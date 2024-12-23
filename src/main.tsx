@@ -6,5 +6,6 @@ import App from './App.tsx';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
+    {/* 나는 빡빡이다!!! */}
   </StrictMode>,
 );
