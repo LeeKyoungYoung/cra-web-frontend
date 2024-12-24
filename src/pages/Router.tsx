@@ -30,10 +30,14 @@ import NoticeList from './Board/Notice/NoticeList';
 import NoticeDetail from './Board/Notice/NoticeDetail';
 import NoticeEdit from './Board/Notice/NoticeEdit';
 import NoticeWrite from './Board/Notice/NoticeWrite';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+import AdminPage from './Admin/AdminPage';
 
 export default function AppRouter() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/intro" />} />
         <Route path="/intro" element={<Intro />} />
@@ -61,7 +65,9 @@ export default function AppRouter() {
         <Route path="/notice-detail" element={<NoticeDetail />} />
         <Route path="/notice-edit" element={<NoticeEdit />} />
         <Route path="/notice-write" element={<NoticeWrite />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
