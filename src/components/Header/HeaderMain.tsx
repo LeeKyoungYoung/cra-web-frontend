@@ -7,19 +7,19 @@ export default function HeaderMain() {
       <Link to="/main">로고</Link>
       <ul>
         <li>
-          <Link to="/notice">Notice</Link>
+          <Link to="/notice-list">Notice</Link>
         </li>
         <li>
-          <Link to="/academic">Academic</Link>
+          <Link to="/academic-list">Academic</Link>
         </li>
         <li>
-          <Link to="/book">Book</Link>
+          <Link to="/book-list">Book</Link>
         </li>
         <li>
-          <Link to="/equipment">Equipment</Link>
+          <Link to="/equip-list">Equipment</Link>
         </li>
         <li>
-          <Link to="/havruta">Havruta</Link>
+          <Link to="/havruta-list">Havruta</Link>
         </li>
       </ul>
       <Link to="/login">로그인</Link>

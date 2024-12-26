@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import BoardDetail from '../../../components/Board/BoardDetail';
+import { CATEGORY } from '../../../constants/category';
 
 export default function HavrutaDetail() {
-  return (
-    <div>HavrutaDetail</div>
-  )
+  return <BoardDetail category={CATEGORY.HAVRUTA} />;
 }
