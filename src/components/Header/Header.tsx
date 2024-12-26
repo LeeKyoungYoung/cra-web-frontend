@@ -10,6 +10,6 @@ export default function Header() {
   const location = useLocation();
   const isIntro = location.pathname === '/intro';
   const isRecruit = location.pathname === '/recruit';
-  console.log(location.pathname);
+  // console.log(location.pathname);
   return isIntro || isRecruit ? <HeaderIntro /> : <HeaderMain />;
 }
