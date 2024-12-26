@@ -1,12 +1,8 @@
 import React from 'react';
-import './List.css';
 import { Link } from 'react-router-dom';
+import BoardDetail from '../../../components/Board/BoardDetail';
+import { CATEGORY } from '../../../constants/category';
 
 export default function NoticeDetail() {
-  return (
-    <div>
-      <h2>공지 자세히 보기</h2>
-      <p></p>
-    </div>
-  );
+  return <BoardDetail category={CATEGORY.NOTICE} />;
 }

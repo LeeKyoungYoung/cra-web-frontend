@@ -20,7 +20,7 @@ export default function HeaderMain() {
         </li>
         /
         <li>
-          <Link to="/equipment">Equipment</Link>
+          <Link to="/equip">Equipment</Link>
         </li>
         /
         <li>
