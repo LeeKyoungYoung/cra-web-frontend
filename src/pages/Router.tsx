@@ -5,31 +5,31 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import Intro from './Intro/Intro';
-import Recruit from './Recruit/Recruit';
-import Main from './Main/Main';
-import Login from './Login/Login';
-import Register from './Register/Register';
-import AcademicList from './Board/Academic/AcademicList';
-import AcademicDetail from './Board/Academic/AcademicDetail';
-import AcademicEdit from './Board/Academic/AcademicEdit';
-import AcademicWrite from './Board/Academic/AcademicWrite';
-import BookList from './Board/Book/BookList';
-import BookDetail from './Board/Book/BookDetail';
-import BookWrite from './Board/Book/BookWrite';
-import BookEdit from './Board/Book/BookEdit';
-import EquipmentList from './Board/Equipment/EquipmentList';
-import EquipmentDetail from './Board/Equipment/EquipmentDetail';
-import EquipmentEdit from './Board/Equipment/EquipmentEdit';
-import EquipmentWrite from './Board/Equipment/EquipmentWrite';
-import HavrutaList from './Board/Havruta/HavrutaList';
-import HavrutaDetail from './Board/Havruta/HavrutaDetail';
-import HavrutaEdit from './Board/Havruta/HavrutaEdit';
-import HavrutaWrite from './Board/Havruta/HavrutaWrite';
-import NoticeList from './Board/Notice/NoticeList';
-import NoticeDetail from './Board/Notice/NoticeDetail';
-import NoticeEdit from './Board/Notice/NoticeEdit';
-import NoticeWrite from './Board/Notice/NoticeWrite';
+import IntroPage from './Intro/IntroPage';
+import RecruitPage from './Recruit/RecruitPage';
+import MainPage from './Main/MainPage';
+import LoginPage from './Login/LoginPage';
+import RegisterPage from './Register/RegisterPage';
+import AcademicPage from './Board/Academic/AcademicPage';
+import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
+import AcademicEditPage from './Board/Academic/AcademicEditPage';
+import AcademicWritePage from './Board/Academic/AcademicWritePage';
+import BookPage from './Board/Book/BookPage';
+import BookDetailPage from './Board/Book/BookDetailPage';
+import BookWritePage from './Board/Book/BookWritePage';
+import BookEditPage from './Board/Book/BookEditPage';
+import EquipmentPage from './Board/Equipment/EquipmentPage';
+import EquipmentDetailPage from './Board/Equipment/EquipmentDetailPage';
+import EquipmentEditPage from './Board/Equipment/EquipmentEditPage';
+import EquipmentWritePage from './Board/Equipment/EquipmentWritePage';
+import HavrutaPage from './Board/Havruta/HavrutaPage';
+import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
+import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
+import HavrutaWritePage from './Board/Havruta/HavrutaWritePage';
+import NoticePage from './Board/Notice/NoticePage';
+import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
+import NoticeEditPage from './Board/Notice/NoticeEditPage';
+import NoticeWritePage from './Board/Notice/NoticeWritePage';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import AdminPage from './Admin/AdminPage';
@@ -40,31 +40,31 @@ export default function AppRouter() {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/intro" />} />
-        <Route path="/intro" element={<Intro />} />
-        <Route path="/recruit" element={<Recruit />} />
-        <Route path="/main" element={<Main />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/academic" element={<AcademicList />} />
-        <Route path="/academic/detail" element={<AcademicDetail />} />
-        <Route path="/academic/edit" element={<AcademicEdit />} />
-        <Route path="/academic/write" element={<AcademicWrite />} />
-        <Route path="/book" element={<BookList />} />
-        <Route path="/book/detail" element={<BookDetail />} />
-        <Route path="/book/edit" element={<BookEdit />} />
-        <Route path="/book/write" element={<BookWrite />} />
-        <Route path="/equip" element={<EquipmentList />} />
-        <Route path="/equip/detail" element={<EquipmentDetail />} />
-        <Route path="/equip/edit" element={<EquipmentEdit />} />
-        <Route path="/equip/write" element={<EquipmentWrite />} />
-        <Route path="/havruta" element={<HavrutaList />} />
-        <Route path="/havruta/detail" element={<HavrutaDetail />} />
-        <Route path="/havruta/edit" element={<HavrutaEdit />} />
-        <Route path="/havruta/write" element={<HavrutaWrite />} />
-        <Route path="/notice" element={<NoticeList />} />
-        <Route path="/notice/detail" element={<NoticeDetail />} />
-        <Route path="/notice/edit" element={<NoticeEdit />} />
-        <Route path="/notice/write" element={<NoticeWrite />} />
+        <Route path="/intro" element={<IntroPage />} />
+        <Route path="/recruit" element={<RecruitPage />} />
+        <Route path="/main" element={<MainPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/academic" element={<AcademicPage />} />
+        <Route path="/academic/detail" element={<AcademicDetailPage />} />
+        <Route path="/academic/edit" element={<AcademicEditPage />} />
+        <Route path="/academic/write" element={<AcademicWritePage />} />
+        <Route path="/book" element={<BookPage />} />
+        <Route path="/book/detail" element={<BookDetailPage />} />
+        <Route path="/book/edit" element={<BookEditPage />} />
+        <Route path="/book/write" element={<BookWritePage />} />
+        <Route path="/equip" element={<EquipmentPage />} />
+        <Route path="/equip/detail" element={<EquipmentDetailPage />} />
+        <Route path="/equip/edit" element={<EquipmentEditPage />} />
+        <Route path="/equip/write" element={<EquipmentWritePage />} />
+        <Route path="/havruta" element={<HavrutaPage />} />
+        <Route path="/havruta/detail" element={<HavrutaDetailPage />} />
+        <Route path="/havruta/edit" element={<HavrutaEditPage />} />
+        <Route path="/havruta/write" element={<HavrutaWritePage />} />
+        <Route path="/notice" element={<NoticePage />} />
+        <Route path="/notice/detail" element={<NoticeDetailPage />} />
+        <Route path="/notice/edit" element={<NoticeEditPage />} />
+        <Route path="/notice/write" element={<NoticeWritePage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
       <Footer />
