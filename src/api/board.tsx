@@ -7,6 +7,7 @@ export const getBoardsByCategory = async (category: number) => {
     const response = await client.get<Board[]>(`/board/${category}`);
     return response.data;
   } catch (error) {
+    console.log(error);
     if (axios.isAxiosError(error)) {
       throw new Error(`Error fetching data: ${error.message}`);
     } else {

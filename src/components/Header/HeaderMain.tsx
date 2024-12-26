@@ -1,25 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './HeaderMain.css';
 
 export default function HeaderMain() {
   return (
-    <div>
+    <div className="header-main">
       <Link to="/main">로고</Link>
       <ul>
         <li>
-          <Link to="/notice-list">Notice</Link>
+          <Link to="/notice">Notice</Link>
         </li>
+        /
         <li>
-          <Link to="/academic-list">Academic</Link>
+          <Link to="/academic">Academic</Link>
         </li>
+        /
         <li>
-          <Link to="/book-list">Book</Link>
+          <Link to="/book">Book</Link>
         </li>
+        /
         <li>
-          <Link to="/equip-list">Equipment</Link>
+          <Link to="/equip">Equipment</Link>
         </li>
+        /
         <li>
-          <Link to="/havruta-list">Havruta</Link>
+          <Link to="/havruta">Havruta</Link>
         </li>
       </ul>
       <Link to="/login">로그인</Link>
