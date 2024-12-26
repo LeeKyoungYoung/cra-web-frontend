@@ -3,6 +3,6 @@ import { Link } from 'react-router-dom';
 import BoardDetail from '../../../components/Board/BoardDetail';
 import { CATEGORY } from '../../../constants/category';
 
-export default function HavrutaDetail() {
-  return <BoardDetail category={CATEGORY.HAVRUTA} />;
+export default function EquipmentDetailPage() {
+  return <BoardDetail category={CATEGORY.EQUIPMENT} />;
 }
