@@ -45,23 +45,23 @@ export default function AppRouter() {
         <Route path="/main" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/academic-list" element={<AcademicList />} />
+        <Route path="/academic" element={<AcademicList />} />
         <Route path="/academic-detail" element={<AcademicDetail />} />
         <Route path="/academic-edit" element={<AcademicEdit />} />
         <Route path="/academic-write" element={<AcademicWrite />} />
-        <Route path="/book-list" element={<BookList />} />
+        <Route path="/book" element={<BookList />} />
         <Route path="/book-detail" element={<BookDetail />} />
         <Route path="/book-edit" element={<BookEdit />} />
         <Route path="/book-write" element={<BookWrite />} />
-        <Route path="/equip-list" element={<EquipmentList />} />
+        <Route path="/equip" element={<EquipmentList />} />
         <Route path="/equip-detail" element={<EquipmentDetail />} />
         <Route path="/equip-edit" element={<EquipmentEdit />} />
         <Route path="/equip-write" element={<EquipmentWrite />} />
-        <Route path="/havruta-list" element={<HavrutaList />} />
+        <Route path="/havruta" element={<HavrutaList />} />
         <Route path="/havruta-detail" element={<HavrutaDetail />} />
         <Route path="/havruta-edit" element={<HavrutaEdit />} />
         <Route path="/havruta-write" element={<HavrutaWrite />} />
-        <Route path="/notice-list" element={<NoticeList />} />
+        <Route path="/notice" element={<NoticeList />} />
         <Route path="/notice-detail" element={<NoticeDetail />} />
         <Route path="/notice-edit" element={<NoticeEdit />} />
         <Route path="/notice-write" element={<NoticeWrite />} />

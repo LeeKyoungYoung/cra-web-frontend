@@ -1,0 +1,11 @@
+.main-page {
+  border: 1px solid black;
+}
+.section {
+  margin: 40px 20px;
+  padding: 100px 0px;
+  border: 1px solid black;
+  p {
+    text-align: center;
+  }
+}
