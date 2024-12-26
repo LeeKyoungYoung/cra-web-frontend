@@ -4,5 +4,10 @@ import BoardList from '../../../components/Board/BoardList';
 import { CATEGORY } from '../../../constants/category';
 
 export default function NoticePage() {
-  return <BoardList category={CATEGORY.NOTICE} />;
+  return (
+    <div>
+      <BoardList category={CATEGORY.NOTICE} />
+      <Link to="/notice/write">Write</Link>
+    </div>
+  );
 }
