@@ -1,0 +1,19 @@
+.intro-page {
+  border: 1px solid black;
+}
+
+.intro-section {
+  margin: 10px 1%;
+  padding: 200px 0px;
+  border: 1px solid black;
+  p {
+    text-align: center;
+  }
+}
+
+.apply-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
