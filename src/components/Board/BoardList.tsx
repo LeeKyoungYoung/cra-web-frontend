@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '../../api/queryKey';
 import { getBoardsByCategory } from '../../api/board';
 import { Link } from 'react-router-dom';
+import BoardDelete from './BoardDelete';
 
 export default function BoardList({ category }: { category: number }) {
   const boardsQuery = useQuery<Board[]>({
@@ -20,9 +21,15 @@ export default function BoardList({ category }: { category: number }) {
   } else if (boardsQuery.isError) {
     content = <div>에러가 발생했습니다!</div>;
   } else if (boardsQuery.isSuccess) {
-    content = boardsQuery.data.map((board) => (
-      <BoardItem key={board.id} board={board} />
-    ));
+    content = boardsQuery.data.map((board) => {
+      if (board.id === undefined) return null; // id가 undefined일 경우 렌더링하지 않음
+      return (
+        <div key={`board-${board.id}`}>
+          <BoardItem board={board} />
+          <BoardDelete id={board.id} />
+        </div>
+      );
+    });
   }
 
   return (
