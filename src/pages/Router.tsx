@@ -30,7 +30,7 @@ import NoticePage from './Board/Notice/NoticePage';
 import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
 import NoticeWritePage from './Board/Notice/NoticeWritePage';
-import Header from '../components/Header/Header';
+import Header from '../components/Header/Header'; 
 import Footer from '../components/Footer/Footer';
 import AdminPage from './Admin/AdminPage';
 

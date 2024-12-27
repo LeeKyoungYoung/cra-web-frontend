@@ -1,3 +1,8 @@
+.recruit-main {
+  border: 1px solid black; /* 페이지 구분을 위해서 테두리 추가 */
+  padding: 50px 0px; /* 리크루팅 폼 위 아래에 여백 추가 */
+}
+
 .recruit-page {
   width: 100%;
   max-width: 600px;

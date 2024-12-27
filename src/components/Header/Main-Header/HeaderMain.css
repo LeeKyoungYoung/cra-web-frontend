@@ -1,0 +1,43 @@
+li {
+  display: inline;
+  padding: 0px 20px;
+}
+
+.header-main {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
+
+.logo-link {
+  color: dodgerblue;
+}
+
+.logo-link:hover {
+  color: blue;
+}
+
+.navbar-link {
+  font-size: x-large;
+  color: black;
+}
+
+.navbar-link:hover {
+  color: darkgrey;
+}
+
+.login-link {
+  color: dodgerblue;
+}
+
+.login-link:hover {
+  color: blue;
+}

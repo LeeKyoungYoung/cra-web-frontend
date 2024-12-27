@@ -1,0 +1,8 @@
+.board-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.board-content > div {
+  margin-bottom: 5px;
+}
