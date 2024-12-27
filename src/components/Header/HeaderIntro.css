@@ -1,0 +1,16 @@
+.header-intro ul {
+  display: flex;
+  justify-content: space-between; /* 항목들 사이에 공간을 두고 배치 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-intro li {
+  padding: 10px;
+}
+
+.header-intro li:nth-child(2) {
+  flex-grow: 1; /* "CRA 배너" 항목이 가운데 공간을 차지하도록 설정 */
+  text-align: center;
+}
