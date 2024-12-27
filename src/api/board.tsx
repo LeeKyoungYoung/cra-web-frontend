@@ -58,3 +58,20 @@ export const createBoards = async (board: Board) => {
     }
   }
 };
+
+// DELETE
+
+export const deleteBoards = async (id: number) => {
+  try {
+    const response = await client.delete(`/board/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Failed to delete board:', error);
+
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Axios error: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
