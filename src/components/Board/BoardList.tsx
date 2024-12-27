@@ -5,6 +5,7 @@ import { Board } from '../../models/Board';
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '../../api/queryKey';
 import { getBoardsByCategory } from '../../api/board';
+import { Link } from 'react-router-dom';
 
 export default function BoardList({ category }: { category: number }) {
   const boardsQuery = useQuery<Board[]>({
@@ -28,6 +29,7 @@ export default function BoardList({ category }: { category: number }) {
     <div>
       <div>{CATEGORY_STRINGS[category]}게시글 리스트</div>
       {content}
+      <Link to="./write">새 게시글 작성</Link>
     </div>
   );
 }
