@@ -1,6 +1,7 @@
 import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteBoards } from '../../api/board';
+import { deleteBoards } from '../../../api/board';
+import './BoardDelete.css';
 
 export default function BoardDelete({ id }: { id: number }) {
   const queryClient = useQueryClient();
@@ -22,5 +23,9 @@ export default function BoardDelete({ id }: { id: number }) {
     deleteMutation.mutate(id);
   };
 
-  return <button onClick={handleDelete}>삭제</button>;
+  return (
+    <button className="delete-button" onClick={handleDelete}>
+      삭제
+    </button>
+  );
 }

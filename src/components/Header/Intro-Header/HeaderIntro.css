@@ -1,0 +1,21 @@
+.header-intro {
+  border: 1px solid black; /* 헤더 구분을 위해서 테두리 추가 */
+
+  ul {
+    display: flex;
+    align-items: center; /* 로고, CRA 배너, main()을 세로로 동일하게 배치 */
+    justify-content: space-between; /* 항목들 사이에 공간을 두고 배치 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  li:nth-child(2) {
+    flex-grow: 1; /* "CRA 배너" 항목이 가운데 공간을 차지하도록 설정 */
+    text-align: center;
+  }
+}

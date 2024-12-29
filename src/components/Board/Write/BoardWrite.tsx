@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { CATEGORY_STRINGS } from '../../constants/category_strings';
+import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { useMutation } from '@tanstack/react-query';
-import { createBoards } from '../../api/board';
-import { Board } from '../../models/Board';
+import { createBoards } from '../../../api/board';
+import { Board } from '../../../models/Board';
+import './BoardWrite.css';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
@@ -66,51 +67,58 @@ export default function BoardWrite({ category }: { category: number }) {
   };
 
   return (
-    <div>
-      <form onSubmit={HandleSubmit}>
-        <h2>{CATEGORY_STRINGS[category]} 게시글 작성</h2>
+    <div className="write-container">
+      <form className="write-form" onSubmit={HandleSubmit}>
+        <h2 className="write-title">
+          {CATEGORY_STRINGS[category]} 게시글 작성
+        </h2>
 
-        <label htmlFor="userId">학번: </label>
+        <label htmlFor="userId">학번:</label>
         <input
           type="number"
           id="userId"
           name="userId"
+          placeholder="Enter your Student ID"
           value={formData.userId}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="title">제목: </label>
+        <label htmlFor="title">제목:</label>
         <input
           type="text"
           id="title"
           name="title"
+          placeholder="Enter the Title of the Post"
           value={formData.title}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="content">내용: </label>
+        <label htmlFor="content">내용:</label>
         <input
           type="text"
           id="content"
           name="content"
+          placeholder="Write the Content of the Post"
           value={formData.content}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="category">카테고리: </label>
+        <label htmlFor="category">카테고리:</label>
         <input
           type="text"
           id="category"
           name="category"
-          value={formData.category}
+          // 카테고리에서 숫자대신 category_strings을 사용해서 어느 항목인지 문자로 출력하게 변경
+          value={CATEGORY_STRINGS[formData.category]}
           readOnly
         />
         <br />
-        <label htmlFor="imageUrls">이미지 주소 (쉼표로 구분): </label>
+        <label htmlFor="imageUrls">이미지 주소:</label>
         <input
           type="text"
           id="imageUrls"
           name="imageUrls"
+          placeholder="Enter Image URLs"
           value={formData.imageUrls.join(',')}
           onChange={handleChange}
         />
