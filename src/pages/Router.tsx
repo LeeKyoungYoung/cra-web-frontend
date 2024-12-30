@@ -30,7 +30,7 @@ import NoticePage from './Board/Notice/NoticePage';
 import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
 import NoticeWritePage from './Board/Notice/NoticeWritePage';
-import Header from '../components/Header/Header'; 
+import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import AdminPage from './Admin/AdminPage';
 
@@ -62,7 +62,7 @@ export default function AppRouter() {
         <Route path="/havruta/edit" element={<HavrutaEditPage />} />
         <Route path="/havruta/write" element={<HavrutaWritePage />} />
         <Route path="/notice" element={<NoticePage />} />
-        <Route path="/notice/detail" element={<NoticeDetailPage />} />
+        <Route path="/notice/view/:id" element={<NoticeDetailPage />} />
         <Route path="/notice/edit" element={<NoticeEditPage />} />
         <Route path="/notice/write" element={<NoticeWritePage />} />
         <Route path="/admin" element={<AdminPage />} />

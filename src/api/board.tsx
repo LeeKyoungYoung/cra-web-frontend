@@ -32,6 +32,20 @@ export const getBoardsByCategory = async (category: number) => {
     }
   }
 };
+// id로 게시물 가져오기 (Detail 페이지에 사용)
+export const getBoardById = async (id: number) => {
+  try {
+    const response = await client.get<Board>(`/board/view/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
 
 // [POST]
 // 새로운 게시판(Board)을 생성하기 위해 서버에 POST 요청을 보내는 메소드
