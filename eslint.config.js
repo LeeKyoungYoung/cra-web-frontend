@@ -60,5 +60,8 @@ export default tseslint.config(
         { argsIgnorePattern: '^_' }, // '_'로 시작하는 매개변수 무시
       ],
     },
+    env: {
+      node: true
+    }
   },
 );
