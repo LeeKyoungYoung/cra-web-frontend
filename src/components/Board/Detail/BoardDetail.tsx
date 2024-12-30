@@ -1,10 +1,10 @@
 import React from 'react';
-import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { Board } from '../../../models/Board';
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '../../../api/queryKey';
 import { getBoardById } from '../../../api/board';
 import { useParams } from 'react-router-dom';
+import BoardDetailItem from '../Item/BoardDetailItem';
 
 export default function BoardDetail({ category }: { category: number }) {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
@@ -26,17 +26,7 @@ export default function BoardDetail({ category }: { category: number }) {
     console.log(board);
     return (
       <div>
-        <h2>{CATEGORY_STRINGS[category]} 게시물 자세히 보기</h2>{' '}
-        {/* category 값을 잘 출력하는지 확인 */}
-        <div>
-          <p>{board.userId}</p>
-          <p>{board.title}</p>
-          <p>{board.content}</p>
-          <p>{board.category}</p>
-          <p>{board.like}</p>
-          <p>{board.view}</p>
-          <p>{board.imageUrls}</p>
-        </div>
+        <BoardDetailItem board={board} category={category} />
       </div>
     );
   }

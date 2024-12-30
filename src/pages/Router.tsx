@@ -46,24 +46,24 @@ export default function AppRouter() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/academic" element={<AcademicPage />} />
-        <Route path="/academic/detail" element={<AcademicDetailPage />} />
-        <Route path="/academic/edit" element={<AcademicEditPage />} />
+        <Route path="/academic/view/:id" element={<AcademicDetailPage />} />
+        <Route path="/academic/edit/:id" element={<AcademicEditPage />} />
         <Route path="/academic/write" element={<AcademicWritePage />} />
         <Route path="/book" element={<BookPage />} />
-        <Route path="/book/detail" element={<BookDetailPage />} />
-        <Route path="/book/edit" element={<BookEditPage />} />
+        <Route path="/book/view/:id" element={<BookDetailPage />} />
+        <Route path="/book/edit/:id" element={<BookEditPage />} />
         <Route path="/book/write" element={<BookWritePage />} />
         <Route path="/equip" element={<EquipmentPage />} />
-        <Route path="/equip/detail" element={<EquipmentDetailPage />} />
-        <Route path="/equip/edit" element={<EquipmentEditPage />} />
+        <Route path="/equip/view/:id" element={<EquipmentDetailPage />} />
+        <Route path="/equip/edit/:id" element={<EquipmentEditPage />} />
         <Route path="/equip/write" element={<EquipmentWritePage />} />
         <Route path="/havruta" element={<HavrutaPage />} />
-        <Route path="/havruta/detail" element={<HavrutaDetailPage />} />
-        <Route path="/havruta/edit" element={<HavrutaEditPage />} />
+        <Route path="/havruta/view/:id" element={<HavrutaDetailPage />} />
+        <Route path="/havruta/edit/:id" element={<HavrutaEditPage />} />
         <Route path="/havruta/write" element={<HavrutaWritePage />} />
         <Route path="/notice" element={<NoticePage />} />
         <Route path="/notice/view/:id" element={<NoticeDetailPage />} />
-        <Route path="/notice/edit" element={<NoticeEditPage />} />
+        <Route path="/notice/edit/:id" element={<NoticeEditPage />} />
         <Route path="/notice/write" element={<NoticeWritePage />} />
         <Route path="/admin" element={<AdminPage />} />
       </Routes>
