@@ -73,6 +73,27 @@ export const createBoards = async (board: Board) => {
   }
 };
 
+// PUT
+export const updateBoards = async (board: Board) => {
+  try {
+    const response = await client.put<Board>(`/board/${board.id}`, board, {
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    console.error('Failed to update data:', error);
+
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Axios error: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
 // DELETE
 
 export const deleteBoards = async (id: number) => {
