@@ -27,7 +27,7 @@ export default function BoardList({ category }: { category: number }) {
       return (
         <div className="board-wrapper" key={`board-${board.id}`}>
           <BoardItem board={board} />
-          <BoardDelete id={board.id} />
+          <BoardDelete id={board.id} category={category} />
         </div>
       );
     });
