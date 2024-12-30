@@ -1,13 +1,22 @@
 .intro-page {
-  border: 1px solid black;
+  background: linear-gradient();
+}
+
+.intro-section-bg {
+  background: linear-gradient(
+    #008bc7 0%,
+    #2cb4db 37%,
+    #79cfe8 73.5%,
+    #bcedfb 100%
+  );
 }
 
 .intro-section {
-  margin: 10px 1%;
-  padding: 200px 0px;
-  border: 1px solid black;
+  padding: 1050px 0px;
+
   p {
     text-align: center;
+    font-size: 50px;
   }
 }
 
@@ -16,4 +25,38 @@
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.character {
+  content: url(test.png);
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 929px;
+  top: 577.47px;
+  transform: rotate(-11.14deg);
+}
+
+.banner {
+  /* LIVE YOUR PASSION CODE YOUR DREAMS */
+  position: absolute;
+  width: 1282px;
+  height: 611px;
+  left: 89px;
+  top: 151px;
+
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 169px;
+  line-height: 150px;
+  /* or 89% */
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.project-element {
+  border: 1px solid black;
+  text-align: center;
 }
