@@ -1,13 +1,14 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Router from './pages/Router.js';
-
-const queryClient = new QueryClient();
+import Footer from './components/Footer/Footer.js';
+import Header from './components/Header/Header.js';
+import AppRoutes from './pages/AppRoutes.js';
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router />
-    </QueryClientProvider>
+    <div>
+      <Header />
+      <AppRoutes />
+      <Footer />
+    </div>
   );
 }
 

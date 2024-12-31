@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import BoardList from '../../../components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
-import BoardList from '../../../components/Board/BoardList';
 import './HavrutaPage.css';
 
 // 초성별 과목 예시

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BoardList from '../../../components/Board/BoardList'; // BoardList 임포트
+import BoardList from '../../../components/Board/BoardList';
 import { CATEGORY } from '../../../constants/category';
 import './BookPage.css';
 
