@@ -1,7 +1,15 @@
-import Router from './pages/Router.js';
+import Footer from './components/Footer/Footer.js';
+import Header from './components/Header/Header.js';
+import AppRoutes from './pages/AppRoutes.js';
 
 function App() {
-  return <Router />;
+  return (
+    <div>
+      <Header />
+      <AppRoutes />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
