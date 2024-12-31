@@ -1,0 +1,16 @@
+@import './styles/colors.css';
+@import './styles/fonts/pretendard.css';
+
+:root {
+  --global-font-family: 'Pretendard';
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: var(--color-background);
+  width: 100%;
+  font-family: var(--global-font-family);
+}

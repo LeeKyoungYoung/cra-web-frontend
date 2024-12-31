@@ -1,0 +1,127 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 115px;
+  padding-bottom: 180px;
+  
+  width: 100%;
+  max-width: 1086px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-left: 10px;
+  padding-bottom: 34px;
+  font-size: 40px;
+  color: var(--color-bright-text);
+}
+
+
+.board-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 17px;
+  padding-right: 17px;
+  border-radius: 10px;
+  border: 1px solid var(--color-dark-stroke);
+  background-color: #ffffff;
+}
+
+.board-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 19px;
+  transition: background-color 0.2s;
+}
+
+.board-wrapper:hover {
+  background-color: #f1f1f1;
+}
+
+.loading {
+  color: #555;
+}
+
+.error {
+  color: red;
+}
+
+.board-list-footer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.spacer {
+  width: 131px;
+}
+
+.write-link {
+  width: 131px;
+  height: 54px;
+  padding: 10px 15px;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+  text-align: center;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.write-link:hover {
+  background-color: var(--color-secondary);
+}
+
+.divider {
+  border: 1px solid var(--color-dark-stroke)
+}
+
+.pagenations {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pagenations-dot {
+  width: 41px;
+  height: 41px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--color-bright-text);
+}
+
+.pagenations-elipse {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagenations-elipse-selected {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.pagenations-elipse-unselected {
+  background: #ffffff;
+  color: var(--color-bright-text);
+  border: 1px solid var(--color-bright-stroke);
+}

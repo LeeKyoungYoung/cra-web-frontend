@@ -7,7 +7,7 @@ import { QUERY_KEY } from '../../../api/queryKey';
 import { getBoardsByCategory } from '../../../api/board';
 import { Link } from 'react-router-dom';
 import BoardDelete from '../Delete/BoardDelete';
-import './BoardList.css';
+import styles from './BoardList.module.css';
 
 export default function BoardList({ category }: { category: number }) {
   const boardsQuery = useQuery<Board[]>({
@@ -22,24 +22,66 @@ export default function BoardList({ category }: { category: number }) {
   } else if (boardsQuery.isError) {
     content = <div className="error">에러가 발생했습니다!</div>;
   } else if (boardsQuery.isSuccess) {
-    content = boardsQuery.data.map((board) => {
+    content = boardsQuery.data.map((board, index) => {
       if (board.id === undefined) return null;
       return (
-        <div className="board-wrapper" key={`board-${board.id}`}>
-          <BoardItem board={board} />
-          <BoardDelete id={board.id} category={category} />
+        <div key={`board-${board.id}`}>
+          <div className={styles['board-wrapper']}>
+            <BoardItem board={board} />
+            {/* <BoardDelete id={board.id} category={category} /> */}
+          </div>
+          {index < boardsQuery.data.length - 1 && (
+            <div className={styles['divider']}></div>
+          )}
         </div>
       );
     });
   }
 
   return (
-    <div className="container">
-      <h2 className="title">{CATEGORY_STRINGS[category]} 게시글 리스트</h2>
-      <div className="board-list">{content}</div>
-      <Link className="write-link" to="./write">
-        새 게시글 작성
-      </Link>
+    <div className={styles.container}>
+      <h2 className={styles.title}>{CATEGORY_STRINGS[category]} 게시판</h2>
+      <div className={styles['board-list']}>{content}</div>
+      <div className={styles['board-list-footer']}>
+        <div className={styles['spacer']}></div>
+        <div className={styles['pagenations']}>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+          ></div>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+          >
+            1
+          </div>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-selected']}`}
+          >
+            2
+          </div>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+          >
+            3
+          </div>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+          >
+            4
+          </div>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+          >
+            5
+          </div>
+          <div className={styles['pagenations-elipse']}>...</div>
+          <div
+            className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+          ></div>
+        </div>
+        <Link className={styles['write-link']} to="./write">
+          글쓰기
+        </Link>
+      </div>
     </div>
   );
 }
