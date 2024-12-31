@@ -4,5 +4,9 @@ import BoardList from '../../../components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
 
 export default function AcademicPage() {
-  return <BoardList category={CATEGORY.ACADEMIC} />;
+  return (
+    <>
+      <BoardList category={CATEGORY.ACADEMIC} />
+    </>
+  );
 }
