@@ -1,0 +1,20 @@
+.container {
+  padding: 10% 30%;
+  margin-bottom: 10%;
+}
+
+.title h2 {
+  text-align: center;
+  padding: 10% 0%;
+}
+
+.id label,
+.password label {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.search-link {
+  font-size: 0.7rem;
+  padding: 0px 0.5rem;
+}
