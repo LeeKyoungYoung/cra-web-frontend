@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import BoardList from '../../../components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
-import './HavrutaPage.css';
+import styles from './HavrutaPage.module.css';
 
-// 초성별 과목 예시
 const subjectsByInitial = {
   ㄱ: [
     { name: '그림 기초', professor: ['홍길동', '김민수'] },
@@ -25,35 +23,36 @@ const subjectsByInitial = {
 
 export default function HavrutaPage() {
   const [selectedSubjects, setSelectedSubjects] = useState<
-    { name: string; professor: string }[]
-  >([]); // 선택된 과목과 교수님
+    { name: string; professor: string[] }[]
+  >([]);
 
-  // 초성 버튼 클릭 시 해당 과목 리스트를 업데이트하는 함수
   const handleInitialClick = (initial: string) => {
-    setSelectedSubjects(subjectsByInitial[initial] || []); // 해당 초성에 맞는 과목 설정
+    setSelectedSubjects(subjectsByInitial[initial] || []);
   };
 
-  // 교수님 선택 변경 처리
   const handleProfessorChange = (index: number, professor: string) => {
     const updatedSubjects = [...selectedSubjects];
-    updatedSubjects[index].professor = professor; // 교수님 변경
+    updatedSubjects[index] = {
+      ...updatedSubjects[index],
+      professor: [professor],
+    };
     setSelectedSubjects(updatedSubjects);
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <header>
         <h1>Havruta 게시판</h1>
       </header>
 
-      <section className="initial-buttons">
+      <section className={styles.initialButtons}>
         <h2>Handong 25-1 개설 과목</h2>
-        <div className="buttons">
+        <div className={styles.buttons}>
           {Object.keys(subjectsByInitial).map((initial) => (
             <button
               key={initial}
               onClick={() => handleInitialClick(initial)}
-              className="initial-button"
+              className={styles.initialButton}
             >
               {initial}
             </button>
@@ -61,10 +60,10 @@ export default function HavrutaPage() {
         </div>
       </section>
 
-      <section className="subject-list">
+      <section className={styles.subjectList}>
         <h2>선택된 과목</h2>
         {selectedSubjects.length > 0 ? (
-          <table className="subject-table">
+          <table className={styles.subjectTable}>
             <thead>
               <tr>
                 <th>과목명</th>
@@ -77,7 +76,7 @@ export default function HavrutaPage() {
                   <td>{subject.name}</td>
                   <td>
                     <select
-                      value={subject.professor}
+                      value={subject.professor[0]}
                       onChange={(e) =>
                         handleProfessorChange(index, e.target.value)
                       }
@@ -98,7 +97,6 @@ export default function HavrutaPage() {
         )}
       </section>
 
-      {/* BoardList 컴포넌트 추가 */}
       <BoardList category={CATEGORY.HAVRUTA} />
     </div>
   );

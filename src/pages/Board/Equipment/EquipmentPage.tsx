@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BoardList from '../../../components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
-import './EquipmentPage.css';
+import styles from './EquipmentPage.module.css';
 
 // 비품의 상태를 정의하는 타입
 interface Equipment {
@@ -72,14 +72,14 @@ export default function EquipmentPage() {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <header>
         <h1>비품 대여 시스템</h1>
       </header>
 
-      <section className="equipment-list">
+      <section className={styles.equipmentList}>
         <h2>대여 가능한 비품 목록</h2>
-        <table id="availableEquipment">
+        <table className={styles.availableEquipment}>
           <thead>
             <tr>
               <th>비품 이름</th>
@@ -92,7 +92,10 @@ export default function EquipmentPage() {
             {availableEquipment.map((equipment, index) => (
               <tr key={index}>
                 <td>
-                  <button onClick={() => handleEquipmentClick(equipment)}>
+                  <button
+                    onClick={() => handleEquipmentClick(equipment)}
+                    className={styles.equipmentButton}
+                  >
                     {equipment.equipmentName}
                   </button>
                 </td>
@@ -102,6 +105,7 @@ export default function EquipmentPage() {
                   <button
                     onClick={() => handleRentEquipment(equipment)}
                     disabled={equipment.status !== '대여가능'}
+                    className={styles.rentButton}
                   >
                     대여하기
                   </button>
@@ -112,7 +116,7 @@ export default function EquipmentPage() {
         </table>
 
         <h2>대여 중인 비품 목록</h2>
-        <table id="rentedEquipment">
+        <table className={styles.rentedEquipment}>
           <thead>
             <tr>
               <th>비품 이름</th>
@@ -131,6 +135,7 @@ export default function EquipmentPage() {
                   <button
                     onClick={() => handleReturnEquipment(equipment)}
                     disabled={equipment.status !== '대여중'}
+                    className={styles.returnButton}
                   >
                     반납하기
                   </button>
@@ -143,7 +148,7 @@ export default function EquipmentPage() {
 
       {/* 비품 정보 모달 */}
       {selectedEquipment && (
-        <div className="equipment-details">
+        <div className={styles.equipmentDetails}>
           <h2>비품 상세 정보</h2>
           <p>
             <strong>비품명:</strong> {selectedEquipment.equipmentName}
@@ -157,7 +162,12 @@ export default function EquipmentPage() {
           <p>
             <strong>설명:</strong> {selectedEquipment.description}
           </p>
-          <button onClick={() => setSelectedEquipment(null)}>닫기</button>
+          <button
+            onClick={() => setSelectedEquipment(null)}
+            className={styles.closeButton}
+          >
+            닫기
+          </button>
         </div>
       )}
 
