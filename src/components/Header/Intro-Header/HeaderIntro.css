@@ -1,6 +1,12 @@
 .header-intro {
   border: 1px solid black; /* 헤더 구분을 위해서 테두리 추가 */
 
+  position: fixed;
+  display: flex;
+  left: 0;
+  top: 0;
+  width: 100%;
+
   ul {
     display: flex;
     align-items: center; /* 로고, CRA 배너, main()을 세로로 동일하게 배치 */
