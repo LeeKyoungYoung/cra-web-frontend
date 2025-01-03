@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '../../../api/queryKey';
 import { getBoardById } from '../../../api/board';
 import { useParams } from 'react-router-dom';
-import BoardDetailItem from '../Item/BoardDetailItem';
+import BoardDetailItem from './BoardDetailItem';
 
 export default function BoardDetail({ category }: { category: number }) {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기

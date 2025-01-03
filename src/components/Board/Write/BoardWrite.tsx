@@ -3,14 +3,14 @@ import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { useMutation } from '@tanstack/react-query';
 import { createBoards } from '../../../api/board';
 import { Board } from '../../../models/Board';
-import './BoardWrite.css';
+import styles from './BoardWrite.module.css';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
 export default function BoardWrite({ category }: { category: number }) {
   // 현재 상태 값 formData, 상태를 업데이트하는 함수: setFormData
   const [formData, setFormData] = useState({
-    userId: 52, // Default로 userId를 일단 52로 설정
+    userId: 1, // Default로 userId를 일단 52로 설정
     title: '',
     content: '',
     category: category, // 부모 컴포넌트에서 전달된 category 값을 Default로 설정
@@ -28,7 +28,7 @@ export default function BoardWrite({ category }: { category: number }) {
       alert('게시글 작성 성공');
       // 성공 후 입력 폼을 원래 상태로 되돌리기
       setFormData({
-        userId: 52,
+        userId: 1, // test: userId로 유동적으로 변경
         title: '',
         content: '',
         category: category,
@@ -67,9 +67,9 @@ export default function BoardWrite({ category }: { category: number }) {
   };
 
   return (
-    <div className="write-container">
-      <form className="write-form" onSubmit={HandleSubmit}>
-        <h2 className="write-title">
+    <div className={styles['write-container']}>
+      <form className={styles['write-form']} onSubmit={HandleSubmit}>
+        <h2 className={styles['write-title']}>
           {CATEGORY_STRINGS[category]} 게시글 작성
         </h2>
 

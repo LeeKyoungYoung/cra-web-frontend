@@ -1,8 +1,8 @@
 import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { deleteBoards } from '../../../api/board';
-import './BoardDelete.css';
 import { QUERY_KEY } from '~/api/queryKey';
+import styles from './BoardDelete.module.css';
 
 export default function BoardDelete({
   id,
@@ -36,7 +36,7 @@ export default function BoardDelete({
   };
 
   return (
-    <button className="delete-button" onClick={handleDelete}>
+    <button className={styles['delete-button']} onClick={handleDelete}>
       삭제
     </button>
   );
