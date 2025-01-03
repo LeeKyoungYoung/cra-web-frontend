@@ -1,6 +1,6 @@
 import React from 'react';
-import './Footer.css';
+import styles from './Footer.module.css';
 
 export default function Footer() {
-  return <div className="footer">Computer Research Association</div>;
+  return <div className={styles['footer']}>Computer Research Association</div>;
 }

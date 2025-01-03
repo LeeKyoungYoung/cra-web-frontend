@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import './HeaderIntro.css';
+import styles from './HeaderIntro.module.css';
 
 export default function HeaderIntro() {
   return (
-    <div className="header-intro">
+    <div className={styles['header-intro']}>
       <ul>
         <Link to="/intro">
           <li>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BoardList from '~/components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
-import './BookPage.css';
+import styles from './BookPage.module.css';
 
 // 도서의 상태를 정의하는 타입
 interface Book {
@@ -64,14 +64,14 @@ export default function BookPage() {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <header>
         <h1>도서 대여 시스템</h1>
       </header>
 
-      <section className="book-list">
+      <section className={styles.bookList}>
         <h2>대여 가능한 도서 목록</h2>
-        <table id="availableBooks">
+        <table className={styles.availableBooks}>
           <thead>
             <tr>
               <th>도서 제목</th>
@@ -84,7 +84,10 @@ export default function BookPage() {
             {availableBooks.map((book, index) => (
               <tr key={index}>
                 <td>
-                  <button onClick={() => handleBookClick(book)}>
+                  <button
+                    onClick={() => handleBookClick(book)}
+                    className={styles.bookTitleButton}
+                  >
                     {book.bookTitle}
                   </button>
                 </td>
@@ -94,6 +97,7 @@ export default function BookPage() {
                   <button
                     onClick={() => handleRentBook(book)}
                     disabled={book.status !== '대여가능'}
+                    className={styles.rentButton}
                   >
                     대여하기
                   </button>
@@ -104,7 +108,7 @@ export default function BookPage() {
         </table>
 
         <h2>대여 중인 도서 목록</h2>
-        <table id="rentedBooks">
+        <table className={styles.rentedBooks}>
           <thead>
             <tr>
               <th>도서 제목</th>
@@ -123,6 +127,7 @@ export default function BookPage() {
                   <button
                     onClick={() => handleReturnBook(book)}
                     disabled={book.status !== '대여중'}
+                    className={styles.returnButton}
                   >
                     반납하기
                   </button>
@@ -135,7 +140,7 @@ export default function BookPage() {
 
       {/* 책 정보 모달 */}
       {selectedBook && (
-        <div className="book-details">
+        <div className={styles.bookDetails}>
           <h2>책 상세 정보</h2>
           <p>
             <strong>제목:</strong> {selectedBook.bookTitle}
