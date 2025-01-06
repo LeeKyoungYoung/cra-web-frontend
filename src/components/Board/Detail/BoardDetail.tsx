@@ -5,6 +5,8 @@ import { QUERY_KEY } from '../../../api/queryKey';
 import { getBoardById } from '../../../api/board';
 import { useParams } from 'react-router-dom';
 import BoardDetailItem from './BoardDetailItem';
+import BoardDelete from '../Delete/BoardDelete';
+import CommentList from '~/components/Comment/List/CommetList';
 
 export default function BoardDetail({ category }: { category: number }) {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
@@ -27,6 +29,8 @@ export default function BoardDetail({ category }: { category: number }) {
     return (
       <div>
         <BoardDetailItem board={board} category={category} />
+        <BoardDelete id={boardId} category={category} />
+        <CommentList id={boardId} />
       </div>
     );
   }
