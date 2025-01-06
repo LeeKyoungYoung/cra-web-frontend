@@ -28,7 +28,7 @@ export default function BoardWrite({ category }: { category: number }) {
       alert('게시글 작성 성공');
       // 성공 후 입력 폼을 원래 상태로 되돌리기
       setFormData({
-        userId: 52,
+        userId: 1,
         title: '',
         content: '',
         category: category,
