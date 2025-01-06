@@ -5,7 +5,7 @@ import { Comment } from '../models/Comment';
 import { error } from 'console';
 
 //get
-export const getComments = async (boardId: number) => {
+export const getCommentsByCategory = async (boardId: number) => {
   try {
     const response = await client.get<Comment[]>(`/comment/${boardId}`);
     return response.data;
@@ -22,7 +22,7 @@ export const getComments = async (boardId: number) => {
 //post
 export const createComments = async (comment: Comment) => {
   try {
-    const response = await client.post<Comment[]>(`/comment`, comment, {
+    const response = await client.post<Comment>(`/comment`, comment, {
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
     });
     return response.data;

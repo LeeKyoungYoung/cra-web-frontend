@@ -5,7 +5,6 @@ import { CATEGORY_STRINGS_EN } from '../../../constants/category_strings_en';
 import { Link } from 'react-router-dom';
 import styles from './BoardDetailItem.module.css';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
-import BoardDelete from '../Delete/BoardDelete';
 
 export default function BoardDetailItem({
   board,
@@ -36,7 +35,7 @@ export default function BoardDetailItem({
         </Link>
       </div>
       <div>
-        <CommentWrite category={category} />
+        <CommentWrite />
       </div>
     </div>
   );

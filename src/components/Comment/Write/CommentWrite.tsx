@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { createComments } from '../../../api/comment';
 import { Comment } from '~/models/Comment';
-import styles from './CommentWrite.module.css'; // Import the styles
 import { useParams } from 'react-router-dom';
+import styles from './CommentWrite.module.css'; // Import the styles
 
 export default function CommentWrite() {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
