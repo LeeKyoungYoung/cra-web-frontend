@@ -85,7 +85,7 @@ export default function BoardWrite({ category }: { category: number }) {
           value={formData.userId}
           readOnly
           onChange={handleChange}
-        />
+        /> 
         <br />
         <label htmlFor="title">제목</label>
         <input
