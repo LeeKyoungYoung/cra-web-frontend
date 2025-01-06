@@ -8,7 +8,7 @@ export default function BoardItem({ board }: { board: Board }) {
     <Link to={`./view/${board.id}`} className={styles['temp-link']}>
       <div className={styles['board-item-container']}>
         <div>
-          <div className={styles['board-user-name']}>{board.userId}</div>
+          <div className={styles['board-user-name']}>{board.id}</div>
           <div className={styles['board-title']}>
             <div className={styles['board-title']}>{board.title}</div>
           </div>

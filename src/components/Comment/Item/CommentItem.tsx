@@ -1,20 +1,10 @@
 import React from 'react';
-import { Board } from '../../../models/Board';
-import { Link } from 'react-router-dom';
-import styles from './BoardItem.module.css';
-
-export default function BoardItem({ board }: { board: Board }) {
+import { Comment } from '~/models/Comment';
+export default function CommentItem({ comment }: { comment: Comment }) {
   return (
-    <Link to={`./view/${board.id}`}>
-      <div>
-        <div>
-          <div>{board.userId}</div>
-          <div>
-            <div>{board.title}</div>
-          </div>
-        </div>
-        <div>{board.content}</div>
-      </div>
-    </Link>
+    <div>
+      <div>{comment.id}</div>
+      <div>{comment.content}</div>
+    </div>
   );
 }

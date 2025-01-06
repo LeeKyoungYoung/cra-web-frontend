@@ -5,7 +5,7 @@ import { Comment } from '../models/Comment';
 import { error } from 'console';
 
 //get
-export const getComments = async (boardId: number) => {
+export const getCommentsByCategory = async (boardId: number) => {
   try {
     const response = await client.get<Comment[]>(`/comment/${boardId}`);
     return response.data;
