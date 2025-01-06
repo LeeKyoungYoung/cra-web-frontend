@@ -1,11 +1,60 @@
 .main-page {
   border: 1px solid black;
 }
-.section {
-  margin: 40px 20px;
-  padding: 100px 0px;
-  border: 1px solid black;
+
+.activity-section {
+  width: 60%;
+  height: auto;
+  margin: 40px auto;
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+
   p {
-    text-align: center;
+    flex-basis: 100%;
+    margin-left: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #5e5e5e;
+  }
+}
+
+.activity-block {
+  width: calc((100% - 48px) / 3);
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  padding-top: 11px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.activity-picture {
+  width: 90%;
+  height: 70%;
+  border-radius: 10px;
+  background-color: #d4d4d4;
+}
+
+.notice-section {
+  width: 60%;
+  height: auto;
+  margin: 40px auto;
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+
+  p {
+    flex-basis: 100%;
+    margin-left: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #5e5e5e;
   }
 }
