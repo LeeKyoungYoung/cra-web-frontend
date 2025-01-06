@@ -25,28 +25,14 @@ export default function IntroPage() {
           CODE YOUR DREAMS
         </div>
         <img className={styles['character']} />
-        <p className={styles['apply-button']}>
-          <button>
-            <Link to="/recruit">지원하기</Link>
-          </button>
-        </p>
+        <Link to="/recruit" className={styles['recruit']}>
+          <p>2025-1 CRA RECRUITMENT</p>
+        </Link>
       </div>
       <div className={styles['intro-section']}>
         <p>동아리 소개</p>
       </div>
-
-      <div className={styles['intro-section']}>
-        <p>
-          동아리 프로젝트 소개
-          <div className={styles['project-element']}>
-            {element.map((elementData) => (
-              <ProjectIntro key={elementData.title} {...elementData} />
-            ))}
-          </div>
-          <button>&lt;</button>
-          <button>&gt;</button>
-        </p>
-      </div>
+      /
     </div>
   );
 }

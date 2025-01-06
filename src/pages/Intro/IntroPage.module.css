@@ -20,21 +20,32 @@
   }
 }
 
-.apply-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.recruit {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+
+  background-color: #e5f7fb;
+  color: #00cfff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2.5rem 3rem;
+  border-radius: 3rem;
+  text-decoration: none;
+
+  p {
+    text-align: center;
+  }
 }
 
 .character {
-  content: url(test.png);
+  content: url('~/assets/images/git.png');
   position: absolute;
   width: 300px;
   height: 300px;
   left: 929px;
   top: 577.47px;
-  transform: rotate(-11.14deg);
+  transform: rotate(+11.14deg);
 }
 
 .banner {
