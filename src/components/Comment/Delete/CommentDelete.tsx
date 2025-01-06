@@ -2,28 +2,22 @@ import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { deleteBoards } from '../../../api/board';
 import { QUERY_KEY } from '~/api/queryKey';
-import styles from './BoardDelete.module.css';
+import styles from './CommentDelete.module.css';
 import { deleteComments } from '~/api/comment';
 
-export default function CommentDelete({
-  id,
-  category,
-}: {
-  id: number;
-  category: number;
-}) {
+export default function CommentDelete({ id }: { id: number }) {
   const queryClient = useQueryClient();
 
   const deleteMutation = useMutation({
     mutationFn: (id: number) => deleteComments(id),
     onSuccess: () => {
-      alert('게시글 삭제 성공');
-      // 게시글 목록 캐시 무효화
+      alert('댓글 삭제 성공');
+      // 댓글 목록 캐시 무효화
       queryClient.invalidateQueries({
-        queryKey: QUERY_KEY.comment.commentsById(category),
+        queryKey: QUERY_KEY.comment.commentsById(id),
       });
       queryClient.refetchQueries({
-        queryKey: QUERY_KEY.comment.commentsById(category),
+        queryKey: QUERY_KEY.comment.commentsById(id),
       });
     },
     onError: (error) => {
