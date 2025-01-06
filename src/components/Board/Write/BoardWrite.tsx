@@ -63,6 +63,7 @@ export default function BoardWrite({ category }: { category: number }) {
     // 디폴트 동작(페이지 새로고침)을 막음
     e.preventDefault();
     // react-query의 mutate 메서드를 통해 서버에 데이터를 전송
+    console.log(formData);
     mutation.mutate(formData);
   };
 

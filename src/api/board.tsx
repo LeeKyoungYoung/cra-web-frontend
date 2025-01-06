@@ -7,7 +7,7 @@ import client from './client';
 // parameter는 category(숫자)로 받음
 // 외부에서 사용할 수 있게 export 해줌
 export const getBoardsByCategory = async (category: number) => {
-  // try 블록에서 await를 사용해서 HTTP 요청을 보냄 -> 문제가 발생하면 catch 블록으로 이동동
+  // try 블록에서 await를 사용해서 HTTP 요청을 보냄 -> 문제가 발생하면 catch 블록으로 이동
   try {
     // client.get은 Axios에서 제공하는 HTTP GET 요청을 수행하는 함수
     // category에 맞는 게시판의 게시물을 Board 타입 배열 형태로 가져옴
