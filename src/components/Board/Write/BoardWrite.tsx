@@ -45,7 +45,9 @@ export default function BoardWrite({ category }: { category: number }) {
 
   // 사용자의 입력을 처리하는 함수
   // 입력 필드의 값을 상태(formData)에 반영
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     // e.target.name은 입력 필드의 이름
     // e.target.value은 입력된 값
     const { name, value } = e.target;
@@ -74,52 +76,44 @@ export default function BoardWrite({ category }: { category: number }) {
           {CATEGORY_STRINGS[category]} 게시글 작성
         </h2>
 
-        <label htmlFor="userId">학번:</label>
+        <label htmlFor="userId">학번</label>
         <input
           type="number"
           id="userId"
           name="userId"
-          placeholder="Enter your Student ID"
+          placeholder="추후 삭제 예정 항목"
           value={formData.userId}
+          readOnly
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="title">제목:</label>
+        <label htmlFor="title">제목</label>
         <input
+          className={styles['input-title']}
           type="text"
           id="title"
           name="title"
-          placeholder="Enter the Title of the Post"
+          placeholder="제목을 입력하세요."
           value={formData.title}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="content">내용:</label>
-        <input
-          type="text"
+        <label htmlFor="content">내용</label>
+        <textarea
+          className={styles['input-content']}
           id="content"
           name="content"
-          placeholder="Write the Content of the Post"
+          placeholder="내용을 입력하세요."
           value={formData.content}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="category">카테고리:</label>
-        <input
-          type="text"
-          id="category"
-          name="category"
-          // 카테고리에서 숫자대신 category_strings을 사용해서 어느 항목인지 문자로 출력하게 변경
-          value={CATEGORY_STRINGS[formData.category]}
-          readOnly
-        />
-        <br />
-        <label htmlFor="imageUrls">이미지 주소:</label>
+        <label htmlFor="imageUrls">이미지 주소</label>
         <input
           type="text"
           id="imageUrls"
           name="imageUrls"
-          placeholder="Enter Image URLs"
+          placeholder="이미지 주소 (추후 삭제 예정 항목)"
           value={formData.imageUrls.join(',')}
           onChange={handleChange}
         />

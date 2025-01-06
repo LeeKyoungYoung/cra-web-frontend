@@ -1,8 +1,4 @@
-import {
-  Routes,
-  Route,
-  Navigate,
-} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import IntroPage from './Intro/IntroPage';
 import RecruitPage from './Recruit/RecruitPage';
 import MainPage from './Main/MainPage';
@@ -29,6 +25,7 @@ import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
 import NoticeWritePage from './Board/Notice/NoticeWritePage';
 import AdminPage from './Admin/AdminPage';
+import ScrollToTop from '~/components/ScrollToTop';
 
 export default function AppRoutes() {
   return (
