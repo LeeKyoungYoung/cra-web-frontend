@@ -6,6 +6,7 @@ import { Board } from '../../../models/Board';
 import styles from './BoardEdit.module.css';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { QUERY_KEY } from '../../../api/queryKey';
+import { CATEGORY } from '~/constants/category';
 
 export default function BoardEdit({ category }: { category: number }) {
   const navigate = useNavigate();

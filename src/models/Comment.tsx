@@ -1,7 +1,7 @@
 interface Comment {
   id?: number;
   userId: number;
-  boardId: number;
+  boardId?: number;
   content: string;
   likeCount?: number;
   createdAt?: Date;
