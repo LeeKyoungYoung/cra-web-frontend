@@ -22,7 +22,7 @@ export const getComments = async (boardId: number) => {
 //post
 export const createComments = async (comment: Comment) => {
   try {
-    const response = await client.post<Comment[]>(`/comment`, comment, {
+    const response = await client.post<Comment>(`/comment`, comment, {
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
     });
     return response.data;
