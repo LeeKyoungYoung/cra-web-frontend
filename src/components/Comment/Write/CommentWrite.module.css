@@ -1,0 +1,49 @@
+.commentWriteContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  width: 80%; /* Adjust width according to your layout */
+  max-width: 600px; /* Max width for the comment input area */
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.submitButton {
+  padding: 8px 20px;
+  background-color: #6fbfe4;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submitButton:hover {
+  background-color: #6fbfe4;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #6fbfe4;
+}
+
+.submitButton:focus {
+  outline: none;
+}

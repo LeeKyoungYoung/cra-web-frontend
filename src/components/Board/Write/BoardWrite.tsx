@@ -10,7 +10,7 @@ import './BoardWrite.css';
 export default function BoardWrite({ category }: { category: number }) {
   // 현재 상태 값 formData, 상태를 업데이트하는 함수: setFormData
   const [formData, setFormData] = useState({
-    userId: 52, // Default로 userId를 일단 52로 설정
+    userId: 1, // Default로 userId를 일단 52로 설정
     title: '',
     content: '',
     category: category, // 부모 컴포넌트에서 전달된 category 값을 Default로 설정
@@ -63,6 +63,7 @@ export default function BoardWrite({ category }: { category: number }) {
     // 디폴트 동작(페이지 새로고침)을 막음
     e.preventDefault();
     // react-query의 mutate 메서드를 통해 서버에 데이터를 전송
+    console.log(formData);
     mutation.mutate(formData);
   };
 
