@@ -1,0 +1,47 @@
+.footer {
+  border: none;
+  background-color: #2cb4db;
+  padding: 2.5rem 0rem;
+  font-size: larger;
+}
+
+.content {
+  padding: 0rem 5rem;
+}
+
+.logo {
+  padding-left: 0.4rem;
+  img {
+    width: 5rem;
+  }
+}
+
+.description {
+  display: flex;
+  padding: 0.5rem 0rem 1rem 0rem;
+  p {
+    color: #bcedfb;
+  }
+  span {
+    color: #ffffff;
+    padding-left: 0.4rem;
+  }
+}
+.cra206 {
+  color: #ffffff;
+  padding-left: 0.4rem;
+}
+
+.icons {
+  padding: 1rem 0rem;
+  float: left;
+}
+
+.developer {
+  text-align: end;
+  font-size: 0.9rem;
+  padding: 1.5rem 0rem;
+  p {
+    color: #ffffff;
+  }
+}

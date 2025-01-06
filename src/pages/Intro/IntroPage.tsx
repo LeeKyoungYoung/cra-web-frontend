@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './IntroPage.css';
+import styles from './IntroPage.module.css';
 import ProjectIntro from './ProjectIntro';
 
 const element = [
@@ -15,28 +15,30 @@ const element = [
 
 export default function IntroPage() {
   return (
-    <div className="intro-page">
-      <div className="intro-section intro-section-bg">
-        <div className="banner">
+    <div className={styles['intro-page']}>
+      <div
+        className={`${styles['intro-section']} ${styles['intro-section-bg']}`}
+      >
+        <div className={styles['banner']}>
           LIVE YOUR
           <div>PASSION</div>
           CODE YOUR DREAMS
         </div>
-        <img className="character" />
-        <p className="apply-button">
+        <img className={styles['character']} />
+        <p className={styles['apply-button']}>
           <button>
             <Link to="/recruit">지원하기</Link>
           </button>
         </p>
       </div>
-      <div className="intro-section">
+      <div className={styles['intro-section']}>
         <p>동아리 소개</p>
       </div>
 
-      <div className="intro-section">
+      <div className={styles['intro-section']}>
         <p>
           동아리 프로젝트 소개
-          <div className="project-element">
+          <div className={styles['project-element']}>
             {element.map((elementData) => (
               <ProjectIntro key={elementData.title} {...elementData} />
             ))}
