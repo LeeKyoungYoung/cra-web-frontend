@@ -33,6 +33,7 @@ export default function MainPage() {
       </div>
       <div className={styles['activity-section']}>
         <p>학술 게시판 내용</p>
+        <MainBoardList category={CATEGORY.ACADEMIC} />
       </div>
     </div>
   );

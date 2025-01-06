@@ -8,21 +8,9 @@
   margin: 0 auto;
 }
 
-.title {
-  margin-left: 10px;
-  padding-bottom: 34px;
-  font-size: 40px;
-  color: var(--color-bright-text);
-}
-
 .board-list {
   display: flex;
   flex-direction: column;
-  padding-left: 17px;
-  padding-right: 17px;
-  border-radius: 10px;
-  border: 1px solid var(--color-dark-stroke);
-  background-color: #ffffff;
 }
 
 .board-wrapper {
@@ -57,6 +45,7 @@
 .spacer {
   width: 131px;
 }
-.divider {
-  border: 1px solid var(--color-dark-stroke);
+.divider{
+  border: 1px solid #c1c1c1;
 }
+
