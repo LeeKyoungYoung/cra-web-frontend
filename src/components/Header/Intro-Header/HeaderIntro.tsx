@@ -7,7 +7,7 @@ export default function HeaderIntro() {
       <ul className={styles['ul-intro']}>
         <Link to="/intro">
           <li className={`${styles['li-intro']} ${styles['li-img']}`}>
-            <img src="./cralogo.png" width="109" />
+            <img src="./cralogo.png" className={styles['logo']} />
           </li>
         </Link>
         <Link

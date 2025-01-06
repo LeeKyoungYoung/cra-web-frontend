@@ -1,16 +1,12 @@
 /* HeaderIntro.module.css */
 .header-intro {
-  position: fixed;
   display: flex;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 109px;
   background-color: rgb(0, 139, 199);
-  z-index: 1000; /* 헤더가 다른 요소 위에 나타나도록 설정 */
   justify-content: space-between; /* 로고와 main()을 양쪽 끝에 배치 */
   align-items: center; /* 세로 정렬 */
-  padding: 10px 20px; /* 헤더 내부 여백 */
+  padding: 2.5rem 3rem 2.5rem 1.5rem; /* 헤더 내부 여백 */
 }
 
 .ul-intro {
@@ -36,4 +32,8 @@
   font-size: 25px;
   color: white;
   text-decoration: none;
+}
+
+.logo {
+  width: 8rem;
 }
