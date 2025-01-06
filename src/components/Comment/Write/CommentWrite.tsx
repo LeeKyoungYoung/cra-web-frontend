@@ -3,11 +3,14 @@ import { useMutation } from '@tanstack/react-query';
 import { createComments } from '../../../api/comment';
 import { Comment } from '~/models/Comment';
 import styles from './CommentWrite.module.css'; // Import the styles
+import { useParams } from 'react-router-dom';
 
-export default function CommentWrite({ category }: { category: number }) {
+export default function CommentWrite() {
+  const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
+  const boardId = Number(id); // id를 숫자로 변환
   const [formData, setFormData] = useState({
     userId: 1,
-    boardId: category,
+    boardId: boardId,
     content: '',
   });
 
@@ -17,7 +20,7 @@ export default function CommentWrite({ category }: { category: number }) {
       alert('댓글 작성 성공');
       setFormData({
         userId: 1,
-        boardId: category,
+        boardId: boardId,
         content: '',
       });
     },

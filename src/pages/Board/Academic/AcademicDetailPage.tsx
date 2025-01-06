@@ -8,7 +8,6 @@ export default function AcademicDetailPage() {
   return (
     <>
       <BoardDetail category={CATEGORY.ACADEMIC} />
-      <CommentWrite category={CATEGORY.ACADEMIC} />
     </>
   );
 }

@@ -4,6 +4,8 @@ import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { CATEGORY_STRINGS_EN } from '../../../constants/category_strings_en';
 import { Link } from 'react-router-dom';
 import styles from './BoardDetailItem.module.css';
+import CommentWrite from '~/components/Comment/Write/CommentWrite';
+import BoardDelete from '../Delete/BoardDelete';
 
 export default function BoardDetailItem({
   board,
@@ -32,6 +34,9 @@ export default function BoardDetailItem({
         >
           게시물 수정하기
         </Link>
+      </div>
+      <div>
+        <CommentWrite category={category} />
       </div>
     </div>
   );
