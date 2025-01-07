@@ -1,9 +1,71 @@
 /* Hello CRA */
 .detail-container {
+  margin-top: 170px;
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin-bottom: 194px;
 }
 
 .detail-content {
+  width: 1086px;
+  height: 984px;
+  background-color: white; /* 테스트용 배경색 */
+  border-radius: 10px;
 }
 
-.edit-link {
+.content-body {
+  margin: 40px;
+  width: 1032px;
+  height: 436px;
+  position: relative;
+}
+
+.divide-line {
+  border-top: 3px solid lightgrey;
+  margin: 30px;
+}
+
+.login {
+  font-size: 1.5rem;
+  background-color: #2cb4db;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  margin-left: auto; /* 버튼을 오른쪽으로 밀어냄 */
+}
+
+.link {
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+  color: white;
+}
+
+.fix-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: left;
+  padding-top: 25px;
+  padding-left: 30px;
+}
+
+.nav {
+  display: flex;
+  gap: 30px; /* 항목들 사이에 간격을 추가 */
+}
+
+.contetn-title {
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.comment-count {
+  position: absolute;
+  bottom: 20px; /* 화면 하단에서 20px 떨어지게 설정 */
 }
