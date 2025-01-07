@@ -103,7 +103,7 @@ export default function IntroPage() {
             <div className={styles['club-content']}>
               <div className={styles['club-content1']}>
                 <p>선의의 경쟁을 통해 좋은 자극을 받을 수 있는 동</p>
-                <p>료들이 기다리고 있습니다.  24시간 이용 가능한</p>
+                <p>료들이 기다리고 있습니다. 24시간 이용 가능한</p>
                 <p>동방에서 모르는 것이 있으면 서로 물어보거나 토</p>
                 <p>론을 하기도 합니다.</p>
               </div>
@@ -143,7 +143,7 @@ export default function IntroPage() {
       </div>
 
       <div className={styles['project']}>
-        <p>프로젝트</p>
+        <p>프로젝트 소개</p>
       </div>
     </div>
   );

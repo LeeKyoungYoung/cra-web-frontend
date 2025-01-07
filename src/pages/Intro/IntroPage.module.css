@@ -217,7 +217,12 @@
 
 .project {
   background: #ffffff;
-  padding: 10rem;
+  padding: 10rem 0rem;
+  p {
+    font-size: 3.125rem;
+    font-weight: bold;
+    text-align: center;
+  }
 }
 
 /* 반응형 스타일 */
