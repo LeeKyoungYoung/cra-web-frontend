@@ -1,22 +1,49 @@
-.intro-container {
+.container {
+  background-color: #f1f1f1;
 }
 
-.intro-main {
+.main {
   background: linear-gradient(
     #008bc7 0%,
     #2cb4db 33%,
     #79cfe8 67%,
     #bcedfb 100%
   );
+
+  height: 62.5rem;
 }
 
-.intro-section {
-  padding: 1050px 0px;
-
+.section {
   p {
+    /* 2025-1 CRA RECRUITMENT */
     text-align: center;
-    font-size: 50px;
+    font-size: 3rem;
   }
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10.5625rem;
+  line-height: 150px;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+
+  padding: 2rem 0rem;
+}
+
+.character {
+  content: url('~/assets/images/crang-e.png');
+  width: 28.25rem;
+  height: 28.25rem;
+  position: absolute;
+  top: 32.18625rem;
+  left: 55.5rem;
 }
 
 .recruit-btn {
@@ -26,10 +53,11 @@
 
   background-color: #e5f7fb;
   color: #00cfff;
-  font-size: 1.5rem;
+  font-size: 2.8125rem;
   font-weight: bold;
-  padding: 2.5rem 3rem;
-  border-radius: 3rem;
+  padding: 1rem 2.5rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
   text-decoration: none;
 
   p {
@@ -37,36 +65,31 @@
   }
 }
 
-.character {
-  content: url('~/assets/images/crang-e.png');
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  left: 929px;
-  top: 577.47px;
-  transform: rotate(0deg);
+.vector {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding: 1.5rem 0rem;
+  img {
+    width: 3.4375rem;
+    height: 1.6875rem;
+  }
 }
 
-.banner {
-  /* LIVE YOUR PASSIONCODE YOUR DREAMS */
-  position: absolute;
-  width: 1282px;
-  height: 611px;
-  left: 89px;
-  top: 151px;
-
-  font-family: 'Archivo Black';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 169px;
-  line-height: 150px;
-  /* or 89% */
-  text-align: center;
-  letter-spacing: -0.05em;
-  color: #ffffff;
-}
-
-.project-element {
+.cra {
   border: 1px solid black;
-  text-align: center;
+  padding: 10rem;
+}
+
+.description {
+}
+
+.club {
+  border: 1px solid black;
+  padding: 10rem;
+}
+
+.project {
+  border: 1px solid black;
+  padding: 10rem;
 }
