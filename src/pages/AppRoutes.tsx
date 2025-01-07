@@ -8,7 +8,7 @@ import AcademicPage from './Board/Academic/AcademicPage';
 import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
 import AcademicEditPage from './Board/Academic/AcademicEditPage';
 import AcademicWritePage from './Board/Academic/AcademicWritePage';
-import BookPage from './Board/Book/BookPage';
+import BookPage from './Board/Book/BookPage/BookPage';
 import BookDetailPage from './Board/Book/BookDetailPage';
 import BookWritePage from './Board/Book/BookWritePage';
 import BookEditPage from './Board/Book/BookEditPage';
