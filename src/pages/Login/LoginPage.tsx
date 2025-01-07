@@ -66,7 +66,7 @@ export default function LoginPage() {
               placeholder="아이디를 입력하세요."
             />
           </div>
-          <div className={styles['id-password-space']}/>
+          <div className={styles['id-password-space']} />
           <div className={styles['password']}>
             <label htmlFor="password">비밀번호</label>
             <input
@@ -77,11 +77,11 @@ export default function LoginPage() {
             />
           </div>
           <div className={styles['search']}>
-            <Link to="#" className={styles['search-link']}>
+            <Link to="/idsearch" className={styles['search-link']}>
               아이디 찾기
             </Link>
             <span>|</span>
-            <Link to="#" className={styles['search-link']}>
+            <Link to="/pwsearch" className={styles['search-link']}>
               비밀번호 찾기
             </Link>
           </div>
@@ -91,7 +91,9 @@ export default function LoginPage() {
         </form>
         <div className={styles['register']}>
           <span>아직 CRA의 회원이 아니신가요? </span>
-          <Link to="#" className={styles['register-link']}>회원가입하기</Link>
+          <Link to="/register" className={styles['register-link']}>
+            회원가입하기
+          </Link>
         </div>
       </div>
     </div>
