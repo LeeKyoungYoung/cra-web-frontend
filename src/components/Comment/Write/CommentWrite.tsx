@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { QueryClient, useMutation, useQueryClient } from '@tanstack/react-query';
 import { createComments } from '../../../api/comment';
 import { Comment } from '~/models/Comment';
 import { useParams } from 'react-router-dom';
 import styles from './CommentWrite.module.css'; // Import the styles
+import { QUERY_KEY } from '~/api/queryKey';
 
 export default function CommentWrite() {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
@@ -13,15 +14,22 @@ export default function CommentWrite() {
     boardId: boardId,
     content: '',
   });
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: (newComment: Comment) => createComments(newComment),
+    mutationFn: (newComment: Comment) => createComments(newComment, boardId),
     onSuccess: () => {
       alert('댓글 작성 성공');
       setFormData({
         userId: 1,
         boardId: boardId,
         content: '',
+      });
+      queryClient.invalidateQueries({
+        queryKey: QUERY_KEY.comment.commentsById(boardId),
+      });
+      queryClient.refetchQueries({
+        queryKey: QUERY_KEY.comment.commentsById(boardId),
       });
     },
     onError: (error) => {

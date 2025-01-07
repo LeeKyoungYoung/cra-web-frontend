@@ -20,9 +20,9 @@ export const getCommentsByCategory = async (boardId: number) => {
 };
 
 //post
-export const createComments = async (comment: Comment) => {
+export const createComments = async (comment: Comment, boardId: number) => {
   try {
-    const response = await client.post<Comment>(`/comment`, comment, {
+    const response = await client.post<Comment>(`/comment/${boardId}`, comment, {
       headers: { 'Content-type': 'application/json; charset=UTF-8' },
     });
     return response.data;
