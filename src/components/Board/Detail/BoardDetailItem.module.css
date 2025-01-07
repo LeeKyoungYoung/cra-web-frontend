@@ -12,7 +12,6 @@
 
 .detail-content {
   width: 100%;
-  min-height: 984px;
   background-color: white; /* 테스트용 배경색 */
   border-radius: 10px;
   border: 1px solid #c9c9c9;

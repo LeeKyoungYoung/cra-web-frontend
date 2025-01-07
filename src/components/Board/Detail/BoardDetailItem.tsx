@@ -9,6 +9,7 @@ import CommentList from '~/components/Comment/List/CommetList';
 import BoardDelete from '../Delete/BoardDelete';
 import HeightSpacer from '~/components/Common/HeightSpacer';
 import Divider from '~/components/Common/Divider';
+import { dateFormat } from '~/utils/dateForm';
 
 export default function BoardDetailItem({
   board,
@@ -45,7 +46,7 @@ export default function BoardDetailItem({
             </div>
             <div>
               <span className={styles['nav-title']}>작성일 | </span>
-              <span className={styles['nav-content']}>2025-00-00</span>
+              <span className={styles['nav-content']}>{ dateFormat(board.createdAt)}</span>
             </div>
           </div>
           <div className={styles['content-title']}>{board.title}</div>

@@ -9,6 +9,7 @@ import BoardDelete from '../Delete/BoardDelete';
 import CommentList from '~/components/Comment/List/CommetList';
 import styles from './BoardDetail.module.css';
 import { getCommentsCountByCategory } from '~/api/comment';
+import { dateFormat } from '~/utils/dateForm';
 
 export default function BoardDetail({ category }: { category: number }) {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기

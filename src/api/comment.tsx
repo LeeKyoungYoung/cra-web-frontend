@@ -8,7 +8,25 @@ import { error } from 'console';
 export const getCommentsByCategory = async (boardId: number) => {
   try {
     const response = await client.get<Comment[]>(`/comment/${boardId}`);
-    return response.data;
+
+    // createdAt 필드를 Date 객체로 변환
+    let comments: Comment[] = [];
+    response.data.forEach((comment) => {
+      let replies: Comment[] = [];
+      comment.commentList.forEach((reply) => {
+        replies.push({
+          ...reply,
+          createdAt: new Date(reply.createdAt),
+        });
+      });
+      comments.push({
+        ...comment,
+        createdAt: new Date(comment.createdAt),
+        commentList: replies,
+      });
+    });
+
+    return comments;
   } catch (error) {
     console.log(error);
     if (axios.isAxiosError(error)) {

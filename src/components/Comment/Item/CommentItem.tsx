@@ -8,6 +8,7 @@ import CommentWrite from '../Write/CommentWrite';
 import Divider from '~/components/Common/Divider';
 import HeightSpacer from '~/components/Common/HeightSpacer';
 import WidthSpacer from '~/components/Common/WidthSpacer';
+import { dateFormat } from '~/utils/dateForm';
 
 export default function CommentItem({
   comment,
@@ -40,7 +41,7 @@ export default function CommentItem({
             <div className={styles['comment-content']}>{comment.content}</div>
 
             <div className={styles['comment-footer']}>
-              <div>2024-12-31</div>
+              <div>{dateFormat(comment.createdAt)}</div>
               <div
                 onClick={() => setIsEditing(true)}
                 className={styles['delete-button']}

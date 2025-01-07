@@ -36,7 +36,12 @@ export const getBoardsByCategory = async (category: number) => {
 export const getBoardById = async (id: number) => {
   try {
     const response = await client.get<Board>(`/board/view/${id}`);
-    return response.data;
+    const board = response.data;
+
+    return {
+      ...board,
+      createdAt: new Date(board.createdAt), // createAt을 Date 객체로 변환
+    };
   } catch (error) {
     console.log(error);
     if (axios.isAxiosError(error)) {
