@@ -1,60 +1,62 @@
 .write-container {
-  padding: 60px;
-  font-family: Arial, sans-serif;
-  max-width: 600px;
-  margin: 50px auto;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 115px;
+  padding-bottom: 180px;
+  width: 100%;
+  max-width: 1086px;
+  margin: 0 auto;
 }
 
 .write-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+  margin-left: 10px;
+  padding-bottom: 60px;
+  font-size: 40px;
+  color: var(--color-bright-text);
 }
 
 .write-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
 .write-form label {
-  font-weight: bold;
-  color: #555;
+  margin: 0 0 16px 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #3e3e3e;
 }
-
 .write-form input[type='text'],
-.write-form input[type='number'] {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
+.write-form input[type='number'],
+.write-form textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 20px;
+  font-size: 18px;
+  border-color: #c1c1c1;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #3e3e3e;
 }
 
-.write-form input[type='text']:focus,
-.write-form input[type='number']:focus {
+.write-form input[type='text']::placeholder,
+.write-form textarea::placeholder {
+  color: #c1c1c1;
+}
+
+.input-title {
+  height: 68px;
+}
+
+.input-content {
+  aspect-ratio: 1 / 1;
+}
+
+.write-form input:focus,
+.write-form textarea:focus {
   border-color: #007bff;
   outline: none;
-}
-
-.write-form input[type='submit'] {
-  padding: 10px 15px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.write-form input[type='submit']:hover {
-  background-color: #0056b3;
 }
 
 .write-form input[readonly] {
@@ -63,4 +65,22 @@
 
 .write-form input[type='content'] {
   height: 200%;
+}
+
+.submit-button {
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  height: 68px;
+  width: 46%;
+  background-color: #2cb4db;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.submit-button:hover {
+  background-color: #2295ba;
 }
