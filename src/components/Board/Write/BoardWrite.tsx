@@ -3,11 +3,13 @@ import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { useMutation } from '@tanstack/react-query';
 import { createBoards } from '../../../api/board';
 import { Board } from '../../../models/Board';
+import { useNavigate } from 'react-router-dom';
 import styles from './BoardWrite.module.css';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
 export default function BoardWrite({ category }: { category: number }) {
+  const navigate = useNavigate();
   // 현재 상태 값 formData, 상태를 업데이트하는 함수: setFormData
   const [formData, setFormData] = useState({
     userId: 1, // Default로 userId를 일단 52로 설정
@@ -23,9 +25,10 @@ export default function BoardWrite({ category }: { category: number }) {
     // Board 객체인 newBoard를 사용해서 createBoards 함수로 보냄
     mutationFn: (newBoard: Board) => createBoards(newBoard),
     // 성공 시에 호출
-    onSuccess: () => {
+    onSuccess: async () => {
       // alert 창으로 알려주기
-      alert('게시글 작성 성공');
+      await alert('게시글 작성 성공');
+      navigate(-1);
       // 성공 후 입력 폼을 원래 상태로 되돌리기
       setFormData({
         userId: 1, // test: userId로 유동적으로 변경
@@ -45,7 +48,9 @@ export default function BoardWrite({ category }: { category: number }) {
 
   // 사용자의 입력을 처리하는 함수
   // 입력 필드의 값을 상태(formData)에 반영
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     // e.target.name은 입력 필드의 이름
     // e.target.value은 입력된 값
     const { name, value } = e.target;
@@ -74,57 +79,53 @@ export default function BoardWrite({ category }: { category: number }) {
           {CATEGORY_STRINGS[category]} 게시글 작성
         </h2>
 
-        <label htmlFor="userId">학번:</label>
+        <label htmlFor="userId">학번</label>
         <input
           type="number"
           id="userId"
           name="userId"
-          placeholder="Enter your Student ID"
+          placeholder="추후 삭제 예정 항목"
           value={formData.userId}
+          readOnly
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="title">제목:</label>
+        <label htmlFor="title">제목</label>
         <input
+          className={styles['input-title']}
           type="text"
           id="title"
           name="title"
-          placeholder="Enter the Title of the Post"
+          placeholder="제목을 입력하세요."
           value={formData.title}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="content">내용:</label>
-        <input
-          type="text"
+        <label htmlFor="content">내용</label>
+        <textarea
+          className={styles['input-content']}
           id="content"
           name="content"
-          placeholder="Write the Content of the Post"
+          placeholder="내용을 입력하세요."
           value={formData.content}
           onChange={handleChange}
         />
         <br />
-        <label htmlFor="category">카테고리:</label>
-        <input
-          type="text"
-          id="category"
-          name="category"
-          // 카테고리에서 숫자대신 category_strings을 사용해서 어느 항목인지 문자로 출력하게 변경
-          value={CATEGORY_STRINGS[formData.category]}
-          readOnly
-        />
-        <br />
-        <label htmlFor="imageUrls">이미지 주소:</label>
+        <label htmlFor="imageUrls">이미지 주소</label>
         <input
           type="text"
           id="imageUrls"
           name="imageUrls"
-          placeholder="Enter Image URLs"
+          placeholder="이미지 주소 (추후 삭제 예정 항목)"
           value={formData.imageUrls.join(',')}
           onChange={handleChange}
         />
         <br />
-        <input type="submit" value="게시글 작성" />
+        <input
+          className={styles['submit-button']}
+          type="submit"
+          value="게시글 작성"
+        />
       </form>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 import { deleteBoards } from '../../../api/board';
 import { QUERY_KEY } from '~/api/queryKey';
 import styles from './BoardDelete.module.css';
@@ -12,11 +13,13 @@ export default function BoardDelete({
   category: number;
 }) {
   const queryClient = useQueryClient();
+  const navigate = useNavigate();
 
   const deleteMutation = useMutation({
     mutationFn: (id: number) => deleteBoards(id),
-    onSuccess: () => {
+    onSuccess: async () => {
       alert('게시글 삭제 성공');
+      await navigate(-1);
       // 게시글 목록 캐시 무효화
       queryClient.invalidateQueries({
         queryKey: QUERY_KEY.board.boards(category),
