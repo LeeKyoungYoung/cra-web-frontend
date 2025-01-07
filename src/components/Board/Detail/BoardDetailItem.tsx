@@ -5,6 +5,7 @@ import { CATEGORY_STRINGS_EN } from '../../../constants/category_strings_en';
 import { Link } from 'react-router-dom';
 import styles from './BoardDetailItem.module.css';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
+import CommentList from '~/components/Comment/List/CommetList';
 
 export default function BoardDetailItem({
   board,
@@ -14,29 +15,51 @@ export default function BoardDetailItem({
   category: number;
 }) {
   return (
-    <div className={styles['detail-container']}>
-      <h2>{CATEGORY_STRINGS[category]} 게시글 자세히 보기</h2>{' '}
-      {/* category 값을 잘 출력하는지 확인 */}
-      <div className={styles['detail-content']}>
-        <p>UserID: {board.userId}</p>
-        <p>Title: {board.title}</p>
-        <p>Content: {board.content}</p>
-        <p>Category: {CATEGORY_STRINGS[board.category]}</p>
-        <p>Like: {board.like}</p>
-        <p>View: {board.view}</p>
-        <p>ImageURLs: {board.imageUrls}</p>
+    <>
+      <div className={styles['detail-container']}>
+        <div>
+          <div className={styles['fix-button']}>
+            <button className={styles['login']}>
+              <Link
+                to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
+                className={styles['link']}
+              >
+                수정하기
+              </Link>
+            </button>
+          </div>
+          <div className={styles['detail-content']}>
+            <header className={styles['title']}>
+              <h3>{CATEGORY_STRINGS[category]} 게시판</h3>
+            </header>
+            <body
+              className={`${styles['divide-line']} ${styles['content-body']}`}
+            >
+              <nav className={styles['nav']}>
+                <span>작성자 | {board.userId}</span>
+                <span>작성일 | 2025 년 00 월 00 일</span>
+              </nav>
+              <h1 className={styles['contetn-title']}>{board.title}</h1>
+              <p>{board.content}</p>
+              <div className={styles['comment-count']}>
+                <p>View: {board.view}</p>
+                <p>Like: {board.like}</p>
+                <p>comment count: 3</p>
+              </div>
+            </body>
+            <footer className={styles['divide-line']}>
+              <CommentWrite />
+            </footer>
+          </div>
+        </div>
       </div>
-      <div>
-        <Link
-          to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
-          className={styles['edit-link']}
-        >
-          게시물 수정하기
-        </Link>
-      </div>
-      <div>
-        <CommentWrite />
-      </div>
-    </div>
+    </>
   );
+}
+//밑에거 다 잘됨.
+{
+  /* <p>Category: {CATEGORY_STRINGS[board.category]}</p>
+          <p>Like: {board.like}</p>
+          <p>View: {board.view}</p>
+          <p>ImageURLs: {board.imageUrls}</p> */
 }

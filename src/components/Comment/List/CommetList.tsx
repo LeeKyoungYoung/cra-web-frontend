@@ -4,14 +4,14 @@ import CommentItem from '../Item/CommentItem';
 import { Comment } from '~/models/Comment';
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '~/api/queryKey';
-import { getCommentsByCategory } from '~/api/comment';
+import { getCommentsByBoardId } from '~/api/comment';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
 export default function CommentList({ id }: { id: number }) {
   const CommentsQuery = useQuery<Comment[]>({
     queryKey: QUERY_KEY.comment.commentsById(id),
-    queryFn: async () => getCommentsByCategory(id),
+    queryFn: async () => getCommentsByBoardId(id),
   });
 
   let content;
