@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { QueryClient, useMutation, useQueryClient } from '@tanstack/react-query';
-import { createComments } from '../../../api/comment';
+import { createChildComments, createComments } from '../../../api/comment';
 import { Comment } from '~/models/Comment';
 import { useParams } from 'react-router-dom';
 import styles from './CommentWrite.module.css'; // Import the styles
 import { QUERY_KEY } from '~/api/queryKey';
 
-export default function CommentWrite() {
+export default function CommentWrite({parentId}: {parentId: number | undefined}) {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
   const boardId = Number(id); // id를 숫자로 변환
   const [formData, setFormData] = useState({
@@ -16,27 +16,51 @@ export default function CommentWrite() {
   });
   const queryClient = useQueryClient();
 
-  const mutation = useMutation({
-    mutationFn: (newComment: Comment) => createComments(newComment, boardId),
-    onSuccess: () => {
-      alert('댓글 작성 성공');
-      setFormData({
-        userId: 1,
-        boardId: boardId,
-        content: '',
+  const mutation = !parentId
+    ? useMutation({
+        mutationFn: (newComment: Comment) =>
+          createComments(newComment, boardId),
+        onSuccess: () => {
+          alert('댓글 작성 성공');
+          setFormData({
+            userId: 1,
+            boardId: boardId,
+            content: '',
+          });
+          queryClient.invalidateQueries({
+            queryKey: QUERY_KEY.comment.commentsById(boardId),
+          });
+          queryClient.refetchQueries({
+            queryKey: QUERY_KEY.comment.commentsById(boardId),
+          });
+        },
+        onError: (error) => {
+          console.error('댓글 작성 실패:', error);
+          alert('댓글 작성 실패');
+        },
+      })
+    : useMutation({
+        mutationFn: (newComment: Comment) =>
+          createChildComments(newComment, boardId, parentId),
+        onSuccess: () => {
+          alert('댓글 작성 성공');
+          setFormData({
+            userId: 1,
+            boardId: boardId,
+            content: '',
+          });
+          queryClient.invalidateQueries({
+            queryKey: QUERY_KEY.comment.commentsById(boardId),
+          });
+          queryClient.refetchQueries({
+            queryKey: QUERY_KEY.comment.commentsById(boardId),
+          });
+        },
+        onError: (error) => {
+          console.error('댓글 작성 실패:', error);
+          alert('댓글 작성 실패');
+        },
       });
-      queryClient.invalidateQueries({
-        queryKey: QUERY_KEY.comment.commentsById(boardId),
-      });
-      queryClient.refetchQueries({
-        queryKey: QUERY_KEY.comment.commentsById(boardId),
-      });
-    },
-    onError: (error) => {
-      console.error('댓글 작성 실패:', error);
-      alert('댓글 작성 실패');
-    },
-  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

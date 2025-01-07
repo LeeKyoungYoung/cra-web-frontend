@@ -35,7 +35,7 @@ export default function BoardDetailItem({
         </Link>
       </div>
       <div>
-        <CommentWrite />
+        <CommentWrite parentId={undefined}/>
       </div>
     </div>
   );
