@@ -29,6 +29,8 @@ import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
 import NoticeWritePage from './Board/Notice/NoticeWritePage';
 import AdminPage from './Admin/AdminPage';
+import IDSearchPage from './Login/Search/ID/IDSearchPage';
+import PWSearchPage from './Login/Search/PW/PWSearchPage';
 
 export default function AppRoutes() {
   return (
@@ -60,6 +62,8 @@ export default function AppRoutes() {
       <Route path="/notice/edit/:id" element={<NoticeEditPage />} />
       <Route path="/notice/write" element={<NoticeWritePage />} />
       <Route path="/admin" element={<AdminPage />} />
+      <Route path="/idsearch" element={<IDSearchPage />} />
+      <Route path="/pwsearch" element={<PWSearchPage />} />
     </Routes>
   );
 }

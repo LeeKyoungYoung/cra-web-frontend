@@ -77,11 +77,11 @@ export default function LoginPage() {
             />
           </div>
           <div className={styles['search']}>
-            <Link to="#" className={styles['search-link']}>
+            <Link to="/idsearch" className={styles['search-link']}>
               아이디 찾기
             </Link>
             <span>|</span>
-            <Link to="#" className={styles['search-link']}>
+            <Link to="/pwsearch" className={styles['search-link']}>
               비밀번호 찾기
             </Link>
           </div>
