@@ -1,6 +1,6 @@
 li {
   display: inline;
-  padding: 0px 20px;
+  padding: 0rem 1.5rem;
 }
 
 .header-main {
@@ -9,13 +9,15 @@ li {
   left: 0;
   top: 0;
   width: 100%;
-  height: 109px;
   background-color: #ffffff;
 
-  border: 1px solid black;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 2rem 2.5rem;
+}
+
+.logo {
+  /*  */
 }
 
 .link {
@@ -24,27 +26,19 @@ li {
   font-weight: bold;
 }
 
-.logo-link {
-  color: dodgerblue;
-}
-
-.logo-link:hover {
-  color: blue;
-}
-
 .navbar-link {
   font-size: x-large;
-  color: black;
+  color: #5d5d5d;
 }
 
 .navbar-link:hover {
   color: darkgrey;
 }
 
-.login-link {
-  color: dodgerblue;
-}
-
-.login-link:hover {
-  color: blue;
+.login {
+  font-size: 1.5rem;
+  background-color: #2cb4db;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
 }
