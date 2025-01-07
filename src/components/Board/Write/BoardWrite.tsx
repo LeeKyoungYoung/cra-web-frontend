@@ -3,11 +3,13 @@ import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { useMutation } from '@tanstack/react-query';
 import { createBoards } from '../../../api/board';
 import { Board } from '../../../models/Board';
+import { useNavigate } from 'react-router-dom';
 import styles from './BoardWrite.module.css';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
 export default function BoardWrite({ category }: { category: number }) {
+  const navigate = useNavigate();
   // 현재 상태 값 formData, 상태를 업데이트하는 함수: setFormData
   const [formData, setFormData] = useState({
     userId: 1, // Default로 userId를 일단 52로 설정
@@ -23,9 +25,10 @@ export default function BoardWrite({ category }: { category: number }) {
     // Board 객체인 newBoard를 사용해서 createBoards 함수로 보냄
     mutationFn: (newBoard: Board) => createBoards(newBoard),
     // 성공 시에 호출
-    onSuccess: () => {
+    onSuccess: async () => {
       // alert 창으로 알려주기
-      alert('게시글 작성 성공');
+      await alert('게시글 작성 성공');
+      navigate(-1);
       // 성공 후 입력 폼을 원래 상태로 되돌리기
       setFormData({
         userId: 1, // test: userId로 유동적으로 변경
@@ -85,7 +88,7 @@ export default function BoardWrite({ category }: { category: number }) {
           value={formData.userId}
           readOnly
           onChange={handleChange}
-        /> 
+        />
         <br />
         <label htmlFor="title">제목</label>
         <input
@@ -118,7 +121,11 @@ export default function BoardWrite({ category }: { category: number }) {
           onChange={handleChange}
         />
         <br />
-        <input type="submit" value="게시글 작성" />
+        <input
+          className={styles['submit-button']}
+          type="submit"
+          value="게시글 작성"
+        />
       </form>
     </div>
   );
