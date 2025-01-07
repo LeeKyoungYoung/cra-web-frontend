@@ -25,7 +25,6 @@ export default function CommentList({ id }: { id: number }) {
     content = commentsQuery.data.map((comment) => (
       <div>
         <CommentItem key={comment.id} comment={comment} isRoot={true} />
-        대댓글
         {comment.commentList.map((childComment) => (
           <CommentItem
             key={childComment.id}
@@ -33,7 +32,6 @@ export default function CommentList({ id }: { id: number }) {
             isRoot={false}
           />
         ))}
-        ---
       </div>
     ));
   }

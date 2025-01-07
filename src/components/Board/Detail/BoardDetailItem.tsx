@@ -7,17 +7,22 @@ import styles from './BoardDetailItem.module.css';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
 import CommentList from '~/components/Comment/List/CommetList';
 import BoardDelete from '../Delete/BoardDelete';
+import HeightSpacer from '~/components/Common/HeightSpacer';
+import Divider from '~/components/Common/Divider';
 
 export default function BoardDetailItem({
   board,
   category,
+  commentCount,
 }: {
   board: Board;
   category: number;
+  commentCount: number;
 }) {
   return (
     <div className={styles['detail-container']}>
       <div className={styles['fix-button']}>
+        <BoardDelete id={board.id!} category={category} />
         <button className={styles['login']}>
           <Link
             to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
@@ -31,7 +36,7 @@ export default function BoardDetailItem({
         <div className={styles['title']}>
           {CATEGORY_STRINGS[category]} 게시판
         </div>
-        <div className={styles['divide-line']} />
+        <Divider />
         <div className={styles['content-body']}>
           <div className={styles['nav']}>
             <div>
@@ -43,16 +48,16 @@ export default function BoardDetailItem({
               <span className={styles['nav-content']}>2025-00-00</span>
             </div>
           </div>
-          <div className={styles['contetn-title']}>{board.title}</div>
-          <p>{board.content}</p>
+          <div className={styles['content-title']}>{board.title}</div>
+          <p className={styles['board-content']}>{board.content}</p>
           <div className={styles['comment-count']}>
-            <p>View: {board.view}</p>
-            <p>Like: {board.like}</p>
-            <p>comment count: 3</p>
+            <span>조회 {board.view}</span>
+            <span>좋아요 {board.like}1</span>
+            <span>댓글 {commentCount}</span>
           </div>
         </div>
-        <div className={styles['divide-line']}>
-          <BoardDelete id={board.id!} category={category} />
+        <div className={styles['footer']}>
+          <HeightSpacer space={20} />
           <CommentList id={board.id!} />
           <CommentWrite parentId={undefined} />
         </div>

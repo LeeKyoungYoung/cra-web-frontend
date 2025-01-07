@@ -19,6 +19,20 @@ export const getCommentsByCategory = async (boardId: number) => {
   }
 };
 
+export const getCommentsCountByCategory = async (boardId: number) => {
+  try {
+    const response = await client.get<number>(`/comment/count/${boardId}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
 //post
 export const createComments = async (comment: Comment, boardId: number) => {
   try {
