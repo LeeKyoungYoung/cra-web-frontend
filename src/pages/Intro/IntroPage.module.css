@@ -32,7 +32,7 @@
   color: #ffffff;
 }
 
-.character { 
+.character {
   content: url('~/assets/images/crang-e2.png');
   position: absolute; /* 절대 위치 설정 */
   top: 67.5%; /* 화면 크기에 따라 위치 비율 조정 */
@@ -152,8 +152,67 @@
 }
 
 .club {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f1f1f1;
-  padding: 10rem;
+  padding: 11rem;
+}
+
+.club-container {
+  display: flex;
+  padding: 10rem 0rem;
+}
+
+.club-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 4.5rem 0rem 0rem;
+}
+
+.club-card1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 0rem 0rem 4.5rem;
+}
+
+.club-title {
+  p {
+    color: #13abd7;
+    font-size: 3.125rem;
+    font-weight: bold;
+    padding: 0.4rem 0rem;
+  }
+  margin-bottom: 2rem;
+}
+
+.club-content {
+  p {
+    color: #3e3e3e;
+    font-size: 1.5625rem;
+    font-weight: bold;
+    padding: 0.3rem 0rem;
+  }
+}
+
+.club-content1 {
+  padding: 0rem 0rem 2rem 0rem;
+}
+
+.club-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  width: 34.3125rem;
+  height: 28.1875rem;
+  position: relative;
+  top: 1rem;
+  p {
+    font-size: 1.5625rem;
+    font-weight: bold;
+  }
 }
 
 .project {
