@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom';
+import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
 import styles from './RecruitPage.module.css';
 
 export default function RecruitPage() {
   return (
-    <div className={styles['recruit-main']}>
-      <div className={styles['recruit-banner']}>
-        <p className={styles['title']}>2025 CRA</p>
-        <p className={styles['title']}>RECRUITMENT</p>
-        <p className={styles['content']}>
-          CRA는 함께 성장 할 25-1 기수 동아리원을 모집합니다.
-        </p>
+    <div className={styles['recruit-container']}>
+      <div className={styles['recruit-main']}>
+        <HeaderIntro />
+        <hr />
+        <div className={styles['recruit-banner']}>
+          <p id={styles['title']}>2025 CRA</p>
+          <p id={styles['title']}>RECRUITMENT</p>
+          <p id={styles['content']}>
+            CRA는 함께 성장 할 25-1 기수 동아리원을 모집합니다.
+          </p>
+        </div>
       </div>
       <form action="" method="POST">
         <div className={styles['recruit-page']}>
