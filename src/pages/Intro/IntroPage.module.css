@@ -1,5 +1,5 @@
 .container {
-  background-color: #f1f1f1;
+  background-color: #bcedfb;
 }
 
 .main {
@@ -10,15 +10,12 @@
     #bcedfb 100%
   );
 
-  height: 62.5rem;
+  height: 66.5rem;
 }
 
 .section {
-  p {
-    /* 2025-1 CRA RECRUITMENT */
-    text-align: center;
-    font-size: 3rem;
-  }
+  position: relative; /* 부모 요소에 relative 위치 지정 */
+  padding: 2rem 0rem;
 }
 
 .banner {
@@ -33,17 +30,16 @@
   line-height: 150px;
   letter-spacing: -0.05em;
   color: #ffffff;
-
-  padding: 2rem 0rem;
 }
 
-.character {
-  content: url('~/assets/images/crang-e.png');
+.character { 
+  content: url('~/assets/images/crang-e2.png');
+  position: absolute; /* 절대 위치 설정 */
+  top: 67.5%; /* 화면 크기에 따라 위치 비율 조정 */
+  left: 82.5%; /* DREAMS의 'S' 옆에 위치 */
+  transform: translate(-50%, -50%); /* 이미지 가운데 정렬 */
   width: 28.25rem;
   height: 28.25rem;
-  position: absolute;
-  top: 32.18625rem;
-  left: 55.5rem;
 }
 
 .recruit-btn {
@@ -69,7 +65,7 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
-  padding: 1.5rem 0rem;
+  padding: 3.25rem 0rem;
   img {
     width: 3.4375rem;
     height: 1.6875rem;
@@ -77,19 +73,100 @@
 }
 
 .cra {
-  border: 1px solid black;
-  padding: 10rem;
+  background-color: #ffffff;
+  border-radius: 2rem 2rem 0rem 0rem;
+  padding: 6.5rem 0rem;
+}
+
+.title {
+  display: flex;
+  justify-self: center;
+  font-size: 3.125rem;
+  font-weight: bold;
+  span {
+    color: #13abd7;
+  }
+  p {
+    color: #3e3e3e;
+  }
+}
+
+#cap-letter {
+  padding-left: 0.75rem;
 }
 
 .description {
+  padding: 4.5rem 0rem;
+  p {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.35rem 0rem;
+  }
+  span {
+    background-color: #bae6f2;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 19rem;
+  height: 19rem;
+  background-color: #f3f3f3;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+#card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  position: relative;
+  top: 1.5rem;
+}
+
+#card-content {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  top: 3rem;
+}
+
+#card-content2 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.4375rem;
+  font-weight: bold;
+  position: relative;
+  top: 2.5rem;
 }
 
 .club {
-  border: 1px solid black;
+  background-color: #f1f1f1;
   padding: 10rem;
 }
 
 .project {
-  border: 1px solid black;
+  background: #ffffff;
   padding: 10rem;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .character {
+    left: 70%; /* 모바일 화면에서 조금 더 왼쪽으로 이동 */
+    top: 60%;
+    width: 20rem; /* 이미지 크기 축소 */
+    height: 20rem;
+  }
 }
