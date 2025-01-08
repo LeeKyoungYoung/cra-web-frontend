@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
 import Vector from '~/assets/images/Arrow-Vector.png';
 import styles from './IntroPage.module.css';
+import EmblaCarousel from './Carousel/EmblaCarousel';
 
 export default function IntroPage() {
   return (
@@ -144,6 +145,10 @@ export default function IntroPage() {
 
       <div className={styles['project']}>
         <p>프로젝트 소개</p>
+        <EmblaCarousel
+          slides={[1, 2, 3, 4, 5]}
+          options={{ loop: true, speed: 300 }}
+        />
       </div>
     </div>
   );
