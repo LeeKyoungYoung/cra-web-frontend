@@ -209,6 +209,7 @@
   height: 28.1875rem;
   position: relative;
   top: 1rem;
+  user-select: none;
   p {
     font-size: 1.5625rem;
     font-weight: bold;

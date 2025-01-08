@@ -145,10 +145,7 @@ export default function IntroPage() {
 
       <div className={styles['project']}>
         <p>프로젝트 소개</p>
-        <EmblaCarousel
-          slides={[1, 2, 3, 4, 5]}
-          options={{ loop: true, speed: 300 }}
-        />
+        <EmblaCarousel />
       </div>
     </div>
   );
