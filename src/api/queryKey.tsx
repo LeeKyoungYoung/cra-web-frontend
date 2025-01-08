@@ -5,5 +5,6 @@ export const QUERY_KEY = {
   },
   comment: {
     commentsById: (id: number) => ['comment.commentsById', id] as const,
+    commentsCountById: (id: number) => ['comment.commentsCountById', id] as const,
   },
 };

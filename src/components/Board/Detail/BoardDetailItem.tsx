@@ -5,37 +5,63 @@ import { CATEGORY_STRINGS_EN } from '../../../constants/category_strings_en';
 import { Link } from 'react-router-dom';
 import styles from './BoardDetailItem.module.css';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
+import CommentList from '~/components/Comment/List/CommetList';
+import BoardDelete from '../Delete/BoardDelete';
+import HeightSpacer from '~/components/Common/HeightSpacer';
+import Divider from '~/components/Common/Divider';
+import { dateFormat } from '~/utils/dateForm';
 
 export default function BoardDetailItem({
   board,
   category,
+  commentCount,
 }: {
   board: Board;
   category: number;
+  commentCount: number;
 }) {
   return (
     <div className={styles['detail-container']}>
-      <h2>{CATEGORY_STRINGS[category]} 게시글 자세히 보기</h2>{' '}
-      {/* category 값을 잘 출력하는지 확인 */}
+      <div className={styles['fix-button']}>
+        <BoardDelete id={board.id!} category={category} />
+        <button className={styles['login']}>
+          <Link
+            to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
+            className={styles['link']}
+          >
+            수정하기
+          </Link>
+        </button>
+      </div>
       <div className={styles['detail-content']}>
-        <p>UserID: {board.userId}</p>
-        <p>Title: {board.title}</p>
-        <p>Content: {board.content}</p>
-        <p>Category: {CATEGORY_STRINGS[board.category]}</p>
-        <p>Like: {board.like}</p>
-        <p>View: {board.view}</p>
-        <p>ImageURLs: {board.imageUrls}</p>
-      </div>
-      <div>
-        <Link
-          to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
-          className={styles['edit-link']}
-        >
-          게시물 수정하기
-        </Link>
-      </div>
-      <div>
-        <CommentWrite />
+        <div className={styles['title']}>
+          {CATEGORY_STRINGS[category]} 게시판
+        </div>
+        <Divider />
+        <div className={styles['content-body']}>
+          <div className={styles['nav']}>
+            <div>
+              <span className={styles['nav-title']}>작성자 | </span>
+              <span className={styles['nav-content']}>{board.userId}</span>
+            </div>
+            <div>
+              <span className={styles['nav-title']}>작성일 | </span>
+              <span className={styles['nav-content']}>{ dateFormat(board.createdAt)}</span>
+            </div>
+          </div>
+          <div className={styles['content-title']}>{board.title}</div>
+          <p className={styles['board-content']}>{board.content}</p>
+          <div className={styles['comment-count']}>
+            <span>조회 {board.view}</span>
+            <span>좋아요 {board.like}1</span>
+            <span>댓글 {commentCount}</span>
+          </div>
+        </div>
+        <div className={styles['footer']}>
+          <HeightSpacer space={20} />
+          <CommentList id={board.id!} />
+          <CommentWrite parentId={undefined} />
+        </div>
       </div>
     </div>
   );
