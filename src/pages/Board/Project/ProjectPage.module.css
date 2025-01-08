@@ -1,0 +1,18 @@
+.project-section {
+  width: 60%;
+  height: auto;
+  margin: 40px auto;
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+
+  p {
+    flex-basis: 100%;
+    margin-left: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #5e5e5e;
+  }
+}
