@@ -19,4 +19,5 @@
 .contents {
   margin-top: 109px;
   flex: 1;
+  box-sizing: border-box;
 }

@@ -1,41 +1,49 @@
 /* Hello CRA */
 .detail-container {
-  margin-top: 170px;
   display: flex;
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
-  margin-bottom: 194px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1086px;
+  padding: 115px 50px 194px;
+  margin: 0 auto;
 }
 
 .detail-content {
-  width: 1086px;
-  height: 984px;
+  width: 100%;
   background-color: white; /* 테스트용 배경색 */
   border-radius: 10px;
+  border: 1px solid #c9c9c9;
+  padding: 18px;
 }
 
 .content-body {
-  margin: 40px;
-  width: 1032px;
-  height: 436px;
-  position: relative;
+  min-height: 436px;
+  margin-top: 20px;
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 .divide-line {
-  border-top: 3px solid lightgrey;
-  margin: 30px;
+  border: 1px solid lightgrey;
 }
 
 .login {
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  height: 44px;
+  font-size: 20px;
   background-color: #2cb4db;
   color: #ffffff;
-  padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  margin-left: auto; /* 버튼을 오른쪽으로 밀어냄 */
+  margin-left: auto;
 }
 
 .link {
+  text-align: center;
   text-decoration: none;
   font-size: large;
   font-weight: bold;
@@ -43,29 +51,60 @@
 }
 
 .fix-button {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: end;
   margin-bottom: 10px;
 }
 
 .title {
   text-align: left;
-  padding-top: 25px;
-  padding-left: 30px;
+  margin: 4px 13px 14px;
+  line-height: 34px;
+  color: #9b9b9b;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .nav {
   display: flex;
-  gap: 30px; /* 항목들 사이에 간격을 추가 */
+  gap: 30px;
 }
 
-.contetn-title {
-  margin-top: 40px;
-  margin-bottom: 50px;
+.nav-title {
+  color: #9b9b9b;
+}
+
+.nav-content {
+  color: #5e5e5e;
+  font-weight: 600;
+}
+
+.content-title {
+  margin-top: 18px;
+  margin-bottom: 33px;
+  color: #5e5e5e;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 59px;
+}
+
+.board-content {
+  min-height: 200px;
 }
 
 .comment-count {
-  position: absolute;
-  bottom: 20px; /* 화면 하단에서 20px 떨어지게 설정 */
+  display: flex;
+  gap: 30px;
+  margin-top: 138px;
+  margin-bottom: 14px;
+  font-size: 20px;
+  color: #9b9b9b;
 }
+
+/* .footer {
+  padding-left: 13px;
+  padding-right: 13px;
+} */
+

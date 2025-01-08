@@ -1,38 +1,60 @@
 .commentWriteContainer {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  padding-top: 20px;
 }
 
 .form {
   display: flex;
   align-items: center;
-  width: 80%; /* Adjust width according to your layout */
-  max-width: 600px; /* Max width for the comment input area */
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  gap: 13px;
+  width: 100%; /* Adjust width according to your layout */
+  height: 95px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
 }
 
 .inputField {
   flex-grow: 1;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-right: 10px;
-  font-size: 14px;
+  height: 100%;
+  
+  
+}
+
+.inputField input {
+  border: none;
+  background-color: #f1f1f1;
+  height: 100%;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0;
+  font: inherit;
+	vertical-align: baseline;
+  color: #5e5e5e;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.inputField input::placeholder {
+  color: #c1c1c1;
 }
 
 .submitButton {
-  padding: 8px 20px;
-  background-color: #6fbfe4;
+  padding: 0;
+  width: 105px;
+  height: 100%;
+  background-color: #2CB4DB;
   color: white;
   border: none;
   border-radius: 9px;
   cursor: pointer;
-  font-size: 14px;
+  font: inherit;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .submitButton:hover {

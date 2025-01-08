@@ -6,60 +6,63 @@ import { Link } from 'react-router-dom';
 import styles from './BoardDetailItem.module.css';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
 import CommentList from '~/components/Comment/List/CommetList';
+import BoardDelete from '../Delete/BoardDelete';
+import HeightSpacer from '~/components/Common/HeightSpacer';
+import Divider from '~/components/Common/Divider';
+import { dateFormat } from '~/utils/dateForm';
 
 export default function BoardDetailItem({
   board,
   category,
+  commentCount,
 }: {
   board: Board;
   category: number;
+  commentCount: number;
 }) {
   return (
-    <>
-      <div className={styles['detail-container']}>
-        <div>
-          <div className={styles['fix-button']}>
-            <button className={styles['login']}>
-              <Link
-                to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
-                className={styles['link']}
-              >
-                수정하기
-              </Link>
-            </button>
+    <div className={styles['detail-container']}>
+      <div className={styles['fix-button']}>
+        <BoardDelete id={board.id!} category={category} />
+        <button className={styles['login']}>
+          <Link
+            to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
+            className={styles['link']}
+          >
+            수정하기
+          </Link>
+        </button>
+      </div>
+      <div className={styles['detail-content']}>
+        <div className={styles['title']}>
+          {CATEGORY_STRINGS[category]} 게시판
+        </div>
+        <Divider />
+        <div className={styles['content-body']}>
+          <div className={styles['nav']}>
+            <div>
+              <span className={styles['nav-title']}>작성자 | </span>
+              <span className={styles['nav-content']}>{board.userId}</span>
+            </div>
+            <div>
+              <span className={styles['nav-title']}>작성일 | </span>
+              <span className={styles['nav-content']}>{ dateFormat(board.createdAt)}</span>
+            </div>
           </div>
-          <div className={styles['detail-content']}>
-            <header className={styles['title']}>
-              <h3>{CATEGORY_STRINGS[category]} 게시판</h3>
-            </header>
-            <body
-              className={`${styles['divide-line']} ${styles['content-body']}`}
-            >
-              <nav className={styles['nav']}>
-                <span>작성자 | {board.userId}</span>
-                <span>작성일 | 2025 년 00 월 00 일</span>
-              </nav>
-              <h1 className={styles['contetn-title']}>{board.title}</h1>
-              <p>{board.content}</p>
-              <div className={styles['comment-count']}>
-                <p>View: {board.view}</p>
-                <p>Like: {board.like}</p>
-                <p>comment count: 3</p>
-              </div>
-            </body>
-            <footer className={styles['divide-line']}>
-              <CommentWrite />
-            </footer>
+          <div className={styles['content-title']}>{board.title}</div>
+          <p className={styles['board-content']}>{board.content}</p>
+          <div className={styles['comment-count']}>
+            <span>조회 {board.view}</span>
+            <span>좋아요 {board.like}1</span>
+            <span>댓글 {commentCount}</span>
           </div>
         </div>
+        <div className={styles['footer']}>
+          <HeightSpacer space={20} />
+          <CommentList id={board.id!} />
+          <CommentWrite parentId={undefined} />
+        </div>
       </div>
-    </>
+    </div>
   );
-}
-//밑에거 다 잘됨.
-{
-  /* <p>Category: {CATEGORY_STRINGS[board.category]}</p>
-          <p>Like: {board.like}</p>
-          <p>View: {board.view}</p>
-          <p>ImageURLs: {board.imageUrls}</p> */
 }

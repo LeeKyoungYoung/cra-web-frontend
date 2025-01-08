@@ -31,8 +31,8 @@ export default function CommentDelete({ id }: { id: number }) {
   };
 
   return (
-    <button className={styles['delete-button']} onClick={handleDelete}>
+    <div className={styles['delete-button']} onClick={handleDelete}>
       삭제
-    </button>
+    </div>
   );
 }

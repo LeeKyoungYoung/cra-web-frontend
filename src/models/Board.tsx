@@ -5,8 +5,8 @@ interface Board {
   category: number;
   content: string;
   imageUrls: string[];
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt: Date;
+  updatedAt: Date;
   havrutaId?: number;
   like?: number;
   view?: number;

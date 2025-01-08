@@ -7,6 +7,9 @@ import { useParams } from 'react-router-dom';
 import BoardDetailItem from './BoardDetailItem';
 import BoardDelete from '../Delete/BoardDelete';
 import CommentList from '~/components/Comment/List/CommetList';
+import styles from './BoardDetail.module.css';
+import { getCommentsCountByCategory } from '~/api/comment';
+import { dateFormat } from '~/utils/dateForm';
 
 export default function BoardDetail({ category }: { category: number }) {
   const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
@@ -17,20 +20,23 @@ export default function BoardDetail({ category }: { category: number }) {
     queryFn: async () => getBoardById(boardId),
   });
 
+  const commentCountQuery = useQuery<number>({
+    queryKey: QUERY_KEY.comment.commentsCountById(boardId),
+    queryFn: async () => getCommentsCountByCategory(boardId),
+  });
+
   let content;
 
-  if (boardQuery.isLoading) {
+  if (boardQuery.isLoading || commentCountQuery.isLoading) {
     content = <div className="loading">데이터를 불러오는 중입니다...</div>;
-  } else if (boardQuery.isError) {
+  } else if (boardQuery.isError || commentCountQuery.isError) {
     content = <div className="error">에러가 발생했습니다!</div>;
-  } else if (boardQuery.isSuccess) {
+  } else if (boardQuery.isSuccess && commentCountQuery.isSuccess) {
     const board = boardQuery.data;
     console.log(board);
     return (
-      <div>
-        <BoardDetailItem board={board} category={category} />
-        <BoardDelete id={boardId} category={category} />
-        <CommentList id={boardId} />
+      <div className={styles['full-width']}>
+        <BoardDetailItem board={board} category={category} commentCount={commentCountQuery.data}/>
       </div>
     );
   }

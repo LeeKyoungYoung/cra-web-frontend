@@ -8,6 +8,38 @@ import { error } from 'console';
 export const getCommentsByBoardId = async (boardId: number) => {
   try {
     const response = await client.get<Comment[]>(`/comment/${boardId}`);
+
+    // createdAt 필드를 Date 객체로 변환
+    let comments: Comment[] = [];
+    response.data.forEach((comment) => {
+      let replies: Comment[] = [];
+      comment.commentList.forEach((reply) => {
+        replies.push({
+          ...reply,
+          createdAt: new Date(reply.createdAt),
+        });
+      });
+      comments.push({
+        ...comment,
+        createdAt: new Date(comment.createdAt),
+        commentList: replies,
+      });
+    });
+
+    return comments;
+  } catch (error) {
+    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
+export const getCommentsCountByCategory = async (boardId: number) => {
+  try {
+    const response = await client.get<number>(`/comment/count/${boardId}`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -20,11 +52,40 @@ export const getCommentsByBoardId = async (boardId: number) => {
 };
 
 //post
-export const createComments = async (comment: Comment) => {
+export const createComments = async (comment: Comment, boardId: number) => {
   try {
     const response = await client.post<Comment>(
-      `/comment/${comment.boardId}`,
+      `/comment/${boardId}`,
       comment,
+      {
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
+//post
+export const createChildComments = async (
+  comment: Comment,
+  boardId: number,
+  parentId: number,
+) => {
+  try {
+    const response = await client.post<Comment>(
+      `/comment/${boardId}`,
+      {
+        userId: comment.userId,
+        parentCommentId: parentId,
+        content: comment.content,
+      },
       {
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       },
