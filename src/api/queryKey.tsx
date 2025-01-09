@@ -5,6 +5,11 @@ export const QUERY_KEY = {
   },
   comment: {
     commentsById: (id: number) => ['comment.commentsById', id] as const,
-    commentsCountById: (id: number) => ['comment.commentsCountById', id] as const,
+    commentsCountById: (id: number) =>
+      ['comment.commentsCountById', id] as const,
+  },
+  project: {
+    projects: () => ['project.projects'] as const,
+    projectById: (id: number) => ['project.projectById', id] as const,
   },
 };
