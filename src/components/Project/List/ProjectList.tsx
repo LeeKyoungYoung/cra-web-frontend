@@ -18,8 +18,7 @@ const fakeProjects: Project[] = [
   { id: 6, serviceName: '프로젝트 6', teamName: '팀 3' },
   { id: 6, serviceName: '프로젝트 6', teamName: '팀 3' },
   { id: 6, serviceName: '프로젝트 6', teamName: '팀 3' },
-  { id: 6, serviceName: '프로젝트 6', teamName: '팀 3' },
-  { id: 6, serviceName: '프로젝트 6', teamName: '팀 3' },
+
 ];
 
 export default function ProjectList() {
