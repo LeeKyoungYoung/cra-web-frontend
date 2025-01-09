@@ -1,5 +1,4 @@
 import React from 'react';
-import HeaderIntro from './Intro-Header/HeaderIntro';
 import HeaderMain from './Main-Header/HeaderMain';
 import { useLocation } from 'react-router-dom';
 
@@ -11,5 +10,5 @@ export default function Header() {
   const isIntro = location.pathname === '/intro';
   const isRecruit = location.pathname === '/recruit';
   // console.log(location.pathname);
-  return isIntro || isRecruit ? <HeaderIntro /> : <HeaderMain />;
+  return isIntro || isRecruit ? <></> : <HeaderMain />;
 }

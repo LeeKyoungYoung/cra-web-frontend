@@ -1,62 +1,237 @@
-.intro-page {
-  background: linear-gradient();
+.container {
+  background-color: #bcedfb;
 }
 
-.intro-section-bg {
+.main {
   background: linear-gradient(
     #008bc7 0%,
-    #2cb4db 37%,
-    #79cfe8 73.5%,
+    #2cb4db 33%,
+    #79cfe8 67%,
     #bcedfb 100%
   );
+
+  height: 66.5rem;
 }
 
-.intro-section {
-  padding: 1050px 0px;
-
-  p {
-    text-align: center;
-    font-size: 50px;
-  }
-}
-
-.apply-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.character {
-  content: url(test.png);
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  left: 929px;
-  top: 577.47px;
-  transform: rotate(-11.14deg);
+.section {
+  position: relative; /* 부모 요소에 relative 위치 지정 */
+  padding: 2rem 0rem;
 }
 
 .banner {
-  /* LIVE YOUR PASSIONCODE YOUR DREAMS */
-  position: absolute;
-  width: 1282px;
-  height: 611px;
-  left: 89px;
-  top: 151px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   font-family: 'Archivo Black';
   font-style: normal;
   font-weight: 700;
-  font-size: 169px;
+  font-size: 10.5625rem;
   line-height: 150px;
-  /* or 89% */
-  text-align: center;
   letter-spacing: -0.05em;
   color: #ffffff;
 }
 
-.project-element {
-  border: 1px solid black;
-  text-align: center;
+.character {
+  content: url('~/assets/images/crang-e2.png');
+  position: absolute; /* 절대 위치 설정 */
+  top: 67.5%; /* 화면 크기에 따라 위치 비율 조정 */
+  left: 82.5%; /* DREAMS의 'S' 옆에 위치 */
+  transform: translate(-50%, -50%); /* 이미지 가운데 정렬 */
+  width: 28.25rem;
+  height: 28.25rem;
+}
+
+.recruit-btn {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+
+  background-color: #e5f7fb;
+  color: #00cfff;
+  font-size: 2.8125rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  text-decoration: none;
+
+  p {
+    text-align: center;
+  }
+}
+
+.vector {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  padding: 3.25rem 0rem;
+  img {
+    width: 3.4375rem;
+    height: 1.6875rem;
+  }
+}
+
+.cra {
+  background-color: #ffffff;
+  border-radius: 2rem 2rem 0rem 0rem;
+  padding: 6.5rem 0rem;
+}
+
+.title {
+  display: flex;
+  justify-self: center;
+  font-size: 3.125rem;
+  font-weight: bold;
+  span {
+    color: #13abd7;
+  }
+  p {
+    color: #3e3e3e;
+  }
+}
+
+#cap-letter {
+  padding-left: 0.75rem;
+}
+
+.description {
+  padding: 4.5rem 0rem;
+  p {
+    font-size: 1.75rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 0.35rem 0rem;
+  }
+  span {
+    background-color: #bae6f2;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 19rem;
+  height: 19rem;
+  background-color: #f3f3f3;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+}
+
+#card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  position: relative;
+  top: 1.5rem;
+}
+
+#card-content {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  top: 3rem;
+}
+
+#card-content2 {
+  display: flex;
+  justify-content: center;
+  font-size: 3.4375rem;
+  font-weight: bold;
+  position: relative;
+  top: 2.5rem;
+}
+
+.club {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 11rem;
+}
+
+.club-container {
+  display: flex;
+  padding: 10rem 0rem;
+}
+
+.club-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 4.5rem 0rem 0rem;
+}
+
+.club-card1 {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 0rem 0rem 4.5rem;
+}
+
+.club-title {
+  p {
+    color: #13abd7;
+    font-size: 3.125rem;
+    font-weight: bold;
+    padding: 0.4rem 0rem;
+  }
+  margin-bottom: 2rem;
+}
+
+.club-content {
+  p {
+    color: #3e3e3e;
+    font-size: 1.5625rem;
+    font-weight: bold;
+    padding: 0.3rem 0rem;
+  }
+}
+
+.club-content1 {
+  padding: 0rem 0rem 2rem 0rem;
+}
+
+.club-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-radius: 2rem;
+  width: 34.3125rem;
+  height: 28.1875rem;
+  position: relative;
+  top: 1rem;
+  user-select: none;
+  p {
+    font-size: 1.5625rem;
+    font-weight: bold;
+  }
+}
+
+.project {
+  background: #ffffff;
+  padding: 10rem 0rem;
+  p {
+    font-size: 3.125rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .character {
+    left: 70%; /* 모바일 화면에서 조금 더 왼쪽으로 이동 */
+    top: 60%;
+    width: 20rem; /* 이미지 크기 축소 */
+    height: 20rem;
+  }
 }

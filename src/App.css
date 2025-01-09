@@ -15,9 +15,3 @@
   font-family: var(--global-font-family);
   z-index: 1000;
 }
-
-.contents {
-  margin-top: 109px;
-  flex: 1;
-  box-sizing: border-box;
-}
