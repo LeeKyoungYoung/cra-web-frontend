@@ -4,10 +4,9 @@ import ProjectList from '~/components/Project/List/ProjectList';
 
 export default function ProjectPage() {
   return (
-    <div>
-      <div className={styles['project-section']}>
-        <ProjectList />
-      </div>
+    <div className={styles['project-section']}>
+      <p>프로젝트 페이지</p>
+      <ProjectList />
     </div>
   );
 }
