@@ -1,0 +1,35 @@
+.project-block {
+  width: calc(33.33% - 24px); /* 세 개 아이템을 한 줄에 배치 */
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #c1c1c1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 이미지 */
+.project-picture {
+  width: 90%;
+  height: 65%;
+  border-radius: 10px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+}
+
+/* 제목 */
+.title {
+  font-weight: 5px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/* 내용 */
+.content {
+  font-weight: 3px;
+  text-align: left;
+  padding-left: 10px;
+}
