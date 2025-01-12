@@ -62,6 +62,9 @@ export default function AppRoutes() {
       <Route path="/idsearch" element={<IDSearchPage />} />
       <Route path="/pwsearch" element={<PWSearchPage />} />
       <Route path="/project" element={<ProjectPage />} />
+      <Route path="/project/view/:id" element={<ProjectPage />} />
+      <Route path="/project/edit/:id" element={<ProjectPage />} />
+      <Route path="/project/write" element={<ProjectPage />} />
     </Routes>
   );
 }
