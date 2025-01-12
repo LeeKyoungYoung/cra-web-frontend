@@ -22,7 +22,8 @@ export const getProjectById = async (id: number) => {
 
     return {
       ...project,
-      createdAt: new Date(project.createdAt),
+      // undefined 체크 후 기본값 설정
+      createdAt: project.createdAt ? new Date(project.createdAt) : new Date(),
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {

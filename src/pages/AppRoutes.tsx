@@ -28,6 +28,9 @@ import AdminPage from './Admin/AdminPage';
 import IDSearchPage from './Login/Search/ID/IDSearchPage';
 import PWSearchPage from './Login/Search/PW/PWSearchPage';
 import ProjectPage from './Board/Project/ProjectPage';
+import ProjectDetailPage from './Board/Project/ProjectDetailPage';
+import ProjectEditPage from './Board/Project/ProjectEditPage';
+import ProjectWritePage from './Board/Project/ProjectWritePage';
 
 export default function AppRoutes() {
   return (
@@ -62,9 +65,9 @@ export default function AppRoutes() {
       <Route path="/idsearch" element={<IDSearchPage />} />
       <Route path="/pwsearch" element={<PWSearchPage />} />
       <Route path="/project" element={<ProjectPage />} />
-      <Route path="/project/view/:id" element={<ProjectPage />} />
-      <Route path="/project/edit/:id" element={<ProjectPage />} />
-      <Route path="/project/write" element={<ProjectPage />} />
+      <Route path="/project/view/:id" element={<ProjectDetailPage />} />
+      <Route path="/project/edit/:id" element={<ProjectEditPage />} />
+      <Route path="/project/write" element={<ProjectWritePage />} />
     </Routes>
   );
 }
