@@ -6,7 +6,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { QUERY_KEY } from '~/api/queryKey';
 import styles from '../Project.module.css';
 
-export default function ProjectEdit() {
+function ProjectEdit() {
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location.pathname);
@@ -166,3 +166,5 @@ export default function ProjectEdit() {
 
   return <div>{content}</div>;
 }
+
+export default ProjectEdit;

@@ -5,7 +5,7 @@ import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Project.module.css';
 
-export default function ProjectWrite() {
+function ProjectWrite() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     semester: '',
@@ -147,3 +147,5 @@ export default function ProjectWrite() {
     </div>
   );
 }
+
+export default ProjectWrite;
