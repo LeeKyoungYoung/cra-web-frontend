@@ -5,7 +5,7 @@ import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Project.module.css';
 
-function ProjectWrite() {
+function ProjectAdminWrite() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     semester: '',
@@ -70,6 +70,7 @@ function ProjectWrite() {
           placeholder="진행된 학기를 입력하세요 (예: 24-2)"
           value={formData.semester}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="teamName">팀 이름</label>
@@ -80,6 +81,7 @@ function ProjectWrite() {
           placeholder="팀 이름을 입력하세요"
           value={formData.teamName}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="title">서비스 이름</label>
@@ -90,6 +92,7 @@ function ProjectWrite() {
           placeholder="서비스 이름을 입력하세요"
           value={formData.serviceName}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="content">내용</label>
@@ -100,6 +103,7 @@ function ProjectWrite() {
           placeholder="내용을 입력하세요"
           value={formData.content}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="gitHubUrl">GitHub 주소</label>
@@ -110,6 +114,7 @@ function ProjectWrite() {
           placeholder="깃허브 주소를 입력하세요"
           value={formData.gitHubUrl}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="serviceUrl">서비스 URL</label>
@@ -120,6 +125,7 @@ function ProjectWrite() {
           placeholder="서비스 주소를 입력하세요"
           value={formData.serviceUrl}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="members">팀원</label>
@@ -130,6 +136,7 @@ function ProjectWrite() {
           placeholder="팀원들의 이름을 입력하세요"
           value={formData.members.join(',')}
           onChange={handleChange}
+          required
         />
         <br />
         <label htmlFor="imageUrls">이미지 주소</label>
@@ -140,6 +147,7 @@ function ProjectWrite() {
           placeholder="이미지 주소"
           value={formData.imageUrls.join(',')}
           onChange={handleChange}
+          required
         />
         <br />
         <input type="submit" value="게시글 작성" />
@@ -148,4 +156,4 @@ function ProjectWrite() {
   );
 }
 
-export default ProjectWrite;
+export default ProjectAdminWrite;

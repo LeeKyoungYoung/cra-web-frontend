@@ -33,5 +33,10 @@ export default function ProjectList() {
     }
   }
 
-  return <div className={styles['content']}>{content}</div>;
+  return (
+    <>
+      <div className={styles['content']}>{content}</div>
+      <Link to={'../admin/project'}>어드민</Link>
+    </>
+  );
 }
