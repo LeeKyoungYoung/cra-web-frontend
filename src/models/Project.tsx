@@ -8,6 +8,7 @@ interface Project {
   serviceUrl: string;
   members: string[];
   imageUrls: string[];
+  deleted?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 }

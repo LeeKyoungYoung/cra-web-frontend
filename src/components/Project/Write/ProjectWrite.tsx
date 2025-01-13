@@ -46,13 +46,15 @@ export default function ProjectWrite() {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: name === 'members' || 'imageUrls' ? value.split(',') : value,
+      [name]: ['members', 'imageUrls'].includes(name)
+        ? value.split(',')
+        : value,
     });
   };
 
   const HandleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
+    console.log('Sending Data:', formData);
     mutation.mutate(formData);
   };
   return (
@@ -62,12 +64,11 @@ export default function ProjectWrite() {
 
         <label htmlFor="semester">학기</label>
         <input
-          type="number"
+          type="text"
           id="semester"
           name="semester"
           placeholder="진행된 학기를 입력하세요 (예: 24-2)"
           value={formData.semester}
-          readOnly
           onChange={handleChange}
         />
         <br />
