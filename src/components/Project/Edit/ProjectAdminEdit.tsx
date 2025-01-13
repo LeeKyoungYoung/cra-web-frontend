@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { getProjectById, updateProject } from '~/api/project';
 import { Project } from '~/models/Project';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { QUERY_KEY } from '~/api/queryKey';
 import styles from '../Project.module.css';
 
-function ProjectEdit() {
+function ProjectAdminEdit() {
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location.pathname);
+
   const [formData, setFormData] = useState({
     semester: '',
     teamName: '',
@@ -24,7 +23,7 @@ function ProjectEdit() {
   const projectId = Number(id);
 
   const projectQuery = useQuery<Project>({
-    queryKey: QUERY_KEY.project.projectById(projectId),
+    queryKey: ['project', 'projectById', projectId],
     queryFn: async () => getProjectById(projectId),
   });
 
@@ -34,7 +33,7 @@ function ProjectEdit() {
     mutationFn: (newProject: Project) => updateProject(newProject),
     onSuccess: async () => {
       alert('프로젝트 수정 성공');
-      await navigate(-2);
+      await navigate(-1);
     },
     onError: (error) => {
       console.error('프로젝트 수정 실패:', error);
@@ -55,10 +54,18 @@ function ProjectEdit() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: name === 'members' || 'imageUrls' ? value.split(',') : value,
-    });
+
+    if (name === 'members' || name === 'imageUrls') {
+      setFormData({
+        ...formData,
+        [name]: value.split(','),
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const HandleSubmit = (e: React.FormEvent) => {
@@ -75,17 +82,17 @@ function ProjectEdit() {
     return (
       <div className={styles['container']}>
         <form onSubmit={HandleSubmit}>
-          <h2>프로젝트 게시글 작성</h2>
+          <h1>프로젝트 게시글 수정</h1>
 
           <label htmlFor="semester">학기</label>
           <input
-            type="number"
+            type="text"
             id="semester"
             name="semester"
             placeholder="진행된 학기를 입력하세요 (예: 24-2)"
             value={formData.semester}
-            readOnly
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="teamName">팀 이름</label>
@@ -96,6 +103,7 @@ function ProjectEdit() {
             placeholder="팀 이름을 입력하세요"
             value={formData.teamName}
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="title">서비스 이름</label>
@@ -106,6 +114,7 @@ function ProjectEdit() {
             placeholder="서비스 이름을 입력하세요"
             value={formData.serviceName}
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="content">내용</label>
@@ -116,6 +125,7 @@ function ProjectEdit() {
             placeholder="내용을 입력하세요"
             value={formData.content}
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="gitHubUrl">GitHub 주소</label>
@@ -126,6 +136,7 @@ function ProjectEdit() {
             placeholder="깃허브 주소를 입력하세요"
             value={formData.gitHubUrl}
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="serviceUrl">서비스 URL</label>
@@ -136,6 +147,7 @@ function ProjectEdit() {
             placeholder="서비스 주소를 입력하세요"
             value={formData.serviceUrl}
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="members">팀원</label>
@@ -146,6 +158,7 @@ function ProjectEdit() {
             placeholder="팀원들의 이름을 입력하세요"
             value={formData.members.join(',')}
             onChange={handleChange}
+            required
           />
           <br />
           <label htmlFor="imageUrls">이미지 주소</label>
@@ -156,6 +169,7 @@ function ProjectEdit() {
             placeholder="이미지 주소"
             value={formData.imageUrls.join(',')}
             onChange={handleChange}
+            required
           />
           <br />
           <input type="submit" value="프로젝트 수정" />
@@ -167,4 +181,4 @@ function ProjectEdit() {
   return <div>{content}</div>;
 }
 
-export default ProjectEdit;
+export default ProjectAdminEdit;

@@ -36,7 +36,11 @@ export default function BoardDetail({ category }: { category: number }) {
     console.log(board);
     return (
       <div className={styles['full-width']}>
-        <BoardDetailItem board={board} category={category} commentCount={commentCountQuery.data}/>
+        <BoardDetailItem
+          board={board}
+          category={category}
+          commentCount={commentCountQuery.data}
+        />
       </div>
     );
   }

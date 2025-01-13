@@ -33,10 +33,5 @@ export default function ProjectList() {
     }
   }
 
-  return (
-    <div>
-      {content}
-      <Link to="./write">프로젝트 생성</Link>
-    </div>
-  );
+  return <div>{content}</div>;
 }
