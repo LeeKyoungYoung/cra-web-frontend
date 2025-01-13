@@ -50,6 +50,14 @@ export default function HeaderMain() {
             Havruta
           </Link>
         </li>
+        <li>
+          <Link
+            to="/project"
+            className={`${styles['link']} ${styles['navbar-link']}`}
+          >
+            Project
+          </Link>
+        </li>
       </ul>
       <Link to="/login" className={`${styles['link']} ${styles['login']}`}>
         로그인
