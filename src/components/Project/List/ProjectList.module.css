@@ -3,4 +3,5 @@
   flex-wrap: wrap; /* 아이템들을 여러 줄로 감싸기 */
   gap: 24px; /* 아이템 간 간격 */
   justify-content: space-between; /* 항목들 사이를 균등하게 배치 */
+  padding: 10rem;
 }

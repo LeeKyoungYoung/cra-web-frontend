@@ -22,7 +22,8 @@ export const getProjectById = async (id: number) => {
 
     return {
       ...project,
-      createdAt: new Date(project.createdAt),
+      // undefined 체크 후 기본값 설정
+      createdAt: project.createdAt ? new Date(project.createdAt) : new Date(),
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -42,8 +43,13 @@ export const createProjects = async (project: Project) => {
     });
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
+    if (axios.isAxiosError(error) && error.response) {
+      console.error('Server Response:', error.response.data); // 서버에서 반환한 응답 데이터
+      console.error('Status:', error.response.status); // HTTP 상태 코드
+      console.error('Headers:', error.response.headers); // 응답 헤더
+      throw new Error(
+        `Axios error: ${error.response.data?.message || error.message}`,
+      );
     } else {
       throw new Error('An unexpected error occurred');
     }

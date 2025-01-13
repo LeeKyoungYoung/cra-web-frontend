@@ -1,28 +1,50 @@
 import Modal from 'react-modal';
-import React, { useState } from 'react';
-import 
+import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { getProjectById } from '~/api/project';
+import { QUERY_KEY } from '~/api/queryKey';
 
-const ModalExample = () => {
-  const [modalIsOpen, setModalOpen] = useState(false);
+const ProjectModal = ({
+  projectId,
+  closeModal,
+}: {
+  projectId: number;
+  closeModal: () => void;
+}) => {
+  const {
+    data: project,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: QUERY_KEY.project.projectById(projectId),
+    queryFn: async () => getProjectById(projectId),
+  });
 
-  const openModal = () => {
-    setModalOpen(true);
-  };
+  if (isLoading) {
+    return (
+      <Modal isOpen onRequestClose={closeModal}>
+        Loading...
+      </Modal>
+    );
+  }
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
-  return (
-    <div>
-      <button onClick={openModal}>모달열기</button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
-        <h2>모달 제목</h2>
-        <p>모달 내용</p>
+  if (isError || !project) {
+    return (
+      <Modal isOpen onRequestClose={closeModal}>
+        <div>에러가 발생했습니다.</div>
         <button onClick={closeModal}>닫기</button>
       </Modal>
-    </div>
+    );
+  }
+
+  return (
+    <Modal isOpen onRequestClose={closeModal}>
+      <h2>{project.serviceName}</h2>
+      <p>{project.content}</p>
+      <p>멤버: {project.members}</p>
+      <button onClick={closeModal}>닫기</button>
+    </Modal>
   );
 };
 
-export default ModalExample;
+export default ProjectModal;
