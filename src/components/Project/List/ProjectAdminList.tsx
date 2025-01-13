@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import ProjectDelete from '../Delete/ProjectAdminDelete';
 import styled from 'styled-components';
 
-// Styled components
 const Container = styled.div`
   padding: 10rem;
 `;
