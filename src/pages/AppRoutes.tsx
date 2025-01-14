@@ -32,6 +32,7 @@ import ProjectAdminPage from './Board/Project/ProjectAdminPage';
 import ProjectDetailPage from './Board/Project/ProjectAdminDetailPage';
 import ProjectEditPage from './Board/Project/ProjectAdminEditPage';
 import ProjectWritePage from './Board/Project/ProjectAdminWritePage';
+import NotFoundPage from './Error/NotFoundPage';
 
 export default function AppRoutes() {
   return (
@@ -70,6 +71,7 @@ export default function AppRoutes() {
       <Route path="/admin/project/view/:id" element={<ProjectDetailPage />} />
       <Route path="/admin/project/edit/:id" element={<ProjectEditPage />} />
       <Route path="/admin/project/write" element={<ProjectWritePage />} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
