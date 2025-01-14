@@ -1,0 +1,16 @@
+/*
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL
+
+Copyright 2017 The Archivo Black Project Authors (https://github.com/Omnibus-Type/ArchivoBlack)
+
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+  font-family: 'Archivo Black';
+  font-weight: normal;
+  font-style: normal;
+  src:
+    local('Archivo Black'),
+    url('./ArchivoBlack/ArchivoBlack-Regular.ttf') format('truetype');
+}
