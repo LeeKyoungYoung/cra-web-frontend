@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import CrangE from '~/assets/images/404_Crang.png';
+import { useNavigate } from 'react-router-dom';
 import WhiteVector from '~/assets/images/Vector-white.png';
 import SkyBlueVector from '~/assets/images/Vector-skyblue.png';
 import styled from 'styled-components';
+import HttpStatus from '~/components/HttpStatus/HttpStatus';
 
 const Container = styled.div`
   display: flex;
@@ -13,22 +13,6 @@ const Container = styled.div`
   p {
     color: #2cb4db;
   }
-`;
-
-const Status = styled.div`
-  display: flex;
-  user-select: none;
-`;
-
-const StatusNum = styled.p`
-  font-family: 'Archivo Black';
-  font-size: 16.7rem;
-`;
-
-const Img = styled.img`
-  width: 15.75rem;
-  height: 14.875rem;
-  margin-top: 4rem;
 `;
 
 const Content = styled.div`
@@ -76,11 +60,7 @@ function NotFoundPage() {
   const navigate = useNavigate();
   return (
     <Container>
-      <Status>
-        <StatusNum>4</StatusNum>
-        <Img src={CrangE} />
-        <StatusNum>4</StatusNum>
-      </Status>
+      <HttpStatus statusCode={404} />
       <Content>
         <Title>죄송합니다. 현재 찾을 수 없는 페이지를 요청하셨습니다.</Title>
         <Context>존재하지 않는 주소를 입력하셨거나,</Context>
