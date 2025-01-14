@@ -1,8 +1,8 @@
-import Modal from 'react-modal';
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getProjectById } from '~/api/project';
 import { QUERY_KEY } from '~/api/queryKey';
+import Modal from 'react-modal';
 
 const ProjectModal = ({
   projectId,
