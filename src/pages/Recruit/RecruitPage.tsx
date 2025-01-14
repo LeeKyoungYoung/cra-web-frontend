@@ -16,37 +16,90 @@ export default function RecruitPage() {
           </p>
         </div>
       </div>
-      <form action="" method="POST">
-        <div className={styles['recruit-page']}>
-          <div className={styles['recruit-section']}>
-            <label htmlFor="name">이름</label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Enter your name" /*required*/
-            />
+
+      <div className={styles['recruit-talent']}>
+        <h1>이런 사람과 함께 하고 싶어요</h1>
+        <div className={styles['recruit-talentDetail']}>
+          <div>
+            <span className={styles['number']}>01</span> 다른 사람과 협력하며
+            공동의 목표를 이루고
+            <br />
+            서로 배우고 발전하며 함께 성장하고 싶은 사람
           </div>
-          <div className={styles['recruit-section']}>
-            <label htmlFor="studentnumber">학번</label>
-            <input type="text" id="studentnumber" /*required*/ />
+          <div>
+            <span className={styles['number']}>02</span> 어떤 문제든 두려움 없이
+            극복하려는 의지를 가지고
+            <br />
+            새로운 기회를 탐구하는 용기와 도전 의식을 지닌 사람
           </div>
-          <div className={styles['recruit-section']}>
-            <label htmlFor="email">이메일</label>
-            <input type="text" id="email" /*required*/ />
+          <div>
+            <span className={styles['number']}>03</span> 익숙하지 않은 새로운
+            지식을 접할 때도 적극적으로 받아들이고
+            <br />
+            실수를 통해 성장하며 자신의 능력을 확장하려고 노력하는 사람
           </div>
-          <div className={styles['recruit-section']}>
-            <label htmlFor="Motivation">지원동기</label>
-            <input type="text" id="Motivation" /*required*/ />
-          </div>
-          <div className={styles['recruit-section']}>
-            <label htmlFor="experience">프로젝트 경험</label>
-            <input type="text" id="experience" />
-            <p>
-              <input type="submit" />
-            </p>
+          <div>
+            <span className={styles['number']}>04</span> 다양한 경험과 지식을
+            습득하며 스스로 성장하는 동시에,
+            <br />
+            자신이 얻은 것들을 주변 사람들에게 아낌없이 나워줄 수 있는 사람
           </div>
         </div>
-      </form>
+      </div>
+
+      <div className={styles['recruit-content']}>
+        <h2>모집 개요</h2>
+        <div className={styles['recruit-contentDetail']}>
+          <div className={styles['content-box']}>
+            <h3>핵심 인재상</h3>
+            <p>컴퓨터 분야의 최신 기술을 공부 및 </p>
+            <p>연구하고 싶은 누구나</p>
+          </div>
+          <div className={styles['content-box']}>
+            <h3>지원 자격</h3>
+            <p>신입 하계 방학 프로젝트에 참</p>
+            <p>여 가능하신 분</p>
+            <p>매 학기 개강/종강 총회에 참여</p>
+            <p>가능하신 분</p>
+          </div>
+          <div className={styles['content-box']}>
+            <h3>지원 방법</h3>
+            <p>1차 서류</p>
+            <p style={{ color: 'gray' }}>리크루팅 폼에서 지원서 작성</p>
+            <p>2차 서류</p>
+            <p style={{ color: 'gray' }}>대면 면접 이후 최종합격</p>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles['recruit-calender']}>
+        <h2>모집 일정</h2>
+        <div className={styles['calender-line']}>
+          <div className={styles['calender-box']}>
+            <h3>서류 접수</h3>
+            <p>2025.3.4.(화)</p>
+            <p>~ 3.18.(화)</p>
+          </div>
+          <div className={styles['calender-box']}>
+            <h3>서류 합격 발표</h3>
+            <p>2025.3.21(금)</p>
+          </div>
+          <div className={styles['calender-box']}>
+            <h3>면접</h3>
+            <p>2025.3.24(월)</p>
+            <p>~3.26(수)</p>
+          </div>
+          <div className={styles['calender-box']}>
+            <h3>최종합격 발표</h3>
+            <p>2025.3.28(금)</p>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles['recruit-apply']}>
+        <h1>CRA와 함께 성장하고 싶다면</h1>
+        <button className={styles['button-style']}>지원하기</button>
+      </div>
     </div>
   );
 }

@@ -16,19 +16,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   padding: 5rem 0rem 0rem 0rem;
 }
 
 #title {
   color: #ffffff;
-  font-size: 3.5rem;
-  font-weight: bold;
+  font-size: 100px;
+  font-weight: 978;
+  letter-spacing: -1px;
+  line-height: 100px;
 }
 
 #content {
   color: #dcf8ff;
-  font-size: 1.5rem;
+  font-size: 45px;
   padding: 2.5rem 0rem;
 }
 
@@ -63,4 +64,158 @@ input[id='studentnumber'] {
 .recruit-section .recruit-section input:focus {
   border-color: #007bff;
   outline: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+.recruit-talent {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 부모 요소를 가운데 정렬 */
+  justify-content: center; /* 부모 요소를 세로로 가운데 정렬 */
+  padding: 5rem 0rem 5rem 0rem;
+
+  h1 {
+    padding-top: 150px;
+    padding-bottom: 40px;
+    font-size: 50px;
+  }
+}
+
+.recruit-talentDetail {
+  div {
+    display: flex;
+    padding: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.6;
+  }
+  .number {
+    font-weight: bold;
+    margin-right: 60px; /* 숫자와 텍스트 사이 간격 */
+    color: #007bff;
+  }
+
+  span {
+    display: inline-block;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.recruit-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0rem 10rem 0rem;
+
+  h2 {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    font-size: 50px;
+  }
+}
+
+.recruit-contentDetail {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-box {
+  width: 500px;
+  aspect-ratio: 397 / 281;
+  background-color: rgb(237, 237, 237);
+  border-radius: 30px;
+  margin: 15px;
+
+  h3 {
+    margin-right: 40%;
+    padding: 40px;
+    font-size: 35px;
+  }
+
+  p {
+    display: flex;
+    font-size: 28px;
+    margin-left: 50px;
+    line-height: 1.6;
+    font-weight: 00;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.recruit-calender {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0rem 30rem 0rem;
+
+  h2 {
+    padding-top: 50px;
+    padding-bottom: 200px;
+    font-size: 50px;
+  }
+}
+
+.calender-line {
+  width: 80%; /* 줄의 길이를 조금 짧게 조정 */
+  height: 10px; /* 줄의 높이 */
+  background-color: rgb(209, 209, 209); /* 줄의 색상 */
+  margin-bottom: 40px; /* 줄과 박스 사이 간격 */
+  display: flex;
+  justify-content: space-between; /* 박스들 사이 공간을 균등하게 배분 */
+  align-items: center; /* 줄이 박스들 가운데에 오도록 정렬 */
+  z-index: 1;
+}
+
+.calender-box {
+  width: 300px;
+  aspect-ratio: 397 / 281;
+  background-color: rgb(237, 237, 237);
+  border-radius: 30px;
+  margin: 40px;
+
+  h3 {
+    padding: 20px;
+    font-size: 35px;
+  }
+
+  p {
+    display: flex;
+    font-size: 28px;
+    margin-left: 50px;
+    line-height: 1.6;
+    font-weight: 00;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+
+.recruit-apply {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0rem 30rem 0rem;
+
+  h1 {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    font-size: 100px;
+  }
+
+  .button-style {
+    padding: 10px 500px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    background: rgb(100, 100, 255);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
 }
