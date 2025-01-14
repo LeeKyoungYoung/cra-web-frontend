@@ -9,8 +9,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* user-select: none; */
-  padding: 10rem;
+  margin: 20rem 0;
   p {
     color: #2cb4db;
   }
@@ -18,6 +17,7 @@ const Container = styled.div`
 
 const Status = styled.div`
   display: flex;
+  user-select: none;
 `;
 
 const StatusNum = styled.p`
@@ -57,6 +57,7 @@ const Buttons = styled.div`
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;
     margin: 0 1.25rem;
+    user-select: none;
   }
 `;
 
@@ -88,7 +89,7 @@ function NotFoundPage() {
         </Context>
       </Content>
       <Buttons>
-        <MainBtn>
+        <MainBtn onClick={() => navigate('/intro')}>
           메인으로 <img src={SkyBlueVector} />
         </MainBtn>
 
