@@ -1,7 +1,79 @@
 import React from 'react';
+import BlueCheck from '~/assets/images/Blue-Check.png';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rem;
+`;
+
+const Img = styled.img`
+  user-select: none;
+`;
+
+const Title = styled.p`
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  font-family: 'Pretendard Bold';
+  margin: 3rem 0;
+`;
+
+const Content = styled.p`
+  background-color: var(--color-white);
+  color: var(--color-dark-text);
+  font-size: 1.5625rem;
+  font-family: 'Pretendard Bold';
+  padding: 0.25rem 0;
+`;
+
+const Buttons = styled.div`
+  display: flex;
+  gap: 2rem;
+`;
+
+const PWResetBtn = styled.button`
+  margin: 5rem 0 20rem 0;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
+  color: var(--color-primary);
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  font-family: 'Pretendard Bold';
+  cursor: pointer;
+`;
+
+const LoginBtn = styled.button`
+  margin: 5rem 0 20rem 0;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 1rem 5rem;
+  font-family: 'Pretendard Bold';
+  cursor: pointer;
+`;
 
 function IDSearchCompletePage() {
-  return <div></div>;
+  const navigate = useNavigate();
+  return (
+    <Container>
+      <Img src={BlueCheck} />
+      <Title>아이디 찾기 완료</Title>
+      <Content>가입일</Content>
+      <Buttons>
+        <PWResetBtn onClick={() => navigate('/pwsearch/reset')}>
+          비밀번호 재설정
+        </PWResetBtn>
+        <LoginBtn onClick={() => navigate('/login')}>로그인 바로하기</LoginBtn>
+      </Buttons>
+    </Container>
+  );
 }
 
 export default IDSearchCompletePage;
