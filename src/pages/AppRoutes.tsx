@@ -4,6 +4,7 @@ import RecruitPage from './Recruit/RecruitPage';
 import MainPage from './Main/MainPage';
 import LoginPage from './Login/LoginPage';
 import RegisterPage from './Register/RegisterPage';
+import RegisterCompletePage from './Register/RegisterCompletePage';
 import AcademicPage from './Board/Academic/AcademicPage';
 import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
 import AcademicEditPage from './Board/Academic/AcademicEditPage';
@@ -43,6 +44,7 @@ export default function AppRoutes() {
       <Route path="/main" element={<MainPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/welcome" element={<RegisterCompletePage />} />
       <Route path="/academic" element={<AcademicPage />} />
       <Route path="/academic/view/:id" element={<AcademicDetailPage />} />
       <Route path="/academic/edit/:id" element={<AcademicEditPage />} />
