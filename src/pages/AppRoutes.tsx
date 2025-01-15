@@ -5,6 +5,11 @@ import MainPage from './Main/MainPage';
 import LoginPage from './Login/LoginPage';
 import RegisterPage from './Register/RegisterPage';
 import RegisterCompletePage from './Register/RegisterCompletePage';
+import IDSearchPage from './Login/ID/IDSearchPage';
+import IDSearchCompletePage from './Login/ID/IDSearchCompletePage';
+import PWSearchPage from './Login/PW/PWSearchPage';
+import PWResetPage from './Login/PW/PWResetPage';
+import PWResetCompletePage from './Login/PW/PWResetCompletePage';
 import AcademicPage from './Board/Academic/AcademicPage';
 import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
 import AcademicEditPage from './Board/Academic/AcademicEditPage';
@@ -26,8 +31,6 @@ import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
 import NoticeWritePage from './Board/Notice/NoticeWritePage';
 import AdminPage from './Admin/AdminPage';
-import IDSearchPage from './Login/Search/ID/IDSearchPage';
-import PWSearchPage from './Login/Search/PW/PWSearchPage';
 import ProjectPage from './Board/Project/ProjectPage';
 import ProjectAdminPage from './Board/Project/ProjectAdminPage';
 import ProjectDetailPage from './Board/Project/ProjectAdminDetailPage';
@@ -67,7 +70,10 @@ export default function AppRoutes() {
       <Route path="/notice/write" element={<NoticeWritePage />} />
       <Route path="/admin" element={<AdminPage />} />
       <Route path="/idsearch" element={<IDSearchPage />} />
+      <Route path="/idsearch/complete" element={<IDSearchCompletePage />} />
       <Route path="/pwsearch" element={<PWSearchPage />} />
+      <Route path="/pwsearch/reset" element={<PWResetPage />} />
+      <Route path="/pwsearch/complete" element={<PWResetCompletePage />} />
       <Route path="/project" element={<ProjectPage />} />
       <Route path="/admin/project" element={<ProjectAdminPage />} />
       <Route path="/admin/project/view/:id" element={<ProjectDetailPage />} />
