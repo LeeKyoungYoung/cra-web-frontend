@@ -32,10 +32,11 @@ const RegisterForm = styled.form`
   label {
     color: var(--color-dark-text);
     font-family: 'Pretendard SemiBold';
-    margin: 1rem 0 0 2rem;
+    margin: 1rem 0 0 0.5rem;
     text-align: start;
     display: block;
     width: 80%;
+    transform: translateY(1rem);
   }
 
   input {
@@ -51,6 +52,7 @@ const RegisterForm = styled.form`
 const SubmitBtn = styled.button`
   background-color: var(--color-primary) !important;
   color: var(--color-white);
+  font-family: 'Pretendard Bold';
   width: 80%;
   text-align: center;
   padding: 1.1rem 0;

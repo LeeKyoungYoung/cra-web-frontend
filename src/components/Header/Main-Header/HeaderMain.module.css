@@ -8,6 +8,7 @@ li {
   display: flex;
   left: 0;
   top: 0;
+  z-index: 100;
   width: 100%;
   background-color: #ffffff;
 
