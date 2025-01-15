@@ -38,6 +38,7 @@ const LoginBtn = styled.button`
   font-size: 2rem;
   padding: 1rem 5rem;
   font-family: 'Pretendard Bold';
+  user-select: none;
   cursor: pointer;
 `;
 

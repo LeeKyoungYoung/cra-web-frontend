@@ -37,6 +37,7 @@ const Input = styled.div`
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     transform: translateY(1.25rem);
+    user-select: none;
   }
   input {
     width: 100%;
@@ -56,11 +57,13 @@ const Submit = styled.button`
   width: 100%;
   background-color: var(--color-primary);
   color: var(--color-white);
+  font-size: 1.5rem;
   font-family: 'Pretendard Bold';
   border-radius: 1rem;
   border: none;
-  padding: 1rem 10rem;
-  margin-bottom: 3rem;
+  padding: 1rem 0;
+  margin: 4rem 0 2rem 0;
+  user-select: none;
   cursor: pointer;
 `;
 

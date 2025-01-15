@@ -22,12 +22,28 @@ const Title = styled.p`
   margin: 3rem 0;
 `;
 
-const Content = styled.p`
+const Content = styled.div`
+  width: 47.5rem;
   background-color: var(--color-white);
   color: var(--color-dark-text);
   font-size: 1.5625rem;
   font-family: 'Pretendard Bold';
-  padding: 0.25rem 0;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+`;
+
+const Context = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
+`;
+
+const Black = styled.p`
+  color: var(--color-dark-text);
+`;
+
+const SkyBlue = styled.p`
+  color: var(--color-primary);
 `;
 
 const Buttons = styled.div`
@@ -65,7 +81,16 @@ function IDSearchCompletePage() {
     <Container>
       <Img src={BlueCheck} />
       <Title>아이디 찾기 완료</Title>
-      <Content>가입일</Content>
+      <Content>
+        <Context>
+          <Black>가입일</Black>
+          <Black>2025. 01. 15</Black>
+        </Context>
+        <Context>
+          <SkyBlue>아이디</SkyBlue>
+          <SkyBlue>dnwnchlrkd206</SkyBlue>
+        </Context>
+      </Content>
       <Buttons>
         <PWResetBtn onClick={() => navigate('/pwsearch/reset')}>
           비밀번호 재설정
