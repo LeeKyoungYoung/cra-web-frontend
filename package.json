@@ -51,5 +51,10 @@
     "typescript-eslint": "^8.15.0",
     "vite": "^6.0.1",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "overrides": {
+    "@toast-ui/react-editor": {
+      "react": "^18.3.1"
+    }
   }
 }
