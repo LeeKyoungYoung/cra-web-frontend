@@ -6,9 +6,21 @@ import { Board } from '../../../models/Board';
 import { useNavigate } from 'react-router-dom';
 import styles from './BoardWrite.module.css';
 import '@toast-ui/editor/dist/toastui-editor.css';
+// import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
 import { Editor } from '@toast-ui/react-editor';
+import 'tui-color-picker/dist/tui-color-picker.css';
 import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css';
 import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
+import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
+import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism.css';
+// import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-python';
+import 'prismjs/components/prism-java';
+import 'prismjs/components/prism-c';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
@@ -118,7 +130,7 @@ export default function BoardWrite({ category }: { category: number }) {
           height="600px"
           initialEditType="markdown"
           useCommandShortcut={true}
-          plugins={[colorSyntax]}
+          plugins={[[codeSyntaxHighlight, { highlighter: Prism }], colorSyntax]}
         />
         <br />
         <label htmlFor="imageUrls">이미지 주소</label>
