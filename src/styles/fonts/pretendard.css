@@ -48,7 +48,7 @@ http://scripts.sil.org/OFL
 }
 
 @font-face {
-  font-family: 'Pretendard Medium';
+  font-family: 'Pretendard';
   font-weight: 500;
   font-display: swap;
   src:
@@ -58,7 +58,7 @@ http://scripts.sil.org/OFL
 }
 
 @font-face {
-  font-family: 'Pretendard Regular';
+  font-family: 'Pretendard';
   font-weight: 400;
   font-display: swap;
   src:
@@ -68,7 +68,7 @@ http://scripts.sil.org/OFL
 }
 
 @font-face {
-  font-family: 'Pretendard Light';
+  font-family: 'Pretendard';
   font-weight: 300;
   font-display: swap;
   src:
@@ -78,7 +78,7 @@ http://scripts.sil.org/OFL
 }
 
 @font-face {
-  font-family: 'Pretendard ExtraLight';
+  font-family: 'Pretendard';
   font-weight: 200;
   font-display: swap;
   src:
@@ -88,7 +88,7 @@ http://scripts.sil.org/OFL
 }
 
 @font-face {
-  font-family: 'Pretendard Thin';
+  font-family: 'Pretendard';
   font-weight: 100;
   font-display: swap;
   src:
