@@ -1,26 +1,14 @@
 import React, { useState, useRef } from 'react';
-import { CATEGORY_STRINGS } from '../../../constants/category_strings';
+import { CATEGORY_STRINGS } from '~/constants/category_strings';
 import { useMutation } from '@tanstack/react-query';
-import { createBoards } from '../../../api/board';
-import { Board } from '../../../models/Board';
+import { createBoards } from '~/api/board';
+import { Board } from '~/models/Board';
 import { useNavigate } from 'react-router-dom';
 import styles from './BoardWrite.module.css';
-import '@toast-ui/editor/dist/toastui-editor.css';
-// import '@toast-ui/editor/dist/theme/toastui-editor-dark.css';
+import '~/styles/toast-ui';
 import { Editor } from '@toast-ui/react-editor';
-import 'tui-color-picker/dist/tui-color-picker.css';
-import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css';
-import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
-import '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight.css';
-import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight';
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
-// import 'prismjs/themes/prism-okaidia.css';
-import 'prismjs/components/prism-css';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-python';
-import 'prismjs/components/prism-java';
-import 'prismjs/components/prism-c';
+import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
+import { blob } from 'stream/consumers';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
@@ -93,6 +81,11 @@ export default function BoardWrite({ category }: { category: number }) {
     mutation.mutate(formData);
   };
 
+  // const onUploadImage = async (
+  //   blob: File,
+  //   callback: (imageUrl: string, fileName: string) => void,
+  // ) => {};
+
   return (
     <div className={styles['write-container']}>
       <form className={styles['write-form']} onSubmit={HandleSubmit}>
@@ -125,10 +118,10 @@ export default function BoardWrite({ category }: { category: number }) {
         <label htmlFor="content">내용</label>
         <Editor
           ref={editorRef} // Editor 인스턴스를 참조
-          initialValue={formData.content || ' '}
+          initialValue=" "
           previewStyle="vertical"
           height="600px"
-          initialEditType="markdown"
+          initialEditType="wysiwyg"
           useCommandShortcut={true}
           plugins={[[codeSyntaxHighlight, { highlighter: Prism }], colorSyntax]}
         />
