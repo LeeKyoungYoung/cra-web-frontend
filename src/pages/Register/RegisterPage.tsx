@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import AlertModal from '~/components/Modal/Alert/AlertModal';
 
 const Container = styled.div`
   display: flex;
@@ -65,24 +66,66 @@ const SubmitBtn = styled.button`
 
 function RegisterPage() {
   const navigate = useNavigate();
+
+  // State for storing input values
+  const [formData, setFormData] = useState({
+    id: '',
+    pw: '',
+    studentNum: '',
+    name: '',
+    CRA: '',
+    github: '',
+    talk: '',
+    code: '',
+  });
+  const [error, setError] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 추가
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if any field is empty
+    // 모든 필드가 채워졌는지 확인
+    for (let key in formData) {
+      if (!formData[key as keyof typeof formData]) {
+        // 타입 단언 추가
+        setIsModalOpen(true); // 모달 열기
+        return;
+      }
+    }
+
+    // If all fields are filled, navigate to the next page
+    setError('');
+    navigate('/welcome');
+  };
+
   return (
     <Container>
       <Title>회원가입</Title>
-      <RegisterForm>
+      <RegisterForm onSubmit={handleSubmit}>
         <label htmlFor="id">아이디</label>
         <input
           type="text"
           name="id"
           id="id"
           placeholder="아이디를 입력하세요."
+          value={formData.id}
+          onChange={handleChange}
         />
 
         <label htmlFor="pw">비밀번호</label>
         <input
-          type="text"
+          type="password"
           name="pw"
           id="pw"
           placeholder="비밀번호를 입력하세요."
+          value={formData.pw}
+          onChange={handleChange}
         />
 
         <label htmlFor="studentNum">학번</label>
@@ -90,15 +133,19 @@ function RegisterPage() {
           type="text"
           name="studentNum"
           id="studentNum"
-          placeholder="학번를 입력하세요."
+          placeholder="학번을 입력하세요."
+          value={formData.studentNum}
+          onChange={handleChange}
         />
 
-        <label htmlFor="Name">이름</label>
+        <label htmlFor="name">이름</label>
         <input
           type="text"
-          name="Name"
-          id="Name"
+          name="name"
+          id="name"
           placeholder="이름을 입력하세요."
+          value={formData.name}
+          onChange={handleChange}
         />
 
         <label htmlFor="CRA">CRA 기수</label>
@@ -107,6 +154,8 @@ function RegisterPage() {
           name="CRA"
           id="CRA"
           placeholder="CRA 기수를 입력하세요."
+          value={formData.CRA}
+          onChange={handleChange}
         />
 
         <label htmlFor="github">GitHub 주소</label>
@@ -115,6 +164,8 @@ function RegisterPage() {
           name="github"
           id="github"
           placeholder="GitHub 주소를 입력하세요."
+          value={formData.github}
+          onChange={handleChange}
         />
 
         <label htmlFor="talk">나의 한마디</label>
@@ -123,6 +174,8 @@ function RegisterPage() {
           name="talk"
           id="talk"
           placeholder="나의 한마디를 입력하세요."
+          value={formData.talk}
+          onChange={handleChange}
         />
 
         <label htmlFor="code">가입코드</label>
@@ -131,17 +184,15 @@ function RegisterPage() {
           name="code"
           id="code"
           placeholder="가입코드를 입력하세요."
+          value={formData.code}
+          onChange={handleChange}
         />
 
-        <SubmitBtn
-          onClick={(e) => {
-            e.preventDefault();
-            navigate('/welcome');
-          }}
-        >
-          확인
-        </SubmitBtn>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        <SubmitBtn type="submit">확인</SubmitBtn>
       </RegisterForm>
+      {isModalOpen && <AlertModal closeModal={() => setIsModalOpen(false)} />}
     </Container>
   );
 }

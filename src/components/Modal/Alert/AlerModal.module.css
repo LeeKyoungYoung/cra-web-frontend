@@ -1,0 +1,19 @@
+.modalContent {
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  height: 300px;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%); /* 처음에는 화면 아래로 숨겨둠 */
+  z-index: 1000;
+  transition: transform 1s ease-out; /* 애니메이션 적용 */
+}
+
+/* 모달이 열리면 translateY(0)으로 설정하여 위로 올라오도록 */
+.modalOpen {
+  transform: translateX(-50%) translateY(-50%); /* 중앙으로 이동 */
+}
