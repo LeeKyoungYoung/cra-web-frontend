@@ -1,3 +1,11 @@
+// ex) 기능: paramater -> return value
+
+// 로그인: Login -> ResponseToken
+
+// 회원가입: ReqSignUp -> ResSignUp
+
+// 토큰 재발급: ReissueToken -> ResponseToken
+
 interface ReqSignUp {
   id: number;
   username: string;
