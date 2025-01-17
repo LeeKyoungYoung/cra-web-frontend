@@ -7,7 +7,6 @@
 // 토큰 재발급: ReissueToken -> ResponseToken
 
 interface ReqSignUp {
-  id: number;
   username: string;
   password: string;
   email: string;
