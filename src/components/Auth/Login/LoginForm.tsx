@@ -28,7 +28,7 @@ const Title = styled.div`
 const MainContainer = styled.div``;
 const Search = styled.div`
   margin: 1.5rem 0 0 0;
-  transform: translateX(2rem);
+  transform: translate(2rem);
   text-align: end;
   line-height: 34px;
   user-select: none;
@@ -61,9 +61,13 @@ const Register = styled.div`
   user-select: none;
 `;
 
+const AuthButtons = styled.div`
+`;
+
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const { login } = useAuthStore();
   const navigate = useNavigate();
 
@@ -97,25 +101,38 @@ const LoginForm = () => {
           <HeightSpacer space={28} />
           <div className={styles['password']}>
             <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              placeholder="Enter the Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className={styles['password-input-container']}>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Enter the Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className={styles['checkbox-container']}>
+              <input
+                type="checkbox"
+                id="show-password"
+                checked={showPassword}
+                onChange={(e) => setShowPassword(e.target.checked)}
+              />
+              <label htmlFor="show-password">비밀번호 보기</label>
+            </div>
           </div>
-          <Search>
-            <Link to="/idsearch" className={styles['search-link']}>
-              아이디 찾기
-            </Link>
-            <span>|</span>
-            <Link to="/pwsearch" className={styles['search-link']}>
-              비밀번호 찾기
-            </Link>
-          </Search>
-          <Login>
-            <input type="submit" value={'로그인'} />
-          </Login>
+          <AuthButtons>
+            <Search>
+              <Link to="/idsearch" className={styles['search-link']}>
+                아이디 찾기
+              </Link>
+              <span>|</span>
+              <Link to="/pwsearch" className={styles['search-link']}>
+                비밀번호 찾기
+              </Link>
+            </Search>
+            <Login>
+              <input type="submit" value={'로그인'} />
+            </Login>
+          </AuthButtons>
         </form>
         <Register>
           <span>아직 CRA의 회원이 아니신가요? </span>

@@ -40,3 +40,26 @@
   color: var(--color-primary);
   user-select: none;
 }
+
+.checkbox-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--color-dark-text);
+}
+
+.checkbox-container input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  margin: 0 0 0 2.5rem;
+}
+
+.checkbox-container label {
+  user-select: none;
+  cursor: pointer;
+  color: var(--color-dark-text);
+  font-size: 1rem;
+  transform: translate(-1rem, 0.7rem);
+}
