@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Project } from '~/models/Project';
-import client from './client';
+import { client } from './client';
 
 export const getProjects = async () => {
   try {
