@@ -22,10 +22,6 @@ import EquipmentPage from './Board/Equipment/EquipmentPage';
 import EquipmentDetailPage from './Board/Equipment/EquipmentDetailPage';
 import EquipmentEditPage from './Board/Equipment/EquipmentEditPage';
 import EquipmentWritePage from './Board/Equipment/EquipmentWritePage';
-import HavrutaPage from './Board/Havruta/HavrutaPage';
-import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
-import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
-import HavrutaWritePage from './Board/Havruta/HavrutaWritePage';
 import NoticePage from './Board/Notice/NoticePage';
 import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
@@ -37,6 +33,11 @@ import ProjectDetailPage from './Board/Project/ProjectAdminDetailPage';
 import ProjectEditPage from './Board/Project/ProjectAdminEditPage';
 import ProjectWritePage from './Board/Project/ProjectAdminWritePage';
 import NotFoundPage from './Error/NotFoundPage';
+import HavrutaPage from './Board/Havruta/Havruta/HavrutaPage';
+import HavrutaDetailPage from './Board/Havruta/Havruta/HavrutaDetailPage';
+import HavrutaEditPage from './Board/Havruta/Havruta/HavrutaEditPage';
+import HavrutaWritePage from './Board/Havruta/Havruta/HavrutaWritePage';
+import HavrutaAdminPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminPage';
 
 export default function AppRoutes() {
   return (
@@ -64,10 +65,14 @@ export default function AppRoutes() {
       <Route path="/havruta/view/:id" element={<HavrutaDetailPage />} />
       <Route path="/havruta/edit/:id" element={<HavrutaEditPage />} />
       <Route path="/havruta/write" element={<HavrutaWritePage />} />
+      <Route path="/admin/havruta" element={<HavrutaAdminPage />} />
+      <Route path="/admin/havruta/view/:id" element={<HavrutaDetailPage />} />
+      <Route path="/admin/havruta/edit/:id" element={<HavrutaEditPage />} />
+      <Route path="/admin/havruta/write" element={<HavrutaWritePage />} />
       <Route path="/notice" element={<NoticePage />} />
       <Route path="/notice/view/:id" element={<NoticeDetailPage />} />
       <Route path="/notice/edit/:id" element={<NoticeEditPage />} />
-      <Route path="/notice/write" element={<NoticeWritePage />} />
+      <Route path="/notice/write" element={<NoticeWritePage />} /> 
       <Route path="/admin" element={<AdminPage />} />
       <Route path="/idsearch" element={<IDSearchPage />} />
       <Route path="/idsearch/complete" element={<IDSearchCompletePage />} />
