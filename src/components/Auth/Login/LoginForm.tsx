@@ -1,8 +1,65 @@
-import React, { FormEvent, useState } from 'react';
-import { Navigate, useNavigate, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '~/store/authStore';
+import HeightSpacer from '~/components/Common/HeightSpacer';
 import styled from 'styled-components';
 import styles from './LoginForm.module.css';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 668px;
+  padding-top: 15rem;
+  padding-bottom: 15%;
+  margin: 0 auto;
+`;
+const Title = styled.div`
+  h2 {
+    text-align: center;
+    font-size: 40px;
+    line-height: 59px;
+    margin-bottom: 70px;
+    color: var(--color-bright-text);
+    user-select: none;
+  }
+`;
+const MainContainer = styled.div``;
+const Search = styled.div`
+  margin: 1.5rem 0 0 0;
+  transform: translateX(2rem);
+  text-align: end;
+  line-height: 34px;
+  user-select: none;
+`;
+const Login = styled.div`
+  input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 68px;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    cursor: pointer;
+  }
+`;
+const Register = styled.div`
+  width: 100%;
+  line-height: 34px;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-dark-text);
+  user-select: none;
+`;
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -22,11 +79,11 @@ const LoginForm = () => {
     }
   };
   return (
-    <div className={styles['container']}>
-      <div className={styles['title']}>
+    <Container>
+      <Title>
         <h2>로그인</h2>
-      </div>
-      <div className={styles['main-container']}>
+      </Title>
+      <MainContainer>
         <form onSubmit={handleLogin}>
           <div className={styles['id']}>
             <label htmlFor="id">Username</label>
@@ -37,6 +94,7 @@ const LoginForm = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
+          <HeightSpacer space={28} />
           <div className={styles['password']}>
             <label htmlFor="password">Password</label>
             <input
@@ -46,7 +104,7 @@ const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className={styles['search']}>
+          <Search>
             <Link to="/idsearch" className={styles['search-link']}>
               아이디 찾기
             </Link>
@@ -54,19 +112,19 @@ const LoginForm = () => {
             <Link to="/pwsearch" className={styles['search-link']}>
               비밀번호 찾기
             </Link>
-          </div>
-          <div className={styles['login']}>
+          </Search>
+          <Login>
             <input type="submit" value={'로그인'} />
-          </div>
+          </Login>
         </form>
-        <div className={styles['register']}>
+        <Register>
           <span>아직 CRA의 회원이 아니신가요? </span>
           <Link to="/register" className={styles['register-link']}>
             회원가입하기
           </Link>
-        </div>
-      </div>
-    </div>
+        </Register>
+      </MainContainer>
+    </Container>
   );
 };
 
