@@ -1,0 +1,65 @@
+.id label,
+.password label {
+  margin-left: 2.5rem;
+  height: 34px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark-text);
+  user-select: none;
+}
+
+.id input,
+.password input {
+  background-color: #fff;
+  width: 100%;
+  height: 68px;
+  font-size: 1.125rem;
+  border-radius: 10px;
+  border: 1px solid var(--color-dark-stroke);
+  margin-bottom: 0;
+}
+
+.id input::placeholder,
+.password input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-placeholder-text);
+  padding-left: 10px;
+}
+
+.search-link {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0px 0.5rem;
+  text-decoration: none;
+  color: var(--color-dark-text);
+}
+
+.register-link {
+  font-weight: 700;
+  color: var(--color-primary);
+  user-select: none;
+}
+
+.checkbox-container {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--color-dark-text);
+}
+
+.checkbox-container input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  margin: 0 0 0 2.5rem;
+}
+
+.checkbox-container label {
+  user-select: none;
+  cursor: pointer;
+  color: var(--color-dark-text);
+  font-size: 1rem;
+  transform: translate(-1rem, 0.7rem);
+}

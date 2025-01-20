@@ -1,4 +1,4 @@
-import client from './client';
+import { client } from './client';
 import { data } from 'react-router-dom';
 import axios from 'axios';
 import { Comment } from '../models/Comment';

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Board } from '../models/Board';
-import client from './client';
+import { client } from './client';
 
 // [GET]
 // async를 사용하여 Promise를 반환하는 비동기 함수 (Promise는 비동기 작업의 완료 or 실패를 나타내는 JS 객체)
