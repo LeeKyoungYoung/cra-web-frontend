@@ -5,7 +5,7 @@ import { reissueToken } from './authApi';
 
 // axios 인터셉터를 사용하여 api 요청 시 토큰을 자동으로 갱신하는 기능
 export const authClient = axios.create({
-  baseURL: '/api', // 기본 API 엔드포인트
+  baseURL: import.meta.env.VITE_API_BASE_URL as string, // 기본 API 엔드포인트
   timeout: 5000, // 요청 타임아웃
 });
 
