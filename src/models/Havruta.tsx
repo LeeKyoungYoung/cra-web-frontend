@@ -7,7 +7,7 @@ interface Havruta {
   category: number;
   likeCount?: number;
   view?: number;
-  imageUrls: [string];
+  imageUrls?: [string];
   createdAt: Date;
   updatedAt: Date;
   className?: string;

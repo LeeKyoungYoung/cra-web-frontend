@@ -38,6 +38,9 @@ import HavrutaDetailPage from './Board/Havruta/Havruta/HavrutaDetailPage';
 import HavrutaEditPage from './Board/Havruta/Havruta/HavrutaEditPage';
 import HavrutaWritePage from './Board/Havruta/Havruta/HavrutaWritePage';
 import HavrutaAdminPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminPage';
+// import HavrutaAdminDetailPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminDetailPage';
+// import HavrutaAdminEditPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminEditPage';
+import HavrutaAdminWritePage from './Board/Havruta/HavrutaAdmin/HavrutaAdminWritePage';
 
 export default function AppRoutes() {
   return (
@@ -66,13 +69,20 @@ export default function AppRoutes() {
       <Route path="/havruta/edit/:id" element={<HavrutaEditPage />} />
       <Route path="/havruta/write" element={<HavrutaWritePage />} />
       <Route path="/admin/havruta" element={<HavrutaAdminPage />} />
-      <Route path="/admin/havruta/view/:id" element={<HavrutaDetailPage />} />
-      <Route path="/admin/havruta/edit/:id" element={<HavrutaEditPage />} />
-      <Route path="/admin/havruta/write" element={<HavrutaWritePage />} />
+      {/*
+      <Route
+        path="/admin/havruta/view/:id"
+        element={<HavrutaAdminDetailPage />}
+      />
+      <Route
+        path="/admin/havruta/edit/:id"
+        element={<HavrutaAdminEditPage />}
+      />*/}
+      <Route path="/admin/havruta/write" element={<HavrutaAdminWritePage />} />
       <Route path="/notice" element={<NoticePage />} />
       <Route path="/notice/view/:id" element={<NoticeDetailPage />} />
       <Route path="/notice/edit/:id" element={<NoticeEditPage />} />
-      <Route path="/notice/write" element={<NoticeWritePage />} /> 
+      <Route path="/notice/write" element={<NoticeWritePage />} />
       <Route path="/admin" element={<AdminPage />} />
       <Route path="/idsearch" element={<IDSearchPage />} />
       <Route path="/idsearch/complete" element={<IDSearchCompletePage />} />

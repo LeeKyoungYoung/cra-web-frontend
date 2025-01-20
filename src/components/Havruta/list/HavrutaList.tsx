@@ -23,7 +23,8 @@ export default function HavrutaList() {
     content = <div className="error">에러가 발생했습니다!</div>;
   } else if (havrutaQuery.isSuccess) {
     content = havrutaQuery.data.map((havruta, index) => {
-      if (havruta.id === undefined) return null;
+      if (havruta.id === undefined)
+        return console.log('서버 통신 가능, 아직 데이터 없음');
       return (
         <div key={`havruta-${havruta.id}`}>
           <div className={styles['board-wrapper']}>

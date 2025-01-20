@@ -5,7 +5,7 @@ import axios from 'axios';
 //get/all // 게시글 전체 받아오기기
 export const getHavruta = async () => {
   try {
-    const response = await client.get<Havruta[]>(`/havruta`);
+    const response = await client.get<Havruta[]>(`/board/havruta`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

@@ -9,7 +9,7 @@ import { Havruta } from '~/models/Havruta';
 export default function HavrutaWrite({ category }: { category: number }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    userId: 1,
+    userId: 0,
     title: '',
     content: '',
     category: category,
@@ -23,7 +23,7 @@ export default function HavrutaWrite({ category }: { category: number }) {
       await alert('게시글 작성 성공');
       navigate(-1);
       setFormData({
-        userId: 1,
+        userId: 0,
         title: '',
         content: '',
         category: category,

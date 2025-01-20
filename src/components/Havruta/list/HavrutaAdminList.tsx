@@ -92,9 +92,9 @@ function HavrutaAdminList() {
                     수정
                   </ActionLink>
                   |{' '}
-                  <DeleteButtonWrapper>
+                  {/* <DeleteButtonWrapper>
                     <havrutaDeleteAdmin id={havrutaElement.id!} />
-                  </DeleteButtonWrapper>
+                  </DeleteButtonWrapper> */}
                 </Td>
               </tr>
             ))}
