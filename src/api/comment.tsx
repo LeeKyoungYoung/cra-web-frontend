@@ -1,8 +1,7 @@
 import { client } from './client';
-import { data } from 'react-router-dom';
 import axios from 'axios';
-import { Comment } from '../models/Comment';
-import { error } from 'console';
+import { Comment } from '~/models/Comment';
+import { authClient } from './auth/authClient';
 
 //get
 export const getCommentsByBoardId = async (boardId: number) => {
@@ -54,7 +53,8 @@ export const getCommentsCountByCategory = async (boardId: number) => {
 //post
 export const createComments = async (comment: Comment, boardId: number) => {
   try {
-    const response = await client.post<Comment>(
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.post<Comment>(
       `/comment/${boardId}`,
       comment,
       {
@@ -79,7 +79,8 @@ export const createChildComments = async (
   parentId: number,
 ) => {
   try {
-    const response = await client.post<Comment>(
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.post<Comment>(
       `/comment/${boardId}`,
       {
         userId: comment.userId,
@@ -104,7 +105,8 @@ export const createChildComments = async (
 //put
 export const updateComments = async (comment: Comment) => {
   try {
-    const response = await client.put<Comment>(
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.put<Comment>(
       `/comment/${comment.id}`,
       comment,
       {
@@ -125,7 +127,8 @@ export const updateComments = async (comment: Comment) => {
 //delete
 export const deleteComments = async (id: number) => {
   try {
-    const response = await client.delete<Comment>(`/comment/${id}`);
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.delete<Comment>(`/comment/${id}`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
