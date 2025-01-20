@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import BoardList from '../../../components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
 import styles from './ItemPage.module.css';
+import ItemList from '~/components/Item/List/ItemList';
+import { ITEMCATEGORY } from '~/constants/itemCategory';
 
 export default function ItemPage() {
-  return <BoardList category={CATEGORY.ITEM} />;
+  return (
+    <div className={styles['project-section']}>
+      <p>비품 페이지</p>
+      <ItemList itemCategory={ITEMCATEGORY.ITEM} />
+    </div>
+  );
 }
