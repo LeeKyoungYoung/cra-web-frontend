@@ -3,6 +3,6 @@ import { Link } from 'react-router-dom';
 import BoardDetail from '../../../components/Board/Detail/BoardDetail';
 import { CATEGORY } from '../../../constants/category';
 
-export default function EquipmentDetailPage() {
-  return <BoardDetail category={CATEGORY.EQUIPMENT} />;
+export default function ItemDetailPage() {
+  return <BoardDetail category={CATEGORY.ITEM} />;
 }

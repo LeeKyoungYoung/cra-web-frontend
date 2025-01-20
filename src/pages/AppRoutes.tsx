@@ -18,10 +18,10 @@ import BookPage from './Board/Book/BookPage';
 import BookDetailPage from './Board/Book/BookDetailPage';
 import BookWritePage from './Board/Book/BookWritePage';
 import BookEditPage from './Board/Book/BookEditPage';
-import EquipmentPage from './Board/Equipment/EquipmentPage';
-import EquipmentDetailPage from './Board/Equipment/EquipmentDetailPage';
-import EquipmentEditPage from './Board/Equipment/EquipmentEditPage';
-import EquipmentWritePage from './Board/Equipment/EquipmentWritePage';
+import ItemPage from './Board/Item/ItemPage';
+import ItemDetailPage from './Board/Item/ItemDetailPage';
+import ItemEditPage from './Board/Item/ItemEditPage';
+import ItemWritePage from './Board/Item/ItemWritePage';
 import HavrutaPage from './Board/Havruta/HavrutaPage';
 import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
 import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
@@ -56,10 +56,10 @@ export default function AppRoutes() {
       <Route path="/book/view/:id" element={<BookDetailPage />} />
       <Route path="/book/edit/:id" element={<BookEditPage />} />
       <Route path="/book/write" element={<BookWritePage />} />
-      <Route path="/equip" element={<EquipmentPage />} />
-      <Route path="/equip/view/:id" element={<EquipmentDetailPage />} />
-      <Route path="/equip/edit/:id" element={<EquipmentEditPage />} />
-      <Route path="/equip/write" element={<EquipmentWritePage />} />
+      <Route path="/item" element={<ItemPage />} />
+      <Route path="/item/view/:id" element={<ItemDetailPage />} />
+      <Route path="/item/edit/:id" element={<ItemEditPage />} />
+      <Route path="/item/write" element={<ItemWritePage />} />
       <Route path="/havruta" element={<HavrutaPage />} />
       <Route path="/havruta/view/:id" element={<HavrutaDetailPage />} />
       <Route path="/havruta/edit/:id" element={<HavrutaEditPage />} />
