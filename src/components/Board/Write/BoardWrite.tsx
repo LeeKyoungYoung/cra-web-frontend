@@ -9,6 +9,7 @@ import '~/styles/toast-ui';
 import { Editor } from '@toast-ui/react-editor';
 import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
 import { blob } from 'stream/consumers';
+import client from '~/api/client';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
@@ -68,6 +69,37 @@ export default function BoardWrite({ category }: { category: number }) {
     });
   };
 
+  const handleImageUpload = (blob: Blob, callback: (url: string) => void) => {
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      // Blob을 Base64로 변환한 결과를 추출
+      const base64data = reader.result?.toString().split(',')[1]; // Base64 데이터만 추출
+
+      client
+        .post('/image/upload', { image: base64data }) // Base64 데이터를 서버에 전송
+        .then((response) => {
+          const imageUrl = response.data?.url;
+
+          if (!imageUrl) {
+            console.error('Server did not return a valid URL');
+            return;
+          }
+          console.log('Server response:', imageUrl);
+          setFormData((formData) => ({
+            ...formData,
+            imageUrls: [...formData.imageUrls, imageUrl],
+          }));
+          callback(imageUrl); // 서버에서 반환된 이미지 URL을 콜백으로 전달
+        })
+        .catch((error) => {
+          console.error('Image upload failed:', error);
+        });
+    };
+
+    reader.readAsDataURL(blob); // Blob을 Base64로 변환
+  };
+
   // 폼 제출시 호출되는 함수
   const HandleSubmit = (e: React.FormEvent) => {
     // 디폴트 동작(페이지 새로고침)을 막음
@@ -80,11 +112,6 @@ export default function BoardWrite({ category }: { category: number }) {
     // react-query의 mutate 메서드를 통해 서버에 데이터를 전송
     mutation.mutate(formData);
   };
-
-  // const onUploadImage = async (
-  //   blob: File,
-  //   callback: (imageUrl: string, fileName: string) => void,
-  // ) => {};
 
   return (
     <div className={styles['write-container']}>
@@ -124,6 +151,9 @@ export default function BoardWrite({ category }: { category: number }) {
           initialEditType="wysiwyg"
           useCommandShortcut={true}
           plugins={[[codeSyntaxHighlight, { highlighter: Prism }], colorSyntax]}
+          hooks={{
+            addImageBlobHook: handleImageUpload,
+          }}
         />
         <br />
         <label htmlFor="imageUrls">이미지 주소</label>
