@@ -11,7 +11,7 @@ interface HavrutaBoard {
   userId: number;
   title: string;
   content: string;
-  category: number;
+  category?: number;
   likeCount?: number;
   view?: number;
   imageUrls: string[];
