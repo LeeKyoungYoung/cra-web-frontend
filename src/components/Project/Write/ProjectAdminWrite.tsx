@@ -15,7 +15,7 @@ function ProjectAdminWrite() {
     gitHubUrl: '',
     serviceUrl: '',
     members: [''],
-    imageUrls: [''],
+    imageUrl: '',
   });
 
   const mutation = useMutation({
@@ -31,7 +31,7 @@ function ProjectAdminWrite() {
         gitHubUrl: '',
         serviceUrl: '',
         members: [''],
-        imageUrls: [''],
+        imageUrl: '',
       });
     },
     onError: (error) => {
@@ -46,9 +46,7 @@ function ProjectAdminWrite() {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: ['members', 'imageUrls'].includes(name)
-        ? value.split(',')
-        : value,
+      [name]: ['members'].includes(name) ? value.split(',') : value,
     });
   };
 
@@ -139,15 +137,14 @@ function ProjectAdminWrite() {
           required
         />
         <br />
-        <label htmlFor="imageUrls">이미지 주소</label>
+        <label htmlFor="imageUrl">이미지 주소</label>
         <input
           type="text"
-          id="imageUrls"
-          name="imageUrls"
+          id="imageUrl"
+          name="imageUrl"
           placeholder="이미지 주소"
-          value={formData.imageUrls.join(',')}
+          value={formData.imageUrl}
           onChange={handleChange}
-          required
         />
         <br />
         <input type="submit" value="게시글 작성" />
