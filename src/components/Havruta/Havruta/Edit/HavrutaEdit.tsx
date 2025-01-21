@@ -32,8 +32,8 @@ function HavrutaEdit() {
       await navigate(-1);
     },
     onError: (error) => {
-      console.error('프로젝트 수정 실패: ', error);
-      alert('프로젝트 수정 실패');
+      console.error('하브루타 수정 실패: ', error);
+      alert('하브루타 수정 실패');
     },
   });
 

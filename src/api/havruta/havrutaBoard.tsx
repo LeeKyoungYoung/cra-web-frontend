@@ -106,7 +106,7 @@ export const updateHavrutaBoard = async (havrutaBoard: HavrutaBoard) => {
 // 하브루타 게시물 삭제하기
 export const deleteHavrutaBoards = async (id: number) => {
   try {
-    const response = await authClient.delete(`/board/havruta/${id}`);
+    const response = await authClient.delete(`/board/${id}`);
     return response.data;
   } catch (error) {
     console.error('Failed to delete havruta board:', error);
