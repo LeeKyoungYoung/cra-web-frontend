@@ -50,9 +50,15 @@ function ItemAdminEdit() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target;
+    const { name, value, checked, type } = e.target;
 
-    if (name === 'members' || name === 'imageUrls') {
+    // 체크박스인 경우, checked 값을 사용하여 상태를 업데이트
+    if (type === 'checkbox' && name === 'isBorrowed') {
+      setFormData({
+        ...formData,
+        [name]: checked, // checked 값 (boolean)을 사용
+      });
+    } else if (name === 'members' || name === 'imageUrls') {
       setFormData({
         ...formData,
         [name]: value.split(','),
@@ -116,6 +122,18 @@ function ItemAdminEdit() {
             required
           />
           <br />
+          <br />
+          <label htmlFor="isBorrowed">대여 불가능</label>
+          <br />
+          <input
+            type="checkbox"
+            id="isBorrowed"
+            name="isBorrowed"
+            checked={formData.isBorrowed}
+            onChange={handleChange}
+          />
+          <br />
+
           <input type="submit" value="프로젝트 수정" />
         </form>
       </div>
