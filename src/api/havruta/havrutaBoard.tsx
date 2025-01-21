@@ -20,7 +20,7 @@ export const getHavrutaBoards = async () => {
 // 과목별 하브루타 게시물 모두 가져오기
 export const getHavrutaBoardsByHavrutaId = async (id: number) => {
   try {
-    const response = await client.get<HavrutaBoard>(`/board/havruta/${id}`);
+    const response = await client.get<HavrutaBoard[]>(`/board/havruta/${id}`);
     return response.data;
   } catch (error) {
     console.log(error);
