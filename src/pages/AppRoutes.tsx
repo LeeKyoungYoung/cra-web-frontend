@@ -38,7 +38,6 @@ import HavrutaBoardDetailPage from './Board/Havruta/HavrutaBoard/HavrutaBoardDet
 import HavrutaBoardEditPage from './Board/Havruta/HavrutaBoard/HavrutaBoardEditPage';
 import HavrutaBoardWritePage from './Board/Havruta/HavrutaBoard/HavrutaBoardWritePage';
 import HavrutaAdminPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminPage';
-import HavrutaAdminDetailPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminDetailPage';
 import HavrutaAdminEditPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminEditPage';
 import HavrutaAdminWritePage from './Board/Havruta/HavrutaAdmin/HavrutaAdminWritePage';
 
@@ -69,10 +68,6 @@ export default function AppRoutes() {
       <Route path="/havruta/edit/:id" element={<HavrutaBoardEditPage />} />
       <Route path="/havruta/write" element={<HavrutaBoardWritePage />} />
       <Route path="/admin/havruta" element={<HavrutaAdminPage />} />
-      <Route
-        path="/admin/havruta/view/:id"
-        element={<HavrutaAdminDetailPage />}
-      />
       <Route
         path="/admin/havruta/edit/:id"
         element={<HavrutaAdminEditPage />}
