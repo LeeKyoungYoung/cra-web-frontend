@@ -20,7 +20,6 @@ import BookWritePage from './Board/Book/BookWritePage';
 import BookEditPage from './Board/Book/BookEditPage';
 import ItemPage from './Board/Item/ItemPage';
 import ItemDetailPage from './Board/Item/ItemDetailPage';
-import ItemEditPage from './Board/Item/ItemAdminEditPage';
 import ItemWritePage from './Board/Item/ItemAdminWritePage';
 import HavrutaPage from './Board/Havruta/HavrutaPage';
 import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
@@ -39,6 +38,7 @@ import ProjectWritePage from './Board/Project/ProjectAdminWritePage';
 import NotFoundPage from './Error/NotFoundPage';
 import ItemAdminPage from './Board/Item/ItemAdminPage';
 import ItemAdminWritePage from './Board/Item/ItemAdminWritePage';
+import ItemAdminEditPage from './Board/Item/ItemAdminEditPage';
 
 export default function AppRoutes() {
   return (
@@ -60,12 +60,11 @@ export default function AppRoutes() {
       <Route path="/book/write" element={<BookWritePage />} />
       <Route path="/item" element={<ItemPage />} />
       <Route path="/item/view/:id" element={<ItemDetailPage />} />
-      <Route path="/item/edit/:id" element={<ItemEditPage />} />
       <Route path="/item/write" element={<ItemWritePage />} />
       <Route path="/admin/item" element={<ItemAdminPage />} />
       {/*
-      <Route path="/admin/item/view:id" element={<ItemDetailAdminPage />} />
-      <Route path="/admin/item/edit:id" element={<ItemEditAdminPage />} />*/}
+      <Route path="/admin/item/view/:id" element={<ItemDetailAdminPage />} />*/}
+      <Route path="/admin/item/edit/:id" element={<ItemAdminEditPage />} />
       <Route path="/admin/item/write" element={<ItemAdminWritePage />} />
       <Route path="/havruta" element={<HavrutaPage />} />
       <Route path="/havruta/view/:id" element={<HavrutaDetailPage />} />

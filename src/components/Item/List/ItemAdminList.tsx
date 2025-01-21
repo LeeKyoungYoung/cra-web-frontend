@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Item } from '~/models/Item';
 import { getItems } from '~/api/item';
 import { ITEMCATEGORY } from '~/constants/itemCategory';
+import ItemAdminDelete from '../Delete/ItemAdminDelete';
 
 const Container = styled.div`
   padding: 10rem;
@@ -54,7 +55,7 @@ const CreateItemLink = styled(Link)`
 
 function ItemAdminList() {
   const itemQuery = useQuery<Item[]>({
-    queryKey: QUERY_KEY.project.projects(),
+    queryKey: QUERY_KEY.item.items(ITEMCATEGORY.ITEM),
     queryFn: async () => getItems(ITEMCATEGORY.ITEM),
   });
 
@@ -75,6 +76,7 @@ function ItemAdminList() {
               <Th>id</Th>
               <Th>제품명</Th>
               <Th>설명</Th>
+              <Th>대여 가능 여부</Th>
             </tr>
           </thead>
           <tbody>
@@ -84,14 +86,22 @@ function ItemAdminList() {
                 <Td>{itemElement.name}</Td>
                 <Td>{itemElement.description}</Td>
                 <Td>
+                  {itemElement.isBorrowed ? (
+                    <span>대여 불가능</span>
+                  ) : (
+                    <span>대여 가능</span>
+                  )}
+                </Td>
+
+                <Td>
                   <ActionLink to={`./view/${itemElement.id}`}>
                     자세히 보기
                   </ActionLink>
                   |<ActionLink to={`./edit/${itemElement.id}`}>수정</ActionLink>
                   |{' '}
-                  {/* <DeleteButtonWrapper>
-                    <ProjectDelete id={itemElement.id!} />
-                  </DeleteButtonWrapper> */}
+                  <DeleteButtonWrapper>
+                    <ItemAdminDelete id={itemElement.id!} />
+                  </DeleteButtonWrapper>
                 </Td>
               </tr>
             ))}

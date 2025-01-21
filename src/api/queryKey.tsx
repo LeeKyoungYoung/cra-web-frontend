@@ -14,7 +14,7 @@ export const QUERY_KEY = {
   },
 
   item: {
-    items: (category: number) => ['item.items', category] as const,
+    items: (itemCategory: number) => ['item.items', itemCategory] as const,
     itemById: (id: number) => ['item.itemById', id] as const,
   },
 };
