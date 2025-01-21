@@ -3,7 +3,7 @@ import styles from '../../Project/Item/ProjectItem.module.css';
 import { useState } from 'react';
 import ProjectModal from '~/components/Modal/Project/ProjectModal';
 
-export default function ItemItem({ item }: { item: Item }) {
+export default function BookItem({ item }: { item: Item }) {
   const [modalIsOpen, setModalOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Item } from '~/models/Item';
 import { getItems } from '~/api/item';
 import { ITEMCATEGORY } from '~/constants/itemCategory';
-import ItemAdminDelete from '../Delete/ItemAdminDelete';
+import ItemAdminDelete from '../Delete/BookAdminDelete';
 
 const Container = styled.div`
   padding: 10rem;
@@ -53,10 +53,10 @@ const CreateItemLink = styled(Link)`
   }
 `;
 
-function ItemAdminList() {
+function BookAdminList() {
   const itemQuery = useQuery<Item[]>({
-    queryKey: QUERY_KEY.item.items(ITEMCATEGORY.ITEM),
-    queryFn: async () => getItems(ITEMCATEGORY.ITEM),
+    queryKey: QUERY_KEY.item.items(ITEMCATEGORY.BOOK),
+    queryFn: async () => getItems(ITEMCATEGORY.BOOK),
   });
 
   let content;
@@ -113,11 +113,11 @@ function ItemAdminList() {
 
   return (
     <Container>
-      <h1>관리자 비품 페이지</h1>
+      <h1>관리자 도서 페이지</h1>
       {content}
-      <CreateItemLink to="./write">새 비품 추가</CreateItemLink>
+      <CreateItemLink to="./write">새 도서 추가</CreateItemLink>
     </Container>
   );
 }
 
-export default ItemAdminList;
+export default BookAdminList;

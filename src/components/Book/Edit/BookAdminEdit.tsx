@@ -6,7 +6,7 @@ import styles from '../../Project/Project.module.css';
 import { Item } from '~/models/Item';
 import { getItemById, updateItem } from '~/api/item';
 
-function ItemAdminEdit() {
+function BookAdminEdit() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -58,11 +58,6 @@ function ItemAdminEdit() {
         ...formData,
         [name]: e.target.checked, // checked 값 (boolean)을 사용
       });
-    } else if (name === 'members' || name === 'imageUrls') {
-      setFormData({
-        ...formData,
-        [name]: value.split(','),
-      });
     } else {
       setFormData({
         ...formData,
@@ -85,14 +80,14 @@ function ItemAdminEdit() {
     return (
       <div className={styles['container']}>
         <form onSubmit={HandleSubmit}>
-          <h1>비품 게시글 수정</h1>
-          <label htmlFor="Name">제품명</label>
+          <h1>도서 게시글 수정</h1>
+          <label htmlFor="Name">도서명</label>
           <br />
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="제품명 입력"
+            placeholder="도서명 입력"
             value={formData.name}
             onChange={handleChange}
             required
@@ -134,7 +129,7 @@ function ItemAdminEdit() {
           />
           <br />
 
-          <input type="submit" value="프로젝트 수정" />
+          <input type="submit" value="도서 수정" />
         </form>
       </div>
     );
@@ -143,4 +138,4 @@ function ItemAdminEdit() {
   return <div>{content}</div>;
 }
 
-export default ItemAdminEdit;
+export default BookAdminEdit;

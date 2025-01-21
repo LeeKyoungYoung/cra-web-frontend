@@ -2,12 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import { getItems } from '~/api/item';
 import { QUERY_KEY } from '~/api/queryKey';
 import { Item } from '~/models/Item';
-import ItemItem from '../Item/ItemItem';
+import ItemItem from '../Item/BookItem';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../../Project/List/ProjectList.module.css';
 
-export default function ItemList({ itemCategory }: { itemCategory: number }) {
+export default function BookList({ itemCategory }: { itemCategory: number }) {
   const ItemQuery = useQuery<Item[]>({
     queryKey: QUERY_KEY.item.items(itemCategory),
     queryFn: async () => getItems(itemCategory),
@@ -36,7 +36,7 @@ export default function ItemList({ itemCategory }: { itemCategory: number }) {
   return (
     <>
       <div className={styles['content']}>{content}</div>
-      <Link to={'../admin/item'}>어드민</Link>
+      <Link to={'../admin/book'}>어드민</Link>
     </>
   );
 }

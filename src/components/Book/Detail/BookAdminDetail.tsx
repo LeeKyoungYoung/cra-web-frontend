@@ -18,7 +18,7 @@ const Bold = styled.b`
   padding-right: 0.25rem;
 `;
 
-function ItemAdminDetail() {
+function BookAdminDetail() {
   const { id } = useParams<{ id: string }>();
   const ItemId = Number(id);
 
@@ -37,18 +37,18 @@ function ItemAdminDetail() {
     const item = itemQuery.data;
     return (
       <Container>
-        <h1>비품 자세히 보기</h1>
+        <h1>도서 자세히 보기</h1>
         <Content>
           <Bold>ID:</Bold> {item.id}
         </Content>
         <Content>
-          <Bold>이름:</Bold> {item.name}
+          <Bold>도서명:</Bold> {item.name}
         </Content>
         <Content>
           <Bold>설명:</Bold> {item.description}
         </Content>
         <Content>
-          <Bold>이미지 URLs:</Bold> {item.imageUrl}
+          <Bold>이미지 URL:</Bold> {item.imageUrl}
         </Content>
         <Content>
           <Bold>대여 가능 여부:</Bold>{' '}
@@ -61,4 +61,4 @@ function ItemAdminDetail() {
   return <div>{content}</div>;
 }
 
-export default ItemAdminDetail;
+export default BookAdminDetail;

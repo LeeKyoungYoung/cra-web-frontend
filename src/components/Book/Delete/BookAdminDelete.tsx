@@ -17,7 +17,7 @@ const DeleteButton = styled.button`
   }
 `;
 
-function ItemAdminDelete({ id }: { id: number }) {
+function BookAdminDelete({ id }: { id: number }) {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
@@ -43,8 +43,8 @@ function ItemAdminDelete({ id }: { id: number }) {
       console.log('Updated Cached Data:', updatedData);
     },
     onError: (error) => {
-      console.error('비품 삭제 실패', error);
-      alert('비품 삭제 실패');
+      console.error('도서 삭제 실패', error);
+      alert('도서 삭제 실패');
     },
   });
 
@@ -55,4 +55,4 @@ function ItemAdminDelete({ id }: { id: number }) {
   return <DeleteButton onClick={handleDelete}>삭제</DeleteButton>;
 }
 
-export default ItemAdminDelete;
+export default BookAdminDelete;

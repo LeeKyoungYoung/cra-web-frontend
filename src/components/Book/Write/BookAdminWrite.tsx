@@ -5,30 +5,30 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../../Project/Project.module.css';
 import { createItems } from '~/api/item';
 
-function ItemAdminWrite() {
+function BookAdminWrite() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    itemCategory: 0,
+    itemCategory: 1,
     imageUrl: '',
   });
 
   const mutation = useMutation({
     mutationFn: (newItem: Item) => createItems(newItem),
     onSuccess: async () => {
-      await alert('비품 추가 성공');
+      await alert('도서 추가 성공');
       navigate(-1);
       setFormData({
         name: '',
         description: '',
-        itemCategory: 0,
+        itemCategory: 1,
         imageUrl: '',
       });
     },
     onError: (error) => {
-      console.error('비품 추가 실패:', error);
-      alert('비품 추가 실패');
+      console.error('도서 추가 실패:', error);
+      alert('도서 추가 실패');
     },
   });
 
@@ -50,15 +50,15 @@ function ItemAdminWrite() {
   return (
     <div className={styles['container']}>
       <form onSubmit={HandleSubmit}>
-        <h2>비품 관리</h2>
+        <h2>도서 관리</h2>
 
-        <label htmlFor="Name">제품명</label>
+        <label htmlFor="Name">도서명</label>
         <br />
         <input
           type="text"
           id="name"
           name="name"
-          placeholder="제품명 입력"
+          placeholder="도서명 입력"
           value={formData.name}
           onChange={handleChange}
           required
@@ -88,10 +88,10 @@ function ItemAdminWrite() {
           required
         />
         <br />
-        <input type="submit" value="비품 추가" />
+        <input type="submit" value="도서 추가" />
       </form>
     </div>
   );
 }
 
-export default ItemAdminWrite;
+export default BookAdminWrite;

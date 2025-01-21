@@ -15,12 +15,7 @@ import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
 import AcademicEditPage from './Board/Academic/AcademicEditPage';
 import AcademicWritePage from './Board/Academic/AcademicWritePage';
 import BookPage from './Board/Book/BookPage';
-import BookDetailPage from './Board/Book/BookDetailPage';
-import BookWritePage from './Board/Book/BookWritePage';
-import BookEditPage from './Board/Book/BookEditPage';
 import ItemPage from './Board/Item/ItemPage';
-import ItemDetailPage from './Board/Item/ItemDetailPage';
-import ItemWritePage from './Board/Item/ItemAdminWritePage';
 import HavrutaPage from './Board/Havruta/HavrutaPage';
 import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
 import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
@@ -40,6 +35,10 @@ import ItemAdminPage from './Board/Item/ItemAdminPage';
 import ItemAdminWritePage from './Board/Item/ItemAdminWritePage';
 import ItemAdminEditPage from './Board/Item/ItemAdminEditPage';
 import ItemAdminDetailPage from './Board/Item/ItemAdminDetailPage';
+import BookAdminPage from './Board/Book/BookAdminPage';
+import BookAdminDetailPage from './Board/Book/BookAdminDetailPage';
+import BookAdminEditPage from './Board/Book/BookAdminEditPage';
+import BookAdminWritePage from './Board/Book/BookAdminWritePage';
 
 export default function AppRoutes() {
   return (
@@ -56,12 +55,11 @@ export default function AppRoutes() {
       <Route path="/academic/edit/:id" element={<AcademicEditPage />} />
       <Route path="/academic/write" element={<AcademicWritePage />} />
       <Route path="/book" element={<BookPage />} />
-      <Route path="/book/view/:id" element={<BookDetailPage />} />
-      <Route path="/book/edit/:id" element={<BookEditPage />} />
-      <Route path="/book/write" element={<BookWritePage />} />
+      <Route path="/admin/book" element={<BookAdminPage />} />
+      <Route path="/admin/book/view/:id" element={<BookAdminDetailPage />} />
+      <Route path="/admin/book/edit/:id" element={<BookAdminEditPage />} />
+      <Route path="/admin/book/write" element={<BookAdminWritePage />} />
       <Route path="/item" element={<ItemPage />} />
-      <Route path="/item/view/:id" element={<ItemDetailPage />} />
-      <Route path="/item/write" element={<ItemWritePage />} />
       <Route path="/admin/item" element={<ItemAdminPage />} />
       <Route path="/admin/item/view/:id" element={<ItemAdminDetailPage />} />
       <Route path="/admin/item/edit/:id" element={<ItemAdminEditPage />} />
