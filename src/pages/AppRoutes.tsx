@@ -15,7 +15,13 @@ import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
 import AcademicEditPage from './Board/Academic/AcademicEditPage';
 import AcademicWritePage from './Board/Academic/AcademicWritePage';
 import BookPage from './Board/Book/BookPage';
-import ItemPage from './Board/Item/ItemPage';
+import BookDetailPage from './Board/Book/BookDetailPage';
+import BookWritePage from './Board/Book/BookWritePage';
+import BookEditPage from './Board/Book/BookEditPage';
+import EquipmentPage from './Board/Equipment/EquipmentPage';
+import EquipmentDetailPage from './Board/Equipment/EquipmentDetailPage';
+import EquipmentEditPage from './Board/Equipment/EquipmentEditPage';
+import EquipmentWritePage from './Board/Equipment/EquipmentWritePage';
 import HavrutaPage from './Board/Havruta/HavrutaPage';
 import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
 import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
@@ -39,6 +45,7 @@ import BookAdminPage from './Board/Book/BookAdminPage';
 import BookAdminDetailPage from './Board/Book/BookAdminDetailPage';
 import BookAdminEditPage from './Board/Book/BookAdminEditPage';
 import BookAdminWritePage from './Board/Book/BookAdminWritePage';
+import ItemPage from './Board/Item/ItemPage';
 
 export default function AppRoutes() {
   return (
