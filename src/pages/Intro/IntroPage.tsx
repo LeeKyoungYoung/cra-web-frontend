@@ -1,8 +1,14 @@
 import { Link } from 'react-router-dom';
 import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
-import Vector from '~/assets/images/Arrow-Vector.png';
 import styles from './IntroPage.module.css';
 import EmblaCarousel from '~/components/Carousel/EmblaCarousel';
+
+import Vector from '~/assets/images/Arrow-Vector.png';
+import Crang1 from '~/assets/images/pixelcrang/pixelcrang1.svg';
+import Crang2 from '~/assets/images/pixelcrang/pixelcrang2.svg';
+import Crang3 from '~/assets/images/pixelcrang/pixelcrang3.svg';
+import Crang4 from '~/assets/images/pixelcrang/pixelcrang4.svg';
+import blurround from '~/assets/images/black-blur-round.svg';
 
 export default function IntroPage() {
   return (
@@ -10,14 +16,18 @@ export default function IntroPage() {
       <div className={styles['main']}>
         <HeaderIntro />
         <div className={styles['section']}>
+          <div className={styles['comment']}>
+            <div>CRA와 함께 성장할 동아리원을 모집합니다</div>
+          </div>
           <div className={styles['banner']}>
-            <div>LIVE YOUR</div>
-            <div>PASSION</div>
-            <div>CODE YOUR</div>
-            <div>DREAMS</div>
+            <div>Why not change the</div>
+            <div className={styles['helloworld']}>hello world!</div>
           </div>
 
-          <img className={styles['character']} />
+          <img className={styles['character1']} src={Crang1} />
+          <img className={styles['character2']} src={Crang2} />
+          <img className={styles['character3']} src={Crang3} />
+          <img className={styles['character4']} src={Crang4} />
 
           <Link to="/recruit" className={styles['recruit-btn']}>
             <p>2025-1 CRA RECRUITMENT</p>
@@ -30,9 +40,17 @@ export default function IntroPage() {
         </div>
       </div>
 
+      <div className={styles['section2']}>
+        <div className={styles['comment2']}>
+          <div>세대를 아우르는 열정과 끈끈한 유대감의 동아리,</div>
+          <div>CRA를 소개합니다.</div>
+        </div>
+        <img className={styles['blur-round']} src={blurround} />
+      </div>
+
       <div className={styles['cra']}>
         <div className={styles['title']}>
-          <span>C</span>
+          <span id={styles['cap-letter']}>C</span>
           <p>omputer</p>
           <span id={styles['cap-letter']}>R</span>
           <p>esearch</p>
