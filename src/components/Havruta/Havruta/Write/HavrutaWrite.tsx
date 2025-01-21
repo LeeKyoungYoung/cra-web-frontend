@@ -39,15 +39,12 @@ function HavrutaWrite() {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: ['members', 'imageUrls'].includes(name)
-        ? value.split(',')
-        : value,
+      [name]: value,
     });
   };
 
   const HandleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Sending Data:', formData);
     mutation.mutate(formData);
   };
 
