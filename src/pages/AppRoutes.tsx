@@ -39,6 +39,7 @@ import NotFoundPage from './Error/NotFoundPage';
 import ItemAdminPage from './Board/Item/ItemAdminPage';
 import ItemAdminWritePage from './Board/Item/ItemAdminWritePage';
 import ItemAdminEditPage from './Board/Item/ItemAdminEditPage';
+import ItemAdminDetailPage from './Board/Item/ItemAdminDetailPage';
 
 export default function AppRoutes() {
   return (
@@ -62,8 +63,7 @@ export default function AppRoutes() {
       <Route path="/item/view/:id" element={<ItemDetailPage />} />
       <Route path="/item/write" element={<ItemWritePage />} />
       <Route path="/admin/item" element={<ItemAdminPage />} />
-      {/*
-      <Route path="/admin/item/view/:id" element={<ItemDetailAdminPage />} />*/}
+      <Route path="/admin/item/view/:id" element={<ItemAdminDetailPage />} />
       <Route path="/admin/item/edit/:id" element={<ItemAdminEditPage />} />
       <Route path="/admin/item/write" element={<ItemAdminWritePage />} />
       <Route path="/havruta" element={<HavrutaPage />} />

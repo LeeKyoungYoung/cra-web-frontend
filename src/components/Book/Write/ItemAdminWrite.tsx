@@ -85,6 +85,7 @@ function ItemAdminWrite() {
           placeholder="이미지 주소"
           value={formData.imageUrl}
           onChange={handleChange}
+          required
         />
         <br />
         <input type="submit" value="비품 추가" />
