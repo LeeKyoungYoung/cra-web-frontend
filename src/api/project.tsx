@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Project } from '~/models/Project';
 import { client } from './client';
+import { authClient } from './auth/authClient';
 
 export const getProjects = async () => {
   try {
@@ -36,7 +37,8 @@ export const getProjectById = async (id: number) => {
 
 export const createProjects = async (project: Project) => {
   try {
-    const response = await client.post<Project>('/admin/project', project, {
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.post<Project>('/admin/project', project, {
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -58,7 +60,8 @@ export const createProjects = async (project: Project) => {
 
 export const updateProject = async (project: Project) => {
   try {
-    const response = await client.put<Project>(
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.put<Project>(
       `/admin/project/${project.id}`,
       project,
       {
@@ -79,7 +82,8 @@ export const updateProject = async (project: Project) => {
 
 export const deleteProject = async (id: number) => {
   try {
-    const response = await client.delete(`/admin/project/${id}`);
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.delete(`/admin/project/${id}`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {

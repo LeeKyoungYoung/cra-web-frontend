@@ -11,9 +11,9 @@ client.defaults.baseURL = import.meta.env.VITE_API_BASE_URL as string;
 //효과 : 코드의 가독성 향상, 유지보수 간편
 
 // Auth 관련 api 가져오기
-const authClient = axios.create();
-authClient.defaults.baseURL = import.meta.env.VITE_API_BASE_URL as string;
-authClient.defaults.headers.common['Content-Type'] =
+const AuthClient = axios.create();
+AuthClient.defaults.baseURL = import.meta.env.VITE_API_BASE_URL as string;
+AuthClient.defaults.headers.common['Content-Type'] =
   'application/json; charset=UTF-8';
 
-export { client, authClient };
+export { client, AuthClient };
