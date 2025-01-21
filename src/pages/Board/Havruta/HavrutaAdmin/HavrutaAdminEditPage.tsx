@@ -1,7 +1,12 @@
 import React from 'react';
+import HavrutaEdit from '~/components/Havruta/Havruta/Edit/HavrutaEdit';
 
 function HavrutaAdminEditPage() {
-  return <div></div>;
+  return (
+    <div>
+      <HavrutaEdit />
+    </div>
+  );
 }
 
 export default HavrutaAdminEditPage;

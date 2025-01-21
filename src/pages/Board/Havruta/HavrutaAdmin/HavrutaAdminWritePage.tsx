@@ -1,5 +1,5 @@
 import React from 'react';
-import HavrutaAdminWrite from '~/components/Havruta/Write/HavrutaAdminWrite';
+import HavrutaAdminWrite from '~/components/Havruta/Havruta/Write/HavrutaWrite';
 
 function ProjectAdminWritePage() {
   return (
