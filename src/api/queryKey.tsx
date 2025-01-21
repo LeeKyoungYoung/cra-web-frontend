@@ -12,4 +12,9 @@ export const QUERY_KEY = {
     projects: () => ['project.projects'] as const,
     projectById: (id: number) => ['project.projectById', id] as const,
   },
+  havruta: {
+    havrutas: () => ['havruta.havrutas'] as const,
+    havrutaById: (id: number) => ['havruta.havrutaById', id] as const,
+    havrutaViewById: (id: number) => ['havruta.havrutaViewById', id] as const,
+  },
 };
