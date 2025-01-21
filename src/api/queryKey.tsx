@@ -15,6 +15,10 @@ export const QUERY_KEY = {
   havruta: {
     havrutas: () => ['havruta.havrutas'] as const,
     havrutaById: (id: number) => ['havruta.havrutaById', id] as const,
-    havrutaViewById: (id: number) => ['havruta.havrutaViewById', id] as const,
+  },
+  havrutaBoard: {
+    havrutaBoards: () => ['havrutaBoard.havrutaBoards'] as const,
+    havrutaBoardById: (id: number) =>
+      ['havrutaBoard.havrutaBoardById', id] as const,
   },
 };
