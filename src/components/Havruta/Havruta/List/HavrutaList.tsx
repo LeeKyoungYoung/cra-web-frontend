@@ -73,6 +73,7 @@ function HavrutaList() {
         <Table>
           <thead>
             <tr>
+              <Th>ID</Th>
               <Th>과목명</Th>
               <Th>교수명</Th>
             </tr>
@@ -80,6 +81,7 @@ function HavrutaList() {
           <tbody>
             {havrutaQuery.data.map((havrutaElement) => (
               <tr key={havrutaElement.id}>
+                <Td>{havrutaElement.id}</Td>
                 <Td>{havrutaElement.className}</Td>
                 <Td>{havrutaElement.professor}</Td>
                 <Td>
