@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import styles from './HavrutaBoardWrite.module.css';
 import { createHavrutaBoard } from '~/api/havruta/havrutaBoard';
-import { HavrutaBoard } from '~/models/Havruta';
+import { Havruta, HavrutaBoard } from '~/models/Havruta';
 import { CATEGORY } from '~/constants/category';
+import { QUERY_KEY } from '~/api/queryKey';
+import { getHavrutas } from '~/api/havruta/havruta';
+import styles from './HavrutaBoardWrite.module.css';
 
 export default function HavrutaBoardWrite() {
   const havrutaCategory = CATEGORY.HAVRUTA;
@@ -16,6 +18,11 @@ export default function HavrutaBoardWrite() {
     category: havrutaCategory,
     imageUrls: [],
     havrutaId: '',
+  });
+
+  const havrutaQuery = useQuery<Havruta[]>({
+    queryKey: QUERY_KEY.havruta.havrutas(),
+    queryFn: async () => getHavrutas(),
   });
 
   const mutation = useMutation({
@@ -41,7 +48,9 @@ export default function HavrutaBoardWrite() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData({
@@ -98,15 +107,28 @@ export default function HavrutaBoardWrite() {
         />
         <br />
         <label htmlFor="havrutaId">과목명</label>
-        {/* 토글 방식 고려해볼만 하다. */}
-        <input
-          type="text"
-          id="havrutaId"
-          name="havrutaId"
-          placeholder="과목명"
-          value={formData.havrutaId}
-          onChange={handleChange}
-        />
+        {havrutaQuery.isLoading ? (
+          <p>과목 목록을 불러오는 중입니다...</p>
+        ) : havrutaQuery.isError ? (
+          <p>과목 목록을 불러오는데 실패했습니다.</p>
+        ) : (
+          <select
+            id="havrutaId"
+            name="havrutaId"
+            value={formData.havrutaId}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled selected>
+              하브루타 과목을 선택하세요
+            </option>
+            {havrutaQuery.data?.map((havruta) => (
+              <option key={havruta.id} value={havruta.id}>
+                {havruta.className} ({havruta.professor})
+              </option>
+            ))}
+          </select>
+        )}
         <br />
         <input
           className={styles['submit-button']}

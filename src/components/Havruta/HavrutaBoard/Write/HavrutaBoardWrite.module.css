@@ -30,7 +30,7 @@
 .write-form input[type='text'],
 .write-form input[type='number'],
 .write-form textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Pretendard SemiBold';
   margin: 0px;
   padding: 20px;
   font-size: 18px;
@@ -70,7 +70,7 @@
 .submit-button {
   margin: 0 auto;
   margin-top: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Pretendard SemiBold';
   font-weight: 600;
   font-size: 24px;
   height: 68px;
@@ -83,4 +83,33 @@
 
 .submit-button:hover {
   background-color: #2295ba;
+}
+
+.write-form select {
+  font-family: 'Pretendard SemiBold';
+  margin: 0px;
+  padding: 20px;
+  font-size: 18px;
+  border-color: #c1c1c1;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #3e3e3e;
+  background-color: white;
+  appearance: none; /* 오른쪽 끝에 거슬리는 화살표 제거 */
+  cursor: pointer;
+}
+
+.write-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.write-form select option {
+  font-size: 18px;
+  color: #3e3e3e;
+}
+
+.write-form select:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
 }
