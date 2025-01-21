@@ -1,9 +1,8 @@
 const CATEGORY = {
   NOTICE: 0,
   ACADEMIC: 1,
-  HAVRUTA: 2,
-  BOOK: 3,
-  EQUIPMENT: 4,
+  BOOK: 2,
+  EQUIPMENT: 3,
 };
 
 export { CATEGORY };
