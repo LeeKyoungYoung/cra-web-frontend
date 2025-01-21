@@ -97,17 +97,6 @@ export default function HavrutaBoardWrite() {
           onChange={handleChange}
         />
         <br />
-        {/* <label htmlFor="imageUrls">이미지 주소</label>
-        <input
-          type="text"
-          id="imageUrls"
-          name="imageUrls"
-          placeholder="이미지 주소 (추후 삭제 예정 항목)"
-          value={formData.imageUrls.join(',')}
-          onChange={handleChange}
-        /> */}
-        <br />
-        <br />
         <label htmlFor="havrutaId">과목명</label>
         {/* 토글 방식 고려해볼만 하다. */}
         <input
