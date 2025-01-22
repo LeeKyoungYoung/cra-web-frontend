@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import WhiteVector from '~/assets/images/Vector-white.png';
-import SkyBlueVector from '~/assets/images/Vector-skyblue.png';
+import WhiteVector from '~/assets/images/Vector/Vector-white.png';
+import SkyBlueVector from '~/assets/images/Vector/Vector-skyblue.png';
 import styled from 'styled-components';
 import HttpStatus from '~/components/HttpStatus/HttpStatus';
 

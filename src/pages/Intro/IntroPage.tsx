@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
-import Vector from '~/assets/images/Arrow-Vector.png';
+import Vector from '~/assets/images/Vector/Arrow-Vector.png';
 import styles from './IntroPage.module.css';
 import EmblaCarousel from '~/components/Carousel/EmblaCarousel';
 

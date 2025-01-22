@@ -1,0 +1,86 @@
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 115px;
+  padding-bottom: 180px;
+  width: 100%;
+  max-width: 1086px;
+  margin: 0 auto;
+}
+
+.edit-title {
+  margin-left: 10px;
+  padding-bottom: 60px;
+  font-size: 40px;
+  color: var(--color-bright-text);
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form label {
+  margin: 0 0 16px 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #3e3e3e;
+}
+.edit-form input[type='text'],
+.edit-form input[type='number'],
+.edit-form textarea {
+  margin: 0px;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+  font-family: 'Pretendard SemiBold';
+  color: #3e3e3e;
+  background-color: white;
+}
+
+.edit-form input[type='text']::placeholder,
+.edit-form textarea::placeholder {
+  color: #c1c1c1;
+}
+
+.input-title {
+  height: 68px;
+}
+
+.input-content {
+  aspect-ratio: 1 / 1;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.edit-form input[readonly] {
+  cursor: not-allowed;
+}
+
+.edit-form input[type='content'] {
+  height: 200%;
+}
+
+.submit-button {
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  height: 68px;
+  width: 46%;
+  background-color: #2cb4db;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.submit-button:hover {
+  background-color: #2295ba;
+}
