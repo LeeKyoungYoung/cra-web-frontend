@@ -1,0 +1,116 @@
+.write-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 115px;
+  padding-bottom: 180px;
+  width: 100%;
+  max-width: 1086px;
+  margin: 0 auto;
+}
+
+.write-title {
+  margin-left: 10px;
+  padding-bottom: 60px;
+  font-size: 40px;
+  color: var(--color-bright-text);
+}
+
+.write-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.write-form label {
+  margin: 0 0 16px 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #3e3e3e;
+}
+.write-form input[type='text'],
+.write-form input[type='number'],
+.write-form textarea {
+  font-family: 'Pretendard SemiBold';
+  margin: 0px;
+  padding: 20px;
+  font-size: 18px;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #3e3e3e;
+  background-color: white;
+}
+
+.write-form input[type='text']::placeholder,
+.write-form textarea::placeholder {
+  color: #c1c1c1;
+}
+
+.input-title {
+  height: 68px;
+}
+
+.input-content {
+  aspect-ratio: 1 / 1;
+}
+
+.write-form input:focus,
+.write-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.write-form input[readonly] {
+  cursor: not-allowed;
+}
+
+.write-form input[type='content'] {
+  height: 200%;
+}
+
+.submit-button {
+  margin: 0 auto;
+  margin-top: 40px;
+  font-family: 'Pretendard SemiBold';
+  font-weight: 600;
+  font-size: 24px;
+  height: 68px;
+  width: 46%;
+  background-color: #2cb4db;
+  color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.submit-button:hover {
+  background-color: #2295ba;
+}
+
+.write-form select {
+  font-family: 'Pretendard SemiBold';
+  margin: 0px;
+  padding: 20px;
+  font-size: 18px;
+  border-color: #c1c1c1;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #3e3e3e;
+  background-color: white;
+  appearance: none; /* 오른쪽 끝에 거슬리는 화살표 제거 */
+  cursor: pointer;
+}
+
+.write-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.write-form select option {
+  font-size: 18px;
+  color: #3e3e3e;
+}
+
+.write-form select:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}

@@ -12,6 +12,11 @@
   "dependencies": {
     "@tanstack/react-query": "^5.62.10",
     "@tanstack/react-query-devtools": "^5.62.10",
+    "@toast-ui/editor": "^3.2.2",
+    "@toast-ui/editor-plugin-code-syntax-highlight": "^3.1.0",
+    "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
+    "@toast-ui/react-editor": "^3.2.3",
+    "@types/prismjs": "^1.26.5",
     "axios": "^1.7.9",
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
@@ -21,6 +26,7 @@
     "jwt-decode": "^4.0.0",
     "modal": "^0.2.0",
     "prettier": "^3.4.2",
+    "prismjs": "^1.29.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-modal": "^3.16.3",
@@ -49,5 +55,10 @@
     "typescript-eslint": "^8.15.0",
     "vite": "^6.0.1",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "overrides": {
+    "@toast-ui/react-editor": {
+      "react": "^18.3.1"
+    }
   }
 }

@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
-import { CATEGORY_STRINGS } from '../../../constants/category_strings';
+import React, { useState, useRef } from 'react';
+import { CATEGORY_STRINGS } from '~/constants/category_strings';
 import { useMutation } from '@tanstack/react-query';
-import { createBoards } from '../../../api/board';
-import { Board } from '../../../models/Board';
+import { createBoards } from '~/api/board';
+import { Board } from '~/models/Board';
 import { useNavigate } from 'react-router-dom';
 import styles from './BoardWrite.module.css';
+import '~/styles/toast-ui';
+import { Editor } from '@toast-ui/react-editor';
+import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
+import { blob } from 'stream/consumers';
 
 // 사용자가 게시글을 작성하여 서버에 업로드할 수 있는 기능
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
 export default function BoardWrite({ category }: { category: number }) {
   const navigate = useNavigate();
+  const editorRef = useRef<any>(); // Editor 인스턴스를 참조하기 위한 ref
   // 현재 상태 값 formData, 상태를 업데이트하는 함수: setFormData
   const [formData, setFormData] = useState({
     userId: 1, // Default로 userId를 일단 52로 설정
@@ -67,10 +72,19 @@ export default function BoardWrite({ category }: { category: number }) {
   const HandleSubmit = (e: React.FormEvent) => {
     // 디폴트 동작(페이지 새로고침)을 막음
     e.preventDefault();
+    const editorInstance = editorRef.current.getInstance();
+    setFormData({
+      ...formData,
+      content: editorInstance.getMarkdown(), // 편집된 내용을 저장
+    });
     // react-query의 mutate 메서드를 통해 서버에 데이터를 전송
-    console.log(formData);
     mutation.mutate(formData);
   };
+
+  // const onUploadImage = async (
+  //   blob: File,
+  //   callback: (imageUrl: string, fileName: string) => void,
+  // ) => {};
 
   return (
     <div className={styles['write-container']}>
@@ -102,13 +116,14 @@ export default function BoardWrite({ category }: { category: number }) {
         />
         <br />
         <label htmlFor="content">내용</label>
-        <textarea
-          className={styles['input-content']}
-          id="content"
-          name="content"
-          placeholder="내용을 입력하세요."
-          value={formData.content}
-          onChange={handleChange}
+        <Editor
+          ref={editorRef} // Editor 인스턴스를 참조
+          initialValue=" "
+          previewStyle="vertical"
+          height="600px"
+          initialEditType="wysiwyg"
+          useCommandShortcut={true}
+          plugins={[[codeSyntaxHighlight, { highlighter: Prism }], colorSyntax]}
         />
         <br />
         <label htmlFor="imageUrls">이미지 주소</label>

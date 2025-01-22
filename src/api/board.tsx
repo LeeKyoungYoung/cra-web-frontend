@@ -41,7 +41,7 @@ export const getBoardById = async (id: number) => {
 
     return {
       ...board,
-      createdAt: new Date(board.createdAt), // createAt을 Date 객체로 변환
+      createdAt: board.createdAt ? new Date(board.createdAt) : new Date(), // createAt을 Date 객체로 변환
     };
   } catch (error) {
     console.log(error);
