@@ -12,6 +12,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.62.10",
     "@tanstack/react-query-devtools": "^5.62.10",
+    "aws-sdk": "^2.1692.0",
     "axios": "^1.7.9",
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",

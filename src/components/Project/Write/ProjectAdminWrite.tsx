@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { createProjects } from '~/api/project';
+import { createProjects, uploadImage } from '~/api/project';
 import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Project.module.css';
+import { notDeepEqual } from 'assert';
 
 function ProjectAdminWrite() {
   const navigate = useNavigate();
@@ -40,14 +41,24 @@ function ProjectAdminWrite() {
     },
   });
 
-  const handleChange = (
+  const handleChange = async (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: ['members'].includes(name) ? value.split(',') : value,
-    });
+    const { name, value, files } = e.target as HTMLInputElement;
+
+    if (files && files[0]) {
+      const file = files[0];
+      const imageUrl = await uploadImage(file); // 이미지 업로드 함수 호출
+
+      if (imageUrl) {
+        setFormData((formData) => ({ ...formData, imageUrl })); // URL을 formData에 저장
+      }
+    } else {
+      setFormData((formData) => ({
+        ...formData,
+        [name]: name === 'members' ? value.split(',') : value, // 텍스트 데이터 업데이트
+      }));
+    }
   };
 
   const HandleSubmit = (e: React.FormEvent) => {
@@ -55,6 +66,7 @@ function ProjectAdminWrite() {
     console.log('Sending Data:', formData);
     mutation.mutate(formData);
   };
+
   return (
     <div className={styles['container']}>
       <form onSubmit={HandleSubmit}>
@@ -137,13 +149,12 @@ function ProjectAdminWrite() {
           required
         />
         <br />
-        <label htmlFor="imageUrl">이미지 주소</label>
+        <label htmlFor="imageSelect">이미지 선택</label>
         <input
-          type="text"
-          id="imageUrl"
-          name="imageUrl"
-          placeholder="이미지 주소"
-          value={formData.imageUrl}
+          type="file"
+          id="imageSelect"
+          name="imageSelect"
+          accept="image/*"
           onChange={handleChange}
         />
         <br />
