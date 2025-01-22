@@ -141,6 +141,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  user-select: none;
+  img {
+    width: 8px;
+    height: 14px;
+    display: flex;
+    margin-top: 0.85rem;
+  }
 }
 
 .pagenations-dot {
@@ -159,22 +166,20 @@
   border-radius: 50%;
   margin-left: 15px;
   margin-right: 15px;
-  font-size: 23px;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-family: 'Pretendard SemiBold';
   text-align: center;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pagenations-elipse-selected {
-  background-color: var(--color-primary);
-  color: #ffffff;
+  color: var(--color-primary);
 }
 
 .pagenations-elipse-unselected {
-  background: #ffffff;
   color: var(--color-bright-text);
-  border: 1px solid var(--color-bright-stroke);
 }
