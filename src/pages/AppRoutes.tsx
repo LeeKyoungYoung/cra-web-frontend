@@ -22,6 +22,10 @@ import EquipmentPage from './Board/Equipment/EquipmentPage';
 import EquipmentDetailPage from './Board/Equipment/EquipmentDetailPage';
 import EquipmentEditPage from './Board/Equipment/EquipmentEditPage';
 import EquipmentWritePage from './Board/Equipment/EquipmentWritePage';
+import HavrutaPage from './Board/Havruta/HavrutaPage';
+import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
+import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
+import HavrutaWritePage from './Board/Havruta/HavrutaWritePage';
 import NoticePage from './Board/Notice/NoticePage';
 import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
@@ -33,13 +37,6 @@ import ProjectDetailPage from './Board/Project/ProjectAdminDetailPage';
 import ProjectEditPage from './Board/Project/ProjectAdminEditPage';
 import ProjectWritePage from './Board/Project/ProjectAdminWritePage';
 import NotFoundPage from './Error/NotFoundPage';
-import HavrutaBoardPage from './Board/Havruta/HavrutaBoard/HavrutaBoardPage';
-import HavrutaBoardDetailPage from './Board/Havruta/HavrutaBoard/HavrutaBoardDetailPage';
-import HavrutaBoardEditPage from './Board/Havruta/HavrutaBoard/HavrutaBoardEditPage';
-import HavrutaBoardWritePage from './Board/Havruta/HavrutaBoard/HavrutaBoardWritePage';
-import HavrutaAdminPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminPage';
-import HavrutaAdminEditPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminEditPage';
-import HavrutaAdminWritePage from './Board/Havruta/HavrutaAdmin/HavrutaAdminWritePage';
 
 export default function AppRoutes() {
   return (
@@ -63,16 +60,10 @@ export default function AppRoutes() {
       <Route path="/equip/view/:id" element={<EquipmentDetailPage />} />
       <Route path="/equip/edit/:id" element={<EquipmentEditPage />} />
       <Route path="/equip/write" element={<EquipmentWritePage />} />
-      <Route path="/havruta" element={<HavrutaBoardPage />} />
-      <Route path="/havruta/view/:id" element={<HavrutaBoardDetailPage />} />
-      <Route path="/havruta/edit/:id" element={<HavrutaBoardEditPage />} />
-      <Route path="/havruta/write" element={<HavrutaBoardWritePage />} />
-      <Route path="/admin/havruta" element={<HavrutaAdminPage />} />
-      <Route
-        path="/admin/havruta/edit/:id"
-        element={<HavrutaAdminEditPage />}
-      />
-      <Route path="/admin/havruta/write" element={<HavrutaAdminWritePage />} />
+      <Route path="/havruta" element={<HavrutaPage />} />
+      <Route path="/havruta/view/:id" element={<HavrutaDetailPage />} />
+      <Route path="/havruta/edit/:id" element={<HavrutaEditPage />} />
+      <Route path="/havruta/write" element={<HavrutaWritePage />} />
       <Route path="/notice" element={<NoticePage />} />
       <Route path="/notice/view/:id" element={<NoticeDetailPage />} />
       <Route path="/notice/edit/:id" element={<NoticeEditPage />} />

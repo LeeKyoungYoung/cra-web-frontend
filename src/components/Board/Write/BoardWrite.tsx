@@ -21,7 +21,7 @@ export default function BoardWrite({ category }: { category: number }) {
     title: '',
     content: '',
     category: category, // 부모 컴포넌트에서 전달된 category 값을 Default로 설정
-    imageUrls: [''],
+    imageUrls: [],
   });
 
   // react-query에서 제공하는 useMutation을 사용해서 비동기 작업(게시글 생성)을 관리
@@ -40,7 +40,7 @@ export default function BoardWrite({ category }: { category: number }) {
         title: '',
         content: '',
         category: category,
-        imageUrls: [''],
+        imageUrls: [],
       });
     },
     // 실패 시에 호출
@@ -126,7 +126,7 @@ export default function BoardWrite({ category }: { category: number }) {
           plugins={[[codeSyntaxHighlight, { highlighter: Prism }], colorSyntax]}
         />
         <br />
-        <label htmlFor="imageUrls">이미지 주소</label>
+        {/* <label htmlFor="imageUrls">이미지 주소</label>
         <input
           type="text"
           id="imageUrls"
@@ -134,7 +134,7 @@ export default function BoardWrite({ category }: { category: number }) {
           placeholder="이미지 주소 (추후 삭제 예정 항목)"
           value={formData.imageUrls.join(',')}
           onChange={handleChange}
-        />
+        /> */}
         <br />
         <input
           className={styles['submit-button']}

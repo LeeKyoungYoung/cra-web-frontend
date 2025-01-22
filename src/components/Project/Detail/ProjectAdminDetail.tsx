@@ -63,7 +63,7 @@ function ProjectAdminDetail() {
           <Bold>팀원:</Bold> {project.members.join(', ')}
         </Content>
         <Content>
-          <Bold>이미지 URLs:</Bold> {project.imageUrls.join(', ')}
+          <Bold>이미지 URL:</Bold> {project.imageUrl}
         </Content>
       </Container>
     );
