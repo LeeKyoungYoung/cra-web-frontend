@@ -34,10 +34,11 @@
   margin: 0px;
   padding: 20px;
   font-size: 18px;
-  border-color: #c1c1c1;
+  border: 1px solid #c1c1c1;
   border-radius: 10px;
   font-weight: 600;
   color: #3e3e3e;
+  background-color: white;
 }
 
 .write-form input[type='text']::placeholder,
