@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Board } from '../models/Board';
-import client from './client';
+import { client } from './client';
+import { authClient } from './auth/authClient';
 
 // [GET]
 // async를 사용하여 Promise를 반환하는 비동기 함수 (Promise는 비동기 작업의 완료 or 실패를 나타내는 JS 객체)
@@ -58,7 +59,8 @@ export const getBoardById = async (id: number) => {
 export const createBoards = async (board: Board) => {
   try {
     // client에서 URL를 가져와서 /board를 붙여서 데이터를 보냄
-    const response = await client.post<Board>('/board', board, {
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.post<Board>('/board', board, {
       // 서버가 요청 데이터를 JSON 형식으로 인식하도록 명시, 문자 인코딩 방식 지정
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
@@ -81,7 +83,8 @@ export const createBoards = async (board: Board) => {
 // PUT
 export const updateBoards = async (board: Board) => {
   try {
-    const response = await client.put<Board>(`/board/${board.id}`, board, {
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.put<Board>(`/board/${board.id}`, board, {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
@@ -103,7 +106,8 @@ export const updateBoards = async (board: Board) => {
 
 export const deleteBoards = async (id: number) => {
   try {
-    const response = await client.delete(`/board/${id}`);
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.delete(`/board/${id}`);
     return response.data;
   } catch (error) {
     console.error('Failed to delete board:', error);

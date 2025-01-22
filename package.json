@@ -23,6 +23,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "i": "^0.3.7",
+    "jwt-decode": "^4.0.0",
     "modal": "^0.2.0",
     "prettier": "^3.4.2",
     "prismjs": "^1.29.0",
@@ -32,7 +33,7 @@
     "react-router-dom": "^7.1.1",
     "styled-components": "^6.1.13",
     "tsconfig-paths": "^4.2.0",
-    "zustand": "^5.0.2"
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
