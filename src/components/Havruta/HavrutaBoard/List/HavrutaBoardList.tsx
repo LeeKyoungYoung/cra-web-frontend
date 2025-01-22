@@ -7,33 +7,55 @@ import HavrutaBoardItem from '../Item/HavrutaBoardItem';
 import {
   getHavrutaBoards,
   getHavrutaBoardsByHavrutaId,
+  getHavrutaBoardsCount,
+  getHavrutaBoardsCountByHavrutaId,
 } from '~/api/havruta/havrutaBoard';
 import { getHavrutas } from '~/api/havruta/havruta';
 import SelectedDot from '~/assets/images/Dot/Selected-Dot.png';
+import LeftVector from '~/assets/images/Vector/LeftVector.png';
+import RightVector from '~/assets/images/Vector/RightVector.png';
 import styles from './HavrutaBoardList.module.css';
 
 export default function HavrutaBoardList() {
-  // 유저가 사이드바에서 선택한 하브루타 ID의 대한 상태 관리
   const [selectedHavrutaId, setSelectedHavrutaId] = useState<number | null>(
     null,
   );
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 10;
 
-  // 하브루타 게시물 모두 가져오기
-  const havrutaBoardQuery = useQuery<HavrutaBoard[]>({
-    queryKey: QUERY_KEY.havrutaBoard.havrutaBoards(),
-    queryFn: async () => getHavrutaBoards(),
+  // 전체 게시물 개수 쿼리
+  const havrutaBoardCountQuery = useQuery<HavrutaBoard[]>({
+    queryKey: QUERY_KEY.havrutaBoard.havrutaBoardsCount(),
+    queryFn: async () => getHavrutaBoardsCount(),
   });
 
-  // 하브루타 과목 별 게시물 모두 가져오기
+  // 전체 게시물 가져오기 쿼리
+  const havrutaBoardQuery = useQuery<HavrutaBoard[]>({
+    queryKey: QUERY_KEY.havrutaBoard.havrutaBoards(currentPage),
+    queryFn: async () => getHavrutaBoards(currentPage),
+  });
+
+  // 과목별 게시물 개수 쿼리
+  const havrutaBoardCountByHavrutaIdQuery = useQuery<HavrutaBoard[]>({
+    queryKey: QUERY_KEY.havrutaBoard.havrutaBoardsCountByHavrutaId(
+      selectedHavrutaId ?? 0,
+    ),
+    queryFn: async () =>
+      getHavrutaBoardsCountByHavrutaId(selectedHavrutaId ?? 0),
+  });
+
+  // 과목별 게시물 가져오기 쿼리
   const havrutaBoardByHavrutaIdQuery = useQuery<HavrutaBoard[]>({
     queryKey: QUERY_KEY.havrutaBoard.havrutaBoardsByHavrutaId(
       selectedHavrutaId ?? 0,
+      currentPage,
     ),
-    queryFn: async () => getHavrutaBoardsByHavrutaId(selectedHavrutaId ?? 0),
+    queryFn: async () =>
+      getHavrutaBoardsByHavrutaId(selectedHavrutaId ?? 0, currentPage),
     enabled: selectedHavrutaId !== null,
   });
 
-  // 하브루타 과목 가져오기기
+  // 하브루타 과목 쿼리
   const havrutaQuery = useQuery<Havruta[]>({
     queryKey: QUERY_KEY.havruta.havrutas(),
     queryFn: async () => getHavrutas(),
@@ -83,6 +105,22 @@ export default function HavrutaBoardList() {
     }
   }
 
+  // 게시물 수 계산
+  const totalItems =
+    selectedHavrutaId === null
+      ? (havrutaBoardCountQuery.data?.length ?? 0)
+      : (havrutaBoardCountByHavrutaIdQuery.data?.length ?? 0);
+
+  console.log('totalItems:', totalItems);
+
+  const totalPage = Math.ceil(totalItems / itemsPerPage);
+  console.log('totalPage:', totalPage);
+
+  // 페이지 넘기기 핸들러
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   let contentSideBar;
 
   if (havrutaQuery.isLoading) {
@@ -125,56 +163,39 @@ export default function HavrutaBoardList() {
         </ul>
       );
     }
+  }
 
-    return (
-      <div className={styles.container}>
-        <div className={styles.sidebar}>{contentSideBar}</div>
-        <div className={styles.content}>
-          <h2 className={styles.title}>하브루타 게시판</h2>
-          <div className={styles['board-list']}>{content}</div>
-          <div className={styles['board-list-footer']}>
-            <div className={styles['spacer']}></div>
-            <div className={styles['pagenations']}>
+  return (
+    <div className={styles.container}>
+      <div className={styles.sidebar}>{contentSideBar}</div>
+      <div className={styles.content}>
+        <h2 className={styles.title}>하브루타 게시판</h2>
+        <div className={styles['board-list']}>{content}</div>
+        <div className={styles['board-list-footer']}>
+          <div className={styles['spacer']}></div>
+          <div className={styles['pagenations']}>
+            <img src={LeftVector} />
+            {[...Array(totalPage)].map((_, pageIndex) => (
               <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
-              ></div>
-              <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
+                key={pageIndex}
+                className={`${styles['pagenations-elipse']} ${
+                  currentPage === pageIndex
+                    ? styles['pagenations-elipse-selected']
+                    : styles['pagenations-elipse-unselected']
+                }`}
+                onClick={() => handlePageChange(pageIndex)}
               >
-                1
+                {pageIndex + 1}
               </div>
-              <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-selected']}`}
-              >
-                2
-              </div>
-              <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
-              >
-                3
-              </div>
-              <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
-              >
-                4
-              </div>
-              <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
-              >
-                5
-              </div>
-              <div className={styles['pagenations-elipse']}>...</div>
-              <div
-                className={`${styles['pagenations-elipse']} ${styles['pagenations-elipse-unselected']}`}
-              ></div>
-            </div>
-            <Link className={styles['write-link']} to="./write">
-              글쓰기
-            </Link>
-            <Link to={'../admin/havruta'}>어드민</Link>
+            ))}
+            <img src={RightVector} />
           </div>
+          <Link className={styles['write-link']} to="./write">
+            글쓰기
+          </Link>
+          <Link to={'../admin/havruta'}>어드민</Link>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
