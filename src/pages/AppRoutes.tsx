@@ -20,7 +20,7 @@ import BookWritePage from './Board/Book/BookWritePage';
 import BookEditPage from './Board/Book/BookEditPage';
 import EquipmentPage from './Board/Equipment/EquipmentPage';
 import EquipmentDetailPage from './Board/Equipment/EquipmentDetailPage';
-import EquipmentEditPage from './Board/Equipment/EquipmentEditPage';
+import ItemEditPage from './Board/Equipment/EquipmentEditPage';
 import EquipmentWritePage from './Board/Equipment/EquipmentWritePage';
 import HavrutaPage from './Board/Havruta/HavrutaPage';
 import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
