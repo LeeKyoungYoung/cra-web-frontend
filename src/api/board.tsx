@@ -115,3 +115,19 @@ export const deleteBoards = async (id: number) => {
     }
   }
 };
+
+export const onUploadImage = async (blob: File, callback: (url: string) => void) => {
+  const formData = new FormData();
+  formData.append('file', blob);
+
+  try {
+    const response = await axios.post('/api/image/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    const imageUrl = response.data.url; // 서버에서 반환된 S3 URL
+    callback(imageUrl); // Toast UI Editor에 삽입
+  } catch (error) {
+    console.error('이미지 업로드 실패:', error);
+    alert('이미지 업로드 실패');
+  }
+};
