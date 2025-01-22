@@ -3,8 +3,36 @@ import { HavrutaBoard } from '~/models/Havruta';
 import { client } from '~/api/client';
 import { authClient } from '~/api/auth/authClient';
 
+// 페이지네이션 적용된 하브루타 게시물 모두 가져오기
+export const getHavrutaBoards = async (
+  page: number = 1,
+  perPage: number = 10,
+  orderBy: number = 0,
+  isASC: boolean = true,
+) => {
+  try {
+    const response = await client.get<HavrutaBoard[]>(
+      `/board/havruta/page/${page}`,
+      {
+        params: {
+          perPage,
+          orderBy,
+          isASC,
+        },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
 // 하브루타 게시물 모두 가져오기
-export const getHavrutaBoards = async () => {
+export const getHavrutaBoardsCount = async () => {
   try {
     const response = await client.get<HavrutaBoard[]>(`/board/havruta`);
     return response.data;
@@ -18,12 +46,42 @@ export const getHavrutaBoards = async () => {
 };
 
 // 과목별 하브루타 게시물 모두 가져오기
-export const getHavrutaBoardsByHavrutaId = async (id: number) => {
+export const getHavrutaBoardsByHavrutaId = async (
+  havrutaId: number,
+  page: number = 1,
+  perPage: number = 10,
+  orderBy: number = 0,
+  isASC: boolean = true,
+) => {
   try {
-    const response = await client.get<HavrutaBoard[]>(`/board/havruta/${id}`);
+    const response = await client.get<HavrutaBoard[]>(
+      `/board/havruta/${havrutaId}/page/${page}`,
+      {
+        params: {
+          perPage,
+          orderBy,
+          isASC,
+        },
+      },
+    );
     return response.data;
   } catch (error) {
     console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
+export const getHavrutaBoardsCountByHavrutaId = async (havrutaId: number) => {
+  try {
+    const response = await client.get<HavrutaBoard[]>(
+      `/board/havruta/${havrutaId}`,
+    );
+    return response.data;
+  } catch (error) {
     if (axios.isAxiosError(error)) {
       throw new Error(`Error fetching data: ${error.message}`);
     } else {
