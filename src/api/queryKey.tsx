@@ -17,10 +17,18 @@ export const QUERY_KEY = {
     havrutaById: (id: number) => ['havruta.havrutaById', id] as const,
   },
   havrutaBoard: {
-    havrutaBoards: () => ['havrutaBoard.havrutaBoards'] as const,
+    havrutaBoards: (currnetPage: number) =>
+      ['havrutaBoard.havrutaBoards', currnetPage] as const,
+    havrutaBoardsCount: () => ['havrutaBoard.havrutaBoards'] as const,
     havrutaBoardById: (id: number) =>
       ['havrutaBoard.havrutaBoardById', id] as const,
-    havrutaBoardsByHavrutaId: (havrutaId: number) =>
+    havrutaBoardsByHavrutaId: (havrutaId: number, currentPage: number) =>
+      [
+        'havrutaBoard.havrutaBoardsByHavrutaId',
+        havrutaId,
+        currentPage,
+      ] as const,
+    havrutaBoardsCountByHavrutaId: (havrutaId: number) =>
       ['havrutaBoard.havrutaBoardsByHavrutaId', havrutaId] as const,
   },
 };
