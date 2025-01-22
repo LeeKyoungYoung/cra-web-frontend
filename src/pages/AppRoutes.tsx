@@ -16,16 +16,8 @@ import AcademicEditPage from './Board/Academic/AcademicEditPage';
 import AcademicWritePage from './Board/Academic/AcademicWritePage';
 import BookPage from './Board/Book/BookPage';
 import BookDetailPage from './Board/Book/BookDetailPage';
-import BookWritePage from './Board/Book/BookWritePage';
-import BookEditPage from './Board/Book/BookEditPage';
 import ItemPage from './Board/Item/ItemPage';
 import ItemDetailPage from './Board/Item/ItemDetailPage';
-import ItemEditPage from './Board/Item/ItemEditPage';
-import ItemWritePage from './Board/Item/ItemWritePage';
-import HavrutaPage from './Board/Havruta/HavrutaPage';
-import HavrutaDetailPage from './Board/Havruta/HavrutaDetailPage';
-import HavrutaEditPage from './Board/Havruta/HavrutaEditPage';
-import HavrutaWritePage from './Board/Havruta/HavrutaWritePage';
 import NoticePage from './Board/Notice/NoticePage';
 import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
@@ -37,6 +29,18 @@ import ProjectDetailPage from './Board/Project/ProjectAdminDetailPage';
 import ProjectEditPage from './Board/Project/ProjectAdminEditPage';
 import ProjectWritePage from './Board/Project/ProjectAdminWritePage';
 import NotFoundPage from './Error/NotFoundPage';
+
+import ItemAdminPage from './Board/Item/ItemAdminPage';
+import ItemAdminWritePage from './Board/Item/ItemAdminWritePage';
+import ItemAdminEditPage from './Board/Item/ItemAdminEditPage';
+import ItemAdminDetailPage from './Board/Item/ItemAdminDetailPage';
+import HavrutaBoardPage from './Board/Havruta/HavrutaBoard/HavrutaBoardPage';
+import HavrutaBoardDetailPage from './Board/Havruta/HavrutaBoard/HavrutaBoardDetailPage';
+import HavrutaBoardEditPage from './Board/Havruta/HavrutaBoard/HavrutaBoardEditPage';
+import HavrutaBoardWritePage from './Board/Havruta/HavrutaBoard/HavrutaBoardWritePage';
+import HavrutaAdminPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminPage';
+import HavrutaAdminEditPage from './Board/Havruta/HavrutaAdmin/HavrutaAdminEditPage';
+import HavrutaAdminWritePage from './Board/Havruta/HavrutaAdmin/HavrutaAdminWritePage';
 
 export default function AppRoutes() {
   return (
@@ -54,16 +58,22 @@ export default function AppRoutes() {
       <Route path="/academic/write" element={<AcademicWritePage />} />
       <Route path="/book" element={<BookPage />} />
       <Route path="/book/view/:id" element={<BookDetailPage />} />
-      <Route path="/book/edit/:id" element={<BookEditPage />} />
-      <Route path="/book/write" element={<BookWritePage />} />
       <Route path="/item" element={<ItemPage />} />
       <Route path="/item/view/:id" element={<ItemDetailPage />} />
-      <Route path="/item/edit/:id" element={<ItemEditPage />} />
-      <Route path="/item/write" element={<ItemWritePage />} />
-      <Route path="/havruta" element={<HavrutaPage />} />
-      <Route path="/havruta/view/:id" element={<HavrutaDetailPage />} />
-      <Route path="/havruta/edit/:id" element={<HavrutaEditPage />} />
-      <Route path="/havruta/write" element={<HavrutaWritePage />} />
+      <Route path="/admin/item" element={<ItemAdminPage />} />
+      <Route path="/admin/item/view/:id" element={<ItemAdminDetailPage />} />
+      <Route path="/admin/item/edit/:id" element={<ItemAdminEditPage />} />
+      <Route path="/admin/item/write" element={<ItemAdminWritePage />} />
+      <Route path="/havruta" element={<HavrutaBoardPage />} />
+      <Route path="/havruta/view/:id" element={<HavrutaBoardDetailPage />} />
+      <Route path="/havruta/edit/:id" element={<HavrutaBoardEditPage />} />
+      <Route path="/havruta/write" element={<HavrutaBoardWritePage />} />
+      <Route path="/admin/havruta" element={<HavrutaAdminPage />} />
+      <Route
+        path="/admin/havruta/edit/:id"
+        element={<HavrutaAdminEditPage />}
+      />
+      <Route path="/admin/havruta/write" element={<HavrutaAdminWritePage />} />
       <Route path="/notice" element={<NoticePage />} />
       <Route path="/notice/view/:id" element={<NoticeDetailPage />} />
       <Route path="/notice/edit/:id" element={<NoticeEditPage />} />
