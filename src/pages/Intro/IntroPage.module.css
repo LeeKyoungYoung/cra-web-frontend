@@ -431,4 +431,20 @@
   .club-title p {
     font-size: 4vw;
   }
+
+  .project {
+    padding: 10vw 0; /* 뷰포트 너비에 비례한 패딩 */
+    max-height: 400px; /* 최대 높이 제한 */
+    min-height: 200px; /* 최소 높이 제한 */
+    display: flex; /* 컨테이너를 중앙 정렬 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project p {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 4vw, 3.125rem); /* 최소/최대 크기 설정 */
+    font-weight: bold;
+  }
 }
