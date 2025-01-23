@@ -44,7 +44,7 @@
   font-family: 'Pixelify Sans Regular';
   font-style: normal;
   font-weight: 700;
-  font-size: 8.125em;
+  font-size: 8.5vw;
   line-height: 150px;
   letter-spacing: -0.05em;
   color: #ffffff;
@@ -53,6 +53,7 @@
   background: linear-gradient(90deg, #2cb4db 0%, #e0f7ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-size: 8.5vw;
 }
 
 @media (min-width: 1650px) {
@@ -108,8 +109,8 @@
   justify-content: center;
   background-color: #00cfff;
   color: #e5f7fb;
-  width: 42.5rem;
-  font-size: 2.8125rem;
+  width: 40vw; 
+  font-size: 2.5vw;
   font-weight: bold;
   padding: 1rem 0rem;
   margin-top: 3rem;
@@ -323,8 +324,7 @@
   }
 
   .banner {
-    font-size: 80px;
-    line-height: 110px;
+    line-height: 10vw;
   }
 
   .comment2 {

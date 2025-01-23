@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { authClient } from './client';
+import { AuthClient } from '../client';
 import {
   ReqSignUp,
   ResSignUp,
@@ -11,7 +11,7 @@ import {
 
 export const login = async (data: Login): Promise<ResponseToken> => {
   try {
-    const response = await authClient.post<ResponseToken>('/auth/login', data);
+    const response = await AuthClient.post<ResponseToken>('/auth/login', data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
@@ -30,7 +30,7 @@ export const login = async (data: Login): Promise<ResponseToken> => {
 
 export const signUp = async (data: ReqSignUp): Promise<ResSignUp> => {
   try {
-    const response = await authClient.post<ResSignUp>('/auth/signup', data);
+    const response = await AuthClient.post<ResSignUp>('/auth/signup', data);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
@@ -46,7 +46,7 @@ export const reissueToken = async (
   data: ReissueToken,
 ): Promise<ResponseToken> => {
   try {
-    const response = await authClient.post<ResponseToken>(
+    const response = await AuthClient.post<ResponseToken>(
       '/auth/reissue-token',
       data,
     );

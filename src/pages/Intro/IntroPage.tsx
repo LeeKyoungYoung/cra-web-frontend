@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
+import Vector from '~/assets/images/Vector/Arrow-Vector.png';
 import styles from './IntroPage.module.css';
 import EmblaCarousel from '~/components/Carousel/EmblaCarousel';
-
-import Vector from '~/assets/images/Arrow-Vector.png';
 import Crang1 from '~/assets/images/pixelcrang/pixelcrang1.svg';
 import Crang2 from '~/assets/images/pixelcrang/pixelcrang2.svg';
 import Crang3 from '~/assets/images/pixelcrang/pixelcrang3.svg';

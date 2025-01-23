@@ -12,7 +12,8 @@ import {
   login as loginApi,
   signUp as signUpApi,
   reissueToken as reissueTokenApi,
-} from '~/api/authApi';
+} from '~/api/auth/authApi';
+import { stringify } from 'querystring';
 
 // Zustand에서 관리할 상태의 구조, 데이터 Type 정의
 interface authStore {
@@ -50,8 +51,11 @@ export const useAuthStore = create<authStore>()(
             userId: response.userId,
           });
           // localStorage에도 토큰을 저장하여 다른 Api 요청에서도 사용할 수 있게하기
-          localStorage.setItem('accessToken', response.accessToken);
-          localStorage.setItem('refreshToken', response.refreshToken);
+          // localStorage.setItem('accessToken', response.accessToken);
+          // localStorage.setItem('refreshToken', response.refreshToken);
+          // Session Storage 방식으로 변경
+          sessionStorage.setItem('accessToken', response.accessToken);
+          sessionStorage.setItem('refreshToken', response.refreshToken);
         } catch (error) {
           console.error('Error During Login: ', error);
           throw error;
@@ -81,8 +85,11 @@ export const useAuthStore = create<authStore>()(
             userId: response.userId,
           });
           // localStorage를 갱신해서 최신 인증 정보 유지
-          localStorage.setItem('accessToken', response.accessToken);
-          localStorage.setItem('refreshToken', response.refreshToken);
+          // localStorage.setItem('accessToken', response.accessToken);
+          // localStorage.setItem('refreshToken', response.refreshToken);
+          // Session Storage 방식으로 변경
+          sessionStorage.setItem('accessToken', response.accessToken);
+          sessionStorage.setItem('refreshToken', response.refreshToken);
         } catch (error) {
           console.error('Error during Reissue: ', error);
           throw error;
@@ -99,14 +106,27 @@ export const useAuthStore = create<authStore>()(
           userId: null,
         });
         // localStorage에서 토큰을 제거하여 로그아웃 후에는 사용자가 인증되지 않게 함
-        localStorage.removeItem(`accessToken`);
-        localStorage.removeItem(`refreshToken`);
+        // localStorage.removeItem(`accessToken`);
+        // localStorage.removeItem(`refreshToken`);
+        // Session Storage 방식으로 변경
+        sessionStorage.removeItem('accessToken');
+        sessionStorage.removeItem('refreshToken');
       },
     }),
 
     // persist옵션에서 name을 지정하여 localStorage에 저장되는 key 이름을 지정
     {
       name: 'auth-storage',
+      storage: {
+        getItem: (name) => {
+          const str = sessionStorage.getItem(name);
+          return str ? JSON.parse(str) : null;
+        },
+        setItem: (name, value) => {
+          sessionStorage.setItem(name, JSON.stringify(value));
+        },
+        removeItem: (name) => sessionStorage.removeItem(name),
+      },
     },
   ),
 );
