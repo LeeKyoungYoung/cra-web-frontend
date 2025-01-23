@@ -12,7 +12,9 @@ export default function BookItem({ item }: { item: Item }) {
   return (
     <>
       <div className={styles['project-block']} onClick={openModal}>
-        <div className={styles['project-picture']}>사진</div>
+        <div className={styles['project-picture']}>
+          <img src={item.imageUrl} className={styles['project-picture']} />
+        </div>
         <div className={styles['title']}>{item.name}</div>
         <div className={styles['content']}>{item.description}</div>
         <div className={styles['content']}>

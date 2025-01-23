@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getProjectById } from '~/api/project';
 import { QUERY_KEY } from '~/api/queryKey';
 import Modal from 'react-modal';
+import styles from '../Project/ProjectModal.module.css';
 
 const ProjectModal = ({
   projectId,
@@ -38,12 +39,14 @@ const ProjectModal = ({
   }
 
   return (
-    <Modal isOpen onRequestClose={closeModal}>
-      <h2>{project.serviceName}</h2>
-      <p>{project.content}</p>
-      <p>멤버: {project.members}</p>
-      <button onClick={closeModal}>닫기</button>
-    </Modal>
+    <>
+      <Modal className={styles.modalContent} isOpen onRequestClose={closeModal}>
+        <h2>{project.serviceName}</h2>
+        <p>{project.content}</p>
+        <p>멤버: {project.members}</p>
+        <button onClick={closeModal}>닫기</button>
+      </Modal>
+    </>
   );
 };
 

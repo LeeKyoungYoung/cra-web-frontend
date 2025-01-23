@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { CATEGORY_STRINGS } from '../../../constants/category_strings';
+import React, { useEffect, useState, useRef } from 'react';
+import { CATEGORY_STRINGS } from '~/constants/category_strings';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getBoardById, updateBoards } from '../../../api/board';
-import { Board } from '../../../models/Board';
+import { getBoardById, updateBoards } from '~/api/board';
+import { Board } from '~/models/Board';
 import styles from './BoardEdit.module.css';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { QUERY_KEY } from '../../../api/queryKey';
-import { CATEGORY } from '~/constants/category';
+import { useNavigate, useParams } from 'react-router-dom';
+import { QUERY_KEY } from '~/api/queryKey';
+import '~/styles/toast-ui';
+import { Editor } from '@toast-ui/react-editor';
+import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
 
 export default function BoardEdit({ category }: { category: number }) {
   const navigate = useNavigate();
-  const location = useLocation();
-  console.log(location.pathname);
+  const editorRef = useRef<any>();
   const [formData, setFormData] = useState({
-    userId: 52,
+    userId: 1,
     title: '',
     content: '',
     category: category,
@@ -102,13 +103,17 @@ export default function BoardEdit({ category }: { category: number }) {
           />
           <br />
           <label htmlFor="content">내용</label>
-          <textarea
-            className={styles['input-content']}
-            id="content"
-            name="content"
-            placeholder="내용을 입력하세요."
-            value={formData.content}
-            onChange={handleChange}
+          <Editor
+            ref={editorRef} // Editor 인스턴스를 참조
+            initialValue={formData.content}
+            previewStyle="vertical"
+            height="600px"
+            initialEditType="markdown"
+            useCommandShortcut={true}
+            plugins={[
+              [codeSyntaxHighlight, { highlighter: Prism }],
+              colorSyntax,
+            ]}
           />
           <br />
           <label htmlFor="imageUrls">이미지 주소</label>

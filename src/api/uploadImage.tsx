@@ -3,13 +3,10 @@ export const uploadImage = async (file: File): Promise<string | null> => {
     const formData = new FormData();
     formData.append('image', file);
 
-    const response = await fetch(
-      'http://3.35.116.122:8080/api/image/upload?imageCategory=1',
-      {
-        method: 'POST',
-        body: formData,
-      },
-    );
+    const response = await fetch('http://3.35.116.122:8080/api/image/upload', {
+      method: 'POST',
+      body: formData,
+    });
 
     if (!response.ok) {
       throw new Error('Failed to upload image');
