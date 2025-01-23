@@ -10,7 +10,7 @@ import {
   getHavrutaBoardsCount,
   getHavrutaBoardsCountByHavrutaId,
 } from '~/api/havruta/havrutaBoard';
-import { getHavrutas } from '~/api/havruta/havruta';
+import { getAllHavrutas } from '~/api/havruta/havruta';
 import SelectedDot from '~/assets/images/Dot/Selected-Dot.png';
 import LeftVector from '~/assets/images/Vector/LeftVector.png';
 import RightVector from '~/assets/images/Vector/RightVector.png';
@@ -38,10 +38,10 @@ export default function HavrutaBoardList() {
   // 과목별 게시물 개수 쿼리
   const havrutaBoardCountByHavrutaIdQuery = useQuery<HavrutaBoard[]>({
     queryKey: QUERY_KEY.havrutaBoard.havrutaBoardsCountByHavrutaId(
-      selectedHavrutaId ?? 0,
+      selectedHavrutaId ?? 1,
     ),
     queryFn: async () =>
-      getHavrutaBoardsCountByHavrutaId(selectedHavrutaId ?? 0),
+      getHavrutaBoardsCountByHavrutaId(selectedHavrutaId ?? 1),
   });
 
   // 과목별 게시물 가져오기 쿼리
@@ -58,7 +58,7 @@ export default function HavrutaBoardList() {
   // 하브루타 과목 쿼리
   const havrutaQuery = useQuery<Havruta[]>({
     queryKey: QUERY_KEY.havruta.havrutas(),
-    queryFn: async () => getHavrutas(),
+    queryFn: async () => getAllHavrutas(),
   });
 
   let content;
@@ -111,10 +111,7 @@ export default function HavrutaBoardList() {
       ? (havrutaBoardCountQuery.data?.length ?? 0)
       : (havrutaBoardCountByHavrutaIdQuery.data?.length ?? 0);
 
-  console.log('totalItems:', totalItems);
-
   const totalPage = Math.ceil(totalItems / itemsPerPage);
-  console.log('totalPage:', totalPage);
 
   // 페이지 넘기기 핸들러
   const handlePageChange = (page: number) => {
