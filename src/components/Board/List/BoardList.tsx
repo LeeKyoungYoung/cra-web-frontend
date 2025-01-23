@@ -23,11 +23,16 @@ export default function BoardList({
   onPageChange,
 }: BoardListProps) {
   const renderBoardContent = () => {
+    if (totalPages === 0)
+      return <div className={styles.noBoards}>현재 게시물이 없습니다.</div>;
+
     if (boardsQuery.isLoading)
-      return <div className="loading">데이터를 불러오는 중입니다...</div>;
+      return (
+        <div className={styles.loading}>데이터를 불러오는 중입니다...</div>
+      );
 
     if (boardsQuery.isError)
-      return <div className="error">에러가 발생했습니다!</div>;
+      return <div className={styles.error}>에러가 발생했습니다!</div>;
 
     if (boardsQuery.isSuccess) {
       return boardsQuery.data
