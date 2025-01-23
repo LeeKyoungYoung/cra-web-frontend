@@ -5,6 +5,7 @@ import { QUERY_KEY } from '~/api/queryKey';
 import styles from '../../Project/Project.module.css';
 import { Item } from '~/models/Item';
 import { getItemById, updateItem } from '~/api/item';
+import { uploadImage } from '~/api/uploadImage';
 
 function BookAdminEdit() {
   const navigate = useNavigate();
@@ -47,10 +48,10 @@ function BookAdminEdit() {
     }
   }, [itemQuery.isSuccess, itemQuery.data]);
 
-  const handleChange = (
+  const handleChange = async (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value, type } = e.target;
+    const { name, value, type, files } = e.target as HTMLInputElement;
 
     // 체크박스인 경우, checked 값을 사용하여 상태를 업데이트
     if (type === 'checkbox' && e.target instanceof HTMLInputElement) {
@@ -58,6 +59,13 @@ function BookAdminEdit() {
         ...formData,
         [name]: e.target.checked, // checked 값 (boolean)을 사용
       });
+    } else if (files && files[0]) {
+      const file = files[0];
+      const imageUrl = await uploadImage(file);
+
+      if (imageUrl) {
+        setFormData((formData) => ({ ...formData, imageUrl }));
+      }
     } else {
       setFormData({
         ...formData,
@@ -65,7 +73,6 @@ function BookAdminEdit() {
       });
     }
   };
-
   const HandleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     mutation.mutate(formData);
@@ -105,16 +112,14 @@ function BookAdminEdit() {
             required
           />
           <br />
-          <label htmlFor="imageUrl">이미지 주소</label>
+          <label htmlFor="imageSelect">이미지 선택</label>
           <br />
           <input
-            type="text"
-            id="imageUrl"
-            name="imageUrl"
-            placeholder="이미지 주소"
-            value={formData.imageUrl}
+            type="file"
+            id="imageSelect"
+            name="imageSelect"
+            accept="image/*"
             onChange={handleChange}
-            required
           />
           <br />
           <br />

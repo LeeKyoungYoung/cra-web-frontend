@@ -4,6 +4,7 @@ import { Item } from '~/models/Item';
 import { useNavigate } from 'react-router-dom';
 import styles from '../../Project/Project.module.css';
 import { createItems } from '~/api/item';
+import { uploadImage } from '~/api/uploadImage';
 
 function ItemAdminWrite() {
   const navigate = useNavigate();
@@ -32,14 +33,23 @@ function ItemAdminWrite() {
     },
   });
 
-  const handleChange = (
+  const handleChange = async (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, files } = e.target as HTMLInputElement;
+    if (files && files[0]) {
+      const file = files[0];
+      const imageUrl = await uploadImage(file);
+
+      if (imageUrl) {
+        setFormData((formData) => ({ ...formData, imageUrl }));
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const HandleSubmit = (e: React.FormEvent) => {
@@ -76,14 +86,13 @@ function ItemAdminWrite() {
           required
         />
         <br />
-        <label htmlFor="imageUrl">이미지 주소</label>
+        <label htmlFor="imageSelect">이미지 선택</label>
         <br />
         <input
-          type="text"
-          id="imageUrl"
-          name="imageUrl"
-          placeholder="이미지 주소"
-          value={formData.imageUrl}
+          type="file"
+          id="imageSelect"
+          name="imageSelect"
+          accept="image/*"
           onChange={handleChange}
         />
         <br />
