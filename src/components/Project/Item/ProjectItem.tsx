@@ -12,7 +12,9 @@ export default function ProjectItem({ project }: { project: Project }) {
   return (
     <>
       <div className={styles['project-block']} onClick={openModal}>
-        <div className={styles['project-picture']}>사진</div>
+        <div className={styles['project-picture']}>
+          <img src={project.imageUrl} className={styles['project-picture']} />
+        </div>
         <div className={styles['title']}>{project.serviceName}</div>
         <div className={styles['content']}>{project.members}</div>
       </div>

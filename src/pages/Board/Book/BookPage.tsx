@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import BoardList from '~/components/Board/List/BoardList';
-import { CATEGORY } from '../../../constants/category';
 import styles from './BookPage.module.css';
+import { ITEMCATEGORY } from '~/constants/itemCategory';
+import BookList from '~/components/Book/List/BookList';
 
 export default function BookPage() {
-  return <BoardList category={CATEGORY.BOOK} />;
+  return (
+    <div className={styles['project-section']}>
+      <p>도서 페이지</p>
+      <BookList itemCategory={ITEMCATEGORY.BOOK} />
+    </div>
+  );
 }

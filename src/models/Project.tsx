@@ -7,7 +7,7 @@ interface Project {
   gitHubUrl: string;
   serviceUrl: string;
   members: string[];
-  imageUrls: string[];
+  imageUrl: string;
   deleted?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
