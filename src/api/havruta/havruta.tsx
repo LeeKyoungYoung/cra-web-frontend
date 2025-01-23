@@ -20,7 +20,7 @@ export const getAllHavrutas = async () => {
 // /api/admin/havruta
 export const getHavrutas = async () => {
   try {
-    const response = await client.get<Havruta[]>(`/admin/havruta`);
+    const response = await authClient.get<Havruta[]>(`/admin/havruta`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -33,7 +33,7 @@ export const getHavrutas = async () => {
 
 export const getHavrutaById = async (id: number) => {
   try {
-    const response = await client.get<Havruta>(`/admin/havruta/view/${id}`);
+    const response = await authClient.get<Havruta>(`/admin/havruta/view/${id}`);
     const havruta = response.data;
 
     return {
