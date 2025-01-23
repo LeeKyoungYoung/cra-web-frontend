@@ -1,6 +1,8 @@
 export const QUERY_KEY = {
   board: {
-    boards: (category: number) => ['board.boards', category] as const,
+    boards: (category: number, currentPage: number) =>
+      ['board.boards', category, currentPage] as const,
+    boardsCount: (category: number) => ['board.boards', category] as const,
     boardById: (id: number) => ['board.boardById', id] as const,
   },
   comment: {
@@ -12,6 +14,12 @@ export const QUERY_KEY = {
     projects: () => ['project.projects'] as const,
     projectById: (id: number) => ['project.projectById', id] as const,
   },
+
+  item: {
+    items: (itemCategory: number) => ['item.items', itemCategory] as const,
+    itemById: (id: number) => ['item.itemById', id] as const,
+  },
+
   havruta: {
     havrutas: () => ['havruta.havrutas'] as const,
     havrutaById: (id: number) => ['havruta.havrutaById', id] as const,

@@ -4,35 +4,50 @@ import { client } from './client';
 import { authClient } from './auth/authClient';
 
 // [GET]
-// async를 사용하여 Promise를 반환하는 비동기 함수 (Promise는 비동기 작업의 완료 or 실패를 나타내는 JS 객체)
-// parameter는 category(숫자)로 받음
-// 외부에서 사용할 수 있게 export 해줌
-export const getBoardsByCategory = async (category: number) => {
-  // try 블록에서 await를 사용해서 HTTP 요청을 보냄 -> 문제가 발생하면 catch 블록으로 이동
+export const getBoardCountByCategory = async (category: number) => {
   try {
-    // client.get은 Axios에서 제공하는 HTTP GET 요청을 수행하는 함수
-    // category에 맞는 게시판의 게시물을 Board 타입 배열 형태로 가져옴
-    // await를 사용하여 작업이 완료될 때 까지 기다림
-    // 완료되면 await는 결과를 response 변수에 저장함
     const response = await client.get<Board[]>(`/board/${category}`);
-    // response에서 서버가 반환한 실제 데이터를 봔환
     return response.data;
   } catch (error) {
-    // Promise가 Rejected 상태가 되면 catch에서 처리
-    // Axios 요청이 실패하거나 에러가 발생하면 catch로 넘어옴
-    // 디버깅 목적으로 console에 error를 출력
     console.log(error);
-    // 오류가 Axios에서 발생한 오류인지 확인
-    // Axios에서는 HTTP 요청 실패 시에 AxiosError 객체를 생성
-    // isAxiosError를 사용하여 오류 식별
     if (axios.isAxiosError(error)) {
-      // error.messsage를 포함하여 Error 객체를 생성하여 throw한다
       throw new Error(`Error fetching data: ${error.message}`);
     } else {
       throw new Error('An unexpected error occurred');
     }
   }
 };
+
+// [GET] by Pagination
+export const getBoardsByCategory = async (
+  category: number,
+  page: number = 1,
+  perPage: number = 10,
+  orderBy: number = 0,
+  isASC: boolean = true,
+) => {
+  try {
+    const response = await client.get<Board[]>(
+      `/board/${category}/page/${page}`,
+      {
+        params: {
+          perPage,
+          orderBy,
+          isASC,
+        },
+      },
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    if (axios.isAxiosError(error)) {
+      throw new Error(`Error fetching data: ${error.message}`);
+    } else {
+      throw new Error('An unexpected error occurred');
+    }
+  }
+};
+
 // id로 게시물 가져오기 (Detail 페이지에 사용)
 export const getBoardById = async (id: number) => {
   try {

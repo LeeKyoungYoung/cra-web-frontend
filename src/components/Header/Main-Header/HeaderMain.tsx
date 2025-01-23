@@ -69,10 +69,10 @@ export default function HeaderMain() {
         </li>
         <li>
           <Link
-            to="/equip"
+            to="/item"
             className={`${styles['link']} ${styles['navbar-link']}`}
           >
-            Equipment
+            Item
           </Link>
         </li>
         <li>

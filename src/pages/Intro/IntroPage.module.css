@@ -145,10 +145,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   font-style: normal;
   font-weight: 600;
-  font-size: 50px;
+  font-size: clamp(30px, 3vw, 3vw);
   line-height: 80px;
   color: #ffffff;
   margin-bottom: -700px;
@@ -283,7 +282,7 @@
 }
 
 .club-content1 p {
-  color: #3e3e3e;
+  color: #ffffff;
   font-size: 1.5vw;
   font-weight: 500;
   margin: 0.3rem 0;
@@ -314,7 +313,7 @@
     text-align: center;
   }
 }
-/* 태블릿 버전 (PC보다 작은) */
+/* 데스크탑  */
 @media (max-width: 1460px) and (min-width: 1024px) {
   .helloworld {
     font-size: 8.5vw;
@@ -323,10 +322,6 @@
     font-size: clamp(30px, 3.5vw, 3.5vw);
   }
 
-  .banner {
-    line-height: 10vw;
-  }
-
   .comment2 {
     font-size: clamp(30px, 3vw, 3vw);
   }
@@ -344,17 +339,13 @@
   #card-content,
   #card-content2 {
     font-size: 42px;
-  }
-  .club-image {
-    width: 30vw;
-    height: 22vw;
   }
 }
 
-/*테블릿 중간 단계*/
-@media (max-width: 1024px) and (min-width: 768px) {
+/* 테블릿 */
+@media (max-width: 1024px) /* and (min-width: 768px) { */ {
   .comment {
-    font-size: clamp(30px, 3.5vw, 3.5vw);
+    font-size: clamp(20px, 3.5vw, 100px);
   }
 
   .banner {
@@ -362,43 +353,82 @@
   }
 
   .comment2 {
-    font-size: clamp(30px, 3vw, 3vw);
+    font-size: clamp(23px, 3vw, 3vw);
   }
 
   .title {
-    font-size: 38px;
+    span {
+      font-size: 3.7vw;
+    }
+    p {
+      font-size: 3.7vw;
+    }
   }
   .description p {
-    font-size: 24px;
+    font-size: clamp(15px, 2.3vw, 2.3vw);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row; /* 카드들을 가로로 정렬 */
+    justify-content: space-around; /* 카드 간 간격 확보 */
+    align-items: flex-start; /* 세로 정렬 */
+    padding: 1rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 25vw; /* 카드 크기를 뷰포트 너비 기준으로 설정 */
+    aspect-ratio: 1 / 1; /* 정사각형 유지 */
+    background-color: #f3f3f3;
+    border-radius: 1rem;
+    padding: 2vw;
+    margin: 1vw; /* 카드 간 가로 간격 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   #card-title {
-    font-size: 20px;
+    font-size: 2.5vw; /* 제목 크기 */
+    margin-top: 1vw; /* 상단 간격 */
+    text-align: center;
   }
-  #card-content,
+
+  #card-content {
+    font-size: 4.5vw; /* 큰 텍스트 크기 */
+    margin-top: 2vw; /* 상단 간격 */
+    text-align: center;
+  }
+
   #card-content2 {
-    font-size: 42px;
-  }
-  /*--------------------------------------------*/
-  .club-container {
-    flex-direction: column; /* 세로 정렬 */
-    gap: 2rem; /* 요소 간 간격 */
+    font-size: 3vw; /* 작은 텍스트 크기 */
+    margin-top: 1.5vw; /* 상단 간격 */
+    text-align: center;
   }
 
   .club-title {
     order: 1; /* 제목 */
     text-align: center;
+    margin: 0;
   }
 
   .club-image {
     order: 2; /* 이미지 */
-    margin: 2rem 0; /* 위아래 간격 */
-    justify-content: center;
+    margin: 1rem; /* 위아래 간격 */
+    width: 60vw;
+    height: 30vw;
   }
 
   .club-content {
     order: 3; /* 내용 */
     text-align: center;
-    padding: 0 2rem; /* 좌우 여백 */
+  }
+
+  .club-content1 p {
+    font-size: 2vw;
+  }
+
+  .club-title p {
+    font-size: 4vw;
   }
 }
