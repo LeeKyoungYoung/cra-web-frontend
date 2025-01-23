@@ -14,6 +14,8 @@ function Pagination({
   currentPage,
   onPageChange,
 }: PaginationProps) {
+  if (totalPages === 0) return null;
+
   return (
     <div className={styles.pagenations}>
       <img src={LeftVector} />
