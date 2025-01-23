@@ -7,6 +7,7 @@
   width: 100%;
   max-width: 1086px;
   margin: 0 auto;
+  margin-top: 4rem;
 }
 
 .title {
@@ -36,15 +37,22 @@
 }
 
 .board-wrapper:hover {
-  background-color: #f1f1f1;
+  background-color: var(--color-hover-white);
+}
+
+.noBoards {
+  color: var(--color-bright-text);
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 2rem 0;
 }
 
 .loading {
-  color: #555;
+  color: var(--color-bright-text);
 }
 
 .error {
-  color: red;
+  color: var(--color-error);
 }
 
 .board-list-footer {
