@@ -1,6 +1,8 @@
 export const QUERY_KEY = {
   board: {
-    boards: (category: number) => ['board.boards', category] as const,
+    boards: (category: number, currentPage: number) =>
+      ['board.boards', category, currentPage] as const,
+    boardsCount: (category: number) => ['board.boards', category] as const,
     boardById: (id: number) => ['board.boardById', id] as const,
   },
   comment: {
