@@ -10,7 +10,7 @@ import {
   getHavrutaBoardsCount,
   getHavrutaBoardsCountByHavrutaId,
 } from '~/api/havruta/havrutaBoard';
-import { getHavrutas } from '~/api/havruta/havruta';
+import { getAllHavrutas } from '~/api/havruta/havruta';
 import SelectedDot from '~/assets/images/Dot/Selected-Dot.png';
 import LeftVector from '~/assets/images/Vector/LeftVector.png';
 import RightVector from '~/assets/images/Vector/RightVector.png';
@@ -58,7 +58,7 @@ export default function HavrutaBoardList() {
   // 하브루타 과목 쿼리
   const havrutaQuery = useQuery<Havruta[]>({
     queryKey: QUERY_KEY.havruta.havrutas(),
-    queryFn: async () => getHavrutas(),
+    queryFn: async () => getAllHavrutas(),
   });
 
   let content;
