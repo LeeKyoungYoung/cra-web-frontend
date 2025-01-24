@@ -42,6 +42,11 @@ const Buttons = styled.div`
     padding: 0.75rem 2rem;
     margin: 0 1.25rem;
     user-select: none;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -69,7 +74,7 @@ function NotFoundPage() {
         </Context>
       </Content>
       <Buttons>
-        <MainBtn onClick={() => navigate('/intro')}>
+        <MainBtn onClick={() => navigate('/')}>
           메인으로 <img src={SkyBlueVector} />
         </MainBtn>
 

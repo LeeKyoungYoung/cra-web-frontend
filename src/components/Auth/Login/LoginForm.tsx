@@ -61,8 +61,7 @@ const Register = styled.div`
   user-select: none;
 `;
 
-const AuthButtons = styled.div`
-`;
+const AuthButtons = styled.div``;
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -96,6 +95,7 @@ const LoginForm = () => {
               placeholder="Enter the Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
           </div>
           <HeightSpacer space={28} />
@@ -107,6 +107,7 @@ const LoginForm = () => {
                 placeholder="Enter the Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
             <div className={styles['checkbox-container']}>
