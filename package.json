@@ -18,6 +18,7 @@
     "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
     "@toast-ui/react-editor": "^3.2.3",
     "@toast-ui/editor": "^3.2.2",
+    "@types/crypto-js": "^4.2.2",
     "@types/prismjs": "^1.26.5",
     "axios": "^1.7.9",
     "embla-carousel-autoplay": "^8.5.1",
