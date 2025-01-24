@@ -10,7 +10,7 @@ export const academicRoute = createRoute({
 
 export const academicViewRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/academic/view/:id',
+  path: '/academic/view/$id',
   component: lazy(
     () => import('~/pages/Board/Academic/AcademicDetailPage.tsx'),
   ),
@@ -18,7 +18,7 @@ export const academicViewRoute = createRoute({
 
 export const academicEditRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/academic/edit/:id',
+  path: '/academic/edit/$id',
   component: lazy(() => import('~/pages/Board/Academic/AcademicEditPage.tsx')),
 });
 

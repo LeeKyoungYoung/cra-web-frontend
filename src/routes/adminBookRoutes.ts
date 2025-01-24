@@ -10,13 +10,13 @@ export const adminBookRoute = createRoute({
 
 export const adminBookDetailRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/book/view/:id',
+  path: '/admin/book/view/$id',
   component: lazy(() => import('~/pages/Board/Book/BookAdminDetailPage.tsx')),
 });
 
 export const adminBookUpdateRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/book/edit/:id',
+  path: '/admin/book/edit/$id',
   component: lazy(() => import('~/pages/Board/Book/BookAdminEditPage.tsx')),
 });
 

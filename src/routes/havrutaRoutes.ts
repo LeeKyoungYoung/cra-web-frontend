@@ -12,7 +12,7 @@ export const havrutaRoute = createRoute({
 
 export const havrutaViewRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/havruta/view/:id',
+  path: '/havruta/view/$id',
   component: lazy(
     () =>
       import('~/pages/Board/Havruta/HavrutaBoard/HavrutaBoardDetailPage.tsx'),
@@ -21,7 +21,7 @@ export const havrutaViewRoute = createRoute({
 
 export const havrutaEditRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/havruta/edit/:id',
+  path: '/havruta/edit/$id',
   component: lazy(
     () => import('~/pages/Board/Havruta/HavrutaBoard/HavrutaBoardEditPage.tsx'),
   ),
