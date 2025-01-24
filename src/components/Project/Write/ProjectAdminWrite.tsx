@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { createProjects, uploadImage } from '~/api/project';
+import { createProjects } from '~/api/project';
 import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Project.module.css';
-import { notDeepEqual } from 'assert';
+import { uploadImage } from '~/api/uploadImage';
 
 function ProjectAdminWrite() {
   const navigate = useNavigate();

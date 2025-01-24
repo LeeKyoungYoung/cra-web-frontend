@@ -1,12 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import BoardList from '../../../components/Board/List/BoardList';
 import { CATEGORY } from '../../../constants/category';
+import BoardContainer from '~/components/Board/BoardContainer';
 
 export default function AcademicPage() {
-  return (
-    <>
-      <BoardList category={CATEGORY.ACADEMIC} />
-    </>
-  );
+  return <BoardContainer category={CATEGORY.ACADEMIC} />;
 }

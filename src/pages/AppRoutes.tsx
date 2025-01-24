@@ -14,10 +14,6 @@ import AcademicPage from './Board/Academic/AcademicPage';
 import AcademicDetailPage from './Board/Academic/AcademicDetailPage';
 import AcademicEditPage from './Board/Academic/AcademicEditPage';
 import AcademicWritePage from './Board/Academic/AcademicWritePage';
-import BookPage from './Board/Book/BookPage';
-import BookDetailPage from './Board/Book/BookDetailPage';
-import ItemPage from './Board/Item/ItemPage';
-import ItemDetailPage from './Board/Item/ItemDetailPage';
 import NoticePage from './Board/Notice/NoticePage';
 import NoticeDetailPage from './Board/Notice/NoticeDetailPage';
 import NoticeEditPage from './Board/Notice/NoticeEditPage';
@@ -29,11 +25,18 @@ import ProjectDetailPage from './Board/Project/ProjectAdminDetailPage';
 import ProjectEditPage from './Board/Project/ProjectAdminEditPage';
 import ProjectWritePage from './Board/Project/ProjectAdminWritePage';
 import NotFoundPage from './Error/NotFoundPage';
-
 import ItemAdminPage from './Board/Item/ItemAdminPage';
 import ItemAdminWritePage from './Board/Item/ItemAdminWritePage';
 import ItemAdminEditPage from './Board/Item/ItemAdminEditPage';
 import ItemAdminDetailPage from './Board/Item/ItemAdminDetailPage';
+import ItemPage from './Board/Item/ItemPage';
+import ItemDetailPage from './Board/Item/ItemDetailPage';
+import BookPage from './Board/Book/BookPage';
+import BookDetailPage from './Board/Book/BookDetailPage';
+import BookAdminPage from './Board/Book/BookAdminPage';
+import BookAdminDetailPage from './Board/Book/BookAdminDetailPage';
+import BookAdminEditPage from './Board/Book/BookAdminEditPage';
+import BookAdminWritePage from './Board/Book/BookAdminWritePage';
 import HavrutaBoardPage from './Board/Havruta/HavrutaBoard/HavrutaBoardPage';
 import HavrutaBoardDetailPage from './Board/Havruta/HavrutaBoard/HavrutaBoardDetailPage';
 import HavrutaBoardEditPage from './Board/Havruta/HavrutaBoard/HavrutaBoardEditPage';
@@ -60,6 +63,11 @@ export default function AppRoutes() {
       <Route path="/book/view/:id" element={<BookDetailPage />} />
       <Route path="/item" element={<ItemPage />} />
       <Route path="/item/view/:id" element={<ItemDetailPage />} />
+      <Route path="/admin/book" element={<BookAdminPage />} />
+      <Route path="/admin/book/view/:id" element={<BookAdminDetailPage />} />
+      <Route path="/admin/book/edit/:id" element={<BookAdminEditPage />} />
+      <Route path="/admin/book/write" element={<BookAdminWritePage />} />
+      <Route path="/item" element={<ItemPage />} />
       <Route path="/admin/item" element={<ItemAdminPage />} />
       <Route path="/admin/item/view/:id" element={<ItemAdminDetailPage />} />
       <Route path="/admin/item/edit/:id" element={<ItemAdminEditPage />} />

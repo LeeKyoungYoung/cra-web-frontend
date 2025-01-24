@@ -1,0 +1,37 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    color: var(--color-bright-text);
+    font-family: 'Pretendard SemiBold';
+    font-size: 22px;
+    margin: 1rem 0 1rem 1.5rem;
+  }
+
+  img {
+    margin: 1.25px 5px;
+  }
+}
+
+.menuItem {
+  margin: 1rem 0;
+  border-radius: 10%;
+  background-color: rgb(255, 255, 255);
+}
+
+.menuItem a {
+  text-decoration: none;
+  font-family: 'Pretendard SemiBold';
+  font-size: 18px;
+  color: var(--color-brighter-text);
+  transition: color 0.5s;
+}
+
+.menuItem a:hover {
+  color: var(--color-bright-text);
+}
+
+.menuItem.selected a {
+  color: var(--color-bright-text) !important;
+}
