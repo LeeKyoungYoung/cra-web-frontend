@@ -5,6 +5,7 @@
 }
 
 .footer {
+  font-family: 'Pretendard SemiBold';
   border: none;
   background-color: #2cb4db;
   padding: 2.5rem 0rem;
@@ -37,6 +38,7 @@
   font-size: 1.25rem;
   color: #ffffff;
   padding-left: 0.4rem;
+  margin-top: 1rem;
 }
 
 .icons {
