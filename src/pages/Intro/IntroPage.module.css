@@ -1,14 +1,14 @@
 .container {
-  background-color: #bcedfb;
+  background-color: #050505;
 }
 
 .main {
-  background: linear-gradient(
+  /* background: linear-gradient(
     #008bc7 0%,
     #2cb4db 33%,
     #79cfe8 67%,
     #bcedfb 100%
-  );
+  ); */
 
   height: 66.5rem;
 }
@@ -19,6 +19,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3.125em;
+  line-height: 150px;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+  margin-bottom: -30px;
 }
 
 .banner {
@@ -26,33 +41,75 @@
   flex-direction: column;
   align-items: center;
 
-  font-family: 'Archivo Black';
+  font-family: 'Pixelify Sans Regular';
   font-style: normal;
   font-weight: 700;
-  font-size: 10.5625rem;
+  font-size: 8.5vw;
   line-height: 150px;
   letter-spacing: -0.05em;
   color: #ffffff;
 }
+.helloworld {
+  background: linear-gradient(90deg, #2cb4db 0%, #e0f7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-.character {
-  content: url('~/assets/images/crang-e2.png');
-  position: absolute; /* 절대 위치 설정 */
-  top: 67.5%; /* 화면 크기에 따라 위치 비율 조정 */
-  left: 82.5%; /* DREAMS의 'S' 옆에 위치 */
-  transform: translate(-50%, -50%); /* 이미지 가운데 정렬 */
-  width: 28.25rem;
-  height: 28.25rem;
+@media (min-width: 1650px) {
+  .character1 {
+    position: absolute;
+    top: 65%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 317.42px;
+    height: 299.78px;
+  }
+
+  .character2 {
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 262.88px;
+    height: 248.278px;
+  }
+
+  .character3 {
+    position: absolute;
+    top: 13%;
+
+    left: 83%;
+    transform: translate(-50%, -50%);
+    width: 262.51px;
+    height: 247.92px;
+  }
+
+  .character4 {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 326.58px;
+    height: 308.44px;
+  }
+}
+@media (max-width: 1649px) {
+  .character1,
+  .character2,
+  .character3,
+  .character4 {
+    display: none !important;
+  }
 }
 
 .recruit-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e5f7fb;
-  color: #00cfff;
-  width: 42.5rem;
-  font-size: 2.8125rem;
+  background-color: #00cfff;
+  color: #e5f7fb;
+  width: 40vw;
+  font-size: 2.5vw;
   font-weight: bold;
   padding: 1rem 0rem;
   margin-top: 3rem;
@@ -75,9 +132,35 @@
   }
 }
 
+.section2 {
+  position: relative;
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 350px;
+}
+
+.comment2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(30px, 3vw, 3vw);
+  line-height: 80px;
+  color: #ffffff;
+  margin-bottom: -700px;
+}
+
+.blur-round {
+  width: auto;
+  height: auto;
+}
+
 .cra {
   background-color: #ffffff;
-  border-radius: 2rem 2rem 0rem 0rem;
+  border-radius: 2rem;
   padding: 6.5rem 0rem;
 }
 
@@ -120,7 +203,7 @@
   display: flex;
   flex-direction: column;
   width: 19rem;
-  height: 19rem;
+  aspect-ratio: 1 / 1;
   background-color: #f3f3f3;
   border-radius: 1rem;
   padding: 2rem;
@@ -158,48 +241,51 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f1f1f1;
   padding: 11rem;
 }
 
 .club-container {
   display: flex;
-  padding: 10rem 0rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 0;
+  gap: 4rem; /* 카드와 이미지 간격 */
 }
 
-.club-card {
-  display: flex;
-  flex-direction: column;
-  margin: 0rem 4.5rem 0rem 0rem;
-}
-
+.club-card,
 .club-card1 {
   display: flex;
   flex-direction: column;
-  margin: 0rem 0rem 0rem 4.5rem;
+  flex: 1; /* 카드와 이미지 균형 유지 */
 }
 
 .club-title {
-  p {
-    color: #13abd7;
-    font-size: 3.125rem;
-    font-weight: bold;
-    padding: 0.4rem 0rem;
-  }
   margin-bottom: 2rem;
 }
 
+.club-title p {
+  color: #13abd7;
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin: 0.4rem 0;
+}
+
 .club-content {
-  p {
-    color: #3e3e3e;
-    font-size: 1.5625rem;
-    font-weight: bold;
-    padding: 0.3rem 0rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .club-content1 {
-  padding: 0rem 0rem 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.club-content1 p {
+  color: #ffffff;
+  font-size: 1.5vw;
+  font-weight: 500;
+  margin: 0.3rem 0;
 }
 
 .club-image {
@@ -208,33 +294,157 @@
   align-items: center;
   background-color: #d9d9d9;
   border-radius: 2rem;
-  width: 34.3125rem;
-  height: 28.1875rem; 
-  position: relative;
-  top: 1rem;
+  width: 30vw;
+  height: 22vw;
   user-select: none;
-  p {
-    font-size: 1.5625rem;
-    font-weight: bold;
-  }
+}
+
+.club-image p {
+  font-size: 1.5625rem;
+  font-weight: bold;
 }
 
 .project {
-  background: #ffffff;
   padding: 10rem 0rem;
   p {
+    color: #ffffff;
     font-size: 3.125rem;
     font-weight: bold;
     text-align: center;
   }
 }
+/* 데스크탑  */
+@media (max-width: 1460px) and (min-width: 1024px) {
+  .helloworld {
+    font-size: 8.5vw;
+  }
+  .comment {
+    font-size: clamp(30px, 3.5vw, 3.5vw);
+  }
 
-/* 반응형 스타일 */
-@media (max-width: 768px) {
-  .character {
-    left: 70%; /* 모바일 화면에서 조금 더 왼쪽으로 이동 */
-    top: 60%;
-    width: 20rem; /* 이미지 크기 축소 */
-    height: 20rem;
+  .comment2 {
+    font-size: clamp(30px, 3vw, 3vw);
+  }
+
+  .title {
+    font-size: 38px;
+  }
+  .description p {
+    font-size: 24px;
+  }
+
+  #card-title {
+    font-size: 20px;
+  }
+  #card-content,
+  #card-content2 {
+    font-size: 42px;
+  }
+}
+
+/* 테블릿 */
+@media (max-width: 1024px) /* and (min-width: 768px) { */ {
+  .comment {
+    font-size: clamp(20px, 3.5vw, 100px);
+  }
+
+  .banner {
+    line-height: 10vw;
+  }
+
+  .comment2 {
+    font-size: clamp(23px, 3vw, 3vw);
+  }
+
+  .title {
+    span {
+      font-size: 3.7vw;
+    }
+    p {
+      font-size: 3.7vw;
+    }
+  }
+  .description p {
+    font-size: clamp(15px, 2.3vw, 2.3vw);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row; /* 카드들을 가로로 정렬 */
+    justify-content: space-around; /* 카드 간 간격 확보 */
+    align-items: flex-start; /* 세로 정렬 */
+    padding: 1rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 25vw; /* 카드 크기를 뷰포트 너비 기준으로 설정 */
+    aspect-ratio: 1 / 1; /* 정사각형 유지 */
+    background-color: #f3f3f3;
+    border-radius: 1rem;
+    padding: 2vw;
+    margin: 1vw; /* 카드 간 가로 간격 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #card-title {
+    font-size: 2.5vw; /* 제목 크기 */
+    margin-top: 1vw; /* 상단 간격 */
+    text-align: center;
+  }
+
+  #card-content {
+    font-size: 4.5vw; /* 큰 텍스트 크기 */
+    margin-top: 2vw; /* 상단 간격 */
+    text-align: center;
+  }
+
+  #card-content2 {
+    font-size: 3vw; /* 작은 텍스트 크기 */
+    margin-top: 1.5vw; /* 상단 간격 */
+    text-align: center;
+  }
+
+  .club-title {
+    order: 1; /* 제목 */
+    text-align: center;
+    margin: 0;
+  }
+
+  .club-image {
+    order: 2; /* 이미지 */
+    margin: 1rem; /* 위아래 간격 */
+    width: 60vw;
+    height: 30vw;
+  }
+
+  .club-content {
+    order: 3; /* 내용 */
+    text-align: center;
+  }
+
+  .club-content1 p {
+    font-size: 2vw;
+  }
+
+  .club-title p {
+    font-size: 4vw;
+  }
+
+  .project {
+    padding: 10vw 0; /* 뷰포트 너비에 비례한 패딩 */
+    max-height: 400px; /* 최대 높이 제한 */
+    min-height: 200px; /* 최소 높이 제한 */
+    display: flex; /* 컨테이너를 중앙 정렬 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .project p {
+    color: #ffffff;
+    font-size: clamp(1.5rem, 4vw, 3.125rem); /* 최소/최대 크기 설정 */
+    font-weight: bold;
   }
 }
