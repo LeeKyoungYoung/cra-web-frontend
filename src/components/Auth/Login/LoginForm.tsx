@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '~/store/authStore';
 import HeightSpacer from '~/components/Common/HeightSpacer';
+import CryptoJS from 'crypto-js';
 import styled from 'styled-components';
 import styles from './LoginForm.module.css';
 
@@ -72,8 +73,17 @@ const LoginForm = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    const secretKey = 'your-secret-key'; // 예시 나중에 바꿀거임 (진짜짜)
+    const encryptedPassword = CryptoJS.AES.encrypt(
+      password,
+      secretKey,
+    ).toString();
     try {
-      await login({ username, password });
+      await login({ username, password: encryptedPassword });
+      // 확인용 (나중에 없앨꺼임)
+      console.log(username);
+      console.log(password);
+      console.log(encryptedPassword);
       alert('로그인 성공');
       navigate('/main');
     } catch (error) {
@@ -81,6 +91,7 @@ const LoginForm = () => {
       alert('로그인 실패');
     }
   };
+
   return (
     <Container>
       <Title>
