@@ -9,6 +9,7 @@ import Crang3 from '~/assets/images/pixelcrang/pixelcrang3.svg';
 import Crang4 from '~/assets/images/pixelcrang/pixelcrang4.svg';
 import blurround from '~/assets/images/black-blur-round.svg';
 import { useEffect, useState } from 'react';
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 export default function IntroPage() {
   const [isVertical, setIsVertical] = useState(window.innerWidth <= 1024);
