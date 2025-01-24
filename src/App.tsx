@@ -4,6 +4,10 @@ import ScrollToTop from './utils/ScrollToTop.tsx';
 import { RouterProvider } from '@tanstack/react-router';
 import './App.css';
 import { routes } from './routes/routes.ts';
+import { Suspense } from 'react';
+const Loding = {
+  padding: '10rem',
+};
 
 function App() {
   return (
@@ -11,7 +15,9 @@ function App() {
       <Header />
       <div className="contents">
         <ScrollToTop />
-        <RouterProvider router={routes} />
+        <Suspense fallback={<div style={Loding}>Loading...</div>}>
+          <RouterProvider router={routes} />
+        </Suspense>
       </div>
       <Footer />
     </div>
