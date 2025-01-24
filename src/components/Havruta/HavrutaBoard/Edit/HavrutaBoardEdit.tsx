@@ -12,7 +12,8 @@ import styles from './HavrutaBoardEdit.module.css';
 function HavrutaBoardEdit() {
   const navigate = useNavigate();
 
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const boardId = Number(id);
 
   const [formData, setFormData] = useState({

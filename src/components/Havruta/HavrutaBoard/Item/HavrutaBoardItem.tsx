@@ -5,7 +5,10 @@ import { HavrutaBoard } from '~/models/Havruta';
 
 function HavrutaBoardItem({ havrutaBoard }: { havrutaBoard: HavrutaBoard }) {
   return (
-    <Link to={`./view/${havrutaBoard.id}`} className={styles['temp-link']}>
+    <Link
+      to={`/havruta/view/${havrutaBoard.id}`}
+      className={styles['temp-link']}
+    >
       <div className={styles['board-item-container']}>
         <div>
           <div className={styles['board-user-name']}>

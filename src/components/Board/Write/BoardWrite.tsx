@@ -14,6 +14,7 @@ import { blob } from 'stream/consumers';
 // Props로 category: number를 받아 게시글이 속할 카테고리를 결정
 export default function BoardWrite({ category }: { category: number }) {
   const navigate = useNavigate();
+  console.log('쓰기');
   const editorRef = useRef<any>(); // Editor 인스턴스를 참조하기 위한 ref
   // 현재 상태 값 formData, 상태를 업데이트하는 함수: setFormData
   const [formData, setFormData] = useState({
