@@ -40,11 +40,42 @@ const ProjectModal = ({
 
   return (
     <>
-      <Modal className={styles.modalContent} isOpen onRequestClose={closeModal}>
-        <h2>{project.serviceName}</h2>
-        <p>{project.content}</p>
-        <p>멤버: {project.members}</p>
-        <button onClick={closeModal}>닫기</button>
+      <Modal
+        className={styles.modalContent}
+        overlayClassName={styles.overlay}
+        isOpen
+        onRequestClose={closeModal}
+      >
+        <div className={styles['modal-header']}>
+          {project.serviceName}
+          <a
+            href={project.serviceUrl}
+            target="_blank"
+            rel="none"
+            className={styles['url-button']}
+          >
+            URL 이동
+          </a>
+        </div>
+        <div className={styles['modal-body']}>
+          <div className={styles['image-box']}>
+            <img src={project.imageUrl} className={styles['image']} />
+          </div>
+          <div className={styles['description']}>
+            <div className={styles['content-description']}>프로젝트 설명</div>
+            <div>{project.content}</div>
+            {/* <div className={styles['info']}>
+              <p>Members: {project.members}</p>
+              <p>Semester: {project.semester}</p>
+              <p>GitHub URL: {project.gitHubUrl}</p>
+            </div> */}
+          </div>
+        </div>
+        <div className={styles['modal-footer']}>
+          <button onClick={closeModal} className={styles['close-button']}>
+            X
+          </button>
+        </div>
       </Modal>
     </>
   );
