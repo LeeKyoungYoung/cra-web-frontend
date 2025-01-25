@@ -17,7 +17,6 @@ const Container = styled.div`
 
 const Content = styled.div`
   p {
-    font-weight: bold;
     text-align: center;
   }
   margin-bottom: 5rem;
@@ -36,7 +35,6 @@ const Context = styled.p`
 const Buttons = styled.div`
   button {
     font-size: 1.5rem;
-    font-weight: bold;
     text-align: center;
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;

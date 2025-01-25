@@ -9,7 +9,6 @@
 .board-user-name {
   line-height: 34px;
   font-size: 16px;
-  font-weight: 600;
   color: var(--color-dark-text);
 }
 
@@ -22,7 +21,6 @@
 .board-title {
   line-height: 34px;
   font-size: 20px;
-  font-weight: 600;
   text-decoration: none;
   color: var(--color-dark-text);
   margin-top: 5px;

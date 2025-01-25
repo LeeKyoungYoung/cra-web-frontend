@@ -24,7 +24,6 @@
 .write-form label {
   margin: 0 0 16px 10px;
   font-size: 24px;
-  font-weight: 600;
   color: #3e3e3e;
 }
 .write-form input[type='text'],
@@ -36,7 +35,6 @@
   font-size: 18px;
   border: 1px solid #c1c1c1;
   border-radius: 10px;
-  font-weight: 600;
   color: #3e3e3e;
   background-color: white;
 }
@@ -72,7 +70,6 @@
   margin: 0 auto;
   margin-top: 40px;
   font-family: 'Pretendard SemiBold';
-  font-weight: 600;
   font-size: 24px;
   height: 68px;
   width: 46%;
@@ -93,7 +90,6 @@
   font-size: 18px;
   border-color: #c1c1c1;
   border-radius: 10px;
-  font-weight: 600;
   color: #3e3e3e;
   background-color: white;
   appearance: none; /* 오른쪽 끝에 거슬리는 화살표 제거 */

@@ -47,7 +47,6 @@
   text-align: center;
   text-decoration: none;
   font-size: large;
-  font-weight: bold;
   color: white;
 }
 
@@ -64,7 +63,6 @@
   margin: 4px 13px 14px;
   line-height: 34px;
   color: #9b9b9b;
-  font-weight: 500;
   font-size: 20px;
 }
 
@@ -79,14 +77,12 @@
 
 .nav-content {
   color: #5e5e5e;
-  font-weight: 600;
 }
 
 .content-title {
   margin-top: 18px;
   margin-bottom: 33px;
   color: #5e5e5e;
-  font-weight: 700;
   font-size: 30px;
   line-height: 59px;
 }
@@ -103,8 +99,3 @@
   font-size: 20px;
   color: #9b9b9b;
 }
-
-/* .footer {
-    padding-left: 13px;
-    padding-right: 13px;
-  } */

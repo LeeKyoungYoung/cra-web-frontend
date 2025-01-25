@@ -36,7 +36,6 @@
 	vertical-align: baseline;
   color: #5e5e5e;
   font-size: 20px;
-  font-weight: 600;
 }
 
 .inputField input::placeholder {
@@ -54,7 +53,6 @@
   cursor: pointer;
   font: inherit;
   font-size: 20px;
-  font-weight: bold;
 }
 
 .submitButton:hover {

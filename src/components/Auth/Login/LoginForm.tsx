@@ -45,7 +45,6 @@ const Login = styled.div`
     border-radius: 10px;
     color: #ffffff;
     font-size: 30px;
-    font-weight: 700;
     margin-bottom: 14px;
     cursor: pointer;
   }
@@ -56,7 +55,6 @@ const Register = styled.div`
   margin: 1rem 0;
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
   color: var(--color-dark-text);
   user-select: none;
 `;

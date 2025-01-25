@@ -3,7 +3,6 @@
   margin-left: 2.5rem;
   height: 34px;
   font-size: 20px;
-  font-weight: 600;
   color: var(--color-dark-text);
   user-select: none;
 }
@@ -22,21 +21,18 @@
 .id input::placeholder,
 .password input::placeholder {
   font-size: 20px;
-  font-weight: 400;
   color: var(--color-placeholder-text);
   padding-left: 10px;
 }
 
 .search-link {
   font-size: 16px;
-  font-weight: 500;
   padding: 0px 0.5rem;
   text-decoration: none;
   color: var(--color-dark-text);
 }
 
 .register-link {
-  font-weight: 700;
   color: var(--color-primary);
   user-select: none;
 }
