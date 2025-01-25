@@ -1,6 +1,6 @@
 # CRA Web
 
-> Backend
+> Frontend
 
 TODO: 배너 이미지 추가
 
