@@ -21,6 +21,7 @@
 .li-intro {
   display: flex;
   align-items: center;
+  font-family: 'Pretendard Bold';
 }
 
 .li-img {
@@ -31,6 +32,11 @@
   font-size: 25px;
   color: white;
   text-decoration: none;
+  transition: transform 0.2s ease;
+  user-select: none;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .logo {

@@ -9,7 +9,7 @@
 .board-user-name {
   line-height: 34px;
   font-size: 16px;
-  font-weight: 600;
+  font-family: 'Pretendard SemiBold';
   color: var(--color-dark-text);
 }
 
@@ -22,7 +22,7 @@
 .board-title {
   line-height: 34px;
   font-size: 20px;
-  font-weight: 600;
+  font-family: 'Pretendard SemiBold';
   text-decoration: none;
   color: var(--color-dark-text);
   margin-top: 5px;
@@ -31,5 +31,6 @@
 .board-content {
   line-height: 32px;
   font-size: 15px;
+  font-family: 'Pretendard';
   color: var(--color-dark-text);
 }

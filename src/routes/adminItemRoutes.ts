@@ -10,13 +10,13 @@ export const adminItemRoute = createRoute({
 
 export const adminItemDetailRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/item/view/:id',
+  path: '/admin/item/view/$id',
   component: lazy(() => import('~/pages/Board/Item/ItemAdminDetailPage.tsx')),
 });
 
 export const adminItemUpdateRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/item/edit/:id',
+  path: '/admin/item/edit/$id',
   component: lazy(() => import('~/pages/Board/Item/ItemAdminEditPage.tsx')),
 });
 

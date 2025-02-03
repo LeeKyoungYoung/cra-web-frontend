@@ -15,7 +15,8 @@ function HavrutaEdit() {
     className: '',
     professor: '',
   });
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const havrutaId = Number(id);
 
   const havrutaQuery = useQuery<Havruta>({

@@ -20,7 +20,8 @@ function ProjectAdminEdit() {
     members: [''],
     imageUrl: '',
   });
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const projectId = Number(id);
 
   const projectQuery = useQuery<Project>({

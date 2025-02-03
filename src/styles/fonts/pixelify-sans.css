@@ -1,0 +1,14 @@
+/* 
+This Font Software is licensed under the SIL Open Font License, Version 1.1. 
+This license is available with a FAQ at: 
+https://scripts.sil.org/OFL 
+*/
+
+@font-face {
+  font-family: 'Pixelify Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('Pixelify Sans Regular'),
+    url('./pixelify-sans-webfont/PixelifySans[wght].woff') format('woff');
+}

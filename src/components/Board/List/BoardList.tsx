@@ -1,5 +1,6 @@
 import React from 'react';
 import { CATEGORY_STRINGS } from '../../../constants/category_strings';
+import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
 import BoardItem from '../Item/BoardItem';
 import { Board } from '../../../models/Board';
 import { UseQueryResult } from '@tanstack/react-query';
@@ -23,6 +24,7 @@ export default function BoardList({
   onPageChange,
 }: BoardListProps) {
   const renderBoardContent = () => {
+    console.log('리스트');
     if (totalPages === 0)
       return <div className={styles.noBoards}>현재 게시물이 없습니다.</div>;
 
@@ -40,7 +42,7 @@ export default function BoardList({
         .map((board, index) => (
           <div key={`board-${board.id}`}>
             <div className={styles['board-wrapper']}>
-              <BoardItem board={board} />
+              <BoardItem board={board} category={category} />
             </div>
             {index < boardsQuery.data.length - 1 && (
               <div className={styles.divider}></div>
@@ -61,7 +63,10 @@ export default function BoardList({
           currentPage={currentPage}
           onPageChange={onPageChange}
         />
-        <Link className={styles['write-link']} to="./write">
+        <Link
+          className={styles['write-link']}
+          to={`/${CATEGORY_STRINGS_EN[category]}/write`}
+        >
           글쓰기
         </Link>
       </div>
