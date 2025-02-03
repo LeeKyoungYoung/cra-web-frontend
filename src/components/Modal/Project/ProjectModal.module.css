@@ -1,13 +1,121 @@
+/* Modal Content */
 .modalContent {
-  background-color: rgb(255, 255, 255);
-  width: 300px;
-  height: 300px;
+  background-color: white;
+  width: 80vw;
+  height: 90vh;
+  max-width: 1000px;
+  max-height: 90vh;
   border-radius: 1rem;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 2vw;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 내용이 모달 밖으로 나오지 않도록 */
+}
 
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Header */
+.modal-header {
+  font-size: 3vw;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 5vw;
+  left: 5vw;
+  right: 3vw;
+}
+
+/* Modal Body */
+.modal-body {
+  display: flex;
+  gap: 2vw;
+  margin-top: 4vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+}
+
+.image-box {
+  width: 100%;
+  height: 100%;
+  max-width: 30vw;
+  max-height: 60vh;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3vw;
+  margin-top: 5vw;
+  border-radius: 5%;
+  margin-right: 1vw;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.description {
+  width: 55%;
+  line-height: 1.5;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5vw;
+}
+.content-description {
+  font-size: 30px;
+  margin-bottom: 2.5rem;
+}
+
+.modal-footer {
+  position: absolute;
+  top: 2vw; /* top 값은 헤더와 겹치지 않도록 조정 */
+  right: 0vw;
+  text-align: center;
+  display: flex;
+  flex-direction: row; /* 버튼들을 가로로 나열 */
+  gap: 1.5vw; /* 버튼 사이 간격 */
+  padding: 1vw;
+  align-items: center; /* 세로로 정렬 */
+}
+
+.close-button {
+  position: absolute;
+  right: 2vw;
+  font-size: 2vw;
+  border: none;
+  background-color: transparent;
+  color: lightgray;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: red;
+}
+
+/* URL Button */
+.url-button {
+  font-size: clamp(0.5rem, 1.5vw, 1.5rem);
+  background-color: #2cb4db;
+  color: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  right: 2rem; /* 오른쪽 끝으로 고정 */
+  position: absolute;
+  white-space: nowrap; /* 텍스트가 줄 바꿈 되지 않도록 설정 */
 }

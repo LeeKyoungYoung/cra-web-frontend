@@ -88,7 +88,7 @@ function SignUpForm() {
         term,
       });
       alert('회원가입 성공');
-      navigate('/welcome');
+      navigate('/register/welcome');
     } catch (error) {
       console.error('SignUp Handling Error: ', error);
       alert('회원가입입 실패');

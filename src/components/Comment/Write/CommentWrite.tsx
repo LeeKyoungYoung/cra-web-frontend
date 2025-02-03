@@ -15,7 +15,9 @@ export default function CommentWrite({
 }: {
   parentId: number | undefined;
 }) {
-  const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // URL 파라미터에서 id 가져오기
+
   const boardId = Number(id); // id를 숫자로 변환
   const [formData, setFormData] = useState({
     userId: 1,

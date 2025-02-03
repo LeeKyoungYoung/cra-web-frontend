@@ -5,6 +5,7 @@ import { Project } from '~/models/Project';
 import { useNavigate, useParams } from 'react-router-dom';
 import { QUERY_KEY } from '~/api/queryKey';
 import styles from '../Project.module.css';
+import { uploadImage } from '~/api/uploadImage';
 
 function ProjectAdminEdit() {
   const navigate = useNavigate();
@@ -17,9 +18,10 @@ function ProjectAdminEdit() {
     gitHubUrl: '',
     serviceUrl: '',
     members: [''],
-    imageUrls: [''],
+    imageUrl: '',
   });
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const projectId = Number(id);
 
   const projectQuery = useQuery<Project>({
@@ -50,21 +52,23 @@ function ProjectAdminEdit() {
     }
   }, [projectQuery.isSuccess, projectQuery.data]);
 
-  const handleChange = (
+  const handleChange = async (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { name, value } = e.target;
+    const { name, value, files } = e.target as HTMLInputElement;
 
-    if (name === 'members' || name === 'imageUrls') {
-      setFormData({
-        ...formData,
-        [name]: value.split(','),
-      });
+    if (files && files[0]) {
+      const file = files[0];
+      const imageUrl = await uploadImage(file); // 이미지 업로드 함수 호출
+
+      if (imageUrl) {
+        setFormData((formData) => ({ ...formData, imageUrl })); // URL을 formData에 저장
+      }
     } else {
-      setFormData({
+      setFormData((formData) => ({
         ...formData,
-        [name]: value,
-      });
+        [name]: name === 'members' ? value.split(',') : value, // 텍스트 데이터 업데이트
+      }));
     }
   };
 
@@ -161,15 +165,13 @@ function ProjectAdminEdit() {
             required
           />
           <br />
-          <label htmlFor="imageUrls">이미지 주소</label>
+          <label htmlFor="imageSelect">이미지 선택</label>
           <input
-            type="text"
-            id="imageUrls"
-            name="imageUrls"
-            placeholder="이미지 주소"
-            value={formData.imageUrls.join(',')}
+            type="file"
+            id="imageSelect"
+            name="imageSelect"
+            accept="image/*"
             onChange={handleChange}
-            required
           />
           <br />
           <input type="submit" value="프로젝트 수정" />

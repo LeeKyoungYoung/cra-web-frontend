@@ -10,14 +10,17 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 20rem 0;
+  font-family: 'Pretendard Bold';
   p {
     color: #2cb4db;
+  }
+  button {
+    font-family: 'Pretendard Bold';
   }
 `;
 
 const Content = styled.div`
   p {
-    font-weight: bold;
     text-align: center;
   }
   margin-bottom: 5rem;
@@ -36,12 +39,16 @@ const Context = styled.p`
 const Buttons = styled.div`
   button {
     font-size: 1.5rem;
-    font-weight: bold;
     text-align: center;
     border-radius: 0.5rem;
     padding: 0.75rem 2rem;
     margin: 0 1.25rem;
     user-select: none;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;
 
@@ -69,7 +76,7 @@ function NotFoundPage() {
         </Context>
       </Content>
       <Buttons>
-        <MainBtn onClick={() => navigate('/intro')}>
+        <MainBtn onClick={() => navigate('/')}>
           메인으로 <img src={SkyBlueVector} />
         </MainBtn>
 

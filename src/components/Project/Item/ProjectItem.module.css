@@ -1,20 +1,26 @@
 .project-block {
-  width: calc(33.33% - 24px); /* 세 개 아이템을 한 줄에 배치 */
+  width: calc(33.33% - 15px); /* 세 개 아이템을 한 줄에 배치 */
   aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid #c1c1c1;
+  border: 1px solid #dadada;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
+  cursor: pointer;
+}
+.project-block:hover {
+  transform: scale(1.05); /* 약간 확대 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
 }
 
 /* 이미지 */
 .project-picture {
-  width: 90%;
-  height: 65%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #dadada;
   border-radius: 10px;
   background-color: #d4d4d4;
   margin-bottom: 10px;
@@ -22,14 +28,12 @@
 
 /* 제목 */
 .title {
-  font-weight: 5px;
   text-align: left;
   padding-left: 10px;
 }
 
 /* 내용 */
 .content {
-  font-weight: 3px;
   text-align: left;
   padding-left: 10px;
 }

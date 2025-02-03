@@ -5,10 +5,10 @@
 }
 
 .footer {
+  font-family: 'Pretendard SemiBold';
   border: none;
   background-color: #2cb4db;
   padding: 2.5rem 0rem;
-  font-size: larger;
 }
 
 .content {
@@ -24,6 +24,7 @@
 
 .description {
   display: flex;
+  font-size: 1.5625rem;
   padding: 0.5rem 0rem 1rem 0rem;
   p {
     color: #bcedfb;
@@ -34,8 +35,10 @@
   }
 }
 .cra206 {
+  font-size: 1.25rem;
   color: #ffffff;
   padding-left: 0.4rem;
+  margin-top: 1rem;
 }
 
 .icons {
@@ -45,7 +48,7 @@
 
 .developer {
   text-align: end;
-  font-size: 0.9rem;
+  font-size: 1.25rem;
   padding: 1.5rem 0rem;
   p {
     color: #ffffff;

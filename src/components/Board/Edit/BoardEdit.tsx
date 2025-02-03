@@ -21,8 +21,9 @@ export default function BoardEdit({ category }: { category: number }) {
     imageUrls: [''],
   });
 
-  const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
-  const boardId = Number(id); // id를 숫자로 변환
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+  const boardId = Number(id);
 
   const boardQuery = useQuery<Board>({
     queryKey: QUERY_KEY.board.boardById(boardId),

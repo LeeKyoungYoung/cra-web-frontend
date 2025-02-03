@@ -16,9 +16,10 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 const Title = styled.div`
-  h2 {
+  p {
     text-align: center;
     font-size: 40px;
+    font-family: 'Pretendard Bold';
     line-height: 59px;
     margin-bottom: 70px;
     color: var(--color-bright-text);
@@ -45,7 +46,7 @@ const Login = styled.div`
     border-radius: 10px;
     color: #ffffff;
     font-size: 30px;
-    font-weight: 700;
+    font-family: 'Pretendard Bold';
     margin-bottom: 14px;
     cursor: pointer;
   }
@@ -56,13 +57,12 @@ const Register = styled.div`
   margin: 1rem 0;
   text-align: center;
   font-size: 16px;
-  font-weight: 500;
+  font-family: 'Pretendard Medium';
   color: var(--color-dark-text);
   user-select: none;
 `;
 
-const AuthButtons = styled.div`
-`;
+const AuthButtons = styled.div``;
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -85,7 +85,7 @@ const LoginForm = () => {
   return (
     <Container>
       <Title>
-        <h2>로그인</h2>
+        <p>로그인</p>
       </Title>
       <MainContainer>
         <form onSubmit={handleLogin}>
@@ -96,6 +96,7 @@ const LoginForm = () => {
               placeholder="Enter the Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
+              required
             />
           </div>
           <HeightSpacer space={28} />
@@ -107,6 +108,7 @@ const LoginForm = () => {
                 placeholder="Enter the Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
             <div className={styles['checkbox-container']}>

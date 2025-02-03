@@ -1,8 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import BoardDetail from '../../../components/Board/Detail/BoardDetail';
-import { CATEGORY } from '../../../constants/category';
+import { ITEMCATEGORY } from '~/constants/itemCategory';
 
 export default function BookDetailPage() {
-  return <BoardDetail category={CATEGORY.BOOK} />;
+  return <BoardDetail category={ITEMCATEGORY.BOOK} />;
 }

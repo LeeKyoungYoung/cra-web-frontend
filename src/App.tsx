@@ -1,8 +1,13 @@
-import Footer from './components/Footer/Footer.js';
-import Header from './components/Header/Header.js';
-import AppRoutes from './pages/AppRoutes.js';
+import Footer from './components/Footer/Footer.tsx';
+import Header from './components/Header/Header.tsx';
+import ScrollToTop from './utils/ScrollToTop.tsx';
+import { RouterProvider } from '@tanstack/react-router';
 import './App.css';
-import ScrollToTop from './utils/ScrollToTop.js';
+import { routes } from './routes/routes.ts';
+import { Suspense } from 'react';
+const Loding = {
+  padding: '10rem',
+};
 
 function App() {
   return (
@@ -10,7 +15,9 @@ function App() {
       <Header />
       <div className="contents">
         <ScrollToTop />
-        <AppRoutes />
+        <Suspense fallback={<div style={Loding}>Loading...</div>}>
+          <RouterProvider router={routes} />
+        </Suspense>
       </div>
       <Footer />
     </div>

@@ -85,7 +85,7 @@ function HavrutaList() {
                 <Td>{havrutaElement.className}</Td>
                 <Td>{havrutaElement.professor}</Td>
                 <Td>
-                  <ActionLink to={`./edit/${havrutaElement.id}`}>
+                  <ActionLink to={`/admin/havruta/edit/${havrutaElement.id}`}>
                     수정
                   </ActionLink>
                   |

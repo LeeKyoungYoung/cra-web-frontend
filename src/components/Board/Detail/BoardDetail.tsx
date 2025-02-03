@@ -1,5 +1,6 @@
 import React from 'react';
 import { Board } from '../../../models/Board';
+import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '../../../api/queryKey';
 import { getBoardById } from '../../../api/board';
@@ -10,10 +11,17 @@ import CommentList from '~/components/Comment/List/CommetList';
 import styles from './BoardDetail.module.css';
 import { getCommentsCountByCategory } from '~/api/comment';
 import { dateFormat } from '~/utils/dateForm';
+import { useMatch, useRouter } from '@tanstack/react-router';
 
 export default function BoardDetail({ category }: { category: number }) {
-  const { id } = useParams<{ id: string }>(); // URL 파라미터에서 id 가져오기
-  const boardId = Number(id); // id를 숫자로 변환
+  const currentUrl = window.location.href; // 현재 경로 가져오기
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // 마지막 '/' 뒤의 숫자 가져오기
+
+  const boardId = Number(id);
+
+  if (isNaN(boardId)) {
+    return <div style={{ padding: '10rem' }}>Invalid ID</div>;
+  }
 
   const boardQuery = useQuery<Board>({
     queryKey: QUERY_KEY.board.boardById(boardId),

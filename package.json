@@ -12,10 +12,12 @@
   "dependencies": {
     "@tanstack/react-query": "^5.62.10",
     "@tanstack/react-query-devtools": "^5.62.10",
-    "@toast-ui/editor": "^3.2.2",
+    "@tanstack/react-router": "^1.97.14",
+    "@tanstack/router-plugin": "^1.97.14",
     "@toast-ui/editor-plugin-code-syntax-highlight": "^3.1.0",
     "@toast-ui/editor-plugin-color-syntax": "^3.1.0",
     "@toast-ui/react-editor": "^3.2.3",
+    "@toast-ui/editor": "^3.2.2",
     "@types/prismjs": "^1.26.5",
     "axios": "^1.7.9",
     "embla-carousel-autoplay": "^8.5.1",
@@ -31,6 +33,7 @@
     "react-dom": "^18.3.1",
     "react-modal": "^3.16.3",
     "react-router-dom": "^7.1.1",
+    "react-scroll-parallax": "^3.4.5",
     "styled-components": "^6.1.13",
     "tsconfig-paths": "^4.2.0",
     "zustand": "^5.0.3"
