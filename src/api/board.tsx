@@ -71,20 +71,22 @@ export const getBoardById = async (id: number) => {
 // [POST]
 // 새로운 게시판(Board)을 생성하기 위해 서버에 POST 요청을 보내는 메소드
 // parameter로 Board 타입의 객체를 받아서 서버로 전송
-export const createBoards = async (board: Board) => {
+export const createBoards = async (board: Board, files: File[]) => {
   try {
-    // client에서 URL를 가져와서 /board를 붙여서 데이터를 보냄
-    // 권한이 필요한 작업에 authClient 사용
-    const response = await authClient.post<Board>('/board', board, {
-      // 서버가 요청 데이터를 JSON 형식으로 인식하도록 명시, 문자 인코딩 방식 지정
+    const formData = new FormData();
+
+    formData.append('board', JSON.stringify(board));
+
+    files.forEach((file) => {
+      formData.append('files', file);
+    });
+    const response = await authClient.post<FormData>('/board', formData, {
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    // 서버에서 반환된 데이터에서 실제 본문 데이터를 추출하여 반환
     return response.data;
   } catch (error) {
-    // 에러 처리
     console.error('Failed to post data:', error);
 
     if (axios.isAxiosError(error)) {
