@@ -8,6 +8,7 @@
   max-width: 1086px;
   padding: 115px 50px 194px;
   margin: 0 auto;
+  margin-top: 1rem;
 }
 
 .detail-content {
@@ -36,8 +37,10 @@
   width: 117px;
   height: 44px;
   font-size: 20px;
-  background-color: #2cb4db;
+  font-family: 'Pretendard Bold';
+  background-color: var(--color-brighter-text);
   color: #ffffff;
+  border: none;
   border-radius: 0.5rem;
   margin-left: auto;
 }
@@ -46,7 +49,6 @@
   text-align: center;
   text-decoration: none;
   font-size: large;
-  font-weight: bold;
   color: white;
 }
 
@@ -63,8 +65,8 @@
   margin: 4px 13px 14px;
   line-height: 34px;
   color: #9b9b9b;
-  font-weight: 500;
   font-size: 20px;
+  font-family: 'Pretendard Medium';
 }
 
 .nav {
@@ -74,19 +76,20 @@
 
 .nav-title {
   color: #9b9b9b;
+  font-family: 'Pretendard Medium';
 }
 
 .nav-content {
   color: #5e5e5e;
-  font-weight: 600;
+  font-family: 'Pretendard SemiBold';
 }
 
 .content-title {
   margin-top: 18px;
   margin-bottom: 33px;
   color: #5e5e5e;
-  font-weight: 700;
   font-size: 30px;
+  font-family: 'Pretendard Bold';
   line-height: 59px;
 }
 
@@ -102,9 +105,3 @@
   font-size: 20px;
   color: #9b9b9b;
 }
-
-/* .footer {
-  padding-left: 13px;
-  padding-right: 13px;
-} */
-

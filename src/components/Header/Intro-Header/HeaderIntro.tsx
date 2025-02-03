@@ -14,7 +14,7 @@ export default function HeaderIntro() {
           to="/main"
           className={`${styles['li-intro']} ${styles['navbar-link']}`}
         >
-          main()
+          MAIN PAGE
         </Link>
       </ul>
     </div>
