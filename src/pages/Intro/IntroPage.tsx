@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
 import Vector from '~/assets/images/Vector/Arrow-Vector.png';
+import Vector2 from '~/assets/images/Vector/Arrow-Vector2.png';
 import styles from './IntroPage.module.css';
 import EmblaCarousel from '~/components/Carousel/EmblaCarousel';
 import Crang1 from '~/assets/images/pixelcrang/pixelcrang1.svg';
@@ -43,7 +44,7 @@ export default function IntroPage() {
           </Link>
 
           <div className={styles['vector']}>
-            <img src={Vector} />
+            <img src={Vector2} />
             <img src={Vector} />
           </div>
         </div>

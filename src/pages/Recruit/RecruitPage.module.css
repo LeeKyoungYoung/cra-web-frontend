@@ -15,16 +15,18 @@
 
 #title {
   color: #ffffff;
-  font-size: 100px;
+  font-size: 5vw;
   font-weight: 978;
   letter-spacing: -1px;
-  line-height: 100px;
+  line-height: 5vw;
+  font-family: 'Archivo Black';
 }
 
 #content {
   color: #dcf8ff;
-  font-size: 45px;
+  font-size: 2.9vw;
   padding: 2.5rem 0rem;
+  font-family: 'Pretendard Bold';
 }
 
 .recruit-page {
@@ -56,7 +58,7 @@ input[id='studentnumber'] {
 }
 
 .recruit-section .recruit-section input:focus {
-  border-color: #007bff;
+  border-color: #2cb4db;
   outline: none;
 }
 
@@ -66,13 +68,14 @@ input[id='studentnumber'] {
   flex-direction: column;
   align-items: center; /* 부모 요소를 가운데 정렬 */
   justify-content: center; /* 부모 요소를 세로로 가운데 정렬 */
-  padding: 5rem 0rem 5rem 0rem;
+  padding: 2vw 0rem 2vw 0rem;
   color: white;
 
   h1 {
-    padding-top: 150px;
+    padding-top: 250px;
     padding-bottom: 40px;
-    font-size: 50px;
+    font-size: 3vw;
+    font-family: 'Pretendard Bold';
   }
 }
 
@@ -80,15 +83,15 @@ input[id='studentnumber'] {
   div {
     display: flex;
     padding: 25px;
-    font-size: 30px;
+    font-size: clamp(13px, 1.5vw, 30px);
     font-weight: bold;
     line-height: 1.6;
     color: white;
   }
   .number {
-    font-weight: bold;
-    margin-right: 60px; /* 숫자와 텍스트 사이 간격 */
-    color: #007bff;
+    font-family: 'Pretendard ExtraBold';
+    margin-right: 6vw; /* 숫자와 텍스트 사이 간격 */
+    color: #2cb4db;
   }
 
   span {
@@ -108,8 +111,9 @@ input[id='studentnumber'] {
   h2 {
     padding-top: 50px;
     padding-bottom: 100px;
-    font-size: 50px;
+    font-size: 3vw;
     color: white;
+    font-family: 'Pretendard Bold';
   }
 }
 
@@ -119,24 +123,25 @@ input[id='studentnumber'] {
 }
 
 .content-box {
-  width: 400px;
+  width: clamp(125px, 20vw, 800px);
+  height: clamp(125px, 15vw, 800px);
   aspect-ratio: 397 / 281;
   background-color: rgb(237, 237, 237);
-  border-radius: 30px;
+  border-radius: 1vw;
   margin: 10px;
 
   h3 {
-    margin-right: 40%;
-    padding: 40px;
-    font-size: 35px;
+    padding: 1.5vw;
+    font-size: 1.7vw;
+    font-family: 'Pretendard ExtraBold';
   }
 
   p {
     display: flex;
-    font-size: 28px;
-    margin-left: 50px;
-    line-height: 1.6;
-    font-weight: 00;
+    font-size: clamp(9px, 1.3vw, 50px);
+    margin-left: 1.4vw;
+    line-height: clamp(15px, 1.6vw, 1.6vw);
+    font-family: 'Pretendard Medium';
   }
 }
 
@@ -152,40 +157,40 @@ input[id='studentnumber'] {
   h2 {
     padding-top: 50px;
     padding-bottom: 200px;
-    font-size: 50px;
+    font-size: 3vw;
     color: white;
+    font-family: 'Pretendard Bold';
   }
 }
 
 .calender-line {
-  width: 80%; /* 줄의 길이를 조금 짧게 조정 */
-  height: 10px; /* 줄의 높이 */
+  width: 50%; /* 줄의 길이를 조금 짧게 조정 */
+  height: 3px; /* 줄의 높이 */
   background-color: rgb(209, 209, 209); /* 줄의 색상 */
-  margin-bottom: 40px; /* 줄과 박스 사이 간격 */
   display: flex;
-  justify-content: space-between; /* 박스들 사이 공간을 균등하게 배분 */
-  align-items: center; /* 줄이 박스들 가운데에 오도록 정렬 */
-  z-index: 1;
+  justify-content: center;
+  align-items: center;
 }
 
 .calender-box {
-  width: 300px;
-  aspect-ratio: 397 / 281;
+  width: 60vw;
+  height: 10vw;
+  aspect-ratio: 286 / 199;
   background-color: rgb(237, 237, 237);
-  border-radius: 30px;
-  margin: 30px;
+  border-radius: 10px;
+  margin: 15px;
 
   h3 {
     padding: 20px;
-    font-size: 35px;
+    font-family: 'Pretendard Bold';
   }
 
   p {
     display: flex;
-    font-size: 28px;
-    margin-left: 40px;
-    line-height: 1.6;
-    font-weight: 00;
+    font-size: 1.3vw;
+    line-height: 1.3;
+    margin-left: 1.6vw;
+    font-family: 'Pretendard Medium';
   }
 }
 
@@ -196,24 +201,43 @@ input[id='studentnumber'] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0rem 30rem 0rem;
+  padding: 1rem 0rem 30rem 0rem;
 
   h1 {
-    padding-top: 50px;
-    padding-bottom: 100px;
-    font-size: 100px;
+    padding-top: 10px;
+    padding-bottom: 3vw;
+    font-size: 3vw;
+    color: white;
+    font-family: 'Pretendard Bold';
   }
 
   .button-style {
-    padding: 10px 500px;
-    font-size: 50px;
-    font-weight: bold;
+    padding: 1vw 15vw;
+    font-size: 2vw;
+    font-family: 'Pretendard Bold';
     color: white;
-    background: rgb(100, 100, 255);
+    background: #2cb4db;
     border: none;
-    border-radius: 50px;
+    border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.3s ease-in-out; /* 부드러운 전환 효과 */
+  }
+
+  .button-style:hover {
+    background-color: aqua;
+  }
+}
+
+/*----------------------------------------------------------------*/
+
+.vector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.25rem 0rem;
+  img {
+    width: 3.4375rem;
+    height: 1.6875rem;
   }
 }
