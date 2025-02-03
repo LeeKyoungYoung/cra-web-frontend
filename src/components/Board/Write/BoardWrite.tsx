@@ -28,7 +28,7 @@ export default function BoardWrite({ category }: { category: number }) {
     // mutationFn은 데이터를 처리하는 비동기 함수를 지정함 (마치 createBoards같은 함수)
     // Board 객체인 newBoard를 사용해서 createBoards 함수로 보냄
     mutationFn: (newBoard: Board) => createBoards(newBoard),
-      // 성공 시에 호출
+    // 성공 시에 호출
     onSuccess: async () => {
       // alert 창으로 알려주기
       await alert('게시글 작성 성공');
@@ -119,7 +119,23 @@ export default function BoardWrite({ category }: { category: number }) {
           useCommandShortcut={true}
           plugins={[[codeSyntaxHighlight, { highlighter: Prism }], colorSyntax]}
           hooks={{
-            addImageBlobHook: onUploadImage, // 이미지 업로드 핸들러 추가
+            addImageBlobHook: async (
+              blob: File,
+              callback: (url: string) => void,
+            ) => {
+              try {
+                const url = await onUploadImage(blob); // URL을 받아옴
+                callback(url); // Markdown 에디터에 삽입
+
+                setFormData((prevData) => ({
+                  ...prevData,
+                  imageUrls: [...prevData.imageUrls, url], // DB로 전송할 이미지 URL 배열에 추가
+                }));
+              } catch (error) {
+                console.error('이미지 업로드 실패:', error);
+                alert('이미지 업로드에 실패했습니다.');
+              }
+            },
           }}
         />
         <br />

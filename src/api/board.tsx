@@ -120,10 +120,7 @@ export const deleteBoards = async (id: number) => {
   }
 };
 
-export const onUploadImage = async (
-  blob: File,
-  callback: (url: string) => void,
-) => {
+export const onUploadImage = async (blob: File) => {
   const formData = new FormData();
   formData.append('image', blob);
 
@@ -132,13 +129,14 @@ export const onUploadImage = async (
       headers: { 'Content-Type': 'multipart/form-data' },
     });
     const imageUrl = response.data;
-    
-    console.log('받은 이미지 URL:', imageUrl); // URL 확인용 로그
 
-    callback(imageUrl); // 전체 S3 이미지 URL 전달
+    console.log('받은 이미지 URL:', imageUrl);
     alert('이미지 업로드 성공');
-  } catch (error) { 
+
+    return imageUrl; // 이미지 URL만 반환 (callback 없음)
+  } catch (error) {
     console.error('이미지 업로드 실패:', error);
     alert('이미지 업로드 실패');
+    throw error;
   }
 };
