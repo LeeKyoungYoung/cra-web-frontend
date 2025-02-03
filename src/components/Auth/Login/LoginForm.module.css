@@ -1,7 +1,7 @@
 .id label,
 .password label {
-  margin-left: 2.5rem;
-  height: 34px;
+  line-height: 34px;
+  margin-bottom: 11px;
   font-size: 20px;
   font-family: 'Pretendard SemiBold';
   color: var(--color-dark-text);
@@ -13,17 +13,17 @@
   background-color: #fff;
   width: 100%;
   height: 68px;
-  font-size: 1.125rem;
+  font-size: 20px;
   border-radius: 10px;
   border: 1px solid var(--color-dark-stroke);
   margin-bottom: 0;
+  padding-left: 20px;
 }
 
 .id input::placeholder,
 .password input::placeholder {
   font-size: 20px;
   color: var(--color-placeholder-text);
-  padding-left: 10px;
 }
 
 .search-link {
@@ -41,7 +41,6 @@
 }
 
 .checkbox-container {
-  margin-top: 10px;
   display: flex;
   align-items: center;
   color: var(--color-dark-text);
@@ -52,7 +51,7 @@
   height: 18px;
   accent-color: var(--color-primary);
   cursor: pointer;
-  margin: 0 0 0 2.5rem;
+  margin: 0 7px 0 7px;
 }
 
 .checkbox-container label {
@@ -60,5 +59,5 @@
   cursor: pointer;
   color: var(--color-dark-text);
   font-size: 1rem;
-  transform: translate(-1rem, 0.7rem);
+  color: var(--color-bright-text);
 }

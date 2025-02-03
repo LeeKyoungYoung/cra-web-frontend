@@ -12,8 +12,8 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 668px;
-  padding-top: 15rem;
-  padding-bottom: 15%;
+  padding-top: 12rem;
+  padding-bottom: 10%;
   margin: 0 auto;
 `;
 const Title = styled.div`
@@ -28,9 +28,12 @@ const Title = styled.div`
   }
 `;
 const MainContainer = styled.div``;
+const IdOptionsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
 const Search = styled.div`
-  margin: 1.5rem 0 0 0;
-  transform: translate(2rem);
   text-align: end;
   line-height: 34px;
   user-select: none;
@@ -48,6 +51,7 @@ const Login = styled.div`
     color: #ffffff;
     font-size: 30px;
     font-family: 'Pretendard Bold';
+    margin-top: 40px;
     margin-bottom: 14px;
     cursor: pointer;
   }
@@ -128,6 +132,8 @@ const LoginForm = () => {
                 required
               />
             </div>
+          </div>
+          <IdOptionsContainer>
             <div className={styles['checkbox-container']}>
               <input
                 type="checkbox"
@@ -137,21 +143,21 @@ const LoginForm = () => {
               />
               <label htmlFor="show-password">비밀번호 보기</label>
             </div>
-          </div>
-          <AuthButtons>
-            <Search>
-              <Link to="/idsearch" className={styles['search-link']}>
-                아이디 찾기
-              </Link>
-              <span>|</span>
-              <Link to="/pwsearch" className={styles['search-link']}>
-                비밀번호 찾기
-              </Link>
-            </Search>
-            <Login>
-              <input type="submit" value={'로그인'} />
-            </Login>
-          </AuthButtons>
+            <AuthButtons>
+              <Search>
+                <Link to="/idsearch" className={styles['search-link']}>
+                  아이디 찾기
+                </Link>
+                <span>|</span>
+                <Link to="/pwsearch" className={styles['search-link']}>
+                  비밀번호 찾기
+                </Link>
+              </Search>
+            </AuthButtons>
+          </IdOptionsContainer>
+          <Login>
+            <input type="submit" value={'로그인'} />
+          </Login>
         </form>
         <Register>
           <span>아직 CRA의 회원이 아니신가요? </span>
