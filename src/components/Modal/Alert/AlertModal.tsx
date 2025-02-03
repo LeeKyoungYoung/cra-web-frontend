@@ -12,17 +12,15 @@ const AlertModal = ({ closeModal }: { closeModal: () => void }) => {
         isOpen
         onRequestClose={closeModal}
       >
-        <div className={styles['modal-header']} />
-        <div className={styles['modal-body']}>
-          <div className={styles['description']}>
-            모든 값을 올바르게 입력 해 주세요
-          </div>
-        </div>
-        <div className={styles['modal-footer']}>
+        <div className={styles['modal-header']}>
           <button onClick={closeModal} className={styles['close-button']}>
-            닫기
+            ✖
           </button>
         </div>
+        <div className={styles['modal-body']}>
+          모든 값을 올바르게 입력해주세요
+        </div>
+        <button className={styles['check-button']}>확인</button>
       </Modal>
     </>
   );

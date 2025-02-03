@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '~/store/authStore';
 import HeightSpacer from '~/components/Common/HeightSpacer';
+import CryptoJS from 'crypto-js';
 import styled from 'styled-components';
 import styles from './LoginForm.module.css';
 import AlertModal from '~/components/Modal/Alert/AlertModal';
@@ -12,8 +13,8 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 668px;
-  padding-top: 15rem;
-  padding-bottom: 15%;
+  padding-top: 12rem;
+  padding-bottom: 10%;
   margin: 0 auto;
 `;
 const Title = styled.div`
@@ -28,9 +29,12 @@ const Title = styled.div`
   }
 `;
 const MainContainer = styled.div``;
+const IdOptionsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`;
 const Search = styled.div`
-  margin: 1.5rem 0 0 0;
-  transform: translate(2rem);
   text-align: end;
   line-height: 34px;
   user-select: none;
@@ -48,6 +52,7 @@ const Login = styled.div`
     color: #ffffff;
     font-size: 30px;
     font-family: 'Pretendard Bold';
+    margin-top: 40px;
     margin-bottom: 14px;
     cursor: pointer;
   }
@@ -78,8 +83,23 @@ const LoginForm = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    const secretKey = '1234567890123456'; // 예시 나중에 바꿀거임 (진짜)
+    const iv = CryptoJS.enc.Utf8.parse('1234567890123456'); // IV 설정
+    const encryptedPassword = CryptoJS.AES.encrypt(
+      password,
+      CryptoJS.enc.Utf8.parse(secretKey),
+      {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7,
+      },
+    ).toString();
     try {
-      await login({ username, password });
+      await login({ username, password: encryptedPassword });
+      // 확인용 (나중에 없앨꺼임)
+      console.log(username);
+      console.log(password);
+      console.log(encryptedPassword);
       alert('로그인 성공');
       navigate('/main');
     } catch (error) {
@@ -87,6 +107,7 @@ const LoginForm = () => {
       openModal();
     }
   };
+
   return (
     <Container>
       <Title>
@@ -116,6 +137,8 @@ const LoginForm = () => {
                 required
               />
             </div>
+          </div>
+          <IdOptionsContainer>
             <div className={styles['checkbox-container']}>
               <input
                 type="checkbox"
@@ -125,21 +148,21 @@ const LoginForm = () => {
               />
               <label htmlFor="show-password">비밀번호 보기</label>
             </div>
-          </div>
-          <AuthButtons>
-            <Search>
-              <Link to="/idsearch" className={styles['search-link']}>
-                아이디 찾기
-              </Link>
-              <span>|</span>
-              <Link to="/pwsearch" className={styles['search-link']}>
-                비밀번호 찾기
-              </Link>
-            </Search>
-            <Login>
-              <input type="submit" value={'로그인'} />
-            </Login>
-          </AuthButtons>
+            <AuthButtons>
+              <Search>
+                <Link to="/idsearch" className={styles['search-link']}>
+                  아이디 찾기
+                </Link>
+                <span>|</span>
+                <Link to="/pwsearch" className={styles['search-link']}>
+                  비밀번호 찾기
+                </Link>
+              </Search>
+            </AuthButtons>
+          </IdOptionsContainer>
+          <Login>
+            <input type="submit" value={'로그인'} />
+          </Login>
         </form>
         <Register>
           <span>아직 CRA의 회원이 아니신가요? </span>
