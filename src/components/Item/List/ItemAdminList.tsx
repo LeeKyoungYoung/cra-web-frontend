@@ -94,10 +94,13 @@ function ItemAdminList() {
                 </Td>
 
                 <Td>
-                  <ActionLink to={`./view/${itemElement.id}`}>
+                  <ActionLink to={`/admin/item/view/${itemElement.id}`}>
                     자세히 보기
                   </ActionLink>
-                  |<ActionLink to={`./edit/${itemElement.id}`}>수정</ActionLink>
+                  |
+                  <ActionLink to={`/admin/item/edit/${itemElement.id}`}>
+                    수정
+                  </ActionLink>
                   |{' '}
                   <DeleteButtonWrapper>
                     <ItemAdminDelete id={itemElement.id!} />
@@ -115,7 +118,7 @@ function ItemAdminList() {
     <Container>
       <h1>관리자 비품 페이지</h1>
       {content}
-      <CreateItemLink to="./write">새 비품 추가</CreateItemLink>
+      <CreateItemLink to="/admin/item/write">새 비품 추가</CreateItemLink>
     </Container>
   );
 }

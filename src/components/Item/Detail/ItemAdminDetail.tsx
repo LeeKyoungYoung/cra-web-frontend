@@ -19,7 +19,8 @@ const Bold = styled.b`
 `;
 
 function ItemAdminDetail() {
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const ItemId = Number(id);
 
   const itemQuery = useQuery<Item>({

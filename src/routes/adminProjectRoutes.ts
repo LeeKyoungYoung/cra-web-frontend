@@ -10,7 +10,7 @@ export const adminProjectRoute = createRoute({
 
 export const adminProjectDetailRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/project/view/:id',
+  path: '/admin/project/view/$id',
   component: lazy(
     () => import('~/pages/Board/Project/ProjectAdminDetailPage.tsx'),
   ),
@@ -18,7 +18,7 @@ export const adminProjectDetailRoute = createRoute({
 
 export const adminProjectUpdateRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/project/edit/:id',
+  path: '/admin/project/edit/$id',
   component: lazy(
     () => import('~/pages/Board/Project/ProjectAdminEditPage.tsx'),
   ),

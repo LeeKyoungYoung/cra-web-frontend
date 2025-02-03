@@ -17,7 +17,8 @@ function BookAdminEdit() {
     imageUrl: '',
     isBorrowed: true,
   });
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const itemId = Number(id);
 
   const itemQuery = useQuery<Item>({

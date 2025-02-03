@@ -12,7 +12,7 @@ export const adminHavrutaRoute = createRoute({
 
 export const adminHavrutaUpdateRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/admin/Havruta/edit/:id',
+  path: '/admin/Havruta/edit/$id',
   component: lazy(
     () => import('~/pages/Board/Havruta/HavrutaAdmin/HavrutaAdminEditPage.tsx'),
   ),

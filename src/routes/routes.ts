@@ -1,7 +1,7 @@
 import { createRouter } from '@tanstack/react-router';
 import { rootRoute } from './__root.tsx';
 import { notFoundRoute } from './notFoundRoute.ts';
-import { introRoute } from './introRoute.ts';
+import { HomeRoute, introRoute } from './introRoutes.ts';
 import { recruitRoute } from './recruitRoute.ts';
 import { mainRoute } from './mainRoute.ts';
 import { loginRoute } from './loginRoute.ts';
@@ -54,12 +54,15 @@ import {
 } from './adminHavrutaRoutes.ts';
 import {
   adminProjectRoute,
+  adminProjectDetailRoute,
   adminProjectUpdateRoute,
   adminProjectCreateRoute,
 } from './adminProjectRoutes.ts';
+
 export const routes = createRouter({
   routeTree: rootRoute.addChildren([
     notFoundRoute,
+    HomeRoute,
     introRoute,
     recruitRoute,
     mainRoute,
@@ -99,6 +102,7 @@ export const routes = createRouter({
     adminHavrutaUpdateRoute,
     adminHavrutaCreateRoute,
     adminProjectRoute,
+    adminProjectDetailRoute,
     adminProjectUpdateRoute,
     adminProjectCreateRoute,
   ]),

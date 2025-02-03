@@ -94,10 +94,13 @@ function BookAdminList() {
                 </Td>
 
                 <Td>
-                  <ActionLink to={`./view/${itemElement.id}`}>
+                  <ActionLink to={`/admin/book/view/${itemElement.id}`}>
                     자세히 보기
                   </ActionLink>
-                  |<ActionLink to={`./edit/${itemElement.id}`}>수정</ActionLink>
+                  |
+                  <ActionLink to={`/admin/book/edit/${itemElement.id}`}>
+                    수정
+                  </ActionLink>
                   |{' '}
                   <DeleteButtonWrapper>
                     <ItemAdminDelete id={itemElement.id!} />
@@ -115,7 +118,7 @@ function BookAdminList() {
     <Container>
       <h1>관리자 도서 페이지</h1>
       {content}
-      <CreateItemLink to="./write">새 도서 추가</CreateItemLink>
+      <CreateItemLink to="/admin/book/write">새 도서 추가</CreateItemLink>
     </Container>
   );
 }
