@@ -74,10 +74,16 @@ const LoginForm = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const secretKey = 'your-secret-key'; // 예시 나중에 바꿀거임 (진짜짜)
+    const secretKey = '1234567890123456'; // 예시 나중에 바꿀거임 (진짜)
+    const iv = CryptoJS.enc.Utf8.parse('1234567890123456'); // IV 설정
     const encryptedPassword = CryptoJS.AES.encrypt(
       password,
-      secretKey,
+      CryptoJS.enc.Utf8.parse(secretKey),
+      {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7,
+      },
     ).toString();
     try {
       await login({ username, password: encryptedPassword });
