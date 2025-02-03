@@ -1,6 +1,7 @@
 @import './styles/colors.css';
 @import './styles/fonts/pretendard.css';
 @import './styles/fonts/archivo-black.css';
+@import './styles/fonts/pixelify-sans.css';
 
 :root {
   --global-font-family: 'Pretendard';
