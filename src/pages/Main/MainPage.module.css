@@ -12,7 +12,8 @@
     flex-basis: 100%;
     margin-left: 0;
     font-size: 40px;
-    color: #5e5e5e;
+    font-family: 'Pretendard Bold';
+    color: var(--color-bright-text);
   }
 }
 
@@ -49,6 +50,7 @@
     flex-basis: 100%;
     margin-left: 0;
     font-size: 40px;
-    color: #5e5e5e;
+    font-family: 'Pretendard Bold';
+    color: var(--color-bright-text);
   }
 }

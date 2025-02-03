@@ -10,8 +10,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 20rem 0;
+  font-family: 'Pretendard Bold';
   p {
     color: #2cb4db;
+  }
+  button {
+    font-family: 'Pretendard Bold';
   }
 `;
 

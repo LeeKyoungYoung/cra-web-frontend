@@ -23,6 +23,7 @@
   width: 100%;
   line-height: 34px;
   font-size: 18px;
+  font-family: 'Pretendard SemiBold';
   text-decoration: none;
   color: var(--color-dark-text);
   display: inline;
@@ -34,6 +35,7 @@
   text-decoration: none;
   color: #9b9b9b;
   font-size: 15px;
+  font-family: 'Pretendard Medium';
   margin: 8px 0;
 }
 

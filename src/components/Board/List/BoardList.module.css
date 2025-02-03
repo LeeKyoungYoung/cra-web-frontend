@@ -14,6 +14,7 @@
   margin-left: 10px;
   padding-bottom: 34px;
   font-size: 40px;
+  font-family: 'Pretendard Bold';
   color: var(--color-bright-text);
 }
 
@@ -78,6 +79,7 @@
   transition: background-color 0.2s;
   text-align: center;
   font-size: 24px;
+  font-family: 'Pretendard Bold';
 }
 
 .write-link:hover {

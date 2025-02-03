@@ -91,7 +91,7 @@ export default function BoardWrite({ category }: { category: number }) {
     <div className={styles['write-container']}>
       <form className={styles['write-form']} onSubmit={HandleSubmit}>
         <h2 className={styles['write-title']}>
-          {CATEGORY_STRINGS[category]} 게시글 작성
+          글쓰기
         </h2>
 
         <label htmlFor="userId">학번</label>
