@@ -75,14 +75,18 @@ export const createBoards = async (board: Board, files: File[]) => {
   try {
     const formData = new FormData();
 
-    formData.append('board', JSON.stringify(board));
+    formData.append(
+      'board',
+      new Blob([JSON.stringify(board)], { type: 'application/json' }),
+    );
 
     files.forEach((file) => {
       formData.append('files', file);
     });
+
     const response = await authClient.post<FormData>('/board', formData, {
       headers: {
-        'Content-type': 'application/json; charset=UTF-8',
+        'Content-type': 'multipart/form-data',
       },
     });
     return response.data;
