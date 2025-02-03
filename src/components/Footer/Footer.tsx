@@ -47,7 +47,7 @@ export default function Footer() {
             <img
               width="32"
               height="32"
-              src="https://img.icons8.com/ios/50/FFFFFF/administrator-male--v1.png"
+              src="https://img.icons8.com/ios-filled/50/automatic.png"
               alt="github"
             />
           </Link>
