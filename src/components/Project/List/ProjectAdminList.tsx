@@ -89,11 +89,11 @@ function ProjectAdminList() {
                 <Td>{projectElement.serviceName}</Td>
                 <Td>{projectElement.members.join(', ')}</Td>
                 <Td>
-                  <ActionLink to={`./view/${projectElement.id}`}>
+                  <ActionLink to={`/admin/project/view/${projectElement.id}`}>
                     자세히 보기
                   </ActionLink>
                   |
-                  <ActionLink to={`./edit/${projectElement.id}`}>
+                  <ActionLink to={`/admin/project/edit/${projectElement.id}`}>
                     수정
                   </ActionLink>
                   |{' '}
@@ -113,7 +113,9 @@ function ProjectAdminList() {
     <Container>
       <h1>관리자 프로젝트 페이지</h1>
       {content}
-      <CreateProjectLink to="./write">새 프로젝트 생성</CreateProjectLink>
+      <CreateProjectLink to="/admin/project/write">
+        새 프로젝트 생성
+      </CreateProjectLink>
     </Container>
   );
 }

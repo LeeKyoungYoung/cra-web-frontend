@@ -10,13 +10,13 @@ export const noticeRoute = createRoute({
 
 export const noticeViewRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/notice/view/:id',
+  path: '/notice/view/$id',
   component: lazy(() => import('~/pages/Board/Notice/NoticeDetailPage.tsx')),
 });
 
 export const noticeEditRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/notice/edit/:id',
+  path: '/notice/edit/$id',
   component: lazy(() => import('~/pages/Board/Notice/NoticeEditPage.tsx')),
 });
 

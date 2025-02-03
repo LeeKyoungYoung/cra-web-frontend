@@ -69,7 +69,7 @@ export default function HavrutaBoardList({
             onPageChange={onPageChange}
           />
 
-          <Link className={styles['write-link']} to="./write">
+          <Link className={styles['write-link']} to="/havruta/write">
             글쓰기
           </Link>
           {/* <Link to={'../admin/havruta'}>어드민</Link> */}

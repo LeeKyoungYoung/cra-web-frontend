@@ -9,7 +9,8 @@ import { HavrutaBoard } from '~/models/Havruta';
 import HavrutaBoardDetailItem from './Item/HavrutaBoardDetailIItem';
 
 export default function HavrutaBoardDetail() {
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const havrutaId = Number(id);
 
   const havrutaQuery = useQuery<HavrutaBoard>({

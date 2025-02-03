@@ -5,5 +5,6 @@ import { CATEGORY } from '../../../constants/category';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
 
 export default function NoticeDetailPage() {
-  return (<BoardDetail category={CATEGORY.NOTICE} />);
+  console.log('NoticeDetailPage 렌더링');
+  return <BoardDetail category={CATEGORY.NOTICE} />;
 }

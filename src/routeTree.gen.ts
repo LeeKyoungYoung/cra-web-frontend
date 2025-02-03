@@ -20,7 +20,7 @@ import { Route as NotFoundRouteImport } from './routes/notFoundRoute'
 import { Route as MainRouteImport } from './routes/mainRoute'
 import { Route as LoginRouteImport } from './routes/loginRoute'
 import { Route as ItemRouteImport } from './routes/itemRoute'
-import { Route as IntroRouteImport } from './routes/introRoute'
+import { Route as IntroRoutesImport } from ./routes/introRouteses'
 import { Route as HavrutaRoutesImport } from './routes/havrutaRoutes'
 import { Route as BookRouteImport } from './routes/bookRoute'
 import { Route as AuthRoutesImport } from './routes/authRoutes'
@@ -87,9 +87,9 @@ const ItemRouteRoute = ItemRouteImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const IntroRouteRoute = IntroRouteImport.update({
-  id: '/introRoute',
-  path: '/introRoute',
+const IntroRoutesRoute = IntroRoutesImport.update({
+  id: '/introRoutes',
+  path: '/introRoutes',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -214,11 +214,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HavrutaRoutesImport
       parentRoute: typeof rootRoute
     }
-    '/introRoute': {
-      id: '/introRoute'
-      path: '/introRoute'
-      fullPath: '/introRoute'
-      preLoaderRoute: typeof IntroRouteImport
+    '/introRoutes': {
+      id: '/introRoutes'
+      path: '/introRoutes'
+      fullPath: '/introRoutes'
+      preLoaderRoute: typeof IntroRoutesImport
       parentRoute: typeof rootRoute
     }
     '/itemRoute': {
@@ -299,7 +299,7 @@ export interface FileRoutesByFullPath {
   '/authRoutes': typeof AuthRoutesRoute
   '/bookRoute': typeof BookRouteRoute
   '/havrutaRoutes': typeof HavrutaRoutesRoute
-  '/introRoute': typeof IntroRouteRoute
+  '/introRoutes': typeof IntroRoutesRoute
   '/itemRoute': typeof ItemRouteRoute
   '/loginRoute': typeof LoginRouteRoute
   '/mainRoute': typeof MainRouteRoute
@@ -321,7 +321,7 @@ export interface FileRoutesByTo {
   '/authRoutes': typeof AuthRoutesRoute
   '/bookRoute': typeof BookRouteRoute
   '/havrutaRoutes': typeof HavrutaRoutesRoute
-  '/introRoute': typeof IntroRouteRoute
+  '/introRoutes': typeof IntroRoutesRoute
   '/itemRoute': typeof ItemRouteRoute
   '/loginRoute': typeof LoginRouteRoute
   '/mainRoute': typeof MainRouteRoute
@@ -344,7 +344,7 @@ export interface FileRoutesById {
   '/authRoutes': typeof AuthRoutesRoute
   '/bookRoute': typeof BookRouteRoute
   '/havrutaRoutes': typeof HavrutaRoutesRoute
-  '/introRoute': typeof IntroRouteRoute
+  '/introRoutes': typeof IntroRoutesRoute
   '/itemRoute': typeof ItemRouteRoute
   '/loginRoute': typeof LoginRouteRoute
   '/mainRoute': typeof MainRouteRoute
@@ -368,7 +368,7 @@ export interface FileRouteTypes {
     | '/authRoutes'
     | '/bookRoute'
     | '/havrutaRoutes'
-    | '/introRoute'
+    | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
@@ -389,7 +389,7 @@ export interface FileRouteTypes {
     | '/authRoutes'
     | '/bookRoute'
     | '/havrutaRoutes'
-    | '/introRoute'
+    | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
@@ -410,7 +410,7 @@ export interface FileRouteTypes {
     | '/authRoutes'
     | '/bookRoute'
     | '/havrutaRoutes'
-    | '/introRoute'
+    | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
@@ -433,7 +433,7 @@ export interface RootRouteChildren {
   AuthRoutesRoute: typeof AuthRoutesRoute
   BookRouteRoute: typeof BookRouteRoute
   HavrutaRoutesRoute: typeof HavrutaRoutesRoute
-  IntroRouteRoute: typeof IntroRouteRoute
+  IntroRoutesRoute: typeof IntroRoutesRoute
   ItemRouteRoute: typeof ItemRouteRoute
   LoginRouteRoute: typeof LoginRouteRoute
   MainRouteRoute: typeof MainRouteRoute
@@ -455,7 +455,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoutesRoute: AuthRoutesRoute,
   BookRouteRoute: BookRouteRoute,
   HavrutaRoutesRoute: HavrutaRoutesRoute,
-  IntroRouteRoute: IntroRouteRoute,
+  IntroRoutesRoute: IntroRoutesRoute,
   ItemRouteRoute: ItemRouteRoute,
   LoginRouteRoute: LoginRouteRoute,
   MainRouteRoute: MainRouteRoute,
@@ -486,7 +486,7 @@ export const routeTree = rootRoute
         "/authRoutes",
         "/bookRoute",
         "/havrutaRoutes",
-        "/introRoute",
+        "/introRoutes",
         "/itemRoute",
         "/loginRoute",
         "/mainRoute",
@@ -525,8 +525,8 @@ export const routeTree = rootRoute
     "/havrutaRoutes": {
       "filePath": "havrutaRoutes.ts"
     },
-    "/introRoute": {
-      "filePath": "introRoute.ts"
+    "/introRoutes": {
+      "filePath": "introRoutes.ts"
     },
     "/itemRoute": {
       "filePath": "itemRoute.ts"
