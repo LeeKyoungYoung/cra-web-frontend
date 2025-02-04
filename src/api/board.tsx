@@ -140,3 +140,24 @@ export const deleteBoards = async (id: number) => {
     }
   }
 };
+
+export const onUploadImage = async (blob: File) => {
+  const formData = new FormData();
+  formData.append('image', blob);
+
+  try {
+    const response = await authClient.post('/image/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+    const imageUrl = response.data;
+
+    console.log('받은 이미지 URL:', imageUrl);
+    alert('이미지 업로드 성공');
+
+    return imageUrl; // 이미지 URL만 반환 (callback 없음)
+  } catch (error) {
+    console.error('이미지 업로드 실패:', error);
+    alert('이미지 업로드 실패');
+    throw error;
+  }
+};

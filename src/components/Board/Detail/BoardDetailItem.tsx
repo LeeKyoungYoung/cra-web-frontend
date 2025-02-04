@@ -10,6 +10,7 @@ import BoardDelete from '../Delete/BoardDelete';
 import HeightSpacer from '~/components/Common/HeightSpacer';
 import Divider from '~/components/Common/Divider';
 import { dateFormat } from '~/utils/dateForm';
+import { Viewer } from '@toast-ui/react-editor';
 
 export default function BoardDetailItem({
   board,
@@ -46,11 +47,15 @@ export default function BoardDetailItem({
             </div>
             <div>
               <span className={styles['nav-title']}>작성일 | </span>
-              <span className={styles['nav-content']}>{ dateFormat(board.createdAt)}</span>
+              <span className={styles['nav-content']}>
+                {dateFormat(board.createdAt)}
+              </span>
             </div>
           </div>
           <div className={styles['content-title']}>{board.title}</div>
-          <p className={styles['board-content']}>{board.content}</p>
+          <p className={styles['board-content']}>
+            <Viewer initialValue={board.content} />
+          </p>
           <div className={styles['comment-count']}>
             <span>조회 {board.view}</span>
             <span>좋아요 {board.like}1</span>
