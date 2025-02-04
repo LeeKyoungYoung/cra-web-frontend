@@ -33,35 +33,6 @@
   padding: 5rem 10rem;
 }
 
-input {
-  background-color: #f1f1f1;
-}
-
-.input-group {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.input-item {
-  display: flex;
-  flex-direction: column; /* label을 위에 두고 input을 아래에 배치 */
-}
-
-label {
-  margin-bottom: 0.5rem; /* label과 input 사이의 간격 */
-}
-
-input[id='name'],
-input[id='studentnumber'] {
-  width: 100%; /* input이 부모 div를 꽉 채우도록 설정 */
-}
-
-.recruit-section .recruit-section input:focus {
-  border-color: #2cb4db;
-  outline: none;
-}
-
 /* ------------------------------------------------------------------------------------------------------------ */
 .recruit-talent {
   display: flex;

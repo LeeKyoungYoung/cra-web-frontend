@@ -4,7 +4,7 @@ interface Board {
   title: string;
   category: number;
   content: string;
-  imageUrls: string[];
+  imageUrls?: string[];
   createdAt?: Date;
   updatedAt?: Date;
   havrutaId?: number;
