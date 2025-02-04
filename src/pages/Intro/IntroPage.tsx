@@ -33,12 +33,24 @@ export default function IntroPage() {
             <div>Why not change the</div>
             <div className={styles['helloworld']}>hello world!</div>
           </div>
-
-          <img className={styles['character1']} src={Crang1} />
-          <img className={styles['character2']} src={Crang2} />
-          <img className={styles['character3']} src={Crang3} />
-          <img className={styles['character4']} src={Crang4} />
-
+          <div className={styles.CranEES}>
+            <img
+              className={`${styles.crangE} ${styles.character1}`}
+              src={Crang1}
+            />
+            <img
+              className={`${styles.crangE} ${styles.character2}`}
+              src={Crang2}
+            />
+            <img
+              className={`${styles.crangE} ${styles.character3}`}
+              src={Crang3}
+            />
+            <img
+              className={`${styles.crangE} ${styles.character4}`}
+              src={Crang4}
+            />
+          </div>
           <Link to="/recruit" className={styles['recruit-btn']}>
             <p>2025-1 CRA RECRUITMENT</p>
           </Link>
