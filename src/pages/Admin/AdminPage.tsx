@@ -5,9 +5,10 @@ import AdminHome from '~/components/Admin/AdminHome';
 import AdminSideBar from '~/components/Admin/AdminSideBar';
 
 const Container = styled.div`
-  padding: 10rem;
   display: flex;
   justify-content: space-between;
+  gap: 1rem;
+  width: 60%;
 `;
 
 export default function AdminPage() {
