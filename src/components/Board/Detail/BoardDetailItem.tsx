@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Board } from '../../../models/Board';
 import { CATEGORY_STRINGS } from '../../../constants/category_strings';
 import { CATEGORY_STRINGS_EN } from '../../../constants/category_strings_en';
@@ -11,6 +11,8 @@ import HeightSpacer from '~/components/Common/HeightSpacer';
 import Divider from '~/components/Common/Divider';
 import { dateFormat } from '~/utils/dateForm';
 import { Viewer } from '@toast-ui/react-editor';
+import { createBoardsView, getBoardById } from '~/api/board';
+import { getHavrutaBoardById } from '~/api/havruta/havrutaBoard';
 
 export default function BoardDetailItem({
   board,
@@ -21,6 +23,24 @@ export default function BoardDetailItem({
   category: number;
   commentCount: number;
 }) {
+  const [viewCnt, setViewCnt] = useState(board.view);
+
+  useEffect(() => {
+    const viewed = localStorage.getItem(`viewed_${board.id}`);
+    if (!viewed) {
+      createBoardsView(board.id as number)
+        .then(() => {
+          localStorage.setItem(`viewed_${board.id}`, 'true');
+          return getBoardById(board.id as number);
+        })
+        .then((updatedBoard) => {
+          setViewCnt(updatedBoard.view as number);
+          console.log(setViewCnt);
+        })
+        .catch((err) => console.error('조회수 업데이트 실패:', err));
+    }
+  }, [board.id]);
+
   return (
     <div className={styles['detail-container']}>
       <div className={styles['fix-button']}>
