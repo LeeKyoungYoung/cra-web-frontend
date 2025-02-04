@@ -5,6 +5,7 @@ import HeightSpacer from '~/components/Common/HeightSpacer';
 import CryptoJS from 'crypto-js';
 import styled from 'styled-components';
 import styles from './LoginForm.module.css';
+import AlertModal from '~/components/Modal/Alert/AlertModal';
 
 const Container = styled.div`
   display: flex;
@@ -76,6 +77,10 @@ const LoginForm = () => {
   const { login } = useAuthStore();
   const navigate = useNavigate();
 
+  const [modalIsOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     const secretKey = '1234567890123456'; // 예시 나중에 바꿀거임 (진짜)
@@ -99,7 +104,7 @@ const LoginForm = () => {
       navigate('/main');
     } catch (error) {
       console.error('Login Handling Error: ', error);
-      alert('로그인 실패');
+      openModal();
     }
   };
 
@@ -166,6 +171,7 @@ const LoginForm = () => {
           </Link>
         </Register>
       </MainContainer>
+      {modalIsOpen && <AlertModal closeModal={closeModal} />}
     </Container>
   );
 };
