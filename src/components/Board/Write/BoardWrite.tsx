@@ -7,7 +7,6 @@ import { Editor } from '@toast-ui/react-editor';
 import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
 
 export default function BoardWrite({ category }: { category: number }) {
-  const navigate = useNavigate();
   const editorRef = useRef<any>();
   const [files, setFiles] = useState<File[]>([]);
   const [formData, setFormData] = useState<{
@@ -32,7 +31,9 @@ export default function BoardWrite({ category }: { category: number }) {
     },
     onSuccess: async () => {
       alert('게시글 작성 성공');
-      navigate(-1);
+      const currentPath = window.location.pathname;
+      const parentPath = currentPath.substring(0, currentPath.lastIndexOf('/'));
+      window.location.href = parentPath;
       setFormData({
         userId: 1,
         title: '',
@@ -116,16 +117,6 @@ export default function BoardWrite({ category }: { category: number }) {
               }
             },
           }}
-        />
-        <br />
-        <label htmlFor="imageUrls">이미지 주소</label>
-        <input
-          type="text"
-          id="imageUrls"
-          name="imageUrls"
-          placeholder="이미지 주소 (추후 삭제 예정 항목)"
-          value={formData.imageUrls.join(',')}
-          onChange={handleChange}
         />
         <br />
         <label htmlFor="files">파일 업로드</label>
