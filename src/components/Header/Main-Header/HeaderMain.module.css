@@ -1,10 +1,5 @@
-li {
-  display: inline;
-  padding: 0rem 1.5rem;
-}
-
 .header-main {
-  position: fixed;
+  position: fixed, sticky;
   display: flex;
   left: 0;
   top: 0;
@@ -13,32 +8,165 @@ li {
   background-color: #ffffff;
   font-family: 'Pretendard Bold';
   align-items: center;
+  box-sizing: border-box;
   justify-content: space-between;
-  padding: 2rem 2.5rem;
+  padding: 0.65rem 8rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--color-bright-stroke);
 }
 
 .logo {
-  /*  */
+  max-width: 5rem;
+  height: auto;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+li {
+  display: inline;
+  padding: 0rem 1.5rem;
 }
 
 .link {
   text-decoration: none;
-  font-size: large;
+  font-size: 1.15rem;
 }
 
 .navbar-link {
-  font-size: x-large;
-  color: #5d5d5d;
+  color: var(--color-bright-text);
+  transition: color 0.3s ease;
 }
 
 .navbar-link:hover {
-  color: darkgrey;
+  color: var(--color-primary);
 }
 
-.login {
-  font-size: 1.5rem;
-  background-color: #2cb4db;
-  color: #ffffff;
-  padding: 0.75rem 2rem;
+.navbar-link.active {
+  color: var(--color-primary);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: #5d5d5d;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* 데스크탑에서만 보이는 로그인 버튼 */
+.desktop-authbutton {
+  display: block;
+}
+
+/* 모바일에서는 안 보이게 설정 */
+.mobile-authbutton {
+  display: none;
+}
+
+.authbutton {
+  background-color: var(--color-primary);
+  width: 5rem;
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-family: 'Pretendard Bold';
+  border: none;
   border-radius: 0.5rem;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: #5eccfa;
+  }
+}
+
+@media (max-width: 1064px) {
+  .header-main {
+    padding: 0.65rem 4rem;
+  }
+  li {
+    padding: 0rem 1rem;
+  }
+  .link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-main {
+    padding: 0.65rem 2rem;
+  }
+  .logo {
+    max-width: 4rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1rem;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: none;
+  }
+
+  .nav-menu.active {
+    display: block;
+  }
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    width: 100%;
+    padding: 0.75rem 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-link {
+    display: block;
+    font-size: 1.25rem;
+  }
+
+  .desktop-authbutton {
+    display: none;
+  }
+
+  .mobile-authbutton {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .authbutton {
+    margin: 0 auto;
+    display: block;
+  }
 }

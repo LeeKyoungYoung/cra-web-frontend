@@ -2,22 +2,13 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import craIconBlue from '~/assets/images/cra-logo-blue.png';
 import { useAuthStore } from '~/store/authStore';
+import { useUIStore } from '~/store/uiStore';
 import styles from './HeaderMain.module.css';
 import styled from 'styled-components';
 
-const Button = styled.button`
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-size: 1.5rem;
-  font-family: 'Pretendard Bold';
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.75rem 2rem;
-  cursor: pointer;
-`;
-
 export default function HeaderMain() {
   const { isAuthenticated, logout } = useAuthStore();
+  const { isMenuOpen, toggleMenu } = useUIStore();
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -40,69 +31,67 @@ export default function HeaderMain() {
   return (
     <div className={styles['header-main']}>
       <Link to="/main">
-        <img src={craIconBlue} alt="크라 아이콘" className={styles['logo']} />
+        <img src={craIconBlue} alt="크라 아이콘" className={styles.logo} />
       </Link>
-      <ul>
-        <li>
-          <Link
-            to="/notice"
-            className={`${styles['link']} ${styles['navbar-link']}`}
-          >
-            Notice
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/academic"
-            className={`${styles['link']} ${styles['navbar-link']}`}
-          >
-            Academic
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/book"
-            className={`${styles['link']} ${styles['navbar-link']}`}
-          >
-            Book
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/item"
-            className={`${styles['link']} ${styles['navbar-link']}`}
-          >
-            Item
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/havruta"
-            className={`${styles['link']} ${styles['navbar-link']}`}
-          >
-            Havruta
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/project"
-            className={`${styles['link']} ${styles['navbar-link']}`}
-          >
-            Project
-          </Link>
+
+      <button className={styles['menu-toggle']} onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul
+        className={`${styles['nav-menu']} ${isMenuOpen ? styles.active : ''}`}
+      >
+        {[
+          { path: '/notice', label: 'Notice' },
+          { path: '/academic', label: 'Academic' },
+          { path: '/book', label: 'Book' },
+          { path: '/item', label: 'Item' },
+          { path: '/havruta', label: 'Havruta' },
+          { path: '/project', label: 'Project' },
+        ].map(({ path, label }) => (
+          <li key={path}>
+            <Link
+              to={path}
+              className={`${styles['link']} ${styles['navbar-link']} ${
+                location.pathname.startsWith(path) ? styles.active : ''
+              }`}
+              onClick={toggleMenu}
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
+
+        <li className={styles['mobile-authbutton']}>
+          {isAuthenticated ? (
+            <button className={styles.authbutton} onClick={handleLogout}>
+              로그아웃
+            </button>
+          ) : (
+            <button className={styles.authbutton} onClick={handleLogin}>
+              로그인
+            </button>
+          )}
         </li>
       </ul>
-      {isAuthenticated ? (
-        <>
-          <Button onClick={handleLogout}>로그아웃</Button>
-        </>
-      ) : (
-        <>
-          <Button onClick={handleLogin}>로그인</Button>
-        </>
-      )}
 
-      {/* 로그인 하기 전에는 '로그인' Link이고, 로그인 이후에는 '내 정보' 버튼, 클릭 시 모달 출력력 */}
+      <div className={styles['desktop-authbutton']}>
+        {isAuthenticated ? (
+          <>
+            <button className={styles.authbutton} onClick={handleLogout}>
+              로그아웃
+            </button>
+          </>
+        ) : (
+          <>
+            <button className={styles.authbutton} onClick={handleLogin}>
+              로그인
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 }
