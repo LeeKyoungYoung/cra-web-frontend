@@ -36,7 +36,6 @@ export default function ItemList({ itemCategory }: { itemCategory: number }) {
   return (
     <>
       <div className={styles['content']}>{content}</div>
-      <Link to={'../admin/item'}>어드민</Link>
     </>
   );
 }
