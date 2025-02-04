@@ -27,6 +27,9 @@
   text-decoration: none;
   color: var(--color-dark-text);
   display: inline;
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 
 .board-created {

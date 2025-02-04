@@ -1,13 +1,20 @@
-.activity-section {
-  width: 60%;
-  height: auto;
-  margin: 40px auto;
-  padding: 20px 40px;
+.main-page {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.activity-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5rem;
   p {
     flex-basis: 100%;
     margin-left: 0;
@@ -17,8 +24,32 @@
   }
 }
 
+.notice-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5rem;
+  p {
+    flex-basis: 100%;
+    margin-left: 3rem;
+    margin-bottom: 4rem;
+    font-size: 40px;
+    font-family: 'Pretendard Bold';
+    color: var(--color-bright-text);
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-bright-text);
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
 .activity-block {
-  width: calc((100% - 48px) / 3);
+  width: 90%;
+  height: 30rem;
   aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 10px;
@@ -26,31 +57,9 @@
   padding-top: 11px;
   display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
-}
-
-.activity-picture {
-  width: 90%;
-  height: 70%;
-  border-radius: 10px;
-  background-color: #d4d4d4;
-}
-
-.notice-section {
-  width: 60%;
-  height: auto;
-  margin: 40px auto;
-  padding: 20px 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: space-between;
-
-  p {
-    flex-basis: 100%;
-    margin-left: 0;
-    font-size: 40px;
-    font-family: 'Pretendard Bold';
-    color: var(--color-bright-text);
+  img {
+    scale: 120%;
   }
 }
