@@ -7,7 +7,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 15rem 0;
+  padding: 5rem 0;
 `;
 
 const Title = styled.h2`
@@ -23,7 +23,7 @@ const Form = styled.form`
   max-width: 700px;
   background-color: var(--color-white);
   border-radius: 1rem;
-  padding: 3rem 4rem;
+  padding: 3rem 10rem;
 `;
 
 const Input = styled.div`
@@ -36,7 +36,6 @@ const Input = styled.div`
     font-family: 'Pretendard SemiBold';
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-    transform: translateY(1.25rem);
     user-select: none;
   }
   input {
@@ -46,7 +45,6 @@ const Input = styled.div`
     border: 1px solid var(--color-dark-stroke);
     border-radius: 0.5rem;
     padding: 1.5rem 1rem;
-    transform: translateX(-2rem);
   }
 `;
 
