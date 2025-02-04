@@ -20,7 +20,9 @@ const AlertModal = ({ closeModal }: { closeModal: () => void }) => {
         <div className={styles['modal-body']}>
           모든 값을 올바르게 입력해주세요
         </div>
-        <button className={styles['check-button']}>확인</button>
+        <button className={styles['check-button']} onClick={closeModal}>
+          확인
+        </button>
       </Modal>
     </>
   );

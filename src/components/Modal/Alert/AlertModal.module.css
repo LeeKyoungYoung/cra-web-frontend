@@ -47,7 +47,7 @@
 }
 
 .close-button:hover {
-  color: rgb(10, 10, 63);
+  color: #2cb4db;
 }
 
 /* Modal Body */
@@ -69,4 +69,9 @@
   color: white;
   border-radius: 10px;
   border: none; /* 기본 border 제거 */
+}
+
+.check-button:hover {
+  background-color: #a0e0f3;
+  color: #2cb4db;
 }
