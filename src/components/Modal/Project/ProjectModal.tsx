@@ -40,6 +40,7 @@ const ProjectModal = ({
 
   return (
     <>
+<<<<<<< HEAD
       <Modal
         className={styles.modalContent}
         overlayClassName={styles.overlay}
@@ -76,6 +77,13 @@ const ProjectModal = ({
             X
           </button>
         </div>
+=======
+      <Modal className={styles.modalContent} isOpen onRequestClose={closeModal}>
+        <h2>{project.serviceName}</h2>
+        <p>{project.content}</p>
+        <p>멤버: {project.members}</p>
+        <button onClick={closeModal}>닫기</button>
+>>>>>>> 9d7c5cfe4efc8572800f4709c09d5c4d939f5694
       </Modal>
     </>
   );

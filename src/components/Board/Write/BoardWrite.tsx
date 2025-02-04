@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { createBoards, onUploadImage } from '~/api/board';
-import { Board } from '~/models/Board';
 import { useNavigate } from 'react-router-dom';
 import styles from './BoardWrite.module.css';
 import { Editor } from '@toast-ui/react-editor';
