@@ -11,6 +11,7 @@ import HeightSpacer from '~/components/Common/HeightSpacer';
 import Divider from '~/components/Common/Divider';
 import { dateFormat } from '~/utils/dateForm';
 import { Viewer } from '@toast-ui/react-editor';
+import { FaRegEdit } from 'react-icons/fa';
 
 export default function BoardDetailItem({
   board,
@@ -23,17 +24,6 @@ export default function BoardDetailItem({
 }) {
   return (
     <div className={styles['detail-container']}>
-      <div className={styles['fix-button']}>
-        <BoardDelete id={board.id!} category={category} />
-        <button className={styles['login']}>
-          <Link
-            to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
-            className={styles['link']}
-          >
-            수정하기
-          </Link>
-        </button>
-      </div>
       <div className={styles['detail-content']}>
         <div className={styles['title']}>
           {CATEGORY_STRINGS[category]} 게시판
@@ -50,6 +40,15 @@ export default function BoardDetailItem({
               <span className={styles['nav-content']}>
                 {dateFormat(board.createdAt)}
               </span>
+            </div>
+            <div className={styles['fix-button']}>
+              <Link
+                to={`/${CATEGORY_STRINGS_EN[category]}/edit/${board.id}`}
+                className={styles['link']}
+              >
+                <FaRegEdit size={22} />
+              </Link>
+              <BoardDelete id={board.id!} category={category} />
             </div>
           </div>
           <div className={styles['content-title']}>{board.title}</div>
