@@ -13,6 +13,7 @@
   flex-direction: column;
   overflow: hidden; /* 내용이 모달 밖으로 나오지 않도록 */
   align-items: center;
+  border: none; /* 기본 border 제거 */
 }
 
 /* Overlay */

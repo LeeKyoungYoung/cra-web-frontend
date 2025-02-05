@@ -1,0 +1,125 @@
+/* Overlay */
+.overlay {
+  position: fixed; /* 화면에 고정 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+}
+
+/* Modal Content */
+.modalContent {
+  position: absolute; /* 부모(.overlay)를 기준으로 위치 설정 */
+  background-color: #f4fdff;
+  width: 388px;
+  height: 365px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  border: 2.5px solid #2cb4db; /* 기본 border 제거 */
+
+  /* 원하는 위치 설정 */
+  top: 95px; /* 상단에서 20px 떨어짐 */
+  right: 60px; /* 오른쪽에서 20px 떨어짐 */
+}
+
+/* Header */
+.modal-header {
+  height: 30px; /* 최소 높이 지정 */
+  width: 100%;
+}
+
+.setting-button {
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  color: gray;
+  cursor: pointer;
+  margin-left: 350px;
+  margin-top: 10px;
+}
+
+/* Modal Body */
+.modal-body {
+  font-family: 'Pretendard Medium';
+  color: #050044;
+  text-align: center;
+}
+
+.first-body {
+  display: flex;
+  margin-left: 40px;
+  gap: 30px;
+}
+
+.profile {
+  width: 114px;
+  height: 114px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  font-family: 'Pretendard Medium';
+  line-height: 2rem;
+  text-align: left;
+  margin-top: 15px;
+}
+.semester {
+  font-family: 'Pretendard Semibold';
+  font-size: 20px;
+}
+.name {
+  font-family: 'Pretendard Bold';
+  font-size: 30px;
+  color: #2cb4db;
+}
+.student-number {
+  font-family: 'Pretendard Medium';
+  font-size: 18px;
+}
+
+.hanmadi {
+  padding-top: 2.2rem;
+  padding-bottom: 2rem;
+  font-family: 'Pretendard Semibold';
+  font-size: 20px;
+}
+
+.extra-info {
+  font-family: 'Pretendard Semibold';
+  font-size: 18px;
+  color: #9b9b9b;
+  margin-left: 40px;
+  line-height: 2rem;
+}
+.line {
+  border: 1px solid #c1c1c1;
+  margin-right: 40px;
+  margin-top: 5px;
+}
+.logout {
+  font-family: 'Pretendard Semibold';
+  font-size: 16px;
+  color: #9b9b9b;
+  padding-top: 10px;
+  display: flex;
+  justify-content: right;
+  margin-right: 40px;
+  gap: 4px;
+}
+
+.logout:hover {
+  color: #2cb4db;
+}
+
+.logout-image {
+  width: 1rem;
+}

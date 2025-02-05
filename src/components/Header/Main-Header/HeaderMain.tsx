@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import craIconBlue from '~/assets/images/cra-logo-blue.png';
 import { useAuthStore } from '~/store/authStore';
 import styles from './HeaderMain.module.css';
 import styled from 'styled-components';
+import UserModal from '~/components/Modal/User/UserModal';
 
 const Button = styled.button`
   background-color: var(--color-primary);
@@ -20,7 +21,12 @@ export default function HeaderMain() {
   const { isAuthenticated, logout } = useAuthStore();
   const navigate = useNavigate();
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   const handleLogin = () => {
+    openModal();
     navigate('/login');
   };
 
@@ -94,14 +100,14 @@ export default function HeaderMain() {
       </ul>
       {isAuthenticated ? (
         <>
-          <Button onClick={handleLogout}>로그아웃</Button>
+          <Button onClick={handleLogout}>내정보</Button>
         </>
       ) : (
         <>
           <Button onClick={handleLogin}>로그인</Button>
         </>
       )}
-
+      {modalOpen && <UserModal closeModal={closeModal} />}
       {/* 로그인 하기 전에는 '로그인' Link이고, 로그인 이후에는 '내 정보' 버튼, 클릭 시 모달 출력력 */}
     </div>
   );
