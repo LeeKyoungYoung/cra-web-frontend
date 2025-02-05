@@ -4,4 +4,5 @@
   gap: 20px; /* 아이템 간 간격 */
   justify-content: flex-start; /* 항목들 사이를 균등하게 배치 */
   padding: 2rem;
+  margin-bottom: 4rem;
 }

@@ -1,5 +1,5 @@
 .header-main {
-  position: fixed, sticky;
+  position: sticky;
   display: flex;
   left: 0;
   top: 0;
@@ -115,6 +115,7 @@ li {
 
   .menu-toggle {
     display: block;
+    z-index: 90;
     margin-top: 1rem;
   }
 
@@ -131,6 +132,7 @@ li {
   }
 
   .nav-menu.active {
+    position: fixed;
     display: block;
   }
 

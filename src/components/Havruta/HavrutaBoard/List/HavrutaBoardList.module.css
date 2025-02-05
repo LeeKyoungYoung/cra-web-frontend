@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 120%;
-  max-width: 120%;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  margin-bottom: 4rem;
   gap: 20px;
 }
 
 .sidebar {
-  flex: 0 0 350px;
+  flex: 0 0 340px;
   max-height: calc(100vh - 81.5px - 20px);
   overflow-y: auto;
   background-color: var(--color-white);
@@ -19,9 +20,10 @@
 }
 
 .content {
-  flex: 1; /* 남은 공간을 채움 */
+  flex-grow: 1;
   display: flex;
-  flex-direction: column; /* 기존 콘텐츠 유지 */
+  flex-direction: column;
+  min-width: 750px;
 }
 
 .title {
@@ -94,4 +96,100 @@
 
 .divider {
   border: 1px solid var(--color-dark-stroke);
+}
+@media (max-width: 1230px) {
+  .container {
+    width: 100%;
+    scale: 90%;
+  }
+}
+@media (max-width: 1070px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    scale: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 60;
+    margin-top: 20px;
+    order: -1;
+  }
+
+  .content {
+    min-width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .boardList {
+    padding: 15px;
+  }
+
+  .board-list-footer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .write-link {
+    font-size: 18px;
+    width: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 17.5rem; /* 1024px 이하와 동일하게 적용 */
+    margin-top: 20px;
+    order: -1;
+  }
+
+  .content {
+    min-width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .boardList {
+    padding: 10px;
+  }
+
+  .board-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .board-list-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .write-link {
+    font-size: 16px;
+    width: 5rem;
+    padding: 0.75rem;
+    border-radius: 0.8rem;
+  }
 }

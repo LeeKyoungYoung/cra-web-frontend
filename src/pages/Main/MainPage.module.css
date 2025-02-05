@@ -61,5 +61,6 @@
   text-align: center;
   img {
     scale: 120%;
+    user-select: none;
   }
 }
