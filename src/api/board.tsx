@@ -101,7 +101,7 @@ export const createBoards = async (board: Board, files: File[]) => {
   }
 };
 
-// POST
+// POST/View
 export const createBoardsView = async (id: number) => {
   try {
     const response = await authClient.post(`/board/view/${id}`);

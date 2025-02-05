@@ -35,7 +35,7 @@ export default function BoardDetailItem({
         })
         .then((updatedBoard) => {
           setViewCnt(updatedBoard.view as number);
-          console.log(setViewCnt);
+          console.log('Updated view count:', updatedBoard.view);
         })
         .catch((err) => console.error('조회수 업데이트 실패:', err));
     }
@@ -77,7 +77,7 @@ export default function BoardDetailItem({
             <Viewer initialValue={board.content} />
           </p>
           <div className={styles['comment-count']}>
-            <span>조회 {board.view}</span>
+            <span>조회 {viewCnt}</span>
             <span>좋아요 {board.like}1</span>
             <span>댓글 {commentCount}</span>
           </div>
