@@ -39,6 +39,9 @@ export default function BoardList({
     if (boardsQuery.isSuccess) {
       return boardsQuery.data
         .filter((board) => board.id !== undefined)
+        .slice()
+        .reverse()
+        .slice(0, 5)
         .map((board, index) => (
           <div key={`board-${board.id}`}>
             <div className={styles['board-wrapper']}>

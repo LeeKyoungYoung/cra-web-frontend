@@ -9,7 +9,7 @@ import styles from './MainBoardList.module.css';
 
 export default function MainBoardList({ category }: { category: number }) {
   const boardsQuery = useQuery<Board[]>({
-    queryKey: QUERY_KEY.board.boards(category),
+    queryKey: QUERY_KEY.board.boardsCount(category),
     queryFn: async () => getBoardCountByCategory(category),
   });
 
@@ -20,19 +20,23 @@ export default function MainBoardList({ category }: { category: number }) {
   } else if (boardsQuery.isError) {
     content = <div className="error">에러가 발생했습니다!</div>;
   } else if (boardsQuery.isSuccess) {
-    content = boardsQuery.data.slice(0, 5).map((board, index) => {
-      if (board.id === undefined) return null;
-      return (
-        <div key={`board-${board.id}`}>
-          <div className={styles['board-wrapper']}>
-            <MainBoardItem board={board} />
+    content = boardsQuery.data
+      .slice()
+      .reverse()
+      .slice(0, 5)
+      .map((board, index) => {
+        if (board.id === undefined) return null;
+        return (
+          <div key={`board-${board.id}`}>
+            <div className={styles['board-wrapper']}>
+              <MainBoardItem board={board} />
+            </div>
+            {index < boardsQuery.data.length - 1 && (
+              <div className={styles['divider']}></div>
+            )}
           </div>
-          {index < boardsQuery.data.length - 1 && (
-            <div className={styles['divider']}></div>
-          )}
-        </div>
-      );
-    });
+        );
+      });
   }
 
   return (
