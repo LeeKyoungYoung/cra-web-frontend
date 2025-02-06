@@ -22,7 +22,7 @@ function ItemAdminEdit() {
   const itemId = Number(id);
 
   const itemQuery = useQuery<Item>({
-    queryKey: ['item', 'itemById', itemId],
+    queryKey: QUERY_KEY.item.itemById(itemId),
     queryFn: async () => getItemById(itemId),
   });
 

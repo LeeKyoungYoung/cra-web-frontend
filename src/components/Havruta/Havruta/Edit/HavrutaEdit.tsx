@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getHavrutaById, updateHavruta } from '~/api/havruta/havruta';
 import { Havruta } from '~/models/Havruta';
 import styled from 'styled-components';
+import { QUERY_KEY } from '~/api/queryKey';
 
 const Container = styled.div`
   padding: 10rem;
@@ -20,7 +21,7 @@ function HavrutaEdit() {
   const havrutaId = Number(id);
 
   const havrutaQuery = useQuery<Havruta>({
-    queryKey: ['havruta', 'havrutaById', havrutaId],
+    queryKey: QUERY_KEY.havruta.havrutaById(havrutaId),
     queryFn: async () => getHavrutaById(havrutaId),
   });
 
