@@ -9,6 +9,7 @@ import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
 export default function BoardWrite({ category }: { category: number }) {
   const editorRef = useRef<any>();
   const [files, setFiles] = useState<File[]>([]);
+  const [fileName, setFileName] = useState<string>('');
   const [formData, setFormData] = useState<{
     userId: number;
     title: string;
@@ -61,8 +62,14 @@ export default function BoardWrite({ category }: { category: number }) {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
-      setFiles(Array.from(e.target.files));
+      const selectedFiles = Array.from(e.target.files);
+      setFiles((prevFiles) => [...prevFiles, ...selectedFiles]); // 기존 파일 유지하면서 새 파일 추가
     }
+  };
+
+  // 특정 파일 삭제 함수
+  const handleRemoveFile = (index: number) => {
+    setFiles((prevFiles) => prevFiles.filter((_, i) => i !== index)); // 해당 index의 파일 제거
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -119,8 +126,34 @@ export default function BoardWrite({ category }: { category: number }) {
           }}
         />
         <br />
-        <label htmlFor="files">파일 업로드</label>
-        <input type="file" id="files" multiple onChange={handleFileChange} />
+
+        <label className={styles['file-button']} htmlFor="fileUpload">
+          파일 선택
+        </label>
+        <input
+          className={styles['file-input']}
+          type="file"
+          id="fileUpload"
+          multiple
+          onChange={handleFileChange}
+        />
+        <ul className={styles['file-list']}>
+          {files.map((file, index) => (
+            <React.Fragment key={index}>
+              <li className={styles['file-item']}>
+                {file.name}
+                <button
+                  type="button"
+                  className={styles['remove-button']}
+                  onClick={() => handleRemoveFile(index)}
+                >
+                  ✕
+                </button>
+              </li>
+              <br /> {/* 리스트 사이 줄바꿈 추가 */}
+            </React.Fragment>
+          ))}
+        </ul>
 
         <input
           className={styles['submit-button']}

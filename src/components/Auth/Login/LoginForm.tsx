@@ -13,8 +13,8 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 668px;
-  padding-top: 12rem;
-  padding-bottom: 10%;
+  padding-top: 5rem;
+  padding-bottom: 6rem;
   margin: 0 auto;
 `;
 const Title = styled.div`
@@ -44,7 +44,7 @@ const Login = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 103.5%;
     height: 68px;
     background-color: var(--color-primary);
     border: none;
@@ -165,7 +165,7 @@ const LoginForm = () => {
           </Login>
         </form>
         <Register>
-          <span>아직 CRA의 회원이 아니신가요? </span>
+          <span>혹시 계정이 없으신가여? </span>
           <Link to="/register" className={styles['register-link']}>
             회원가입하기
           </Link>

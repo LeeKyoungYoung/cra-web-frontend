@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import SignUpForm from '~/components/Auth/SignUp/SignUpForm';
-
-function RegisterPage() {
-  return (
-    <div>
-      <SignUpForm />
-    </div>
-=======
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -18,7 +8,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10rem 0;
+  width: 100%;
+  max-width: 1600px;
+  margin-bottom: 4rem;
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 const Title = styled.h2`
@@ -27,6 +22,9 @@ const Title = styled.h2`
   line-height: 59px;
   margin-bottom: 70px;
   color: var(--color-bright-text);
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
 `;
 
 const RegisterForm = styled.form`
@@ -35,42 +33,56 @@ const RegisterForm = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 90%;
+  max-width: 600px;
   background-color: var(--color-white);
   border-radius: 1rem;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+  }
+`;
+
+const Input = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
 
   label {
-    color: var(--color-dark-text);
+    color: var(--color-dark);
     font-family: 'Pretendard SemiBold';
-    margin: 1rem 0 0 0.5rem;
-    text-align: start;
-    display: block;
-    width: 80%;
-    transform: translateY(1rem);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    user-select: none;
   }
 
   input {
     background-color: var(--color-white);
+    color: var(--color-dark-stroke);
     border: 1px solid var(--color-dark-stroke);
     border-radius: 0.5rem;
-    width: 80%;
-    margin-bottom: 2rem;
     padding: 1.5rem 1rem;
+
+    @media (max-width: 480px) {
+      padding: 1.2rem 0.8rem;
+    }
   }
 `;
 
 const SubmitBtn = styled.button`
   background-color: var(--color-primary) !important;
   color: var(--color-white);
+  width: 20%;
+  max-width: 400px;
   font-family: 'Pretendard Bold';
-  width: 80%;
+  font-size: 1.25rem;
   text-align: center;
-  padding: 1.1rem 0;
-  margin: 4rem 0 2rem 0;
+  padding: 0.9rem 0;
+  margin-top: 2rem;
   border: none;
-  border-radius: 0.5rem;
-  font-size: 1.5rem;
+  border-radius: 0.75rem;
   cursor: pointer;
 `;
 
@@ -91,12 +103,12 @@ function RegisterPage() {
   const [error, setError] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false); // 모달 상태 추가
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
     // Check if any field is empty
@@ -118,85 +130,100 @@ function RegisterPage() {
     <Container>
       <Title>회원가입</Title>
       <RegisterForm onSubmit={handleSubmit}>
-        <label htmlFor="id">아이디</label>
-        <input
-          type="text"
-          name="id"
-          id="id"
-          placeholder="아이디를 입력하세요."
-          value={formData.id}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="id">아이디</label>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            placeholder="아이디를 입력하세요."
+            value={formData.id}
+            onChange={handleChange}
+          />
+        </Input>
+        <Input>
+          <label htmlFor="pw">비밀번호</label>
+          <input
+            type="password"
+            name="pw"
+            id="pw"
+            placeholder="비밀번호를 입력하세요."
+            value={formData.pw}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
-        <label htmlFor="pw">비밀번호</label>
-        <input
-          type="password"
-          name="pw"
-          id="pw"
-          placeholder="비밀번호를 입력하세요."
-          value={formData.pw}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="studentNum">학번</label>
+          <input
+            type="text"
+            name="studentNum"
+            id="studentNum"
+            placeholder="학번을 입력하세요."
+            value={formData.studentNum}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
-        <label htmlFor="studentNum">학번</label>
-        <input
-          type="text"
-          name="studentNum"
-          id="studentNum"
-          placeholder="학번을 입력하세요."
-          value={formData.studentNum}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="name">이름</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="이름을 입력하세요."
+            value={formData.name}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
-        <label htmlFor="name">이름</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="이름을 입력하세요."
-          value={formData.name}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="CRA">CRA 기수</label>
+          <input
+            type="text"
+            name="CRA"
+            id="CRA"
+            placeholder="CRA 기수를 입력하세요."
+            value={formData.CRA}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
-        <label htmlFor="CRA">CRA 기수</label>
-        <input
-          type="text"
-          name="CRA"
-          id="CRA"
-          placeholder="CRA 기수를 입력하세요."
-          value={formData.CRA}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="github">GitHub 주소</label>
+          <input
+            type="text"
+            name="github"
+            id="github"
+            placeholder="GitHub 주소를 입력하세요."
+            value={formData.github}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
-        <label htmlFor="github">GitHub 주소</label>
-        <input
-          type="text"
-          name="github"
-          id="github"
-          placeholder="GitHub 주소를 입력하세요."
-          value={formData.github}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="talk">나의 한마디</label>
+          <input
+            type="text"
+            name="talk"
+            id="talk"
+            placeholder="나의 한마디를 입력하세요."
+            value={formData.talk}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
-        <label htmlFor="talk">나의 한마디</label>
-        <input
-          type="text"
-          name="talk"
-          id="talk"
-          placeholder="나의 한마디를 입력하세요."
-          value={formData.talk}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="code">가입코드</label>
-        <input
-          type="text"
-          name="code"
-          id="code"
-          placeholder="가입코드를 입력하세요."
-          value={formData.code}
-          onChange={handleChange}
-        />
+        <Input>
+          <label htmlFor="code">가입코드</label>
+          <input
+            type="text"
+            name="code"
+            id="code"
+            placeholder="가입코드를 입력하세요."
+            value={formData.code}
+            onChange={handleChange}
+          />{' '}
+        </Input>
 
         {error && <p style={{ color: 'red' }}>{error}</p>}
 
@@ -204,7 +231,6 @@ function RegisterPage() {
       </RegisterForm>
       {isModalOpen && <AlertModal closeModal={() => setIsModalOpen(false)} />}
     </Container>
->>>>>>> 9d7c5cfe4efc8572800f4709c09d5c4d939f5694
   );
 }
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './HeaderIntro.module.css';
+import CRALogo from '~/assets/images/cra-logo.png';
 
 export default function HeaderIntro() {
   return (
@@ -7,7 +8,7 @@ export default function HeaderIntro() {
       <ul className={styles['ul-intro']}>
         <Link to="/intro">
           <li className={`${styles['li-intro']} ${styles['li-img']}`}>
-            <img src="./cralogo.png" className={styles['logo']} />
+            <img src={CRALogo} className={styles['logo']} />
           </li>
         </Link>
         <Link

@@ -24,8 +24,8 @@
   border: 2.5px solid #2cb4db; /* 기본 border 제거 */
 
   /* 원하는 위치 설정 */
-  top: 95px; /* 상단에서 20px 떨어짐 */
-  right: 60px; /* 오른쪽에서 20px 떨어짐 */
+  top: 70px; /* 상단에서 20px 떨어짐 */
+  right: 145px; /* 오른쪽에서 20px 떨어짐 */
 }
 
 /* Header */

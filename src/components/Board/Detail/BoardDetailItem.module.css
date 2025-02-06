@@ -30,34 +30,20 @@
   border: 1px solid lightgrey;
 }
 
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 117px;
-  height: 44px;
-  font-size: 20px;
-  font-family: 'Pretendard Bold';
-  background-color: var(--color-brighter-text);
-  color: #ffffff;
-  border: none;
-  border-radius: 0.5rem;
-  margin-left: auto;
+.link {
+  color: #9b9b9b;
+  cursor: pointer;
+  margin-right: 4px;
 }
 
-.link {
-  text-align: center;
-  text-decoration: none;
-  font-size: large;
-  color: white;
+.link:hover {
+  color: var(--color-primary);
 }
 
 .fix-button {
-  width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: end;
   margin-bottom: 10px;
+  margin-left: auto;
 }
 
 .title {

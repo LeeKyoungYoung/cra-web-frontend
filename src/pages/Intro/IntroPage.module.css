@@ -1,16 +1,11 @@
 .container {
   background-color: #050505;
   font-family: 'Pretendard Bold';
+  width: 100%;
+  overflow: hidden;
 }
 
 .main {
-  /* background: linear-gradient(
-    #008bc7 0%,
-    #2cb4db 33%,
-    #79cfe8 67%,
-    #bcedfb 100%
-  ); */
-
   height: 66.5rem;
 }
 
@@ -54,7 +49,12 @@
   -webkit-text-fill-color: transparent;
 }
 
-@media (min-width: 1650px) {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 301px) {
   .character1 {
     position: absolute;
     top: 65%;
@@ -92,7 +92,7 @@
     height: 308.44px;
   }
 }
-@media (max-width: 1649px) {
+@media (max-width: 300px) {
   .character1,
   .character2,
   .character3,
@@ -101,6 +101,25 @@
   }
 }
 
+.image-container {
+  position: relative;
+  z-index: 1;
+}
+
+.comment,
+.banner {
+  position: relative;
+  z-index: 2;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.crangE {
+  user-select: none;
+  object-fit: contain;
+  max-width: 100%; /* 화면 크기에 맞게 크기 자동 조정 */
+  height: auto; /* 비율을 유지하며 높이 조정 */
+}
 .recruit-btn {
   display: flex;
   align-items: center;
@@ -124,6 +143,7 @@
   flex-direction: column;
   align-items: center;
   padding: 3.25rem 0rem;
+  user-select: none;
   img {
     width: 3.4375rem;
     height: 1.6875rem;
@@ -137,6 +157,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 350px;
+  user-select: none;
 }
 
 .comment2 {
@@ -144,6 +165,7 @@
   flex-direction: column;
   align-items: center;
   font-style: normal;
+  text-align: center;
   font-size: clamp(30px, 3vw, 3vw);
   line-height: 80px;
   color: #ffffff;
@@ -305,6 +327,13 @@
     text-align: center;
   }
 }
+
+.crangE {
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
 /* 데스크탑  */
 @media (max-width: 1460px) and (min-width: 1024px) {
   .helloworld {
@@ -336,6 +365,10 @@
 
 /* 테블릿 */
 @media (max-width: 1024px) /* and (min-width: 768px) { */ {
+  .crangE {
+    width: 20%; /* 태블릿 크기에서는 좀 더 작게 설정 */
+  }
+
   .comment {
     font-size: clamp(20px, 3.5vw, 100px);
   }
@@ -437,5 +470,17 @@
   .project p {
     color: #ffffff;
     font-size: clamp(1.5rem, 4vw, 3.125rem); /* 최소/최대 크기 설정 */
+  }
+}
+
+@media (max-width: 768px) {
+  .comment2 {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .crangE {
+    width: 60%;
   }
 }

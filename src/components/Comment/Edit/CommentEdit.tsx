@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { updateComments } from '~/api/comment';
+import { QUERY_KEY } from '~/api/queryKey';
 
 export default function CommentEdit({
   id,
@@ -10,6 +11,7 @@ export default function CommentEdit({
   onClose: () => void; // 수정 완료 또는 취소 시 호출되는 함수
 }) {
   const [content, setContent] = useState('');
+  const queryClient = useQueryClient();
 
   // 댓글 수정 요청을 보내는 mutation
   const mutation = useMutation({
@@ -17,6 +19,7 @@ export default function CommentEdit({
       updateComments(newComment),
     onSuccess: () => {
       alert('댓글 수정 성공');
+      queryClient.invalidateQueries(QUERY_KEY.comment.commentsById(id)); // 댓글 데이터 쿼리 무효화
       onClose(); // 수정 성공 시 수정 모드 종료
     },
     onError: (error) => {

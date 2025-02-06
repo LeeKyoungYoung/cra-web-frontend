@@ -1,5 +1,5 @@
 .project-block {
-  width: calc(33.33% - 15px); /* 세 개 아이템을 한 줄에 배치 */
+  width: calc(33.33% - 4rem); /* 세 개 아이템을 한 줄에 배치 */
   aspect-ratio: 1 / 1;
   background-color: white;
   border-radius: 10px;

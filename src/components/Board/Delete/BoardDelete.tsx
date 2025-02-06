@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { deleteBoards } from '../../../api/board';
 import { QUERY_KEY } from '~/api/queryKey';
 import styles from './BoardDelete.module.css';
+import { MdDeleteOutline } from 'react-icons/md';
 
 export default function BoardDelete({
   id,
@@ -39,8 +40,8 @@ export default function BoardDelete({
   };
 
   return (
-    <button className={styles['delete-button']} onClick={handleDelete}>
-      삭제
-    </button>
+      <div className={styles['delete-button']} onClick={handleDelete}>
+        <MdDeleteOutline size={24} />
+      </div>
   );
 }
