@@ -25,7 +25,7 @@ function ProjectAdminEdit() {
   const projectId = Number(id);
 
   const projectQuery = useQuery<Project>({
-    queryKey: ['project', 'projectById', projectId],
+    queryKey: QUERY_KEY.project.projectById(projectId),
     queryFn: async () => getProjectById(projectId),
   });
 
