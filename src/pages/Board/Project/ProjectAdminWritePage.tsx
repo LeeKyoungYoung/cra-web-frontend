@@ -1,5 +1,4 @@
-import React from 'react';
-import ProjectAdminWrite from '~/components/Project/Write/ProjectAdminWrite';
+import ProjectAdminWrite from '~/components/Project/Write/ProjectAdminWrite.tsx';
 
 function ProjectAdminWritePage() {
   return (

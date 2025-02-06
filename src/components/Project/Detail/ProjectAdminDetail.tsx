@@ -1,9 +1,7 @@
-import React from 'react';
-import { Project } from '~/models/Project';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { getProjectById } from '~/api/project';
-import { useParams } from 'react-router-dom';
+import { Project } from '~/models/Project.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { getProjectById } from '~/api/project.ts';
 import styled from 'styled-components';
 
 const Container = styled.div`

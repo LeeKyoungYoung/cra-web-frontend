@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
-import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
-import styles from './RecruitPage.module.css';
+import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro.tsx';
 import Vector from '~/assets/images/Vector/Arrow-Vector.png';
 import Vector2 from '~/assets/images/Vector/Arrow-Vector2.png';
+import styles from './RecruitPage.module.css';
 
 export default function RecruitPage() {
   return (

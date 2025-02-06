@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AlertModal from '~/components/Modal/Alert/AlertModal.tsx';
 import styled from 'styled-components';
-import AlertModal from '~/components/Modal/Alert/AlertModal';
 
 const Container = styled.div`
   display: flex;

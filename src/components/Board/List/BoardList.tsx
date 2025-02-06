@@ -1,10 +1,10 @@
-import { CATEGORY_STRINGS } from '~/constants/category_strings';
-import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
-import BoardItem from '~/components/Board/Item/BoardItem';
-import { Board } from '~/models/Board';
 import { UseQueryResult } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-import Pagination from '~/components/Pagination/Pagination';
+import { Board } from '~/models/Board.ts';
+import { CATEGORY_STRINGS } from '~/constants/category_strings.ts';
+import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en.ts';
+import BoardItem from '~/components/Board/Item/BoardItem.tsx';
+import Pagination from '~/components/Pagination/Pagination.tsx';
 import styles from './BoardList.module.css';
 
 interface BoardListProps {

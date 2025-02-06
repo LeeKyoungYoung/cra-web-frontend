@@ -1,5 +1,5 @@
-import BoardDetail from '~/components/Board/Detail/BoardDetail';
-import { CATEGORY } from '~/constants/category';
+import BoardDetail from '~/components/Board/Detail/BoardDetail.tsx';
+import { CATEGORY } from '~/constants/category.ts';
 
 export default function AcademicDetailPage() {
   return (

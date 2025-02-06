@@ -1,4 +1,4 @@
-import ProjectList from '~/components/Project/List/ProjectList';
+import ProjectList from '~/components/Project/List/ProjectList.tsx';
 import styles from '../Project/ProjectPage.module.css';
 
 export default function ProjectPage() {

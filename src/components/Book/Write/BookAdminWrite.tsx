@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { Item } from '~/models/Item';
 import { useNavigate } from 'react-router-dom';
-import { createItems } from '~/api/item';
-import { uploadImage } from '~/api/uploadImage';
+import { Item } from '~/models/Item.ts';
+import { createItems } from '~/api/item.ts';
+import { onUploadImage } from '~/api/board.ts';
 import styles from '../../Project/Project.module.css';
 
 function BookAdminWrite() {
@@ -39,7 +39,7 @@ function BookAdminWrite() {
     const { name, value, files } = e.target as HTMLInputElement;
     if (files && files[0]) {
       const file = files[0];
-      const imageUrl = await uploadImage(file);
+      const imageUrl = await onUploadImage(file);
 
       if (imageUrl) {
         setFormData((formData) => ({ ...formData, imageUrl }));

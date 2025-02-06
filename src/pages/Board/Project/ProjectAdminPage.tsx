@@ -1,5 +1,4 @@
-import React from 'react';
-import ProjectAdminList from '~/components/Project/List/ProjectAdminList';
+import ProjectAdminList from '~/components/Project/List/ProjectAdminList.tsx';
 
 function ProjectAdminPage() {
   return (

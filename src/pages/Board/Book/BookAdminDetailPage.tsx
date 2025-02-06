@@ -1,4 +1,4 @@
-import BookAdminDetail from '~/components/Book/Detail/BookAdminDetail';
+import BookAdminDetail from '~/components/Book/Detail/BookAdminDetail.tsx';
 
 function BookAdminDetailPage() {
   return (

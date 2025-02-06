@@ -1,6 +1,5 @@
-import React from 'react';
-import { Board } from '~/models/Board';
 import { Link } from 'react-router-dom';
+import { Board } from '~/models/Board.ts';
 import styles from './MainBoardItem.module.css';
 
 export default function BoardItem({ board }: { board: Board }) {

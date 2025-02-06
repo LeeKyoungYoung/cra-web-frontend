@@ -1,6 +1,4 @@
-import React from 'react';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteHavrutaBoards } from '~/api/havruta/havrutaBoard';
+import { useMutation } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './HavrutaBoardDelete.module.css';
 import { MdDeleteOutline } from 'react-icons/md';

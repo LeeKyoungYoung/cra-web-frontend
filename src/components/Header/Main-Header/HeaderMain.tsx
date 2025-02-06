@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import craIconBlue from '~/assets/images/cra-logo-blue.png';
-import { useAuthStore } from '~/store/authStore';
-import { useUIStore } from '~/store/uiStore';
+import { useAuthStore } from '~/store/authStore.ts';
+import { useUIStore } from '~/store/uiStore.ts';
 import styles from './HeaderMain.module.css';
 import styled from 'styled-components';
+import UserModal from '~/components/Modal/User/UserModal';
 
 export default function HeaderMain() {
   const { isAuthenticated, logout } = useAuthStore();
   const { isMenuOpen, toggleMenu } = useUIStore();
   const navigate = useNavigate();
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   const handleLogin = () => {
     navigate('/login');
   };
 
   const handleLogout = () => {
+    // 내정보
     try {
       logout();
+      closeModal();
       alert('로그아웃 성공');
       navigate('/main');
     } catch (error) {
@@ -66,8 +73,8 @@ export default function HeaderMain() {
 
         <li className={styles['mobile-authbutton']}>
           {isAuthenticated ? (
-            <button className={styles.authbutton} onClick={handleLogout}>
-              로그아웃
+            <button className={styles.authbutton} onClick={openModal}>
+              내정보
             </button>
           ) : (
             <button className={styles.authbutton} onClick={handleLogin}>
@@ -76,12 +83,11 @@ export default function HeaderMain() {
           )}
         </li>
       </ul>
-
       <div className={styles['desktop-authbutton']}>
         {isAuthenticated ? (
           <>
-            <button className={styles.authbutton} onClick={handleLogout}>
-              로그아웃
+            <button className={styles.authbutton} onClick={openModal}>
+              내정보
             </button>
           </>
         ) : (
@@ -90,6 +96,9 @@ export default function HeaderMain() {
               로그인
             </button>
           </>
+        )}
+        {modalOpen && (
+          <UserModal closeModal={closeModal} handleLogout={handleLogout} />
         )}
       </div>
     </div>

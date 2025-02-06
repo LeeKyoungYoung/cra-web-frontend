@@ -1,12 +1,10 @@
-import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { useParams } from 'react-router-dom';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { getCommentsCountByCategory } from '~/api/comment.ts';
+import { getHavrutaBoardById } from '~/api/havruta/havrutaBoard.ts';
+import { HavrutaBoard } from '~/models/Havruta.ts';
+import HavrutaBoardDetailItem from './Item/HavrutaBoardDetailIItem.tsx';
 import styles from './HavrutaBoardDetail.module.css';
-import { getCommentsCountByCategory } from '~/api/comment';
-import { getHavrutaBoardById } from '~/api/havruta/havrutaBoard';
-import { HavrutaBoard } from '~/models/Havruta';
-import HavrutaBoardDetailItem from './Item/HavrutaBoardDetailIItem';
 
 export default function HavrutaBoardDetail() {
   const currentUrl = window.location.href;

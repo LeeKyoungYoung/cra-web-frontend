@@ -1,5 +1,4 @@
-import React from 'react';
-import HavrutaBoardDetail from '~/components/Havruta/HavrutaBoard/Detail/HavrutaBoardDetail';
+import HavrutaBoardDetail from '~/components/Havruta/HavrutaBoard/Detail/HavrutaBoardDetail.tsx';
 
 function HavrutaBoardDetailPage() {
   return (

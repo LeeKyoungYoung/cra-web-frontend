@@ -1,5 +1,4 @@
-import ItemAdminEdit from '~/components/Item/Edit/ItemAdminEdit';
-import React from 'react';
+import ItemAdminEdit from '~/components/Item/Edit/ItemAdminEdit.tsx';
 
 function ItemAdminEditPage() {
   return (

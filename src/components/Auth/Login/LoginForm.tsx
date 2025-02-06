@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuthStore } from '~/store/authStore';
-import HeightSpacer from '~/components/Common/HeightSpacer';
+import { useAuthStore } from '~/store/authStore.ts';
+import HeightSpacer from '~/components/Common/HeightSpacer.tsx';
 import CryptoJS from 'crypto-js';
+import AlertModal from '~/components/Modal/Alert/AlertModal.tsx';
 import styled from 'styled-components';
 import styles from './LoginForm.module.css';
-import AlertModal from '~/components/Modal/Alert/AlertModal';
 
 const Container = styled.div`
   display: flex;
@@ -83,8 +83,8 @@ const LoginForm = () => {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const secretKey = '1234567890123456'; // 예시 나중에 바꿀거임 (진짜)
-    const iv = CryptoJS.enc.Utf8.parse('1234567890123456'); // IV 설정
+    const secretKey = import.meta.env.VITE_SECRET_KEY;
+    const iv = CryptoJS.enc.Utf8.parse(import.meta.env.VITE_SECRET_IV);
     const encryptedPassword = CryptoJS.AES.encrypt(
       password,
       CryptoJS.enc.Utf8.parse(secretKey),
