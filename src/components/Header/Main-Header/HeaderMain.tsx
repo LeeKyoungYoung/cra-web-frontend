@@ -17,14 +17,16 @@ export default function HeaderMain() {
   const closeModal = () => setModalOpen(false);
 
   const handleLogin = () => {
-    openModal();
     navigate('/login');
   };
 
   const handleLogout = () => {
+    // 내정보
+    openModal();
     try {
       logout();
       alert('로그아웃 성공');
+      closeModal();
       navigate('/main');
     } catch (error) {
       alert('로그아웃 실패');
@@ -73,7 +75,7 @@ export default function HeaderMain() {
         <li className={styles['mobile-authbutton']}>
           {isAuthenticated ? (
             <button className={styles.authbutton} onClick={handleLogout}>
-              로그아웃
+              내정보
             </button>
           ) : (
             <button className={styles.authbutton} onClick={handleLogin}>
@@ -86,7 +88,7 @@ export default function HeaderMain() {
         {isAuthenticated ? (
           <>
             <button className={styles.authbutton} onClick={handleLogout}>
-              로그아웃
+              내정보
             </button>
           </>
         ) : (
@@ -96,7 +98,9 @@ export default function HeaderMain() {
             </button>
           </>
         )}
-        {modalOpen && <UserModal closeModal={closeModal} />}
+        {modalOpen && (
+          <UserModal closeModal={closeModal} handleLogout={handleLogout} />
+        )}
       </div>
     </div>
   );

@@ -2,9 +2,14 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Modal from 'react-modal';
 import styles from '../User/UserModal.module.css';
-import logout from '~/assets/images/logout.png';
+import logoutImage from '~/assets/images/logoutImage.png';
 
-const UserModal = ({ closeModal }: { closeModal: () => void }) => {
+interface UserModalProps {
+  closeModal: () => void;
+  handleLogout: () => void;
+}
+
+const UserModal = ({ closeModal, handleLogout }: UserModalProps) => {
   return (
     <>
       <Modal
@@ -34,8 +39,8 @@ const UserModal = ({ closeModal }: { closeModal: () => void }) => {
           <div> 기술 스택 |</div>
           <div className={styles['line']} />
         </div>
-        <a className={styles['logout']}>
-          <img src={logout} className={styles['logout-image']} />
+        <a className={styles['logout']} onClick={handleLogout}>
+          <img src={logoutImage} className={styles['logout-image']} />
           <div>로그아웃</div>
         </a>
       </Modal>

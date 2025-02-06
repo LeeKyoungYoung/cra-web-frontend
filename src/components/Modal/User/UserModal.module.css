@@ -114,6 +114,7 @@
   justify-content: right;
   margin-right: 40px;
   gap: 4px;
+  cursor: pointer;
 }
 
 .logout:hover {
