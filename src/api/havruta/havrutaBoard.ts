@@ -22,11 +22,8 @@ export const getHavrutaBoards = async (
     );
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -36,11 +33,8 @@ export const getHavrutaBoardsCount = async () => {
     const response = await client.get<HavrutaBoard[]>(`/board/havruta`);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -65,11 +59,7 @@ export const getHavrutaBoardsByHavrutaId = async (
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -80,11 +70,8 @@ export const getHavrutaBoardsCountByHavrutaId = async (havrutaId: number) => {
     );
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -102,11 +89,7 @@ export const getHavrutaBoardById = async (id: number) => {
     };
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -124,13 +107,8 @@ export const createHavrutaBoard = async (havrutaBoard: HavrutaBoard) => {
     );
     return response.data;
   } catch (error) {
-    console.error('Failed to post data:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -149,13 +127,8 @@ export const updateHavrutaBoard = async (havrutaBoard: HavrutaBoard) => {
 
     return response.data;
   } catch (error) {
-    console.error('Failed to update data:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -165,11 +138,7 @@ export const deleteHavrutaBoards = async (id: number) => {
     const response = await authClient.delete(`/board/${id}`);
     return response.data;
   } catch (error) {
-    console.error('Failed to delete havruta board:', error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };

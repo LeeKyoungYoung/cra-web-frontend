@@ -28,11 +28,7 @@ export const getCommentsByBoardId = async (boardId: number) => {
     return comments;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -42,11 +38,7 @@ export const getCommentsCountByCategory = async (boardId: number) => {
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -64,11 +56,7 @@ export const createComments = async (comment: Comment, boardId: number) => {
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -94,11 +82,7 @@ export const createChildComments = async (
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -116,11 +100,7 @@ export const updateComments = async (comment: Comment) => {
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -131,10 +111,7 @@ export const deleteComments = async (id: number) => {
     const response = await authClient.delete<Comment>(`/comment/${id}`);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };

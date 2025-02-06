@@ -16,12 +16,12 @@ import { Route as RegisterRoutesImport } from './routes/registerRoutes'
 import { Route as RecruitRouteImport } from './routes/recruitRoute'
 import { Route as ProjectRouteImport } from './routes/projectRoute'
 import { Route as NoticeRoutesImport } from './routes/noticeRoutes'
-import { Route as NotFoundRouteImport } from './routes/notFoundRoute'
-import { Route as MainRouteImport } from './routes/mainRoute'
+import { Route as MainRouteImport } from './ro./routes/errorRoute
 import { Route as LoginRouteImport } from './routes/loginRoute'
 import { Route as ItemRouteImport } from './routes/itemRoute'
 import { Route as IntroRoutesImport } from './routes/introRoutes'
 import { Route as HavrutaRoutesImport } from './routes/havrutaRoutes'
+import { Route as ErrorRouteImport } from './routes/errorRoute'
 import { Route as BookRouteImport } from './routes/bookRoute'
 import { Route as AuthRoutesImport } from './routes/authRoutes'
 import { Route as AdminRouteImport } from './routes/adminRoute'
@@ -63,12 +63,6 @@ const NoticeRoutesRoute = NoticeRoutesImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const NotFoundRouteRoute = NotFoundRouteImport.update({
-  id: '/notFoundRoute',
-  path: '/notFoundRoute',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const MainRouteRoute = MainRouteImport.update({
   id: '/mainRoute',
   path: '/mainRoute',
@@ -96,6 +90,12 @@ const IntroRoutesRoute = IntroRoutesImport.update({
 const HavrutaRoutesRoute = HavrutaRoutesImport.update({
   id: '/havrutaRoutes',
   path: '/havrutaRoutes',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ErrorRouteRoute = ErrorRouteImport.update({
+  id: '/errorRoute',
+  path: '/errorRoute',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -207,6 +207,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRoute
     }
+    '/errorRoute': {
+      id: '/errorRoute'
+      path: '/errorRoute'
+      fullPath: '/errorRoute'
+      preLoaderRoute: typeof ErrorRouteImport
+      parentRoute: typeof rootRoute
+    }
     '/havrutaRoutes': {
       id: '/havrutaRoutes'
       path: '/havrutaRoutes'
@@ -240,13 +247,6 @@ declare module '@tanstack/react-router' {
       path: '/mainRoute'
       fullPath: '/mainRoute'
       preLoaderRoute: typeof MainRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/notFoundRoute': {
-      id: '/notFoundRoute'
-      path: '/notFoundRoute'
-      fullPath: '/notFoundRoute'
-      preLoaderRoute: typeof NotFoundRouteImport
       parentRoute: typeof rootRoute
     }
     '/noticeRoutes': {
@@ -298,12 +298,12 @@ export interface FileRoutesByFullPath {
   '/adminRoute': typeof AdminRouteRoute
   '/authRoutes': typeof AuthRoutesRoute
   '/bookRoute': typeof BookRouteRoute
+  '/errorRoute': typeof ErrorRouteRoute
   '/havrutaRoutes': typeof HavrutaRoutesRoute
   '/introRoutes': typeof IntroRoutesRoute
   '/itemRoute': typeof ItemRouteRoute
   '/loginRoute': typeof LoginRouteRoute
   '/mainRoute': typeof MainRouteRoute
-  '/notFoundRoute': typeof NotFoundRouteRoute
   '/noticeRoutes': typeof NoticeRoutesRoute
   '/projectRoute': typeof ProjectRouteRoute
   '/recruitRoute': typeof RecruitRouteRoute
@@ -320,12 +320,12 @@ export interface FileRoutesByTo {
   '/adminRoute': typeof AdminRouteRoute
   '/authRoutes': typeof AuthRoutesRoute
   '/bookRoute': typeof BookRouteRoute
+  '/errorRoute': typeof ErrorRouteRoute
   '/havrutaRoutes': typeof HavrutaRoutesRoute
   '/introRoutes': typeof IntroRoutesRoute
   '/itemRoute': typeof ItemRouteRoute
   '/loginRoute': typeof LoginRouteRoute
   '/mainRoute': typeof MainRouteRoute
-  '/notFoundRoute': typeof NotFoundRouteRoute
   '/noticeRoutes': typeof NoticeRoutesRoute
   '/projectRoute': typeof ProjectRouteRoute
   '/recruitRoute': typeof RecruitRouteRoute
@@ -343,12 +343,12 @@ export interface FileRoutesById {
   '/adminRoute': typeof AdminRouteRoute
   '/authRoutes': typeof AuthRoutesRoute
   '/bookRoute': typeof BookRouteRoute
+  '/errorRoute': typeof ErrorRouteRoute
   '/havrutaRoutes': typeof HavrutaRoutesRoute
   '/introRoutes': typeof IntroRoutesRoute
   '/itemRoute': typeof ItemRouteRoute
   '/loginRoute': typeof LoginRouteRoute
   '/mainRoute': typeof MainRouteRoute
-  '/notFoundRoute': typeof NotFoundRouteRoute
   '/noticeRoutes': typeof NoticeRoutesRoute
   '/projectRoute': typeof ProjectRouteRoute
   '/recruitRoute': typeof RecruitRouteRoute
@@ -367,12 +367,12 @@ export interface FileRouteTypes {
     | '/adminRoute'
     | '/authRoutes'
     | '/bookRoute'
+    | '/errorRoute'
     | '/havrutaRoutes'
     | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
-    | '/notFoundRoute'
     | '/noticeRoutes'
     | '/projectRoute'
     | '/recruitRoute'
@@ -388,12 +388,12 @@ export interface FileRouteTypes {
     | '/adminRoute'
     | '/authRoutes'
     | '/bookRoute'
+    | '/errorRoute'
     | '/havrutaRoutes'
     | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
-    | '/notFoundRoute'
     | '/noticeRoutes'
     | '/projectRoute'
     | '/recruitRoute'
@@ -409,12 +409,12 @@ export interface FileRouteTypes {
     | '/adminRoute'
     | '/authRoutes'
     | '/bookRoute'
+    | '/errorRoute'
     | '/havrutaRoutes'
     | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
-    | '/notFoundRoute'
     | '/noticeRoutes'
     | '/projectRoute'
     | '/recruitRoute'
@@ -432,12 +432,12 @@ export interface RootRouteChildren {
   AdminRouteRoute: typeof AdminRouteRoute
   AuthRoutesRoute: typeof AuthRoutesRoute
   BookRouteRoute: typeof BookRouteRoute
+  ErrorRouteRoute: typeof ErrorRouteRoute
   HavrutaRoutesRoute: typeof HavrutaRoutesRoute
   IntroRoutesRoute: typeof IntroRoutesRoute
   ItemRouteRoute: typeof ItemRouteRoute
   LoginRouteRoute: typeof LoginRouteRoute
   MainRouteRoute: typeof MainRouteRoute
-  NotFoundRouteRoute: typeof NotFoundRouteRoute
   NoticeRoutesRoute: typeof NoticeRoutesRoute
   ProjectRouteRoute: typeof ProjectRouteRoute
   RecruitRouteRoute: typeof RecruitRouteRoute
@@ -454,12 +454,12 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRouteRoute: AdminRouteRoute,
   AuthRoutesRoute: AuthRoutesRoute,
   BookRouteRoute: BookRouteRoute,
+  ErrorRouteRoute: ErrorRouteRoute,
   HavrutaRoutesRoute: HavrutaRoutesRoute,
   IntroRoutesRoute: IntroRoutesRoute,
   ItemRouteRoute: ItemRouteRoute,
   LoginRouteRoute: LoginRouteRoute,
   MainRouteRoute: MainRouteRoute,
-  NotFoundRouteRoute: NotFoundRouteRoute,
   NoticeRoutesRoute: NoticeRoutesRoute,
   ProjectRouteRoute: ProjectRouteRoute,
   RecruitRouteRoute: RecruitRouteRoute,
@@ -485,12 +485,12 @@ export const routeTree = rootRoute
         "/adminRoute",
         "/authRoutes",
         "/bookRoute",
+        "/errorRoute",
         "/havrutaRoutes",
         "/introRoutes",
         "/itemRoute",
         "/loginRoute",
         "/mainRoute",
-        "/notFoundRoute",
         "/noticeRoutes",
         "/projectRoute",
         "/recruitRoute",
@@ -522,6 +522,9 @@ export const routeTree = rootRoute
     "/bookRoute": {
       "filePath": "bookRoute.ts"
     },
+    "/errorRoute": {
+      "filePath": "errorRoute.ts"
+    },
     "/havrutaRoutes": {
       "filePath": "havrutaRoutes.ts"
     },
@@ -536,9 +539,6 @@ export const routeTree = rootRoute
     },
     "/mainRoute": {
       "filePath": "mainRoute.ts"
-    },
-    "/notFoundRoute": {
-      "filePath": "notFoundRoute.ts"
     },
     "/noticeRoutes": {
       "filePath": "noticeRoutes.ts"

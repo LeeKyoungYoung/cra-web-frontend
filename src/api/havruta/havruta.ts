@@ -9,11 +9,8 @@ export const getAllHavrutas = async () => {
     const response = await client.get<Havruta[]>(`/havruta`);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -23,11 +20,8 @@ export const getHavrutas = async () => {
     const response = await authClient.get<Havruta[]>(`/admin/havruta`);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -42,11 +36,7 @@ export const getHavrutaById = async (id: number) => {
     };
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -59,13 +49,8 @@ export const createHavruta = async (havruta: Havruta) => {
     });
     return response.data;
   } catch (error) {
-    console.error('Failed to post data:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -83,13 +68,8 @@ export const updateHavruta = async (havruta: Havruta) => {
 
     return response.data;
   } catch (error) {
-    console.error('Failed to update data:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -98,12 +78,7 @@ export const deleteHavruta = async (id: number) => {
     const response = await authClient.delete(`/admin/havruta/${id}`);
     return response.data;
   } catch (error) {
-    console.error('Failed to delete board:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
