@@ -1,9 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import { getProjects } from '~/api/project';
-import { QUERY_KEY } from '~/api/queryKey';
-import { Project } from '~/models/Project';
 import { Link } from 'react-router-dom';
-import ProjectDelete from '../Delete/ProjectAdminDelete';
+import { getProjects } from '~/api/project.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { Project } from '~/models/Project.ts';
+import ProjectDelete from '../Delete/ProjectAdminDelete.tsx';
 import styled from 'styled-components';
 
 const Container = styled.div`

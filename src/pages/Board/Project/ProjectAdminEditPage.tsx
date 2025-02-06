@@ -1,5 +1,4 @@
-import React from 'react';
-import ProjectAdminEdit from '~/components/Project/Edit/ProjectAdminEdit';
+import ProjectAdminEdit from '~/components/Project/Edit/ProjectAdminEdit.tsx';
 
 function ProjectAdminEditPage() {
   return (

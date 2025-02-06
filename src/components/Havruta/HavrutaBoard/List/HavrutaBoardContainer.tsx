@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { Havruta, HavrutaBoard } from '~/models/Havruta';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { Havruta, HavrutaBoard } from '~/models/Havruta.ts';
 import {
   getHavrutaBoards,
   getHavrutaBoardsByHavrutaId,
   getHavrutaBoardsCount,
   getHavrutaBoardsCountByHavrutaId,
-} from '~/api/havruta/havrutaBoard';
-import { getAllHavrutas } from '~/api/havruta/havruta';
-import HavrutaBoardList from './HavrutaBoardList';
+} from '~/api/havruta/havrutaBoard.ts';
+import { getAllHavrutas } from '~/api/havruta/havruta.ts';
+import HavrutaBoardList from './HavrutaBoardList.tsx';
 
 function HavrutaBoardContainer() {
   const [selectedHavrutaId, setSelectedHavrutaId] = useState<number | null>(

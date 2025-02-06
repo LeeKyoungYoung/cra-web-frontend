@@ -1,9 +1,8 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import HttpStatus from '~/components/HttpStatus/HttpStatus.tsx';
 import WhiteVector from '~/assets/images/Vector/Vector-white.png';
 import SkyBlueVector from '~/assets/images/Vector/Vector-skyblue.png';
 import styled from 'styled-components';
-import HttpStatus from '~/components/HttpStatus/HttpStatus';
 
 const Container = styled.div`
   display: flex;

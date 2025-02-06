@@ -1,5 +1,4 @@
-import ItemAdminList from '~/components/Item/List/ItemAdminList';
-import ItemAdminWrite from '~/components/Item/Write/ItemAdminWrite';
+import ItemAdminList from '~/components/Item/List/ItemAdminList.tsx';
 
 function ItemAdminPage() {
   return <ItemAdminList />;

@@ -1,5 +1,4 @@
-import React from 'react';
-import ItemAdminWrite from '~/components/Item/Write/ItemAdminWrite';
+import ItemAdminWrite from '~/components/Item/Write/ItemAdminWrite.tsx';
 
 export default function ItemAdminWritePage() {
   return <ItemAdminWrite />;

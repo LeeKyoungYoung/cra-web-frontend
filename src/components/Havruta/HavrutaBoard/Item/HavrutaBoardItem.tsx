@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { HavrutaBoard } from '~/models/Havruta.ts';
 import styles from './HavrutaBoardItem.module.css';
-import { HavrutaBoard } from '~/models/Havruta';
 
 function HavrutaBoardItem({ havrutaBoard }: { havrutaBoard: HavrutaBoard }) {
   return (

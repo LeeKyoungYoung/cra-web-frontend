@@ -1,4 +1,3 @@
-import React from 'react';
 import LeftVector from '~/assets/images/Vector/LeftVector.png';
 import RightVector from '~/assets/images/Vector/RightVector.png';
 import styles from './Pagination.module.css';

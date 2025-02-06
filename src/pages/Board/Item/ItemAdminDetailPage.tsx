@@ -1,5 +1,4 @@
-import ItemAdminDetail from '~/components/Item/Detail/ItemAdminDetail';
-import React from 'react';
+import ItemAdminDetail from '~/components/Item/Detail/ItemAdminDetail.tsx';
 
 function ItemAdminDetailPage() {
   return (

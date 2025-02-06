@@ -1,4 +1,3 @@
-import React from 'react';
 import CrangE from '~/assets/images/Status_Crang.png';
 import styled from 'styled-components';
 

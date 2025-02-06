@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { deleteComments } from '~/api/comment.ts';
 import styles from './CommentDelete.module.css';
-import { deleteComments } from '~/api/comment';
 
 export default function CommentDelete({ id }: { id: number }) {
   const queryClient = useQueryClient();

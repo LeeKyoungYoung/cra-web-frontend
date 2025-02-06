@@ -1,5 +1,5 @@
 import React from 'react';
-import { DotButton, useDotButton } from './EmblaCarouselDotButton';
+import { DotButton, useDotButton } from './EmblaCarouselDotButton.tsx';
 import useEmblaCarousel from 'embla-carousel-react';
 import styles from './embla.module.css';
 

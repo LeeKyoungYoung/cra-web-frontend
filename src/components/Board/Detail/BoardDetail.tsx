@@ -1,9 +1,9 @@
-import { Board } from '~/models/Board';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { getBoardById } from '~/api/board';
-import BoardDetailItem from './BoardDetailItem';
-import { getCommentsCountByCategory } from '~/api/comment';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { Board } from '~/models/Board.ts';
+import { getBoardById } from '~/api/board.ts';
+import BoardDetailItem from './BoardDetailItem.tsx';
+import { getCommentsCountByCategory } from '~/api/comment.ts';
 import styles from './BoardDetail.module.css';
 
 export default function BoardDetail({ category }: { category: number }) {

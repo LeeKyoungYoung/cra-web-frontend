@@ -1,5 +1,5 @@
-import ItemList from '~/components/Item/List/ItemList';
-import { ITEMCATEGORY } from '~/constants/itemCategory';
+import ItemList from '~/components/Item/List/ItemList.tsx';
+import { ITEMCATEGORY } from '~/constants/itemCategory.ts';
 import styles from './ItemPage.module.css';
 
 export default function ItemPage() {
