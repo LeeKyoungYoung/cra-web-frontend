@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
-import { CATEGORY_STRINGS } from '~/constants/category_strings';
-import CommentItem from '../Item/CommentItem';
+import CommentItem from '~/components/Comment/Item/CommentItem';
 import { Comment } from '~/models/Comment';
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '~/api/queryKey';
 import { getCommentsByBoardId } from '~/api/comment';
-import { Link } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
 export default function CommentList({ id }: { id: number }) {
   const commentsQuery = useQuery<Comment[]>({

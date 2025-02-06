@@ -1,17 +1,10 @@
-import React from 'react';
-import { Board } from '../../../models/Board';
-import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
+import { Board } from '~/models/Board';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '../../../api/queryKey';
-import { getBoardById } from '../../../api/board';
-import { useParams } from 'react-router-dom';
+import { QUERY_KEY } from '~/api/queryKey';
+import { getBoardById } from '~/api/board';
 import BoardDetailItem from './BoardDetailItem';
-import BoardDelete from '../Delete/BoardDelete';
-import CommentList from '~/components/Comment/List/CommetList';
-import styles from './BoardDetail.module.css';
 import { getCommentsCountByCategory } from '~/api/comment';
-import { dateFormat } from '~/utils/dateForm';
-import { useMatch, useRouter } from '@tanstack/react-router';
+import styles from './BoardDetail.module.css';
 
 export default function BoardDetail({ category }: { category: number }) {
   const currentUrl = window.location.href; // 현재 경로 가져오기

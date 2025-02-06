@@ -1,6 +1,3 @@
-import React from 'react';
-import { CATEGORY_STRINGS } from '~/constants/category_strings';
-import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
 import { Link } from 'react-router-dom';
 import CommentWrite from '~/components/Comment/Write/CommentWrite';
 import CommentList from '~/components/Comment/List/CommetList';
@@ -8,7 +5,7 @@ import HeightSpacer from '~/components/Common/HeightSpacer';
 import Divider from '~/components/Common/Divider';
 import { dateFormat } from '~/utils/dateForm';
 import { HavrutaBoard } from '~/models/Havruta';
-import HavrutaBoardDelete from '../../Delete/HavrutaBoardDelete';
+import HavrutaBoardDelete from '~/components/Havruta/HavrutaBoard/Delete/HavrutaBoardDelete';
 import styles from './HavrutaBoardDetailItem.module.css';
 
 export default function HavrutaBoardDetailItem({

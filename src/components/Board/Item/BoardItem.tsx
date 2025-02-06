@@ -1,6 +1,5 @@
-import React from 'react';
 import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
-import { Board } from '../../../models/Board';
+import { Board } from '~/models/Board';
 import { Link } from 'react-router-dom';
 import styles from './BoardItem.module.css';
 
