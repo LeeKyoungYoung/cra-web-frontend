@@ -71,9 +71,9 @@ export default function BoardDetailItem({
             </div>
           </div>
           <div className={styles['content-title']}>{board.title}</div>
-          <p className={styles['board-content']}>
+          <div className={styles['board-content']}>
             <Viewer initialValue={board.content} />
-          </p>
+          </div>
           <div className={styles['comment-count']}>
             <span>조회 {viewCnt}</span>
             <span>좋아요 {board.like}1</span>
