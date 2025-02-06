@@ -1,9 +1,6 @@
-import React from 'react';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteHavrutaBoards } from '~/api/havruta/havrutaBoard';
+import { useMutation } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
-import { QUERY_KEY } from '~/api/queryKey';
-import { HavrutaBoard } from '~/models/Havruta';
+import { deleteHavrutaBoards } from '~/api/havruta/havrutaBoard.ts';
 import styled from 'styled-components';
 
 const DeleteButton = styled.button`

@@ -1,5 +1,3 @@
-import React from 'react';
-import { useQuery } from '@tanstack/react-query';
 import Modal from 'react-modal';
 import styles from '../Alert/AlertModal.module.css';
 

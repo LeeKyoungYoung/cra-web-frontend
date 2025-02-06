@@ -1,16 +1,16 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro';
+import HeaderIntro from '~/components/Header/Intro-Header/HeaderIntro.tsx';
+import EmblaCarousel from '~/components/Carousel/EmblaCarousel.tsx';
 import Vector from '~/assets/images/Vector/Arrow-Vector.png';
 import Vector2 from '~/assets/images/Vector/Arrow-Vector2.png';
-import styles from './IntroPage.module.css';
-import EmblaCarousel from '~/components/Carousel/EmblaCarousel';
 import Crang1 from '~/assets/images/pixelcrang/pixelcrang1.svg';
 import Crang2 from '~/assets/images/pixelcrang/pixelcrang2.svg';
 import Crang3 from '~/assets/images/pixelcrang/pixelcrang3.svg';
 import Crang4 from '~/assets/images/pixelcrang/pixelcrang4.svg';
 import blurround from '~/assets/images/black-blur-round.svg';
-import { useEffect, useState } from 'react';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import styles from './IntroPage.module.css';
+// import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 
 export default function IntroPage() {
   const [isVertical, setIsVertical] = useState(window.innerWidth <= 1024);

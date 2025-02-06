@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { deleteBoards } from '~/api/board';
-import { QUERY_KEY } from '~/api/queryKey';
+import { deleteBoards } from '~/api/board.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
 import { MdDeleteOutline } from 'react-icons/md';
 import styles from './BoardDelete.module.css';
 

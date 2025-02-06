@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { Havruta } from '~/models/Havruta';
-import { client } from '~/api/client';
-import { authClient } from '~/api/auth/authClient';
+import { Havruta } from '~/models/Havruta.ts';
+import { client } from '~/api/client.ts';
+import { authClient } from '~/api/auth/authClient.ts';
 
 // /admin/havruta
 export const getAllHavrutas = async () => {

@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { getProjects } from '~/api/project';
-import { QUERY_KEY } from '~/api/queryKey';
-import { Project } from '~/models/Project';
-import ProjectItem from '~/components/Project/Item/ProjectItem';
+import { getProjects } from '~/api/project.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { Project } from '~/models/Project.ts';
+import ProjectItem from '~/components/Project/Item/ProjectItem.tsx';
 import styles from './ProjectList.module.css';
 
 export default function ProjectList() {

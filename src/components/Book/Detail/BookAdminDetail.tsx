@@ -1,10 +1,8 @@
-import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { useParams } from 'react-router-dom';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { Item } from '~/models/Item.ts';
+import { getItemById } from '~/api/item.ts';
 import styled from 'styled-components';
-import { Item } from '~/models/Item';
-import { getItemById } from '~/api/item';
 
 const Container = styled.div`
   padding: 10rem;

@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { CATEGORY_STRINGS } from '~/constants/category_strings';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getBoardById, updateBoards } from '~/api/board';
-import { Board } from '~/models/Board';
-import styles from './BoardEdit.module.css';
-import { useNavigate, useParams } from 'react-router-dom';
-import { QUERY_KEY } from '~/api/queryKey';
+import { useNavigate } from 'react-router-dom';
+import { CATEGORY_STRINGS } from '~/constants/category_strings.ts';
+import { getBoardById, updateBoards } from '~/api/board.ts';
+import { Board } from '~/models/Board.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
 import '~/styles/toast-ui';
 import { Editor } from '@toast-ui/react-editor';
 import { colorSyntax, codeSyntaxHighlight, Prism } from '~/styles/toast-ui';
+import styles from './BoardEdit.module.css';
 
 export default function BoardEdit({ category }: { category: number }) {
   const navigate = useNavigate();

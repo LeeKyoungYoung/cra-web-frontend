@@ -1,8 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import AdminHome from '~/components/Admin/AdminHome.tsx';
+import AdminSideBar from '~/components/Admin/AdminSideBar.tsx';
 import styled from 'styled-components';
-import AdminHome from '~/components/Admin/AdminHome';
-import AdminSideBar from '~/components/Admin/AdminSideBar';
 
 const Container = styled.div`
   display: flex;

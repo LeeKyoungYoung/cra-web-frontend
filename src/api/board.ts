@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { Board } from '~/models/Board';
-import { client } from './client';
-import { authClient } from './auth/authClient';
+import { Board } from '~/models/Board.ts';
+import { client } from './client.ts';
+import { authClient } from './auth/authClient.ts';
 
 // [GET]
 export const getBoardCountByCategory = async (category: number) => {

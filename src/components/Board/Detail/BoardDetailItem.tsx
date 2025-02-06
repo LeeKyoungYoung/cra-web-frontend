@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { Board } from '~/models/Board';
-import { CATEGORY_STRINGS } from '~/constants/category_strings';
-import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
 import { Link } from 'react-router-dom';
-import CommentWrite from '~/components/Comment/Write/CommentWrite';
-import CommentList from '~/components/Comment/List/CommetList';
-import BoardDelete from '~/components/Board/Delete/BoardDelete';
-import HeightSpacer from '~/components/Common/HeightSpacer';
-import Divider from '~/components/Common/Divider';
-import { dateFormat } from '~/utils/dateForm';
+import { Board } from '~/models/Board.ts';
+import { createBoardsView, getBoardById } from '~/api/board.ts';
+import { CATEGORY_STRINGS } from '~/constants/category_strings.ts';
+import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en.ts';
+import CommentWrite from '~/components/Comment/Write/CommentWrite.tsx';
+import CommentList from '~/components/Comment/List/CommetList.tsx';
+import BoardDelete from '~/components/Board/Delete/BoardDelete.tsx';
+import HeightSpacer from '~/components/Common/HeightSpacer.tsx';
+import Divider from '~/components/Common/Divider.tsx';
+import { dateFormat } from '~/utils/dateForm.ts';
 import { Viewer } from '@toast-ui/react-editor';
 import { FaRegEdit } from 'react-icons/fa';
-import { createBoardsView, getBoardById } from '~/api/board';
 import styles from './BoardDetailItem.module.css';
 
 export default function BoardDetailItem({

@@ -1,7 +1,7 @@
-import { Project } from '~/models/Project';
-import styles from './ProjectItem.module.css';
 import { useState } from 'react';
-import ProjectModal from '~/components/Modal/Project/ProjectModal';
+import { Project } from '~/models/Project.ts';
+import ProjectModal from '~/components/Modal/Project/ProjectModal.tsx';
+import styles from './ProjectItem.module.css';
 
 export default function ProjectItem({ project }: { project: Project }) {
   const [modalIsOpen, setModalOpen] = useState(false);

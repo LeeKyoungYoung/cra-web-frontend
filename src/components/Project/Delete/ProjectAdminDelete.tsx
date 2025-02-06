@@ -1,8 +1,7 @@
-import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteProject } from '~/api/project';
-import { QUERY_KEY } from '~/api/queryKey';
-import { Project } from '~/models/Project';
+import { deleteProject } from '~/api/project.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { Project } from '~/models/Project.ts';
 import styled from 'styled-components';
 
 const DeleteButton = styled.button`

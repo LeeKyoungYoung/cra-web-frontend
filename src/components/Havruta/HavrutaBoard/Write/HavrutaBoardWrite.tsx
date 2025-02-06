@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import { createHavrutaBoard } from '~/api/havruta/havrutaBoard';
-import { Havruta, HavrutaBoard } from '~/models/Havruta';
-import { CATEGORY } from '~/constants/category';
-import { QUERY_KEY } from '~/api/queryKey';
-import { getHavrutas } from '~/api/havruta/havruta';
+import { createHavrutaBoard } from '~/api/havruta/havrutaBoard.ts';
+import { Havruta, HavrutaBoard } from '~/models/Havruta.ts';
+import { CATEGORY } from '~/constants/category.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { getHavrutas } from '~/api/havruta/havruta.ts';
 import styles from './HavrutaBoardWrite.module.css';
 
 export default function HavrutaBoardWrite() {

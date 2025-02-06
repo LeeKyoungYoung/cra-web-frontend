@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getHavrutaById, updateHavruta } from '~/api/havruta/havruta';
 import { Havruta } from '~/models/Havruta';
 import styled from 'styled-components';

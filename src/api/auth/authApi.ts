@@ -1,12 +1,12 @@
 import axios from 'axios';
-import { AuthClient } from '~/api/client.tsx';
+import { AuthClient } from '~/api/client.ts';
 import {
   ReqSignUp,
   ResSignUp,
   ReissueToken,
   Login,
   ResponseToken,
-} from '~/models/Auth';
+} from '~/models/Auth.ts';
 
 export const login = async (data: Login): Promise<ResponseToken> => {
   try {

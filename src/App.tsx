@@ -1,10 +1,10 @@
-import Footer from './components/Footer/Footer.tsx';
-import Header from './components/Header/Header.tsx';
-import ScrollToTop from './utils/ScrollToTop.tsx';
-import { RouterProvider } from '@tanstack/react-router';
-import styles from './App.module.css';
-import { routes } from './routes/routes.ts';
 import { Suspense } from 'react';
+import { RouterProvider } from '@tanstack/react-router';
+import { routes } from './routes/routes.ts';
+import Header from './components/Header/Header.tsx';
+import Footer from './components/Footer/Footer.tsx';
+import ScrollToTop from './utils/ScrollToTop.ts';
+import styles from './App.module.css';
 
 function App() {
   return (
