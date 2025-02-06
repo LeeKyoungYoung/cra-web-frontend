@@ -35,7 +35,10 @@ export default function BoardDelete({
   });
 
   const handleDelete = () => {
-    deleteMutation.mutate(id);
+    const confirmDelete = window.confirm('정말로 삭제하시겠습니까?');
+    if (confirmDelete) {
+      deleteMutation.mutate(id);
+    }
   };
 
   return (

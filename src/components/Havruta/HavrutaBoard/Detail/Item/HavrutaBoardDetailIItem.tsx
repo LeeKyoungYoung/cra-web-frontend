@@ -7,6 +7,8 @@ import { dateFormat } from '~/utils/dateForm';
 import { HavrutaBoard } from '~/models/Havruta';
 import HavrutaBoardDelete from '~/components/Havruta/HavrutaBoard/Delete/HavrutaBoardDelete';
 import styles from './HavrutaBoardDetailItem.module.css';
+import { FaRegEdit } from 'react-icons/fa';
+import { Viewer } from '@toast-ui/react-editor';
 
 export default function HavrutaBoardDetailItem({
   havrutaBoard,
@@ -17,17 +19,6 @@ export default function HavrutaBoardDetailItem({
 }) {
   return (
     <div className={styles['detail-container']}>
-      <div className={styles['fix-button']}>
-        <HavrutaBoardDelete />
-        <button className={styles['login']}>
-          <Link
-            to={`/havruta/edit/${havrutaBoard.id}`}
-            className={styles['link']}
-          >
-            수정하기
-          </Link>
-        </button>
-      </div>
       <div className={styles['detail-content']}>
         <div className={styles['title']}>
           {havrutaBoard.className} ({havrutaBoard.professor})
@@ -47,9 +38,20 @@ export default function HavrutaBoardDetailItem({
                 {dateFormat(havrutaBoard.createdAt)}
               </span>
             </div>
+            <div className={styles['fix-button']}>
+              <Link
+                to={`/havruta/edit/${havrutaBoard.id}`}
+                className={styles['link']}
+              >
+                <FaRegEdit size={22} />
+              </Link>
+              <HavrutaBoardDelete />
+            </div>
           </div>
           <div className={styles['content-title']}>{havrutaBoard.title}</div>
-          <p className={styles['board-content']}>{havrutaBoard.content}</p>
+          <div className={styles['board-content']}>
+            <Viewer initialValue={havrutaBoard.content} />
+          </div>
           <div className={styles['comment-count']}>
             <span>조회 {havrutaBoard.view}</span>
             <span>좋아요 {havrutaBoard.likeCount}1</span>
