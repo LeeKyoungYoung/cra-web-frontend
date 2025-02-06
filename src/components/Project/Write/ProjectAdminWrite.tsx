@@ -4,7 +4,7 @@ import { createProjects } from '~/api/project';
 import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
 import styles from '../Project.module.css';
-import { uploadImage } from '~/api/uploadImage';
+import { onUploadImage } from '~/api/board';
 
 function ProjectAdminWrite() {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ function ProjectAdminWrite() {
 
     if (files && files[0]) {
       const file = files[0];
-      const imageUrl = await uploadImage(file); // 이미지 업로드 함수 호출
+      const imageUrl = await onUploadImage(file); // 이미지 업로드 함수 호출
 
       if (imageUrl) {
         setFormData((formData) => ({ ...formData, imageUrl })); // URL을 formData에 저장

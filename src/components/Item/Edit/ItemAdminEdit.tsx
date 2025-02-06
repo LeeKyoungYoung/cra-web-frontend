@@ -5,7 +5,7 @@ import { QUERY_KEY } from '~/api/queryKey';
 import styles from '../../Project/Project.module.css';
 import { Item } from '~/models/Item';
 import { getItemById, updateItem } from '~/api/item';
-import { uploadImage } from '~/api/uploadImage';
+import { onUploadImage } from '~/api/board';
 
 function ItemAdminEdit() {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ function ItemAdminEdit() {
       });
     } else if (files && files[0]) {
       const file = files[0];
-      const imageUrl = await uploadImage(file);
+      const imageUrl = await onUploadImage(file);
 
       if (imageUrl) {
         setFormData((formData) => ({ ...formData, imageUrl }));
