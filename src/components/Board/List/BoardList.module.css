@@ -68,6 +68,8 @@
 
 .write-link {
   padding: 10px 15px;
+  width: 131px;
+  height: 54px;
   background-color: var(--color-primary);
   color: white;
   text-decoration: none;
