@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Board } from '../models/Board';
+import { Board } from '~/models/Board';
 import { client } from './client';
 import { authClient } from './auth/authClient';
 

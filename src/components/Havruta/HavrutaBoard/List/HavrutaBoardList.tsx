@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar/HavrutaSidebar';
 import Pagination from '~/components/Pagination/Pagination';
-import HavrutaBoardItem from '../Item/HavrutaBoardItem';
+import HavrutaBoardItem from '~/components/Havruta/HavrutaBoard/Item/HavrutaBoardItem';
 import { UseQueryResult } from '@tanstack/react-query';
 import { Havruta, HavrutaBoard } from '~/models/Havruta';
 import styles from './HavrutaBoardList.module.css';
@@ -72,7 +71,6 @@ export default function HavrutaBoardList({
           <Link className={styles['write-link']} to="/havruta/write">
             글쓰기
           </Link>
-          {/* <Link to={'../admin/havruta'}>어드민</Link> */}
         </div>
       </div>
     </div>

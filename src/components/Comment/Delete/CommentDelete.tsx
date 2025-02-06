@@ -1,6 +1,4 @@
-import React from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { deleteBoards } from '../../../api/board';
 import { QUERY_KEY } from '~/api/queryKey';
 import styles from './CommentDelete.module.css';
 import { deleteComments } from '~/api/comment';

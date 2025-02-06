@@ -1,6 +1,5 @@
-import React from 'react';
 import axios from 'axios';
-import { AuthClient } from '../client';
+import { AuthClient } from '~/api/client.tsx';
 import {
   ReqSignUp,
   ResSignUp,

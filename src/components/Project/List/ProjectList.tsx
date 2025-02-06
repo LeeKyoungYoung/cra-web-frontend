@@ -2,9 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getProjects } from '~/api/project';
 import { QUERY_KEY } from '~/api/queryKey';
 import { Project } from '~/models/Project';
-import ProjectItem from '../Item/ProjectItem';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import ProjectItem from '~/components/Project/Item/ProjectItem';
 import styles from './ProjectList.module.css';
 
 export default function ProjectList() {

@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import styles from './BookPage.module.css';
 import { ITEMCATEGORY } from '~/constants/itemCategory';
 import BookList from '~/components/Book/List/BookList';

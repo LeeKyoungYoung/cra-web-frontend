@@ -1,6 +1,5 @@
-import React from 'react';
-import styles from '../Project/ProjectPage.module.css';
 import ProjectList from '~/components/Project/List/ProjectList';
+import styles from '../Project/ProjectPage.module.css';
 
 export default function ProjectPage() {
   return (

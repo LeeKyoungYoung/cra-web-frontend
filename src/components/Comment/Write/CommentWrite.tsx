@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import {
-  QueryClient,
   useMutation,
   useQueryClient,
 } from '@tanstack/react-query';
-import { createChildComments, createComments } from '../../../api/comment';
+import { createChildComments, createComments } from '~/api/comment';
 import { Comment } from '~/models/Comment';
-import { useParams } from 'react-router-dom';
-import styles from './CommentWrite.module.css'; // Import the styles
 import { QUERY_KEY } from '~/api/queryKey';
+import styles from './CommentWrite.module.css';
 
 export default function CommentWrite({
   parentId,
