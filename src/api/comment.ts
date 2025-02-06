@@ -1,7 +1,7 @@
-import { client } from './client';
 import axios from 'axios';
-import { Comment } from '~/models/Comment';
-import { authClient } from './auth/authClient';
+import { Comment } from '~/models/Comment.ts';
+import { client } from './client.ts';
+import { authClient } from './auth/authClient.ts';
 
 //get
 export const getCommentsByBoardId = async (boardId: number) => {

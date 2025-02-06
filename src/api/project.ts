@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { client } from './client';
-import { Item } from '~/models/Item';
+import { Project } from '~/models/Project.ts';
+import { client } from './client.ts';
+import { authClient } from './auth/authClient.ts';
 
-export const getItems = async (itemCategory: number) => {
+export const getProjects = async () => {
   try {
-    const response = await client.get<Item[]>(`/item/${itemCategory}`);
+    const response = await client.get<Project[]>(`/project`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -15,15 +16,15 @@ export const getItems = async (itemCategory: number) => {
   }
 };
 
-export const getItemById = async (id: number) => {
+export const getProjectById = async (id: number) => {
   try {
-    const response = await client.get<Item>(`/item/view/${id}`);
-    const Item = response.data;
+    const response = await client.get<Project>(`/project/view/${id}`);
+    const project = response.data;
 
     return {
-      ...Item,
+      ...project,
       // undefined 체크 후 기본값 설정
-      createdAt: Item.createdAt ? new Date(Item.createdAt) : new Date(),
+      createdAt: project.createdAt ? new Date(project.createdAt) : new Date(),
     };
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -34,9 +35,10 @@ export const getItemById = async (id: number) => {
   }
 };
 
-export const createItems = async (item: Item) => {
+export const createProjects = async (project: Project) => {
   try {
-    const response = await client.post<Item>('/admin/item', item, {
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.post<Project>('/admin/project', project, {
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -56,13 +58,18 @@ export const createItems = async (item: Item) => {
   }
 };
 
-export const updateItem = async (item: Item) => {
+export const updateProject = async (project: Project) => {
   try {
-    const response = await client.put<Item>(`/admin/item/${item.id}`, item, {
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.put<Project>(
+      `/admin/project/${project.id}`,
+      project,
+      {
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
       },
-    });
+    );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
@@ -73,9 +80,10 @@ export const updateItem = async (item: Item) => {
   }
 };
 
-export const deleteItem = async (id: number) => {
+export const deleteProject = async (id: number) => {
   try {
-    const response = await client.delete(`/admin/item/${id}`);
+    // 권한이 필요한 작업에 authClient 사용
+    const response = await authClient.delete(`/admin/project/${id}`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
