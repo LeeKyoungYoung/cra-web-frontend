@@ -1,17 +1,16 @@
 .container {
-  display: flex; /* 플렉스 레이아웃 활성화 */
-  flex-direction: row; /* 세로 메뉴와 콘텐츠를 가로로 나란히 배치 */
+  display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-  padding-top: 115px;
-  padding-bottom: 180px;
   width: 100%;
-  max-width: 1200px; /* 컨테이너의 최대 너비 */
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 20px; /* sidebar와 content 간격 추가 */
+  margin-bottom: 4rem;
+  gap: 20px;
 }
 
 .sidebar {
-  flex: 0 0 350px;
+  flex: 0 0 340px;
   max-height: calc(100vh - 81.5px - 20px);
   overflow-y: auto;
   background-color: var(--color-white);
@@ -21,9 +20,10 @@
 }
 
 .content {
-  flex: 1; /* 남은 공간을 채움 */
+  flex-grow: 1;
   display: flex;
-  flex-direction: column; /* 기존 콘텐츠 유지 */
+  flex-direction: column;
+  min-width: 750px;
 }
 
 .title {
@@ -78,8 +78,7 @@
 }
 
 .write-link {
-  width: 131px;
-  height: 54px;
+  width: 5rem;
   padding: 10px 15px;
   background-color: var(--color-primary);
   color: white;
@@ -97,4 +96,100 @@
 
 .divider {
   border: 1px solid var(--color-dark-stroke);
+}
+@media (max-width: 1230px) {
+  .container {
+    width: 100%;
+    scale: 90%;
+  }
+}
+@media (max-width: 1070px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    scale: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 60;
+    margin-top: 20px;
+    order: -1;
+  }
+
+  .content {
+    min-width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .boardList {
+    padding: 15px;
+  }
+
+  .board-list-footer {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .write-link {
+    font-size: 18px;
+    width: 6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 17.5rem; /* 1024px 이하와 동일하게 적용 */
+    margin-top: 20px;
+    order: -1;
+  }
+
+  .content {
+    min-width: 100%;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  .boardList {
+    padding: 10px;
+  }
+
+  .board-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .board-list-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .write-link {
+    font-size: 16px;
+    width: 5rem;
+    padding: 0.75rem;
+    border-radius: 0.8rem;
+  }
 }

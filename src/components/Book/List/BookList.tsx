@@ -36,7 +36,6 @@ export default function BookList({ itemCategory }: { itemCategory: number }) {
   return (
     <>
       <div className={styles['content']}>{content}</div>
-      <Link to={'../admin/book'}>어드민</Link>
     </>
   );
 }

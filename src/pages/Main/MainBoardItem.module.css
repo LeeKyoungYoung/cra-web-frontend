@@ -5,6 +5,11 @@
   margin-right: 17px;
   margin-left: 17px;
   justify-content: space-between;
+  &:hover {
+    .board-title, .board-created {
+      color: var(--color-primary);
+    }
+  }
 }
 
 .board-user-name {
@@ -27,6 +32,9 @@
   text-decoration: none;
   color: var(--color-dark-text);
   display: inline;
+  &:hover {
+    color: var(--color-primary);
+  }
 }
 
 .board-created {

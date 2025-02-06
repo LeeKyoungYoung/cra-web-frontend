@@ -5,6 +5,7 @@
   background: transparent;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
   padding: 2.5rem 3rem 2.5rem 1.5rem;
 }
 
@@ -29,16 +30,54 @@
 }
 
 .navbar-link {
-  font-size: 25px;
+  font-size: 1.5rem;
   color: white;
   text-decoration: none;
   transition: transform 0.2s ease;
   user-select: none;
   &:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 
 .logo {
   width: 8rem;
+}
+
+@media (max-width: 1064px) {
+  .logo {
+    width: 6.5rem;
+  }
+
+  .navbar-link {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-intro {
+    display: flex;
+    padding: 1.35rem 1.5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  .ul-intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .logo {
+    width: 5rem;
+  }
+
+  .navbar-link {
+    font-size: 1rem;
+  }
 }

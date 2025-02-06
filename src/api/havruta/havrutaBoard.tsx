@@ -8,7 +8,6 @@ export const getHavrutaBoards = async (
   page: number = 1,
   perPage: number = 10,
   orderBy: number = 0,
-  isASC: boolean = true,
 ) => {
   try {
     const response = await client.get<HavrutaBoard[]>(
@@ -17,7 +16,7 @@ export const getHavrutaBoards = async (
         params: {
           perPage,
           orderBy,
-          isASC,
+          isASC: false,
         },
       },
     );
@@ -51,7 +50,6 @@ export const getHavrutaBoardsByHavrutaId = async (
   page: number = 1,
   perPage: number = 10,
   orderBy: number = 0,
-  isASC: boolean = true,
 ) => {
   try {
     const response = await client.get<HavrutaBoard[]>(
@@ -60,7 +58,7 @@ export const getHavrutaBoardsByHavrutaId = async (
         params: {
           perPage,
           orderBy,
-          isASC,
+          isASC: false,
         },
       },
     );

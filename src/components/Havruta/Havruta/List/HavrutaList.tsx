@@ -8,7 +8,6 @@ import { getHavrutas } from '~/api/havruta/havruta';
 import HavrutaDelete from '../Delete/HavrutaDelete';
 
 const Container = styled.div`
-  padding: 10rem;
 `;
 
 const Table = styled.table`

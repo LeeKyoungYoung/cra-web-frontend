@@ -69,6 +69,7 @@
   color: white;
   border-radius: 10px;
   border: none; /* 기본 border 제거 */
+  cursor: pointer;
 }
 
 .check-button:hover {

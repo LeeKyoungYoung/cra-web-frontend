@@ -1,18 +1,18 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .footer {
   font-family: 'Pretendard SemiBold';
   border: none;
   background-color: #2cb4db;
-  padding: 2.5rem 0rem;
+  padding: 2.25rem 6rem;
+  user-select: none;
 }
 
 .content {
-  padding: 0rem 5rem;
+  scale: 90%;
 }
 
 .logo {
@@ -53,5 +53,25 @@
   padding: 1.5rem 0rem;
   p {
     color: #ffffff;
+  }
+}
+
+@media (max-width: 1064px) {
+  .footer {
+    padding: 2.5rem 2rem;
+  }
+
+  .content {
+    scale: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 0rem;
+  }
+
+  .content {
+    scale: 70%;
   }
 }
