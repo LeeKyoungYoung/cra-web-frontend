@@ -1,4 +1,4 @@
-import { Item } from '~/models/Item';
+import { Item } from '~/models/Item.ts';
 import styles from '../../Project/Item/ProjectItem.module.css';
 
 export default function BookItem({ item }: { item: Item }) {

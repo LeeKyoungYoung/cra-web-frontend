@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { updateComments } from '~/api/comment';
-import { QUERY_KEY } from '~/api/queryKey';
+import { updateComments } from '~/api/comment.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
 
 export default function CommentEdit({
   id,

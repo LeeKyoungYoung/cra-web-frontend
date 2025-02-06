@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuthStore } from '~/store/authStore';
-import HeightSpacer from '~/components/Common/HeightSpacer';
+import { useAuthStore } from '~/store/authStore.ts';
+import HeightSpacer from '~/components/Common/HeightSpacer.tsx';
 import CryptoJS from 'crypto-js';
+import AlertModal from '~/components/Modal/Alert/AlertModal.tsx';
 import styled from 'styled-components';
 import styles from './LoginForm.module.css';
-import AlertModal from '~/components/Modal/Alert/AlertModal';
 
 const Container = styled.div`
   display: flex;

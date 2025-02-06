@@ -1,8 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import SelectedDot from '~/assets/images/Dot/Selected-Dot.png';
 import { UseQueryResult } from '@tanstack/react-query';
-import { Havruta } from '~/models/Havruta';
+import { Havruta } from '~/models/Havruta.ts';
+import SelectedDot from '~/assets/images/Dot/Selected-Dot.png';
 import styles from './HavrutaSidebar.module.css';
 
 interface HavrutaSidebarProps {

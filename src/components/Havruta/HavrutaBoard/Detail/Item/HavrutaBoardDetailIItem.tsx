@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import CommentWrite from '~/components/Comment/Write/CommentWrite';
-import CommentList from '~/components/Comment/List/CommetList';
-import HeightSpacer from '~/components/Common/HeightSpacer';
-import Divider from '~/components/Common/Divider';
-import { dateFormat } from '~/utils/dateForm';
-import { HavrutaBoard } from '~/models/Havruta';
-import HavrutaBoardDelete from '~/components/Havruta/HavrutaBoard/Delete/HavrutaBoardDelete';
+import { dateFormat } from '~/utils/dateForm.ts';
+import { HavrutaBoard } from '~/models/Havruta.ts';
+import CommentWrite from '~/components/Comment/Write/CommentWrite.tsx';
+import CommentList from '~/components/Comment/List/CommetList.tsx';
+import HavrutaBoardDelete from '~/components/Havruta/HavrutaBoard/Delete/HavrutaBoardDelete.tsx';
+import HeightSpacer from '~/components/Common/HeightSpacer.tsx';
+import Divider from '~/components/Common/Divider.tsx';
 import styles from './HavrutaBoardDetailItem.module.css';
 
 export default function HavrutaBoardDetailItem({

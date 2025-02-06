@@ -1,8 +1,8 @@
-import CommentItem from '~/components/Comment/Item/CommentItem';
-import { Comment } from '~/models/Comment';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { getCommentsByBoardId } from '~/api/comment';
+import { Comment } from '~/models/Comment.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { getCommentsByBoardId } from '~/api/comment.ts';
+import CommentItem from '~/components/Comment/Item/CommentItem.tsx';
 
 export default function CommentList({ id }: { id: number }) {
   const commentsQuery = useQuery<Comment[]>({

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { getProjectById, updateProject } from '~/api/project';
-import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
-import { QUERY_KEY } from '~/api/queryKey';
-import { onUploadImage } from '~/api/board';
+import { getProjectById, updateProject } from '~/api/project.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { onUploadImage } from '~/api/board.ts';
+import { Project } from '~/models/Project.ts';
 import styles from '../Project.module.css';
 
 function ProjectAdminEdit() {

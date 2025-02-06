@@ -1,7 +1,6 @@
-import React from 'react';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
-import { reissueToken } from './authApi';
+import { reissueToken } from './authApi.ts';
 
 // axios 인터셉터를 사용하여 api 요청 시 토큰을 자동으로 갱신하는 기능
 export const authClient = axios.create({

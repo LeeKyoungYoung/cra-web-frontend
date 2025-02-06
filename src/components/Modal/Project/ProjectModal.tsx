@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getProjectById } from '~/api/project';
-import { QUERY_KEY } from '~/api/queryKey';
+import { getProjectById } from '~/api/project.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
 import Modal from 'react-modal';
 import styles from '../Project/ProjectModal.module.css';
 

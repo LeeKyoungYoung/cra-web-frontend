@@ -1,10 +1,8 @@
-import React from 'react';
-import { CATEGORY_STRINGS } from '~/constants/category_strings';
-import MainBoardItem from './MainBoardItem';
-import { Board } from '~/models/Board';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { getBoardCountByCategory } from '~/api/board';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { getBoardCountByCategory } from '~/api/board.ts';
+import { Board } from '~/models/Board.ts';
+import MainBoardItem from './MainBoardItem.tsx';
 import styles from './MainBoardList.module.css';
 
 export default function MainBoardList({ category }: { category: number }) {

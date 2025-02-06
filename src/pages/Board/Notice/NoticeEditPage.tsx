@@ -1,5 +1,5 @@
-import BoardEdit from '~/components/Board/Edit/BoardEdit';
-import { CATEGORY } from '~/constants/category';
+import BoardEdit from '~/components/Board/Edit/BoardEdit.tsx';
+import { CATEGORY } from '~/constants/category.ts';
 
 export default function NoticeEditPage() {
   return <BoardEdit category={CATEGORY.NOTICE} />;

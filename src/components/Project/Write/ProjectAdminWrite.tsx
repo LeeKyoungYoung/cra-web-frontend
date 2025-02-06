@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { createProjects } from '~/api/project';
-import { Project } from '~/models/Project';
 import { useNavigate } from 'react-router-dom';
-import { onUploadImage } from '~/api/board';
+import { createProjects } from '~/api/project.ts';
+import { Project } from '~/models/Project';
+import { onUploadImage } from '~/api/board.ts';
 import styles from '../Project.module.css';
 
 function ProjectAdminWrite() {

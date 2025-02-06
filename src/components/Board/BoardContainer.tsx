@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { Board } from '~/models/Board';
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { QUERY_KEY } from '~/api/queryKey';
-import { getBoardsByCategory, getBoardCountByCategory } from '~/api/board';
-import BoardList from './List/BoardList';
+import { Board } from '~/models/Board.ts';
+import { QUERY_KEY } from '~/api/queryKey.ts';
+import { getBoardsByCategory, getBoardCountByCategory } from '~/api/board.ts';
+import BoardList from './List/BoardList.tsx';
 
 function BoardContainer({ category }: { category: number }) {
   const [currentPage, setCurrentPage] = useState(0);

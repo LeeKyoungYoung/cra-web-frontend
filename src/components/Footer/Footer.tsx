@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import craIcon from '~/assets/images/cra-logo.png';
 import styles from './Footer.module.css';

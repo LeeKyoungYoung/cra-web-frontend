@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { Item } from '~/models/Item';
 import { useNavigate } from 'react-router-dom';
-import { createItems } from '~/api/item';
-import { onUploadImage } from '~/api/board';
+import { Item } from '~/models/Item.ts';
+import { createItems } from '~/api/item.ts';
+import { onUploadImage } from '~/api/board.ts';
 import styles from '../../Project/Project.module.css';
 
 function BookAdminWrite() {

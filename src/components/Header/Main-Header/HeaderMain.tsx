@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import craIconBlue from '~/assets/images/cra-logo-blue.png';
-import { useAuthStore } from '~/store/authStore';
-import { useUIStore } from '~/store/uiStore';
+import { useAuthStore } from '~/store/authStore.ts';
+import { useUIStore } from '~/store/uiStore.ts';
 import styles from './HeaderMain.module.css';
 import styled from 'styled-components';
 import UserModal from '~/components/Modal/User/UserModal';

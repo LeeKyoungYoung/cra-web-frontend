@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Sidebar from './Sidebar/HavrutaSidebar';
-import Pagination from '~/components/Pagination/Pagination';
-import HavrutaBoardItem from '~/components/Havruta/HavrutaBoard/Item/HavrutaBoardItem';
 import { UseQueryResult } from '@tanstack/react-query';
-import { Havruta, HavrutaBoard } from '~/models/Havruta';
+import { Havruta, HavrutaBoard } from '~/models/Havruta.ts';
+import Sidebar from './Sidebar/HavrutaSidebar.tsx';
+import Pagination from '~/components/Pagination/Pagination.tsx';
+import HavrutaBoardItem from '~/components/Havruta/HavrutaBoard/Item/HavrutaBoardItem.tsx';
 import styles from './HavrutaBoardList.module.css';
 
 interface HavrutaBoardListProps {

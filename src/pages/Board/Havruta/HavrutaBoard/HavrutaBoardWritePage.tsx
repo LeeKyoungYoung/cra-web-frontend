@@ -1,5 +1,4 @@
-import React from 'react';
-import HavrutaBoardWrite from '~/components/Havruta/HavrutaBoard/Write/HavrutaBoardWrite';
+import HavrutaBoardWrite from '~/components/Havruta/HavrutaBoard/Write/HavrutaBoardWrite.tsx';
 function HavrutaBoardWritePage() {
   return (
     <div>
