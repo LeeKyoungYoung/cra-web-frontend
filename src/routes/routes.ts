@@ -1,6 +1,11 @@
 import { createRouter } from '@tanstack/react-router';
 import { rootRoute } from './__root.tsx';
-import { notFoundRoute } from './notFoundRoute.ts';
+import {
+  notRouteRoute,
+  notFoundRoute,
+  forbiddenRoute,
+  serverErrorRoute,
+} from './errorRoute.ts';
 import { HomeRoute, introRoute } from './introRoutes.ts';
 import { recruitRoute } from './recruitRoute.ts';
 import { mainRoute } from './mainRoute.ts';
@@ -61,7 +66,10 @@ import {
 
 export const routes = createRouter({
   routeTree: rootRoute.addChildren([
+    notRouteRoute,
     notFoundRoute,
+    forbiddenRoute,
+    serverErrorRoute,
     HomeRoute,
     introRoute,
     recruitRoute,
