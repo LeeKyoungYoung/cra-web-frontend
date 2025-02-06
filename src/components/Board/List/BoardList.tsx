@@ -1,8 +1,7 @@
-import React from 'react';
-import { CATEGORY_STRINGS } from '../../../constants/category_strings';
+import { CATEGORY_STRINGS } from '~/constants/category_strings';
 import { CATEGORY_STRINGS_EN } from '~/constants/category_strings_en';
-import BoardItem from '../Item/BoardItem';
-import { Board } from '../../../models/Board';
+import BoardItem from '~/components/Board/Item/BoardItem';
+import { Board } from '~/models/Board';
 import { UseQueryResult } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import Pagination from '~/components/Pagination/Pagination';

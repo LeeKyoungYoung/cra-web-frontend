@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { getProjectById, updateProject } from '~/api/project';
 import { Project } from '~/models/Project';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { QUERY_KEY } from '~/api/queryKey';
-import styles from '../Project.module.css';
 import { onUploadImage } from '~/api/board';
+import styles from '../Project.module.css';
 
 function ProjectAdminEdit() {
   const navigate = useNavigate();

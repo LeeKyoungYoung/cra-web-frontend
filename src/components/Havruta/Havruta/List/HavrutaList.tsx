@@ -1,11 +1,10 @@
-import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { QUERY_KEY } from '~/api/queryKey';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
 import { Havruta } from '~/models/Havruta';
 import { getHavrutas } from '~/api/havruta/havruta';
-import HavrutaDelete from '../Delete/HavrutaDelete';
+import HavrutaDelete from '~/components/Havruta/Havruta/Delete/HavrutaDelete';
+import styled from 'styled-components';
 
 const Container = styled.div`
 `;

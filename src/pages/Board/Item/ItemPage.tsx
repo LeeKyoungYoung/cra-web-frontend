@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { CATEGORY } from '../../../constants/category';
-import styles from './ItemPage.module.css';
 import ItemList from '~/components/Item/List/ItemList';
 import { ITEMCATEGORY } from '~/constants/itemCategory';
+import styles from './ItemPage.module.css';
 
 export default function ItemPage() {
   return (

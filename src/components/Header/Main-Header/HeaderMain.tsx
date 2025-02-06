@@ -22,11 +22,10 @@ export default function HeaderMain() {
 
   const handleLogout = () => {
     // 내정보
-    openModal();
     try {
       logout();
-      alert('로그아웃 성공');
       closeModal();
+      alert('로그아웃 성공');
       navigate('/main');
     } catch (error) {
       alert('로그아웃 실패');
@@ -74,7 +73,7 @@ export default function HeaderMain() {
 
         <li className={styles['mobile-authbutton']}>
           {isAuthenticated ? (
-            <button className={styles.authbutton} onClick={handleLogout}>
+            <button className={styles.authbutton} onClick={openModal}>
               내정보
             </button>
           ) : (
@@ -87,7 +86,7 @@ export default function HeaderMain() {
       <div className={styles['desktop-authbutton']}>
         {isAuthenticated ? (
           <>
-            <button className={styles.authbutton} onClick={handleLogout}>
+            <button className={styles.authbutton} onClick={openModal}>
               내정보
             </button>
           </>

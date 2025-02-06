@@ -1,4 +1,3 @@
-import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getProjects } from '~/api/project';
 import { QUERY_KEY } from '~/api/queryKey';
