@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import {
-  useMutation,
-  useQueryClient,
-} from '@tanstack/react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { createChildComments, createComments } from '~/api/comment.ts';
 import { Comment } from '~/models/Comment.ts';
 import { QUERY_KEY } from '~/api/queryKey.ts';

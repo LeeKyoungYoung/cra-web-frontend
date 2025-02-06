@@ -85,9 +85,16 @@
 
 .comment-count {
   display: flex;
+  justify-content: right;
   gap: 30px;
   margin-top: 138px;
   margin-bottom: 14px;
   font-size: 20px;
   color: #9b9b9b;
+}
+
+.viewContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 원하는 간격(px 단위) */
 }
