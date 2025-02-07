@@ -111,6 +111,7 @@ li {
   }
   .logo {
     max-width: 4rem;
+    transform: translateY(0.25rem);
   }
 
   .menu-toggle {
@@ -132,8 +133,7 @@ li {
   }
 
   .nav-menu.active {
-    position: fixed;
-    display: block;
+    display: flex;
   }
 
   ul {
