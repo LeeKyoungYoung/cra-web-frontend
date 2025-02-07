@@ -67,20 +67,20 @@ function NotFoundPage() {
   const navigate = useNavigate();
   return (
     <Container>
-      <HttpStatus statusCode={404} />
+      <HttpStatus statusCode={403} />
       <Content>
-        <Title>죄송합니다. 현재 찾을 수 없는 페이지를 요청하셨습니다.</Title>
+        <Title>Forbidden</Title>
         <Context>존재하지 않는 주소를 입력하셨거나,</Context>
         <Context>
           요청하신 페이지의 주소가 변경, 삭제되어 찾을 수 없습니다.
         </Context>
       </Content>
       <Buttons>
-        <MainBtn onClick={() => navigate('/main')}>
+        <MainBtn onClick={() => navigate('/')}>
           메인으로 <img src={SkyBlueVector} />
         </MainBtn>
 
-        <PrevBtn onClick={() => navigate(-2)}>
+        <PrevBtn onClick={() => navigate(-1)}>
           이전으로 <img src={WhiteVector} />
         </PrevBtn>
       </Buttons>

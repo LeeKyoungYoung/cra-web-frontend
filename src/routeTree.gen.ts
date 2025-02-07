@@ -10,26 +10,26 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as RoutesImport } from './routes/routes'
-import { Route as RegisterRoutesImport } from './routes/registerRoutes'
-import { Route as RecruitRouteImport } from './routes/recruitRoute'
-import { Route as ProjectRouteImport } from './routes/projectRoute'
-import { Route as NoticeRoutesImport } from './routes/noticeRoutes'
-import { Route as NotFoundRouteImport } from './routes/notFoundRoute'
-import { Route as MainRouteImport } from './routes/mainRoute'
-import { Route as LoginRouteImport } from './routes/loginRoute'
-import { Route as ItemRouteImport } from './routes/itemRoute'
-import { Route as IntroRoutesImport } from './routes/introRoutes'
-import { Route as HavrutaRoutesImport } from './routes/havrutaRoutes'
-import { Route as BookRouteImport } from './routes/bookRoute'
-import { Route as AuthRoutesImport } from './routes/authRoutes'
-import { Route as AdminRouteImport } from './routes/adminRoute'
-import { Route as AdminProjectRoutesImport } from './routes/adminProjectRoutes'
-import { Route as AdminItemRoutesImport } from './routes/adminItemRoutes'
-import { Route as AdminHavrutaRoutesImport } from './routes/adminHavrutaRoutes'
-import { Route as AdminBookRoutesImport } from './routes/adminBookRoutes'
-import { Route as AcademicRoutesImport } from './routes/academicRoutes'
+import { Route as rootRoute } from './routes/__root';
+import { Route as RoutesImport } from './routes/routes';
+import { Route as RegisterRoutesImport } from './routes/registerRoutes';
+import { Route as RecruitRouteImport } from './routes/recruitRoute';
+import { Route as ProjectRouteImport } from './routes/projectRoute';
+import { Route as NoticeRoutesImport } from './routes/noticeRoutes';
+import { Route as MainRouteImport } from './routes/mainRoute';
+import { Route as LoginRouteImport } from './routes/loginRoute';
+import { Route as ItemRouteImport } from './routes/itemRoute';
+import { Route as IntroRoutesImport } from './routes/introRoutes';
+import { Route as HavrutaRoutesImport } from './routes/havrutaRoutes';
+import { Route as ErrorRouteImport } from './routes/errorRoute';
+import { Route as BookRouteImport } from './routes/bookRoute';
+import { Route as AuthRoutesImport } from './routes/authRoutes';
+import { Route as AdminRouteImport } from './routes/adminRoute';
+import { Route as AdminProjectRoutesImport } from './routes/adminProjectRoutes';
+import { Route as AdminItemRoutesImport } from './routes/adminItemRoutes';
+import { Route as AdminHavrutaRoutesImport } from './routes/adminHavrutaRoutes';
+import { Route as AdminBookRoutesImport } from './routes/adminBookRoutes';
+import { Route as AcademicRoutesImport } from './routes/academicRoutes';
 
 // Create/Update Routes
 
@@ -37,327 +37,327 @@ const RoutesRoute = RoutesImport.update({
   id: '/routes',
   path: '/routes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const RegisterRoutesRoute = RegisterRoutesImport.update({
   id: '/registerRoutes',
   path: '/registerRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const RecruitRouteRoute = RecruitRouteImport.update({
   id: '/recruitRoute',
   path: '/recruitRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const ProjectRouteRoute = ProjectRouteImport.update({
   id: '/projectRoute',
   path: '/projectRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const NoticeRoutesRoute = NoticeRoutesImport.update({
   id: '/noticeRoutes',
   path: '/noticeRoutes',
   getParentRoute: () => rootRoute,
-} as any)
-
-const NotFoundRouteRoute = NotFoundRouteImport.update({
-  id: '/notFoundRoute',
-  path: '/notFoundRoute',
-  getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const MainRouteRoute = MainRouteImport.update({
   id: '/mainRoute',
   path: '/mainRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const LoginRouteRoute = LoginRouteImport.update({
   id: '/loginRoute',
   path: '/loginRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const ItemRouteRoute = ItemRouteImport.update({
   id: '/itemRoute',
   path: '/itemRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const IntroRoutesRoute = IntroRoutesImport.update({
   id: '/introRoutes',
   path: '/introRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const HavrutaRoutesRoute = HavrutaRoutesImport.update({
   id: '/havrutaRoutes',
   path: '/havrutaRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
+
+const ErrorRouteRoute = ErrorRouteImport.update({
+  id: '/errorRoute',
+  path: '/errorRoute',
+  getParentRoute: () => rootRoute,
+} as any);
 
 const BookRouteRoute = BookRouteImport.update({
   id: '/bookRoute',
   path: '/bookRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AuthRoutesRoute = AuthRoutesImport.update({
   id: '/authRoutes',
   path: '/authRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AdminRouteRoute = AdminRouteImport.update({
   id: '/adminRoute',
   path: '/adminRoute',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AdminProjectRoutesRoute = AdminProjectRoutesImport.update({
   id: '/adminProjectRoutes',
   path: '/adminProjectRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AdminItemRoutesRoute = AdminItemRoutesImport.update({
   id: '/adminItemRoutes',
   path: '/adminItemRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AdminHavrutaRoutesRoute = AdminHavrutaRoutesImport.update({
   id: '/adminHavrutaRoutes',
   path: '/adminHavrutaRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AdminBookRoutesRoute = AdminBookRoutesImport.update({
   id: '/adminBookRoutes',
   path: '/adminBookRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 const AcademicRoutesRoute = AcademicRoutesImport.update({
   id: '/academicRoutes',
   path: '/academicRoutes',
   getParentRoute: () => rootRoute,
-} as any)
+} as any);
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
     '/academicRoutes': {
-      id: '/academicRoutes'
-      path: '/academicRoutes'
-      fullPath: '/academicRoutes'
-      preLoaderRoute: typeof AcademicRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/academicRoutes';
+      path: '/academicRoutes';
+      fullPath: '/academicRoutes';
+      preLoaderRoute: typeof AcademicRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/adminBookRoutes': {
-      id: '/adminBookRoutes'
-      path: '/adminBookRoutes'
-      fullPath: '/adminBookRoutes'
-      preLoaderRoute: typeof AdminBookRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/adminBookRoutes';
+      path: '/adminBookRoutes';
+      fullPath: '/adminBookRoutes';
+      preLoaderRoute: typeof AdminBookRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/adminHavrutaRoutes': {
-      id: '/adminHavrutaRoutes'
-      path: '/adminHavrutaRoutes'
-      fullPath: '/adminHavrutaRoutes'
-      preLoaderRoute: typeof AdminHavrutaRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/adminHavrutaRoutes';
+      path: '/adminHavrutaRoutes';
+      fullPath: '/adminHavrutaRoutes';
+      preLoaderRoute: typeof AdminHavrutaRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/adminItemRoutes': {
-      id: '/adminItemRoutes'
-      path: '/adminItemRoutes'
-      fullPath: '/adminItemRoutes'
-      preLoaderRoute: typeof AdminItemRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/adminItemRoutes';
+      path: '/adminItemRoutes';
+      fullPath: '/adminItemRoutes';
+      preLoaderRoute: typeof AdminItemRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/adminProjectRoutes': {
-      id: '/adminProjectRoutes'
-      path: '/adminProjectRoutes'
-      fullPath: '/adminProjectRoutes'
-      preLoaderRoute: typeof AdminProjectRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/adminProjectRoutes';
+      path: '/adminProjectRoutes';
+      fullPath: '/adminProjectRoutes';
+      preLoaderRoute: typeof AdminProjectRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/adminRoute': {
-      id: '/adminRoute'
-      path: '/adminRoute'
-      fullPath: '/adminRoute'
-      preLoaderRoute: typeof AdminRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/adminRoute';
+      path: '/adminRoute';
+      fullPath: '/adminRoute';
+      preLoaderRoute: typeof AdminRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/authRoutes': {
-      id: '/authRoutes'
-      path: '/authRoutes'
-      fullPath: '/authRoutes'
-      preLoaderRoute: typeof AuthRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/authRoutes';
+      path: '/authRoutes';
+      fullPath: '/authRoutes';
+      preLoaderRoute: typeof AuthRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/bookRoute': {
-      id: '/bookRoute'
-      path: '/bookRoute'
-      fullPath: '/bookRoute'
-      preLoaderRoute: typeof BookRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/bookRoute';
+      path: '/bookRoute';
+      fullPath: '/bookRoute';
+      preLoaderRoute: typeof BookRouteImport;
+      parentRoute: typeof rootRoute;
+    };
+    '/errorRoute': {
+      id: '/errorRoute';
+      path: '/errorRoute';
+      fullPath: '/errorRoute';
+      preLoaderRoute: typeof ErrorRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/havrutaRoutes': {
-      id: '/havrutaRoutes'
-      path: '/havrutaRoutes'
-      fullPath: '/havrutaRoutes'
-      preLoaderRoute: typeof HavrutaRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/havrutaRoutes';
+      path: '/havrutaRoutes';
+      fullPath: '/havrutaRoutes';
+      preLoaderRoute: typeof HavrutaRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/introRoutes': {
-      id: '/introRoutes'
-      path: '/introRoutes'
-      fullPath: '/introRoutes'
-      preLoaderRoute: typeof IntroRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/introRoutes';
+      path: '/introRoutes';
+      fullPath: '/introRoutes';
+      preLoaderRoute: typeof IntroRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/itemRoute': {
-      id: '/itemRoute'
-      path: '/itemRoute'
-      fullPath: '/itemRoute'
-      preLoaderRoute: typeof ItemRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/itemRoute';
+      path: '/itemRoute';
+      fullPath: '/itemRoute';
+      preLoaderRoute: typeof ItemRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/loginRoute': {
-      id: '/loginRoute'
-      path: '/loginRoute'
-      fullPath: '/loginRoute'
-      preLoaderRoute: typeof LoginRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/loginRoute';
+      path: '/loginRoute';
+      fullPath: '/loginRoute';
+      preLoaderRoute: typeof LoginRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/mainRoute': {
-      id: '/mainRoute'
-      path: '/mainRoute'
-      fullPath: '/mainRoute'
-      preLoaderRoute: typeof MainRouteImport
-      parentRoute: typeof rootRoute
-    }
-    '/notFoundRoute': {
-      id: '/notFoundRoute'
-      path: '/notFoundRoute'
-      fullPath: '/notFoundRoute'
-      preLoaderRoute: typeof NotFoundRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/mainRoute';
+      path: '/mainRoute';
+      fullPath: '/mainRoute';
+      preLoaderRoute: typeof MainRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/noticeRoutes': {
-      id: '/noticeRoutes'
-      path: '/noticeRoutes'
-      fullPath: '/noticeRoutes'
-      preLoaderRoute: typeof NoticeRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/noticeRoutes';
+      path: '/noticeRoutes';
+      fullPath: '/noticeRoutes';
+      preLoaderRoute: typeof NoticeRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/projectRoute': {
-      id: '/projectRoute'
-      path: '/projectRoute'
-      fullPath: '/projectRoute'
-      preLoaderRoute: typeof ProjectRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/projectRoute';
+      path: '/projectRoute';
+      fullPath: '/projectRoute';
+      preLoaderRoute: typeof ProjectRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/recruitRoute': {
-      id: '/recruitRoute'
-      path: '/recruitRoute'
-      fullPath: '/recruitRoute'
-      preLoaderRoute: typeof RecruitRouteImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/recruitRoute';
+      path: '/recruitRoute';
+      fullPath: '/recruitRoute';
+      preLoaderRoute: typeof RecruitRouteImport;
+      parentRoute: typeof rootRoute;
+    };
     '/registerRoutes': {
-      id: '/registerRoutes'
-      path: '/registerRoutes'
-      fullPath: '/registerRoutes'
-      preLoaderRoute: typeof RegisterRoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/registerRoutes';
+      path: '/registerRoutes';
+      fullPath: '/registerRoutes';
+      preLoaderRoute: typeof RegisterRoutesImport;
+      parentRoute: typeof rootRoute;
+    };
     '/routes': {
-      id: '/routes'
-      path: '/routes'
-      fullPath: '/routes'
-      preLoaderRoute: typeof RoutesImport
-      parentRoute: typeof rootRoute
-    }
+      id: '/routes';
+      path: '/routes';
+      fullPath: '/routes';
+      preLoaderRoute: typeof RoutesImport;
+      parentRoute: typeof rootRoute;
+    };
   }
 }
 
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/academicRoutes': typeof AcademicRoutesRoute
-  '/adminBookRoutes': typeof AdminBookRoutesRoute
-  '/adminHavrutaRoutes': typeof AdminHavrutaRoutesRoute
-  '/adminItemRoutes': typeof AdminItemRoutesRoute
-  '/adminProjectRoutes': typeof AdminProjectRoutesRoute
-  '/adminRoute': typeof AdminRouteRoute
-  '/authRoutes': typeof AuthRoutesRoute
-  '/bookRoute': typeof BookRouteRoute
-  '/havrutaRoutes': typeof HavrutaRoutesRoute
-  '/introRoutes': typeof IntroRoutesRoute
-  '/itemRoute': typeof ItemRouteRoute
-  '/loginRoute': typeof LoginRouteRoute
-  '/mainRoute': typeof MainRouteRoute
-  '/notFoundRoute': typeof NotFoundRouteRoute
-  '/noticeRoutes': typeof NoticeRoutesRoute
-  '/projectRoute': typeof ProjectRouteRoute
-  '/recruitRoute': typeof RecruitRouteRoute
-  '/registerRoutes': typeof RegisterRoutesRoute
-  '/routes': typeof RoutesRoute
+  '/academicRoutes': typeof AcademicRoutesRoute;
+  '/adminBookRoutes': typeof AdminBookRoutesRoute;
+  '/adminHavrutaRoutes': typeof AdminHavrutaRoutesRoute;
+  '/adminItemRoutes': typeof AdminItemRoutesRoute;
+  '/adminProjectRoutes': typeof AdminProjectRoutesRoute;
+  '/adminRoute': typeof AdminRouteRoute;
+  '/authRoutes': typeof AuthRoutesRoute;
+  '/bookRoute': typeof BookRouteRoute;
+  '/errorRoute': typeof ErrorRouteRoute;
+  '/havrutaRoutes': typeof HavrutaRoutesRoute;
+  '/introRoutes': typeof IntroRoutesRoute;
+  '/itemRoute': typeof ItemRouteRoute;
+  '/loginRoute': typeof LoginRouteRoute;
+  '/mainRoute': typeof MainRouteRoute;
+  '/noticeRoutes': typeof NoticeRoutesRoute;
+  '/projectRoute': typeof ProjectRouteRoute;
+  '/recruitRoute': typeof RecruitRouteRoute;
+  '/registerRoutes': typeof RegisterRoutesRoute;
+  '/routes': typeof RoutesRoute;
 }
 
 export interface FileRoutesByTo {
-  '/academicRoutes': typeof AcademicRoutesRoute
-  '/adminBookRoutes': typeof AdminBookRoutesRoute
-  '/adminHavrutaRoutes': typeof AdminHavrutaRoutesRoute
-  '/adminItemRoutes': typeof AdminItemRoutesRoute
-  '/adminProjectRoutes': typeof AdminProjectRoutesRoute
-  '/adminRoute': typeof AdminRouteRoute
-  '/authRoutes': typeof AuthRoutesRoute
-  '/bookRoute': typeof BookRouteRoute
-  '/havrutaRoutes': typeof HavrutaRoutesRoute
-  '/introRoutes': typeof IntroRoutesRoute
-  '/itemRoute': typeof ItemRouteRoute
-  '/loginRoute': typeof LoginRouteRoute
-  '/mainRoute': typeof MainRouteRoute
-  '/notFoundRoute': typeof NotFoundRouteRoute
-  '/noticeRoutes': typeof NoticeRoutesRoute
-  '/projectRoute': typeof ProjectRouteRoute
-  '/recruitRoute': typeof RecruitRouteRoute
-  '/registerRoutes': typeof RegisterRoutesRoute
-  '/routes': typeof RoutesRoute
+  '/academicRoutes': typeof AcademicRoutesRoute;
+  '/adminBookRoutes': typeof AdminBookRoutesRoute;
+  '/adminHavrutaRoutes': typeof AdminHavrutaRoutesRoute;
+  '/adminItemRoutes': typeof AdminItemRoutesRoute;
+  '/adminProjectRoutes': typeof AdminProjectRoutesRoute;
+  '/adminRoute': typeof AdminRouteRoute;
+  '/authRoutes': typeof AuthRoutesRoute;
+  '/bookRoute': typeof BookRouteRoute;
+  '/errorRoute': typeof ErrorRouteRoute;
+  '/havrutaRoutes': typeof HavrutaRoutesRoute;
+  '/introRoutes': typeof IntroRoutesRoute;
+  '/itemRoute': typeof ItemRouteRoute;
+  '/loginRoute': typeof LoginRouteRoute;
+  '/mainRoute': typeof MainRouteRoute;
+  '/noticeRoutes': typeof NoticeRoutesRoute;
+  '/projectRoute': typeof ProjectRouteRoute;
+  '/recruitRoute': typeof RecruitRouteRoute;
+  '/registerRoutes': typeof RegisterRoutesRoute;
+  '/routes': typeof RoutesRoute;
 }
 
 export interface FileRoutesById {
-  __root__: typeof rootRoute
-  '/academicRoutes': typeof AcademicRoutesRoute
-  '/adminBookRoutes': typeof AdminBookRoutesRoute
-  '/adminHavrutaRoutes': typeof AdminHavrutaRoutesRoute
-  '/adminItemRoutes': typeof AdminItemRoutesRoute
-  '/adminProjectRoutes': typeof AdminProjectRoutesRoute
-  '/adminRoute': typeof AdminRouteRoute
-  '/authRoutes': typeof AuthRoutesRoute
-  '/bookRoute': typeof BookRouteRoute
-  '/havrutaRoutes': typeof HavrutaRoutesRoute
-  '/introRoutes': typeof IntroRoutesRoute
-  '/itemRoute': typeof ItemRouteRoute
-  '/loginRoute': typeof LoginRouteRoute
-  '/mainRoute': typeof MainRouteRoute
-  '/notFoundRoute': typeof NotFoundRouteRoute
-  '/noticeRoutes': typeof NoticeRoutesRoute
-  '/projectRoute': typeof ProjectRouteRoute
-  '/recruitRoute': typeof RecruitRouteRoute
-  '/registerRoutes': typeof RegisterRoutesRoute
-  '/routes': typeof RoutesRoute
+  __root__: typeof rootRoute;
+  '/academicRoutes': typeof AcademicRoutesRoute;
+  '/adminBookRoutes': typeof AdminBookRoutesRoute;
+  '/adminHavrutaRoutes': typeof AdminHavrutaRoutesRoute;
+  '/adminItemRoutes': typeof AdminItemRoutesRoute;
+  '/adminProjectRoutes': typeof AdminProjectRoutesRoute;
+  '/adminRoute': typeof AdminRouteRoute;
+  '/authRoutes': typeof AuthRoutesRoute;
+  '/bookRoute': typeof BookRouteRoute;
+  '/errorRoute': typeof ErrorRouteRoute;
+  '/havrutaRoutes': typeof HavrutaRoutesRoute;
+  '/introRoutes': typeof IntroRoutesRoute;
+  '/itemRoute': typeof ItemRouteRoute;
+  '/loginRoute': typeof LoginRouteRoute;
+  '/mainRoute': typeof MainRouteRoute;
+  '/noticeRoutes': typeof NoticeRoutesRoute;
+  '/projectRoute': typeof ProjectRouteRoute;
+  '/recruitRoute': typeof RecruitRouteRoute;
+  '/registerRoutes': typeof RegisterRoutesRoute;
+  '/routes': typeof RoutesRoute;
 }
 
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
+  fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | '/academicRoutes'
     | '/adminBookRoutes'
@@ -367,18 +367,18 @@ export interface FileRouteTypes {
     | '/adminRoute'
     | '/authRoutes'
     | '/bookRoute'
+    | '/errorRoute'
     | '/havrutaRoutes'
     | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
-    | '/notFoundRoute'
     | '/noticeRoutes'
     | '/projectRoute'
     | '/recruitRoute'
     | '/registerRoutes'
-    | '/routes'
-  fileRoutesByTo: FileRoutesByTo
+    | '/routes';
+  fileRoutesByTo: FileRoutesByTo;
   to:
     | '/academicRoutes'
     | '/adminBookRoutes'
@@ -388,17 +388,17 @@ export interface FileRouteTypes {
     | '/adminRoute'
     | '/authRoutes'
     | '/bookRoute'
+    | '/errorRoute'
     | '/havrutaRoutes'
     | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
-    | '/notFoundRoute'
     | '/noticeRoutes'
     | '/projectRoute'
     | '/recruitRoute'
     | '/registerRoutes'
-    | '/routes'
+    | '/routes';
   id:
     | '__root__'
     | '/academicRoutes'
@@ -409,40 +409,40 @@ export interface FileRouteTypes {
     | '/adminRoute'
     | '/authRoutes'
     | '/bookRoute'
+    | '/errorRoute'
     | '/havrutaRoutes'
     | '/introRoutes'
     | '/itemRoute'
     | '/loginRoute'
     | '/mainRoute'
-    | '/notFoundRoute'
     | '/noticeRoutes'
     | '/projectRoute'
     | '/recruitRoute'
     | '/registerRoutes'
-    | '/routes'
-  fileRoutesById: FileRoutesById
+    | '/routes';
+  fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
-  AcademicRoutesRoute: typeof AcademicRoutesRoute
-  AdminBookRoutesRoute: typeof AdminBookRoutesRoute
-  AdminHavrutaRoutesRoute: typeof AdminHavrutaRoutesRoute
-  AdminItemRoutesRoute: typeof AdminItemRoutesRoute
-  AdminProjectRoutesRoute: typeof AdminProjectRoutesRoute
-  AdminRouteRoute: typeof AdminRouteRoute
-  AuthRoutesRoute: typeof AuthRoutesRoute
-  BookRouteRoute: typeof BookRouteRoute
-  HavrutaRoutesRoute: typeof HavrutaRoutesRoute
-  IntroRoutesRoute: typeof IntroRoutesRoute
-  ItemRouteRoute: typeof ItemRouteRoute
-  LoginRouteRoute: typeof LoginRouteRoute
-  MainRouteRoute: typeof MainRouteRoute
-  NotFoundRouteRoute: typeof NotFoundRouteRoute
-  NoticeRoutesRoute: typeof NoticeRoutesRoute
-  ProjectRouteRoute: typeof ProjectRouteRoute
-  RecruitRouteRoute: typeof RecruitRouteRoute
-  RegisterRoutesRoute: typeof RegisterRoutesRoute
-  RoutesRoute: typeof RoutesRoute
+  AcademicRoutesRoute: typeof AcademicRoutesRoute;
+  AdminBookRoutesRoute: typeof AdminBookRoutesRoute;
+  AdminHavrutaRoutesRoute: typeof AdminHavrutaRoutesRoute;
+  AdminItemRoutesRoute: typeof AdminItemRoutesRoute;
+  AdminProjectRoutesRoute: typeof AdminProjectRoutesRoute;
+  AdminRouteRoute: typeof AdminRouteRoute;
+  AuthRoutesRoute: typeof AuthRoutesRoute;
+  BookRouteRoute: typeof BookRouteRoute;
+  ErrorRouteRoute: typeof ErrorRouteRoute;
+  HavrutaRoutesRoute: typeof HavrutaRoutesRoute;
+  IntroRoutesRoute: typeof IntroRoutesRoute;
+  ItemRouteRoute: typeof ItemRouteRoute;
+  LoginRouteRoute: typeof LoginRouteRoute;
+  MainRouteRoute: typeof MainRouteRoute;
+  NoticeRoutesRoute: typeof NoticeRoutesRoute;
+  ProjectRouteRoute: typeof ProjectRouteRoute;
+  RecruitRouteRoute: typeof RecruitRouteRoute;
+  RegisterRoutesRoute: typeof RegisterRoutesRoute;
+  RoutesRoute: typeof RoutesRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -454,22 +454,22 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRouteRoute: AdminRouteRoute,
   AuthRoutesRoute: AuthRoutesRoute,
   BookRouteRoute: BookRouteRoute,
+  ErrorRouteRoute: ErrorRouteRoute,
   HavrutaRoutesRoute: HavrutaRoutesRoute,
   IntroRoutesRoute: IntroRoutesRoute,
   ItemRouteRoute: ItemRouteRoute,
   LoginRouteRoute: LoginRouteRoute,
   MainRouteRoute: MainRouteRoute,
-  NotFoundRouteRoute: NotFoundRouteRoute,
   NoticeRoutesRoute: NoticeRoutesRoute,
   ProjectRouteRoute: ProjectRouteRoute,
   RecruitRouteRoute: RecruitRouteRoute,
   RegisterRoutesRoute: RegisterRoutesRoute,
   RoutesRoute: RoutesRoute,
-}
+};
 
 export const routeTree = rootRoute
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
 /* ROUTE_MANIFEST_START
 {
@@ -485,12 +485,12 @@ export const routeTree = rootRoute
         "/adminRoute",
         "/authRoutes",
         "/bookRoute",
+        "/errorRoute",
         "/havrutaRoutes",
         "/introRoutes",
         "/itemRoute",
         "/loginRoute",
         "/mainRoute",
-        "/notFoundRoute",
         "/noticeRoutes",
         "/projectRoute",
         "/recruitRoute",
@@ -522,6 +522,9 @@ export const routeTree = rootRoute
     "/bookRoute": {
       "filePath": "bookRoute.ts"
     },
+    "/errorRoute": {
+      "filePath": "errorRoute.ts"
+    },
     "/havrutaRoutes": {
       "filePath": "havrutaRoutes.ts"
     },
@@ -536,9 +539,6 @@ export const routeTree = rootRoute
     },
     "/mainRoute": {
       "filePath": "mainRoute.ts"
-    },
-    "/notFoundRoute": {
-      "filePath": "notFoundRoute.ts"
     },
     "/noticeRoutes": {
       "filePath": "noticeRoutes.ts"

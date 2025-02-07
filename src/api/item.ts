@@ -7,11 +7,8 @@ export const getItems = async (itemCategory: number) => {
     const response = await client.get<Item[]>(`/item/${itemCategory}`);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -26,11 +23,8 @@ export const getItemById = async (id: number) => {
       createdAt: Item.createdAt ? new Date(Item.createdAt) : new Date(),
     };
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -43,16 +37,8 @@ export const createItems = async (item: Item) => {
     });
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error) && error.response) {
-      console.error('Server Response:', error.response.data); // 서버에서 반환한 응답 데이터
-      console.error('Status:', error.response.status); // HTTP 상태 코드
-      console.error('Headers:', error.response.headers); // 응답 헤더
-      throw new Error(
-        `Axios error: ${error.response.data?.message || error.message}`,
-      );
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -65,11 +51,8 @@ export const updateItem = async (item: Item) => {
     });
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -78,10 +61,7 @@ export const deleteItem = async (id: number) => {
     const response = await client.delete(`/admin/item/${id}`);
     return response.data;
   } catch (error) {
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };

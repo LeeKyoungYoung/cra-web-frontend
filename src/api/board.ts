@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import { Board } from '~/models/Board.ts';
 import { client } from './client.ts';
 import { authClient } from './auth/authClient.ts';
@@ -10,11 +10,7 @@ export const getBoardCountByCategory = async (category: number) => {
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -40,11 +36,7 @@ export const getBoardsByCategory = async (
     return response.data;
   } catch (error) {
     console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    throw error;
   }
 };
 
@@ -59,12 +51,9 @@ export const getBoardById = async (id: number) => {
       createdAt: board.createdAt ? new Date(board.createdAt) : new Date(), // createAt을 Date 객체로 변환
     };
   } catch (error) {
-    console.log(error);
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Error fetching data: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log('⚠️ Error occurred while fetching board:', error);
+    // 원본 error를 그대로 throw
+    throw error;
   }
 };
 
@@ -91,13 +80,8 @@ export const createBoards = async (board: Board, files: File[]) => {
     });
     return response.data;
   } catch (error) {
-    console.error('Failed to post data:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -107,8 +91,8 @@ export const createBoardsView = async (id: number) => {
     const response = await authClient.post(`/board/view/${id}`);
     return response.data;
   } catch (error) {
-    console.error('조회수 증가 실패:', error);
-    throw new Error('조회수 증가 중 오류가 발생했습니다.');
+    console.log(error);
+    throw error;
   }
 };
 
@@ -124,13 +108,8 @@ export const updateBoards = async (board: Board) => {
 
     return response.data;
   } catch (error) {
-    console.error('Failed to update data:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 
@@ -142,13 +121,8 @@ export const deleteBoards = async (id: number) => {
     const response = await authClient.delete(`/board/${id}`);
     return response.data;
   } catch (error) {
-    console.error('Failed to delete board:', error);
-
-    if (axios.isAxiosError(error)) {
-      throw new Error(`Axios error: ${error.message}`);
-    } else {
-      throw new Error('An unexpected error occurred');
-    }
+    console.log(error);
+    throw error;
   }
 };
 

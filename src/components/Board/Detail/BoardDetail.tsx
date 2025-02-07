@@ -1,44 +1,83 @@
+import { useEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { QUERY_KEY } from '~/api/queryKey.ts';
-import { Board } from '~/models/Board.ts';
 import { getBoardById } from '~/api/board.ts';
-import BoardDetailItem from './BoardDetailItem.tsx';
 import { getCommentsCountByCategory } from '~/api/comment.ts';
+import { Board } from '~/models/Board.ts';
+import BoardDetailItem from './BoardDetailItem.tsx';
 import styles from './BoardDetail.module.css';
 
 export default function BoardDetail({ category }: { category: number }) {
-  const currentUrl = window.location.href; // 현재 경로 가져오기
-  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1); // 마지막 '/' 뒤의 숫자 가져오기
-
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const boardId = Number(id);
 
-  if (isNaN(boardId)) {
-    return <div style={{ padding: '10rem' }}>Invalid ID</div>;
-  }
+  const navigate = useNavigate();
+  const hasNavigated = useRef(false);
 
   const boardQuery = useQuery<Board>({
     queryKey: QUERY_KEY.board.boardById(boardId),
     queryFn: async () => getBoardById(boardId),
+    retry: false,
   });
 
   const commentCountQuery = useQuery<number>({
     queryKey: QUERY_KEY.comment.commentsCountById(boardId),
     queryFn: async () => getCommentsCountByCategory(boardId),
+    retry: false,
   });
 
-  let content;
+  useEffect(() => {
+    if (hasNavigated.current) return;
 
-  if (boardQuery.isLoading || commentCountQuery.isLoading) {
-    content = <div className="loading">데이터를 불러오는 중입니다...</div>;
-  } else if (boardQuery.isError || commentCountQuery.isError) {
-    content = <div className="error">에러가 발생했습니다!</div>;
-  } else if (boardQuery.isSuccess && commentCountQuery.isSuccess) {
-    const board = boardQuery.data;
-    console.log(board);
+    if (boardQuery.isError) {
+      const error = boardQuery.error;
+
+      if (axios.isAxiosError(error)) {
+        const status = error.response?.status;
+
+        if (status === 404) {
+          hasNavigated.current = true;
+          navigate('/not-found');
+          return;
+        }
+
+        if (status === 403) {
+          hasNavigated.current = true;
+          navigate('/forbidden');
+          return;
+        }
+
+        if (status === 500) {
+          hasNavigated.current = true;
+          navigate('/internal-server-error', {
+            state: { message: error.message },
+          });
+          return;
+        }
+      }
+
+      hasNavigated.current = true;
+      navigate('/internal-server-error', {
+        state: {
+          message: error instanceof Error ? error.message : 'Unknown error',
+        },
+      });
+      return;
+    }
+  });
+
+  if (boardQuery.isFetching || commentCountQuery.isFetching) {
+    return <div>로딩 중...</div>;
+  }
+
+  if (boardQuery.isSuccess && commentCountQuery.isSuccess) {
     return (
       <div className={styles['full-width']}>
         <BoardDetailItem
-          board={board}
+          board={boardQuery.data}
           category={category}
           commentCount={commentCountQuery.data}
         />
@@ -46,5 +85,5 @@ export default function BoardDetail({ category }: { category: number }) {
     );
   }
 
-  return <div>{content}</div>;
+  return <div>데이터를 불러올 수 없습니다.</div>;
 }
