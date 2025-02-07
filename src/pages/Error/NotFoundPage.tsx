@@ -80,7 +80,7 @@ function NotFoundPage() {
           메인으로 <img src={SkyBlueVector} />
         </MainBtn>
 
-        <PrevBtn onClick={() => navigate(-1)}>
+        <PrevBtn onClick={() => navigate(-2)}>
           이전으로 <img src={WhiteVector} />
         </PrevBtn>
       </Buttons>
