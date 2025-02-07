@@ -165,7 +165,7 @@ const LoginForm = () => {
           </Login>
         </form>
         <Register>
-          <span>혹시 계정이 없으신가여? </span>
+          <span>혹시 계정이 없으신가요? </span>
           <Link to="/register" className={styles['register-link']}>
             회원가입하기
           </Link>
