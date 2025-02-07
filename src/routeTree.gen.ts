@@ -16,7 +16,7 @@ import { Route as RegisterRoutesImport } from './routes/registerRoutes';
 import { Route as RecruitRouteImport } from './routes/recruitRoute';
 import { Route as ProjectRouteImport } from './routes/projectRoute';
 import { Route as NoticeRoutesImport } from './routes/noticeRoutes';
-import { Route as MainRouteImport } from './routes/errorRoute';
+import { Route as MainRouteImport } from './routes/mainRoute';
 import { Route as LoginRouteImport } from './routes/loginRoute';
 import { Route as ItemRouteImport } from './routes/itemRoute';
 import { Route as IntroRoutesImport } from './routes/introRoutes';
