@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { QUERY_KEY } from '~/api/queryKey.ts';
-import { Board } from '~/models/Board.ts';
 import { getBoardById } from '~/api/board.ts';
-import BoardDetailItem from './BoardDetailItem.tsx';
 import { getCommentsCountByCategory } from '~/api/comment.ts';
+import { Board } from '~/models/Board.ts';
+import BoardDetailItem from './BoardDetailItem.tsx';
 import styles from './BoardDetail.module.css';
 
 export default function BoardDetail({ category }: { category: number }) {
@@ -15,7 +15,7 @@ export default function BoardDetail({ category }: { category: number }) {
   const boardId = Number(id);
 
   const navigate = useNavigate();
-  const hasNavigated = useRef(false); // 🚀 navigate 실행 여부를 저장
+  const hasNavigated = useRef(false);
 
   const boardQuery = useQuery<Board>({
     queryKey: QUERY_KEY.board.boardById(boardId),
@@ -30,30 +30,26 @@ export default function BoardDetail({ category }: { category: number }) {
   });
 
   useEffect(() => {
-    if (hasNavigated.current) return; // ✅ 이미 이동했다면 추가 실행 X
+    if (hasNavigated.current) return;
 
     if (boardQuery.isError) {
       const error = boardQuery.error;
 
-      // AxiosError 체크를 먼저 하고
       if (axios.isAxiosError(error)) {
         const status = error.response?.status;
 
-        // 404 에러인 경우
         if (status === 404) {
           hasNavigated.current = true;
           navigate('/not-found');
           return;
         }
 
-        // 403 에러인 경우
         if (status === 403) {
           hasNavigated.current = true;
           navigate('/forbidden');
           return;
         }
 
-        // 500 에러인 경우
         if (status === 500) {
           hasNavigated.current = true;
           navigate('/internal-server-error', {
@@ -63,7 +59,6 @@ export default function BoardDetail({ category }: { category: number }) {
         }
       }
 
-      // 그 외의 일반적인 에러는 마지막에 처리
       hasNavigated.current = true;
       navigate('/internal-server-error', {
         state: {
