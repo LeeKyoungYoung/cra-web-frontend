@@ -99,9 +99,9 @@ export default function BoardDetailItem({
             </div>
           </div>
           <div className={styles['content-title']}>{board.title}</div>
-          <p className={styles['board-content']}>
+          <div className={styles['board-content']}>
             <Viewer initialValue={board.content} />
-          </p>
+          </div>
           <div className={styles['comment-count']}>
             <span className={styles.viewContainer}>
               <img src={viewImage} />

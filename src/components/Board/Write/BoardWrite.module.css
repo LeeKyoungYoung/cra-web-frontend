@@ -2,12 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 115px;
   padding-bottom: 180px;
   width: 100%;
   max-width: 1086px;
   margin: 0 auto;
-  margin-top: 4rem;
 }
 
 .write-title {
@@ -34,8 +32,17 @@
 .write-form textarea {
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 34px;
-  padding: 20px;
   font-size: 18px;
+  border: 1px solid #c1c1c1;
+  border-radius: 10px;
+}
+
+.write-form input[type='number'],
+.write-form textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 34px;
+  font-size: 18px;
+  padding: 20px;
   border: 1px solid #c1c1c1;
   border-radius: 10px;
 }
@@ -48,6 +55,7 @@
 .input-title {
   height: 68px;
   border-color: #c1c1c1;
+  padding: 0 20px;
 }
 
 .input-content {
@@ -70,8 +78,8 @@
 
 .file-button {
   cursor: pointer;
-  width: 110px;
-  height: 45px;
+  width: 90px;
+  height: 30px;
   margin: 0 !important;
   padding: 10px 15px;
   background-color: #c1c1c1;

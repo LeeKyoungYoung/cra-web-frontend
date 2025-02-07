@@ -1,25 +1,13 @@
 import { useMutation } from '@tanstack/react-query';
 import { useNavigate, useParams } from 'react-router-dom';
-import { deleteHavrutaBoards } from '~/api/havruta/havrutaBoard.ts';
-import styled from 'styled-components';
-
-const DeleteButton = styled.button`
-  padding: 5px 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  &:hover {
-    background-color: darkred;
-  }
-`;
+import styles from './HavrutaBoardDelete.module.css';
+import { MdDeleteOutline } from 'react-icons/md';
 
 function HavrutaBoardDelete() {
   const navigate = useNavigate();
 
-  const { id } = useParams<{ id: string }>();
+  const currentUrl = window.location.href;
+  const id = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
   const havrutaBoardId = Number(id);
 
   const mutation = useMutation({
@@ -41,7 +29,11 @@ function HavrutaBoardDelete() {
     }
   };
 
-  return <DeleteButton onClick={HandleDelete}>삭제</DeleteButton>;
+  return (
+    <div className={styles['delete-button']} onClick={HandleDelete}>
+      <MdDeleteOutline size={24} />
+    </div>
+  );
 }
 
 export default HavrutaBoardDelete;
